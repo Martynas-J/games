@@ -45,7 +45,7 @@ const Quiz = () => {
 
   const saveResult = async () => {
     try {
-      const response = await fetch("https://martynas-game.vercel.app/api/saveResult", {
+      const response = await fetch("http://martynas-game.vercel.app/api/saveResult", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
