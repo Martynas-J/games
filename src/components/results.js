@@ -5,7 +5,7 @@ const Results = ({ showScore }) => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    fetch("/api/getResults")
+    fetch("https://martynas-game.vercel.app//api/getResults")
       .then((response) => response.json())
       .then((data) => {
         data.sort((a, b) => b.playerScore - a.playerScore);
