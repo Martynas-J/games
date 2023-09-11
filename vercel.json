@@ -1,7 +1,6 @@
 {
   "routes": [
     {
-      "dest": "/",
       "methods": [
         "GET",
         "POST",
