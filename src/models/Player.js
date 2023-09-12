@@ -9,7 +9,7 @@ const playerSchema = new Schema({
         required: true,
     },
     playerScore: {
-        type: String,
+        type: String, 
         required: true,
     },
 }, {timestamps: true})
