@@ -7,7 +7,6 @@ export const GET = async (req) => {
     try {
       await connect();
       const data = await playerModel.find({});
-      // console.log(data)
       return new NextResponse(JSON.stringify(data), { status: 200 });
     } catch (err) {
       return new NextResponse("Database Error :(", { status: 500 });

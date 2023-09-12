@@ -17,7 +17,7 @@ const shuffleQuestions = (questions) => {
 
 const Quiz = () => {
   const [questionsList, setQuestionsList] = useState(
-    shuffleQuestions(questions)
+    shuffleQuestions(questions).slice(0, 10) // Pasiimame tik pirmus 10 klausimų
   );
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -36,7 +36,7 @@ const Quiz = () => {
     if (nextQuestionIndex < questionsList.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
-      setQuestionsList(shuffleQuestions(questions));
+      setQuestionsList(shuffleQuestions(questions).slice(0, 10)); // Pasiimame naujus 10 klausimų
       setCurrentQuestionIndex(0);
       setShowScore(true);
       setGameFinished(true);
@@ -68,7 +68,7 @@ const Quiz = () => {
 
   useEffect(() => {
     if (showScore) {
-      setQuestionsList(shuffleQuestions(questions));
+      setQuestionsList(shuffleQuestions(questions).slice(0, 10)); // Pasiimame naujus 10 klausimų
       setPlayerScore(score);
     }
   }, [showScore, score]);

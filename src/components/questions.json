@@ -1,12 +1,244 @@
 [
   {
-    "question": "Kas yra Java?",
-    "answers": ["Programavimo kalba", "Žaidimas", "Skaitmeninė valiuta"],
-    "correctAnswer": "Programavimo kalba"
+    "question": "Didžiausia žemės dalis?",
+    "answers": ["Afrikos žemynas", "Europos žemynas", "Azijos žemynas"],
+    "correctAnswer": "Azijos žemynas"
   },
   {
-    "question": "Kas yra Python?",
-    "answers": ["Gyvūnas", "Žaidimas", "Programavimo kalba"],
-    "correctAnswer": "Programavimo kalba"
+    "question": "Ilgiausias upės pasaulyje?",
+    "answers": ["Nilas", "Amazonė", "Missisipė"],
+    "correctAnswer": "Amazonė"
+  },
+  {
+    "question": "Didžiausias vandenynas pasaulyje?",
+    "answers": [
+      "Ramziojo vandenynas",
+      "Atlanto vandenynas",
+      "Indijos vandenynas"
+    ],
+    "correctAnswer": "Ramziojo vandenynas"
+  },
+  {
+    "question": "Kuri šalis yra žinoma kaip 'Australijos salynas'?",
+    "answers": ["Australija", "Naujoji Zelandija", "Indonezija"],
+    "correctAnswer": "Australija"
+  },
+  {
+    "question": "Aukščiausias kalnas pasaulyje?",
+    "answers": ["Mont Everestas", "K2", "Kilimandžaras"],
+    "correctAnswer": "Mont Everestas"
+  },
+  {
+    "question": "Kuri šalis yra žinoma kaip 'Šimtų ežerų šalis'?",
+    "answers": ["Suomija", "Švedija", "Kanada"],
+    "correctAnswer": "Suomija"
+  },
+  {
+    "question": "Kas yra didžiausias gyvūnas pasaulyje?",
+    "answers": ["Vėrinė", "Delfinas", "Mėlynasis banginis"],
+    "correctAnswer": "Mėlynasis banginis"
+  },
+  {
+    "question": "Kiek yra planetų mūsų Saulės sistemoje?",
+    "answers": ["6", "7", "8"],
+    "correctAnswer": "8"
+  },
+  {
+    "question": "Kuri šalis turi didžiausią teritoriją pasaulyje?",
+    "answers": ["Kanada", "Jungtinės Amerikos Valstijos", "Kinija"],
+    "correctAnswer": "Kanada"
+  },
+  {
+    "question": "Kuri jūra yra tarp Europos ir Azijos?",
+    "answers": ["Viduržemio jūra", "Juodoji jūra", "Kaspijos jūra"],
+    "correctAnswer": "Juodoji jūra"
+  },
+  {
+    "question": "Kas yra Sahara?",
+    "answers": [
+      "Didžiausia atogrąžų miškų zona",
+      "Didžiausia dykuma pasaulyje",
+      "Karštų šaltinių plotas"
+    ],
+    "correctAnswer": "Didžiausia dykuma pasaulyje"
+  },
+  {
+    "question": "Kurioje šalyje yra Machu Picchu?",
+    "answers": ["Brazilija", "Meksika", "Peru"],
+    "correctAnswer": "Peru"
+  },
+  {
+    "question": "Kuri šalis yra žinoma kaip 'Žalioji sala'?",
+    "answers": ["Islandija", "Airija", "Naujoji Zelandija"],
+    "correctAnswer": "Naujoji Zelandija"
+  },
+  {
+    "question": "Kuri šalis turi didžiausią gyventojų skaičių pasaulyje?",
+    "answers": ["Kinija", "Indija", "JAV"],
+    "correctAnswer": "Kinija"
+  },
+  {
+    "question": "Kuris upės tiltas yra žinomas kaip 'Aušros tiltas'?",
+    "answers": [
+      "Sankt Peterburgo tiltas",
+      "Paryžiaus tiltas",
+      "San Francisco tiltas"
+    ],
+    "correctAnswer": "San Francisco tiltas"
+  },
+  {
+    "question": "Kuri šalis yra žinoma kaip 'Smėlio dykumos šalis'?",
+    "answers": ["Arabijos pusiasalis", "Egiptas", "Izraelis"],
+    "correctAnswer": "Arabijos pusiasalis"
+  },
+  {
+    "question": "Kuri šalis yra žinoma kaip 'Vėjo ir garų laivų gimtinė'?",
+    "answers": ["JAV", "Jungtinė Karalystė", "Nyderlandai"],
+    "correctAnswer": "Nyderlandai"
+  },
+
+  {
+    "question": "Kas yra Mona Lizos paveikslas?",
+    "answers": [
+      "Renasanso tapyba",
+      "Sienos freska",
+      "Leonardo da Vinci kūrinys"
+    ],
+    "correctAnswer": "Leonardo da Vinci kūrinys"
+  },
+  {
+    "question": "Kuri šalis yra žinoma kaip 'Ugnies šalis' dėl savo aktyvių ugnikalnių?",
+    "answers": ["Italija", "Islandija", "Japonija"],
+    "correctAnswer": "Islandija"
+  },
+  {
+    "question": "Kas yra Paryžiaus katedra?",
+    "answers": ["Sporto arena", "Muziejus", "Gotikinė katalikų bažnyčia"],
+    "correctAnswer": "Gotikinė katalikų bažnyčia"
+  },
+  {
+    "question": "Kas yra Kilimandžaras?",
+    "answers": [
+      "Didžiausia kalnų grandinė",
+      "Ugnikalnis",
+      "Aukščiausias Afrikos kalnas"
+    ],
+    "correctAnswer": "Aukščiausias Afrikos kalnas"
+  },
+  {
+    "question": "Kas yra Machu Picchu?",
+    "answers": ["Senovės miestas Peru", "Didelis prekybos centras", "Knyga"],
+    "correctAnswer": "Senovės miestas Peru"
+  },
+  {
+    "question": "Kas yra Akropolis?",
+    "answers": [
+      "Atletikos stadionas",
+      "Senovės Graikijos miestas",
+      "Karšto šaltinio kompleksas"
+    ],
+    "correctAnswer": "Senovės Graikijos miestas"
+  },
+  {
+    "question": "Kas yra Amazonės miškai?",
+    "answers": [
+      "Didžiausi pasaulyje miškai",
+      "Vandens parkas",
+      "Didelis ežeras"
+    ],
+    "correctAnswer": "Didžiausi pasaulyje miškai"
+  },
+  {
+    "question": "Kas yra Niagaros krioklys?",
+    "answers": ["Kalnas", "Didžiausias pasaulyje krioklys", "Ežeras"],
+    "correctAnswer": "Didžiausias pasaulyje krioklys"
+  },
+  {
+    "question": "Kas yra Sahara?",
+    "answers": [
+      "Didžiausia dykuma pasaulyje",
+      "Graikijos sala",
+      "Vandens parkas"
+    ],
+    "correctAnswer": "Didžiausia dykuma pasaulyje"
+  },
+  {
+    "question": "JAV prezidento oficiali rezidencija?",
+    "answers": ["Baltoji rūmai", "Didelis miestas", "Laisvalaikio sodyba"],
+    "correctAnswer": "Baltoji rūmai"
+  },
+  {
+    "question": "Kas yra Petra?",
+    "answers": ["Šventykla", "Didelis prekybos centras", "Siena"],
+    "correctAnswer": "Šventykla"
+  },
+  {
+    "question": "Kas yra Grand Canyono nacionalinis parkas?",
+    "answers": ["Didžiulis ežeras", "Senovės miestas", "Gyvenvietė"],
+    "correctAnswer": "Didžiulis ežeras"
+  },
+  {
+    "question": "Kas yra Ayers Rock?",
+    "answers": ["Kalnas", "Didelis akmuo", "Žemės rūbas"],
+    "correctAnswer": "Kalnas"
+  },
+  {
+    "question": "Kas yra Stonehenge?",
+    "answers": ["Gyvenvietė", "Senovės paminklas", "Mūrinė siena"],
+    "correctAnswer": "Senovės paminklas"
+  },
+  {
+    "question": "Kuri šalis yra didžiausią ištekliais?",
+    "answers": ["Rusija", "Brazilija", "Kanada"],
+    "correctAnswer": "Rusija"
+  },
+
+  {
+    "question": "Kas yra Angkor Wat?",
+    "answers": [
+      "Didelis prekybos centras",
+      "Senovės šventykla",
+      "Valstybės rūmai"
+    ],
+    "correctAnswer": "Senovės šventykla"
+  },
+  {
+    "question": "Kas yra Tadž Mahal?",
+    "answers": ["Karalystės rūmai", "Mažas miestas", "Mausoliejus"],
+    "correctAnswer": "Mausoliejus"
+  },
+  {
+    "question": "Kuri šalis garsėja antikvarinių Romos atradimų?",
+    "answers": ["Italija", "Graikija", "Turkija"],
+    "correctAnswer": "Italija"
+  },
+  {
+    "question": "Kas yra Kremlius?",
+    "answers": [
+      "Didelis miestas",
+      "Katalikų bažnyčia",
+      "Rusijos prezidento rezidencija"
+    ],
+    "correctAnswer": "Rusijos prezidento rezidencija"
+  },
+  {
+    "question": "Kas yra Serengeti nac. parkas?",
+    "answers": ["Miestas", "Didžiausias Afrikos parkas", "Upė"],
+    "correctAnswer": "Didžiausias Afrikos parkas"
+  },
+  {
+    "question": "Kas yra Akmenų miestas?",
+    "answers": ["Didelis miestas", "Siena iš akmenų", "Didžiulė kalnų viršūnė"],
+    "correctAnswer": "Siena iš akmenų"
+  },
+  {
+    "question": "Kas yra Naujoji Gvineja?",
+    "answers": ["Salos valstybė", "Šalis Pietų Amerikoje", "Didelis upė"],
+    "correctAnswer": "Salos valstybė"
+  },
+  {
+    "question": "JAV didžiausias nacionalinis parkas?",
+    "answers": ["Alaskos ledkalniai", "Havajų vulkanai", "Didžiulė dykuma"],
+    "correctAnswer": "Alaskos ledkalniai"
   }
 ]

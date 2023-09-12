@@ -6,7 +6,6 @@ export const POST = async (req) => {
   try {
   await connect();
   const body = await req.json();
-  console.log(body)
     const newItem = new playerModel(body);
     await newItem.save();
     return new NextResponse(`This has been created`, {
