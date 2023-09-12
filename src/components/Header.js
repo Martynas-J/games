@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -21,14 +21,6 @@ const Header = () => {
               </div>
             </Link>
           </li>
-          <li>
-            <Link href="/about">
-              <div className="group relative">
-                <span className="text-lg group-hover:text-blue-500">About</span>
-                <div className="absolute w-full h-0.5 bg-white bottom-0 left-0 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform"></div>
-              </div>
-            </Link>
-          </li>
         </ul>
       </nav>
     </header>
@@ -36,4 +28,3 @@ const Header = () => {
 };
 
 export default Header;
-

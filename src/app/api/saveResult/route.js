@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import path from "path";
 
 export const POST = async (req, res) => {
+  console.log("veikia")
   if (req.method === "POST") {
     try {
       const { playerName, playerScore } = await req.json();
