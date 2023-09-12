@@ -5,7 +5,7 @@ const Results = ({ showScore }) => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    fetch("https://martynas-game.vercel.app/api/getResults")
+    fetch("api/getResults")
       .then((response) => response.json())
       .then((data) => {
         data.sort((a, b) => b.playerScore - a.playerScore);
@@ -23,7 +23,7 @@ const Results = ({ showScore }) => {
         {results.length > 0 ? (
           results.map((result, index) => (
             <li key={index} className="mb-1">
-            {new Date(result.timestamp).toLocaleString("lt-LT")} - {result.playerName} - {'Taškai: ' + result.playerScore}  
+            {new Date(result.createdAt).toLocaleString("lt-LT")} - {result.playerName} - {'Taškai: ' + result.playerScore}  
             </li>
           ))
         ) : (

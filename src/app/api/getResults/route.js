@@ -1,24 +1,16 @@
-import fs from "fs";
+import connect from "@/app/utils/db";
+import playerModel from "@/models/Player";
 import { NextResponse } from "next/server";
-import path from "path";
 
 export const GET = async (req) => {
   if (req.method === "GET") {
     try {
-      const filePath = path.join(process.cwd(), "results.json");
-
-      if (fs.existsSync(filePath)) {
-        const fileData = fs.readFileSync(filePath, "utf-8");
-        const results = JSON.parse(fileData);
-        return new NextResponse(JSON.stringify(results), { status: 200 });
-      } else {
-        return new NextResponse(JSON.stringify({ message: "Failas nerastas." }), { status: 400 });
-      }
-    } catch (error) {
-      console.error(error);
-      return new NextResponse(JSON.stringify({ message: "Įvyko klaida bandant gauti duomenis." }), { status: 500 });
+      await connect();
+      const data = await playerModel.find({});
+      // console.log(data)
+      return new NextResponse(JSON.stringify(data), { status: 200 });
+    } catch (err) {
+      return new NextResponse("Database Error :(", { status: 500 });
     }
-  } else {
-    return new NextResponse("", { status: 405 });
   }
 };
