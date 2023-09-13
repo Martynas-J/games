@@ -1,20 +1,15 @@
 "use client";
 import { API_URL } from "@/app/config/config";
+import axios from "axios";
 import { useState, useEffect } from "react";
 
 const Results = ({ showScore }) => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    fetch(`/api/getResults`)
-      .then((response) => response.json())
-      .then((data) => {
-        data.sort((a, b) => b.playerScore - a.playerScore);
-        setResults(data);
-      })
-      .catch((error) => {
-        console.error("Failed to fetch results:", error);
-      });
+      axios.get(`${API_URL}/api/getResults`)
+      .then(res => setResults(res.data))
+      .catch(res => toast.error(res.message))
   }, [showScore]);
 
   return (
