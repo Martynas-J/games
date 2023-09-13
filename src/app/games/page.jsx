@@ -4,18 +4,8 @@ import questions from "../../components/questions.json";
 import Results from "@/components/results";
 import { API_URL } from "../config/config";
 import useSWR from "swr";
-
-const shuffleQuestions = (questions) => {
-  const shuffledQuestions = [...questions];
-  for (let i = shuffledQuestions.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffledQuestions[i], shuffledQuestions[j]] = [
-      shuffledQuestions[j],
-      shuffledQuestions[i],
-    ];
-  }
-  return shuffledQuestions;
-};
+import { saveResultData } from "@/components/saveResultData";
+import { shuffleQuestions } from "@/components/shuffleQuestions";
 
 const Quiz = () => {
 
@@ -51,17 +41,7 @@ const Quiz = () => {
 
   const saveResult = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/saveResult`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          playerName,
-          playerScore: score,
-        }),
-      });
-
+      const response = await saveResultData(playerName, score)
       if (response.ok) {
         setResultSaved(true);
         mutate();
