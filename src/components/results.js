@@ -1,15 +1,9 @@
 "use client";
-import useSWR from "swr";
 
-const Results = ({ showScore }) => {
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, mutate } = useSWR(`/api/getResults`, fetcher);
+const Results = ({ data }) => {
 
 if (!data) {
   return
-}
-if (showScore) {
-  mutate()
 }
   return (
     <div className="results-sidebar ml-auto w-1/4 p-4">

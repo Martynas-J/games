@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import questions from "../../components/questions.json";
 import Results from "@/components/results";
 import { API_URL } from "../config/config";
+import useSWR from "swr";
 
 const shuffleQuestions = (questions) => {
   const shuffledQuestions = [...questions];
@@ -17,6 +18,10 @@ const shuffleQuestions = (questions) => {
 };
 
 const Quiz = () => {
+
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, mutate } = useSWR(`/api/getResults`, fetcher);
+
   const [questionsList, setQuestionsList] = useState(
     shuffleQuestions(questions).slice(0, 10) 
   );
@@ -59,6 +64,7 @@ const Quiz = () => {
 
       if (response.ok) {
         setResultSaved(true);
+        mutate();
       } else {
         console.error("Failed to save the result.");
       }
@@ -132,7 +138,7 @@ const Quiz = () => {
           </div>
         )
       )}
-      <Results showScore={showScore} />
+      <Results data={data} />
     </div>
   );
 };
