@@ -60,7 +60,7 @@ const Quiz = () => {
   }, [showScore, score]);
 
   return (
-    <div className="container mx-auto p-4 flex sm:flex-row">
+    <div className="container mx-auto p-4 flex flex-col sm:flex-row">
     <div className="flex-grow">
       {showScore ? (
         <div className="text-2xl font-bold mb-auto">
