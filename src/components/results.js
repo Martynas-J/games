@@ -1,25 +1,25 @@
 "use client";
-import { API_URL } from "@/app/config/config";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import useSWR from "swr";
 
 const Results = ({ showScore }) => {
-  const [results, setResults] = useState([]);
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data, mutate } = useSWR(`/api/getResults`, fetcher);
 
-  useEffect(() => {
-      axios.get(`${API_URL}/api/getResults`)
-      .then(res => setResults(res.data))
-      .catch(res => toast.error(res.message))
-  }, [showScore]);
-
+if (!data) {
+  return
+}
+if (showScore) {
+  mutate()
+}
   return (
     <div className="results-sidebar ml-auto w-1/4 p-4">
       <h2 className="text-lg font-semibold mb-2">Visi Rezultatai:</h2>
       <ul>
-        {results.length > 0 ? (
-          results.map((result, index) => (
+        {data.length > 0 ? (
+          data.map((result, index) => (
             <li key={index} className="mb-1">
-            {new Date(result.createdAt).toLocaleString("lt-LT")} - {result.playerName} - {'Taškai: ' + result.playerScore}  
+              {new Date(result.createdAt).toLocaleString("lt-LT")} -{" "}
+              {result.playerName} - {"Taškai: " + result.playerScore}
             </li>
           ))
         ) : (
