@@ -2,6 +2,8 @@ import connect from "@/app/utils/db";
 import playerModel from "@/models/Player";
 import { NextResponse } from "next/server";
 
+export const revalidate = true;
+
 export const GET = async (req) => {
   if (req.method === "GET") {
     try {
