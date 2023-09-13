@@ -1,6 +1,6 @@
 const Results = ({ data }) => {
   if (!data) {
-    return null; // Grąžinkite 'null', jei nėra duomenų
+    return null; 
   }
 
   data.sort((a, b) => b.playerScore - a.playerScore);

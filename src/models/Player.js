@@ -9,7 +9,11 @@ const playerSchema = new Schema({
         required: true,
     },
     playerScore: {
-        type: String, 
+        type: Number, 
+        required: true,
+    },
+    level: {
+        type: Number, 
         required: true,
     },
 }, {timestamps: true})

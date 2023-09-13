@@ -4,7 +4,6 @@ import questions from "../../components/questions.json";
 import Results from "@/components/results";
 import { API_URL } from "../config/config";
 import useSWR from "swr";
-import { saveResultData } from "@/components/saveResultData";
 import { shuffleQuestions } from "@/components/shuffleQuestions";
 import { useSession } from "next-auth/react";
 import { updateResultData } from "@/components/updateResultData";
@@ -12,7 +11,19 @@ import { updateResultData } from "@/components/updateResultData";
 const Quiz = () => {
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, mutate } = useSWR(`${API_URL}/api/getResults`, fetcher);
+  const { data: results, mutate } = useSWR(
+    `${API_URL}/api/getResults`,
+    fetcher
+  );
+  const { data: result } = useSWR(
+    `${API_URL}/api/getResults/${session.data?.user.name}`,
+    fetcher
+  );
+  useEffect(() => {
+    if (result) {
+      setLevel(result.level);
+    }
+  }, [result]);
 
   const [questionsList, setQuestionsList] = useState(
     shuffleQuestions(questions).slice(0, 10)
@@ -23,10 +34,14 @@ const Quiz = () => {
   const [gameFinished, setGameFinished] = useState(false);
   const [playerScore, setPlayerScore] = useState(0);
   const [resultSaved, setResultSaved] = useState(false);
+  const [level, setLevel] = useState(1);
 
   const handleAnswerOptionClick = (selectedAnswer) => {
     if (selectedAnswer === questionsList[currentQuestionIndex].correctAnswer) {
-      setScore(score + 1);
+      setScore((prev) => prev + level);
+    }
+    if (score == 5 * level) {
+      setLevel((prev) => prev + 1);
     }
 
     const nextQuestionIndex = currentQuestionIndex + 1;
@@ -42,7 +57,11 @@ const Quiz = () => {
 
   const saveResult = async () => {
     try {
-      const response = await updateResultData(session.data.user.name, score);
+      const response = await updateResultData(
+        session.data.user.name,
+        score,
+        level
+      );
       if (response.ok) {
         setResultSaved(true);
         mutate();
@@ -64,6 +83,9 @@ const Quiz = () => {
   return (
     <div className="container mx-auto p-4 flex flex-col sm:flex-row">
       <div className="flex-grow">
+        <p className="text-xl font-semibold mt-4 text-center text-blue-800">
+          Level: {level}
+        </p>
         {showScore ? (
           <div className="text-2xl font-bold mb-auto">
             <p>Your Score: {score}</p>
@@ -79,7 +101,7 @@ const Quiz = () => {
             >
               Žaisti iš naujo
             </button>
-            {(!resultSaved && session.status === "authenticated") && (
+            {!resultSaved && session.status === "authenticated" && (
               <div>
                 <button
                   onClick={saveResult}
@@ -114,7 +136,7 @@ const Quiz = () => {
           )
         )}
       </div>
-      <Results data={data} />
+      <Results data={results} />
     </div>
   );
 };

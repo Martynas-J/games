@@ -5,7 +5,6 @@ import { NextResponse } from "next/server";
 export const PATCH = async (request, { params }) => {
   const id = params.id;
   const data = await request.json();
-  console.log(id, data);
   try {
     await connect();
     const updatedData = await playerModel.findOneAndUpdate(
