@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import questions from "../../components/questions.json";
 import Results from "@/components/results";
+import { API_URL } from "../config/config";
 
 const shuffleQuestions = (questions) => {
   const shuffledQuestions = [...questions];
@@ -17,7 +18,7 @@ const shuffleQuestions = (questions) => {
 
 const Quiz = () => {
   const [questionsList, setQuestionsList] = useState(
-    shuffleQuestions(questions).slice(0, 10) // Pasiimame tik pirmus 10 klausimų
+    shuffleQuestions(questions).slice(0, 10) 
   );
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -36,7 +37,7 @@ const Quiz = () => {
     if (nextQuestionIndex < questionsList.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
-      setQuestionsList(shuffleQuestions(questions).slice(0, 10)); // Pasiimame naujus 10 klausimų
+      setQuestionsList(shuffleQuestions(questions).slice(0, 10)); 
       setCurrentQuestionIndex(0);
       setShowScore(true);
       setGameFinished(true);
@@ -45,7 +46,7 @@ const Quiz = () => {
 
   const saveResult = async () => {
     try {
-      const response = await fetch("api/saveResult", {
+      const response = await fetch(`${API_URL}api/saveResult`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +69,7 @@ const Quiz = () => {
 
   useEffect(() => {
     if (showScore) {
-      setQuestionsList(shuffleQuestions(questions).slice(0, 10)); // Pasiimame naujus 10 klausimų
+      setQuestionsList(shuffleQuestions(questions).slice(0, 10)); 
       setPlayerScore(score);
     }
   }, [showScore, score]);

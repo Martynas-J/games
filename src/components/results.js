@@ -1,11 +1,12 @@
 "use client";
+import { API_URL } from "@/app/config/config";
 import { useState, useEffect } from "react";
 
 const Results = ({ showScore }) => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    fetch("api/getResults")
+    fetch(`${API_URL}api/getResults`)
       .then((response) => response.json())
       .then((data) => {
         data.sort((a, b) => b.playerScore - a.playerScore);
