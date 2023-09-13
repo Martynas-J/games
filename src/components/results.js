@@ -5,6 +5,7 @@ const Results = ({ data }) => {
 if (!data) {
   return
 }
+data.sort((a, b) => b.playerScore - a.playerScore);
   return (
     <div className="results-sidebar ml-auto w-1/4 p-4">
       <h2 className="text-lg font-semibold mb-2">Visi Rezultatai:</h2>

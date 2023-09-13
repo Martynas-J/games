@@ -20,7 +20,7 @@ const shuffleQuestions = (questions) => {
 const Quiz = () => {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data, mutate } = useSWR(`/api/getResults`, fetcher);
+  const { data, mutate } = useSWR(`${API_URL}/api/getResults`, fetcher);
 
   const [questionsList, setQuestionsList] = useState(
     shuffleQuestions(questions).slice(0, 10) 
