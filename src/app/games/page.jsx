@@ -46,7 +46,7 @@ const Quiz = () => {
 
   const saveResult = async () => {
     try {
-      const response = await fetch(`${API_URL}api/saveResult`, {
+      const response = await fetch(`${API_URL}/api/saveResult`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -6,7 +6,7 @@ const Results = ({ showScore }) => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}api/getResults`)
+    fetch(`${API_URL}/api/getResults`)
       .then((response) => response.json())
       .then((data) => {
         data.sort((a, b) => b.playerScore - a.playerScore);
