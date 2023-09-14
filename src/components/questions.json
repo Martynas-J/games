@@ -523,6 +523,86 @@
   ],
   "level4": [
     {
+      "question": "Pirmas elementas chemijos elementų lentelėje?",
+      "answers": ["Vandenilis", "Oksigenas", "Anglis", "Geležis", "Auksas"],
+      "correctAnswer": "Vandenilis"
+    },
+    {
+      "question": "Didžiausia planetas mūsų Saulės sistemoje?",
+      "answers": ["Merkurijus", "Venera", "Marsas", "Jupiteris", "Saturnas"],
+      "correctAnswer": "Jupiteris"
+    },
+    {
+      "question": "Garsiausia pasaulyje ugnikalnio išsiveržimo vieta?",
+      "answers": ["Vezuvijus", "Etna", "Krakatau", "Fuji", "Stromboli"],
+      "correctAnswer": "Krakatau"
+    },
+    {
+      "question": "Kas yra garsiausia pasaulyje džiazo muzikos atlikėja?",
+      "answers": ["Ella Fitzgerald", "Louis Armstrong", "Duke Ellington", "Miles Davis", "John Coltrane"],
+      "correctAnswer": "Ella Fitzgerald"
+    },
+    {
+      "question": "Garsiausias pasaulyje dailininkas, kuris nutapė 'Žvaigždėta naktis'?",
+      "answers": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dali", "Claude Monet"],
+      "correctAnswer": "Vincent van Gogh"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulyje mokslininkas, kuris atrado peniciliną?",
+      "answers": ["Isaac Newton", "Albert Einstein", "Charles Darwin", "Marie Curie", "Alexander Fleming"],
+      "correctAnswer": "Alexander Fleming"
+    },
+    {
+      "question": "Garsiausias pasaulyje filmų režisierius, kuris sukūrė 'Godfather' trilogiją?",
+      "answers": ["Steven Spielberg", "Martin Scorsese", "Francis Ford Coppola", "Alfred Hitchcock", "Quentin Tarantino"],
+      "correctAnswer": "Francis Ford Coppola"
+    },
+    {
+      "question": "Kurioje šalyje gimė garsusis kompozitorius Ludwig van Beethoven?",
+      "answers": ["Vokietija", "Austrija", "Prancūzija", "Italija", "Lenkija"],
+      "correctAnswer": "Vokietija"
+    },
+    {
+      "question": "Knygos 'Harry Potter' autorius?",
+      "answers": ["J.R.R. Tolkien", "C.S. Lewis", "George Orwell", "J.K. Rowling", "Stephen King"],
+      "correctAnswer": "J.K. Rowling"
+    },
+    {
+      "question": "Garsiausias pasaulyje dailininkas, kuris sukūrė 'Paskutinę vakarienę'?",
+      "answers": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dali", "Claude Monet"],
+      "correctAnswer": "Leonardo da Vinci"
+    },
+    {
+      "question": "Garsiausias pasaulyje muzikantas, kuris sukūrė 'Imagine'?",
+      "answers": ["The Beatles", "Elton John", "Michael Jackson", "John Lennon", "Bob Dylan"],
+      "correctAnswer": "John Lennon"
+    },
+    {
+      "question": "Aktorius, kuris vaidino 'Forrest Gump' vaidmenį?",
+      "answers": ["Tom Hanks", "Robert De Niro", "Al Pacino", "Denzel Washington", "Leonardo DiCaprio"],
+      "correctAnswer": "Tom Hanks"
+    },
+    {
+      "question": "Mokslininkas, kuris atrado peniciliną?",
+      "answers": ["Isaac Newton", "Albert Einstein", "Charles Darwin", "Marie Curie", "Alexander Fleming"],
+      "correctAnswer": "Alexander Fleming"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulyje filmų režisierius, kuris sukūrė 'Godfather' trilogiją?",
+      "answers": ["Steven Spielberg", "Martin Scorsese", "Francis Ford Coppola", "Alfred Hitchcock", "Quentin Tarantino"],
+      "correctAnswer": "Francis Ford Coppola"
+    },
+    {
+      "question": "Kurioje šalyje gimė garsusis kompozitorius Ludwig van Beethoven?",
+      "answers": ["Vokietija", "Austrija", "Prancūzija", "Italija", "Lenkija"],
+      "correctAnswer": "Vokietija"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulyje knygos 'Harry Potter' autorius?",
+      "answers": ["J.R.R. Tolkien", "C.S. Lewis", "George Orwell", "J.K. Rowling", "Stephen King"],
+      "correctAnswer": "J.K. Rowling"
+    },
+    {
       "question": "Kur randami Jungtinių Tautų būstinės pastatai?",
       "answers": ["Niujorke, JAV", "Londonas, Jungtinė Karalystė", "Paryžius, Prancūzija", "Vatikanas", "Sidnėjus, Australija"],
       "correctAnswer": "Niujorke, JAV"
@@ -615,89 +695,192 @@
   ],
   "level5": [
     {
-      "question": "Pirmas elementas chemijos elementų lentelėje?",
-      "answers": ["Vandenilis", "Oksigenas", "Anglis", "Geležis", "Auksas"],
+      "question": "Kas yra kvantinė fizika ir kodėl ji yra toks svarbus moksle?",
+      "answers": [
+        "Tai fizikos šaka, kurioje tyrinėjamos kosminės struktūros ir galaktikos.",
+        "Tai biologijos šaka, nagrinėjanti gyvūnų elgesį.",
+        "Tai fizikos šaka, nagrinėjanti kvantinius objektus ir jų elgesį.",
+        "Tai cheminė sąveika tarp kietų kūnų.",
+        "Tai matematikos šaka, tirianti taisykles."
+      ],
+      "correctAnswer": "Tai fizikos šaka, nagrinėjanti kvantinius objektus ir jų elgesį."
+    },
+    {
+      "question": "Kas yra Heisenbergo nepatikimumo principas?",
+      "answers": [
+        "Matematinė formulė apibrėžianti gravitacijos jėgą.",
+        "Teiginys apie tai, kad negalima tiksliai matuoti dalelių vietos ir jų impulsų vienu metu.",
+        "Teorija apie tai, kaip žvaigždės gimsta.",
+        "Įrodymas, kad visi atomai yra susideda iš protonų, neutronų ir elektronų.",
+        "Tai fizikos teorija, susijusi su erdvės ir laiko deformacijomis."
+      ],
+      "correctAnswer": "Teiginys apie tai, kad negalima tiksliai matuoti dalelių vietos ir jų impulsų vienu metu."
+    },
+    {
+      "question": "E=mc² reikšmės paaiškinimas?",
+      "answers": [
+        "Tai yra Einstaino pirmoji teorija.",
+        "Tai yra branduolinės energijos suma.",
+        "Daugyba tarp energijos ir masės yra lygi šviesos greičiui kvadratu.",
+        "Tai yra fizikinės konstantos reikšmė.",
+        "Tai matematikos teorema apie laiko ir erdvės ryšį."
+      ],
+      "correctAnswer": "Daugyba tarp energijos ir masės yra lygi šviesos greičiui kvadratu."
+    },
+    {
+      "question": "Kas yra kvantinė fizika ir kodėl ji yra toks svarbus moksle?",
+      "answers": [
+        "Tai fizikos šaka, kurioje tyrinėjamos kosminės struktūros ir galaktikos.",
+        "Tai biologijos šaka, nagrinėjanti gyvūnų elgesį.",
+        "Tai fizikos šaka, nagrinėjanti kvantinius objektus ir jų elgesį.",
+        "Tai cheminė sąveika tarp kietų kūnų.",
+        "Tai matematikos šaka, tirianti taisykles."
+      ],
+      "correctAnswer": "Tai fizikos šaka, nagrinėjanti kvantinius objektus ir jų elgesį."
+    },
+    {
+      "question": "Koks elementas buvo pirmasis sukurtas žmogaus?",
+      "answers": [
+        "Vandenilis",
+        "Oksigenas",
+        "Sidabras",
+        "Geležis",
+        "Titanas"
+      ],
       "correctAnswer": "Vandenilis"
     },
     {
-      "question": "Didžiausia planetas mūsų Saulės sistemoje?",
-      "answers": ["Merkurijus", "Venera", "Marsas", "Jupiteris", "Saturnas"],
-      "correctAnswer": "Jupiteris"
+      "question": "Kas yra Fibonacci seka?",
+      "answers": [
+        "Seka, kurioje kiekvienas skaičius yra prieš tai einančių dviejų skaičių suma.",
+        "Seka, kurioje kiekvienas skaičius yra jo pirminės faktorius.",
+        "Seka, kurioje kiekvienas skaičius yra sandauga tarp dviejų ankstesnių skaičių.",
+        "Seka, kurioje kiekvienas skaičius yra pirminis skaičius.",
+        "Seka, kurioje kiekvienas skaičius yra šviesos greičio matas."
+      ],
+      "correctAnswer": "Seka, kurioje kiekvienas skaičius yra prieš tai einančių dviejų skaičių suma."
     },
     {
-      "question": "Garsiausia pasaulyje ugnikalnio išsiveržimo vieta?",
-      "answers": ["Vezuvijus", "Etna", "Krakatau", "Fuji", "Stromboli"],
-      "correctAnswer": "Krakatau"
+      "question": "Kas yra Platoninės kūno teorija?",
+      "answers": [
+        "Teorija, teigianti, kad žemė yra plokščia ir rieda ant bangos.",
+        "Teorija, kurioje aprašoma, kaip juda planetos apie Saulę.",
+        "Teorija apie skaičių teoriją ir geometrijos taisykles.",
+        "Teorija apie idealias, nekintančias figūras, turinčias tam tikrų savybių.",
+        "Teorija apie erdvės ir laiko sąveiką."
+      ],
+      "correctAnswer": "Teorija apie idealias, nekintančias figūras, turinčias tam tikrų savybių."
     },
     {
-      "question": "Kas yra garsiausia pasaulyje džiazo muzikos atlikėja?",
-      "answers": ["Ella Fitzgerald", "Louis Armstrong", "Duke Ellington", "Miles Davis", "John Coltrane"],
-      "correctAnswer": "Ella Fitzgerald"
+      "question": "Teorija apie visko pradžią iš vieno taško?",
+      "answers": [
+        "Kosminė ekspancija",
+        "Sąveikos teorija",
+        "Paraleliniai pasauliai",
+        "Kvantinė fizika",
+        "Didysis susitraukimas"
+      ],
+      "correctAnswer": "Kosminė ekspancija"
     },
     {
-      "question": "Garsiausias pasaulyje dailininkas, kuris nutapė 'Žvaigždėta naktis'?",
-      "answers": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dali", "Claude Monet"],
-      "correctAnswer": "Vincent van Gogh"
+      "question": "Kas yra Higgs bozonas ir kodėl jis svarbus fizikoje?",
+    "answers": [
+    "Tai didelės energijos dalelių greitintuvo branduolys.",
+    "Tai elementarioji dalelė, suteikianti masę kitiems daleliams.",
+    "Tai garsus matematinis dalelių modelis.",
+    "Tai pirmasis atrastas subatomų dalelis.",
+    "Tai pagrindinė fizikos teorija."
+    ],
+    "correctAnswer": "Tai elementarioji dalelė, suteikianti masę kitiems daleliams."
     },
     {
-      "question": "Kas yra garsiausias pasaulyje mokslininkas, kuris atrado peniciliną?",
-      "answers": ["Isaac Newton", "Albert Einstein", "Charles Darwin", "Marie Curie", "Alexander Fleming"],
-      "correctAnswer": "Alexander Fleming"
+    "question": "Kas yra Schrödingerio lygtis kvantinėje mechanikoje?",
+    "answers": [
+    "Tai paprasta lygtis aprašanti judančias daleles.",
+    "Tai lygtis, apibrėžianti elektronų elgesį atomoje.",
+    "Tai lygtis, nustatanti masės ir greičio santykį.",
+    "Tai Einsteinio formulė.",
+    "Tai fantazijos kūrinys."
+    ],
+    "correctAnswer": "Tai lygtis, apibrėžianti elektronų elgesį atomoje."
     },
     {
-      "question": "Garsiausias pasaulyje filmų režisierius, kuris sukūrė 'Godfather' trilogiją?",
-      "answers": ["Steven Spielberg", "Martin Scorsese", "Francis Ford Coppola", "Alfred Hitchcock", "Quentin Tarantino"],
-      "correctAnswer": "Francis Ford Coppola"
+    "question": "Kas yra Planck skaičius ir kaip jis susijęs su kvantine fizika?",
+    "answers": [
+    "Tai fundamentali fizikos konstanta, susijusi su kvantinės mechanikos pagrindais.",
+    "Tai skaičius, nusakantis planetų judėjimo greitį.",
+    "Tai skaičius, kuris naudojamas mokant matematiką.",
+    "Tai keistas skaičius, kurį sugalvojo Maxas Planckas.",
+    "Tai skaičius, kurį Einsteinas naudojo savo teorijose."
+    ],
+    "correctAnswer": "Tai fundamentali fizikos konstanta, susijusi su kvantinės mechanikos pagrindais."
     },
     {
-      "question": "Kurioje šalyje gimė garsusis kompozitorius Ludwig van Beethoven?",
-      "answers": ["Vokietija", "Austrija", "Prancūzija", "Italija", "Lenkija"],
-      "correctAnswer": "Vokietija"
+    "question": "Kas yra kvarkas?",
+    "answers": [
+    "Tai mažas gaminys.",
+    "Tai branduolinė dalis, sudaranti protonus ir neutronus.",
+    "Tai paprastas atomų komponentas.",
+    "Tai senovinis filosofinis terminas.",
+    "Tai visiškai neegzistuojantis dalelis."
+    ],
+    "correctAnswer": "Tai branduolinė dalis, sudaranti protonus ir neutronus."
+    },
+
+    {
+    "question": "Kas yra kvazarus?",
+    "answers": [
+    "Tai smalsūs žmonės.",
+    "Tai kosminiai objektai su ekstremaliais energijos išmetimo savybėmis.",
+    "Tai mokslininkų sugebėjimas suprasti sudėtingas problemas.",
+    "Tai šaltiniai, iš kurių gauname elektrą.",
+    "Tai fantastinė būtybė."
+    ],
+    "correctAnswer": "Tai kosminiai objektai su ekstremaliais energijos išmetimo savybėmis."
     },
     {
-      "question": "Knygos 'Harry Potter' autorius?",
-      "answers": ["J.R.R. Tolkien", "C.S. Lewis", "George Orwell", "J.K. Rowling", "Stephen King"],
-      "correctAnswer": "J.K. Rowling"
+    "question": "Kas yra Diraco dalelė ir kodėl ji svarbi fizikoje?",
+    "answers": [
+    "Tai muzikos instrumentas.",
+    "Tai klasikinės fizikos objektas.",
+    "Tai elementarioji dalelė, numatyta Paulio Diraco.",
+    "Tai fantastinis dalelių tipas.",
+    "Tai biologinis organizmas."
+    ],
+    "correctAnswer": "Tai elementarioji dalelė, numatyta Paulio Diraco."
     },
     {
-      "question": "Garsiausias pasaulyje aktorius, kuris vaidino James Bondo vaidmenį?",
-      "answers": ["Sean Connery", "Roger Moore", "Pierce Brosnan", "Daniel Craig", "Timothy Dalton"],
-      "correctAnswer": "Sean Connery"
+    "question": "Kas yra Turingo mašina ir kaip ji susijusi su kompiuterijos pradžia?",
+    "answers": [
+    "Tai kelionės kompiuteris.",
+    "Tai programa rašyti programų.",
+    "Tai pirmasis kompiuteris pasaulyje.",
+    "Tai matematinė koncepcija, numatyta Alanui Turingui.",
+    "Tai mašina, kuri gaminama iš Turingo juostelės."
+    ],
+    "correctAnswer": "Tai matematinė koncepcija, numatyta Alanui Turingui."
     },
     {
-      "question": "Garsiausias pasaulyje dailininkas, kuris sukūrė 'Paskutinę vakarienę'?",
-      "answers": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dali", "Claude Monet"],
-      "correctAnswer": "Leonardo da Vinci"
+    "question": "Kas yra Schrödingerio katės paradoksas?",
+    "answers": [
+    "Tai katės gimimo ir mirties būsena kvantinėje mechanikoje.",
+    "Tai fizikinis paradoksas, apibūdinantis šiukšlių dėžėje būseną.",
+    "Tai garsus gyvūnas.",
+    "Tai Schrödingerio atradimas.",
+    "Tai kvantinė fizika."
+    ],
+    "correctAnswer": "Tai katės gimimo ir mirties būsena kvantinėje mechanikoje."
     },
     {
-      "question": "Garsiausias pasaulyje muzikantas, kuris sukūrė 'Imagine'?",
-      "answers": ["The Beatles", "Elton John", "Michael Jackson", "John Lennon", "Bob Dylan"],
-      "correctAnswer": "John Lennon"
-    },
-    {
-      "question": "Aktorius, kuris vaidino 'Forrest Gump' vaidmenį?",
-      "answers": ["Tom Hanks", "Robert De Niro", "Al Pacino", "Denzel Washington", "Leonardo DiCaprio"],
-      "correctAnswer": "Tom Hanks"
-    },
-    {
-      "question": "Mokslininkas, kuris atrado peniciliną?",
-      "answers": ["Isaac Newton", "Albert Einstein", "Charles Darwin", "Marie Curie", "Alexander Fleming"],
-      "correctAnswer": "Alexander Fleming"
-    },
-    {
-      "question": "Kas yra garsiausias pasaulyje filmų režisierius, kuris sukūrė 'Godfather' trilogiją?",
-      "answers": ["Steven Spielberg", "Martin Scorsese", "Francis Ford Coppola", "Alfred Hitchcock", "Quentin Tarantino"],
-      "correctAnswer": "Francis Ford Coppola"
-    },
-    {
-      "question": "Kurioje šalyje gimė garsusis kompozitorius Ludwig van Beethoven?",
-      "answers": ["Vokietija", "Austrija", "Prancūzija", "Italija", "Lenkija"],
-      "correctAnswer": "Vokietija"
-    },
-    {
-      "question": "Kas yra garsiausias pasaulyje knygos 'Harry Potter' autorius?",
-      "answers": ["J.R.R. Tolkien", "C.S. Lewis", "George Orwell", "J.K. Rowling", "Stephen King"],
-      "correctAnswer": "J.K. Rowling"
+    "question": "Kas yra naujoji fizikos teorija?",
+    "answers": [
+    "Tai moderni fizikos disciplina.",
+    "Tai fizikos teorija, kurios dar nėra atrasta.",
+    "Tai fizikos teorija, kuri pakeis Einšteino teorijas.",
+    "Tai fizikos teorija, siejanti visus fizikos reiškinius.",
+    "Tai fantastinė fizikos kryptis."
+    ],
+    "correctAnswer": "Tai fizikos teorija, kuri pakeis Einšteino teorijas."
     }
   ]
   
