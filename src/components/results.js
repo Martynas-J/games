@@ -19,6 +19,7 @@ const Results = ({ data }) => {
                 {new Date(result.createdAt).toLocaleString("lt-LT")} -{" "}
                 <span className="font-semibold">{result.playerName}</span> -{" "}
                 <span className="text-blue-600">Taškai: {result.playerScore}</span>
+                <span className="font-semibold text-gray-600"> Lvl: {result.level}</span>
               </p>
             </li>
           ))

@@ -25,22 +25,32 @@ const Quiz = () => {
     }
   }, [result]);
 
-  const [questionsList, setQuestionsList] = useState(
-    shuffleQuestions(questions).slice(0, 10)
-  );
+  const [questionsList, setQuestionsList] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [point, setPoint] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
   const [playerScore, setPlayerScore] = useState(0);
   const [resultSaved, setResultSaved] = useState(false);
   const [level, setLevel] = useState(1);
+  const lvlUp = 7;
+  const maxScore = lvlUp * level +1
+
+  useEffect(() => {
+    const levelQuestions = questions[`level${level}`];
+    if (levelQuestions) {
+      const shuffledQuestions = shuffleQuestions(levelQuestions);
+      setQuestionsList(shuffledQuestions.slice(0, 10));
+    }
+  }, [level]);
 
   const handleAnswerOptionClick = (selectedAnswer) => {
     if (selectedAnswer === questionsList[currentQuestionIndex].correctAnswer) {
       setScore((prev) => prev + level);
+      setPoint((prev) => prev + level);
     }
-    if (score == 5 * level) {
+    if (score === lvlUp * level) {
       setLevel((prev) => prev + 1);
     }
 
@@ -48,9 +58,12 @@ const Quiz = () => {
     if (nextQuestionIndex < questionsList.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
-      setQuestionsList(shuffleQuestions(questions).slice(0, 10));
+      setQuestionsList(
+        shuffleQuestions(questions[`level${level}`] || []).slice(0, 10)
+      );
       setCurrentQuestionIndex(0);
       setShowScore(true);
+      setPlayerScore(score);
       setGameFinished(true);
     }
   };
@@ -73,19 +86,23 @@ const Quiz = () => {
     }
   };
 
-  useEffect(() => {
-    if (showScore) {
-      setQuestionsList(shuffleQuestions(questions).slice(0, 10));
-      setPlayerScore(score);
-    }
-  }, [showScore, score]);
-
   return (
     <div className="container mx-auto p-4 flex flex-col sm:flex-row">
       <div className="flex-grow">
         <p className="text-xl font-semibold mt-4 text-center text-blue-800">
           Level: {level}
         </p>
+        <div className="mt-4 relative w-full">
+          <div className="bg-gray-300 h-4 rounded-full">
+            <div
+              className="bg-green-500 h-4 rounded-full"
+              style={{ width: `${(score / maxScore) * 100}%` }}
+            ></div>
+          </div>
+          <p className="text-center mt-2 text-sm font-semibold text-gray-600">
+            Kitas lygis: {Math.round((score / maxScore) * 100)}%
+          </p>
+        </div>
         {showScore ? (
           <div className="text-2xl font-bold mb-auto">
             <p>Your Score: {score}</p>
@@ -96,6 +113,7 @@ const Quiz = () => {
                 setShowScore(false);
                 setGameFinished(false);
                 setResultSaved(false);
+                setPoint(0);
               }}
               className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mt-4"
             >
@@ -115,11 +133,14 @@ const Quiz = () => {
         ) : (
           currentQuestionIndex !== null && (
             <div>
+              <p className="text-l font-semibold mt-2 text-left text-green-800">
+                Taškai: {point} Klausimas: {currentQuestionIndex + 1}
+              </p>
               <p className="text-lg font-semibold">
-                {questionsList[currentQuestionIndex].question}
+                {questionsList[currentQuestionIndex]?.question}
               </p>
               <ul className="space-y-2">
-                {questionsList[currentQuestionIndex].answers.map(
+                {questionsList[currentQuestionIndex]?.answers.map(
                   (answer, index) => (
                     <li key={index}>
                       <button

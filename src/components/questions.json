@@ -1,244 +1,617 @@
-[
-  {
-    "question": "Didžiausia žemės dalis?",
-    "answers": ["Afrikos žemynas", "Europos žemynas", "Azijos žemynas"],
-    "correctAnswer": "Azijos žemynas"
-  },
-  {
-    "question": "Ilgiausias upės pasaulyje?",
-    "answers": ["Nilas", "Amazonė", "Missisipė"],
-    "correctAnswer": "Amazonė"
-  },
-  {
-    "question": "Didžiausias vandenynas pasaulyje?",
-    "answers": [
-      "Ramziojo vandenynas",
-      "Atlanto vandenynas",
-      "Indijos vandenynas"
-    ],
-    "correctAnswer": "Ramziojo vandenynas"
-  },
-  {
-    "question": "Kuri šalis yra žinoma kaip 'Australijos salynas'?",
-    "answers": ["Australija", "Naujoji Zelandija", "Indonezija"],
-    "correctAnswer": "Australija"
-  },
-  {
-    "question": "Aukščiausias kalnas pasaulyje?",
-    "answers": ["Mont Everestas", "K2", "Kilimandžaras"],
-    "correctAnswer": "Mont Everestas"
-  },
-  {
-    "question": "Kuri šalis yra žinoma kaip 'Šimtų ežerų šalis'?",
-    "answers": ["Suomija", "Švedija", "Kanada"],
-    "correctAnswer": "Suomija"
-  },
-  {
-    "question": "Kas yra didžiausias gyvūnas pasaulyje?",
-    "answers": ["Vėrinė", "Delfinas", "Mėlynasis banginis"],
-    "correctAnswer": "Mėlynasis banginis"
-  },
-  {
-    "question": "Kiek yra planetų mūsų Saulės sistemoje?",
-    "answers": ["6", "7", "8"],
-    "correctAnswer": "8"
-  },
-  {
-    "question": "Kuri šalis turi didžiausią teritoriją pasaulyje?",
-    "answers": ["Kanada", "Jungtinės Amerikos Valstijos", "Kinija"],
-    "correctAnswer": "Kanada"
-  },
-  {
-    "question": "Kuri jūra yra tarp Europos ir Azijos?",
-    "answers": ["Viduržemio jūra", "Juodoji jūra", "Kaspijos jūra"],
-    "correctAnswer": "Juodoji jūra"
-  },
-  {
-    "question": "Kas yra Sahara?",
-    "answers": [
-      "Didžiausia atogrąžų miškų zona",
-      "Didžiausia dykuma pasaulyje",
-      "Karštų šaltinių plotas"
-    ],
-    "correctAnswer": "Didžiausia dykuma pasaulyje"
-  },
-  {
-    "question": "Kurioje šalyje yra Machu Picchu?",
-    "answers": ["Brazilija", "Meksika", "Peru"],
-    "correctAnswer": "Peru"
-  },
-  {
-    "question": "Kuri šalis yra žinoma kaip 'Žalioji sala'?",
-    "answers": ["Islandija", "Airija", "Naujoji Zelandija"],
-    "correctAnswer": "Naujoji Zelandija"
-  },
-  {
-    "question": "Kuri šalis turi didžiausią gyventojų skaičių pasaulyje?",
-    "answers": ["Kinija", "Indija", "JAV"],
-    "correctAnswer": "Kinija"
-  },
-  {
-    "question": "Kuris upės tiltas yra žinomas kaip 'Aušros tiltas'?",
-    "answers": [
-      "Sankt Peterburgo tiltas",
-      "Paryžiaus tiltas",
-      "San Francisco tiltas"
-    ],
-    "correctAnswer": "San Francisco tiltas"
-  },
-  {
-    "question": "Kuri šalis yra žinoma kaip 'Smėlio dykumos šalis'?",
-    "answers": ["Arabijos pusiasalis", "Egiptas", "Izraelis"],
-    "correctAnswer": "Arabijos pusiasalis"
-  },
-  {
-    "question": "Kuri šalis yra žinoma kaip 'Vėjo ir garų laivų gimtinė'?",
-    "answers": ["JAV", "Jungtinė Karalystė", "Nyderlandai"],
-    "correctAnswer": "Nyderlandai"
-  },
+{
+  "level1": [
+    {
+      "question": "Didžiausias pasaulyje vandens telkinys?",
+      "answers": ["Kaspino jūra", "Amazonės upė"],
+      "correctAnswer": "Amazonės upė"
+    },
+    {
+      "question": "Kas yra garsiausias dramaturgas pasaulyje?",
+      "answers": ["William Shakespeare","Anton Pavlovič Čechov"],
+      "correctAnswer": "William Shakespeare"
+    },
+    {
+      "question": "Kas pirmasis pasiekė Mėnulį?",
+      "answers": ["Neil Armstrong", "Yuri Gagarin"],
+      "correctAnswer": "Neil Armstrong"
+    },
+    {
+      "question": "Kas yra garsiausias sportininkas pasaulyje?",
+      "answers": ["Usain Bolt", "Michael Jordan"],
+      "correctAnswer": "Usain Bolt"
+    },
+    {
+      "question": "Kas yra populiariausias pasaulyje gyvūnas?",
+      "answers": ["Liūtas", "Tigras"],
+      "correctAnswer": "Liūtas"
+    },
+    {
+      "question": "Didžiausias pasaulyje kalnų grandinės?",
+      "answers": ["Andai", "Himalajai"],
+      "correctAnswer": "Himalajai"
+    },
+    {
+      "question": "Kurioje šalyje gimė Leonardo da Vinci?",
+      "answers": ["Italija", "Prancūzija"],
+      "correctAnswer": "Italija"
+    },
+    {
+      "question": "Kuri Saulės sistemos planeta yra arčiausiai Saulės?",
+      "answers": ["Merkurijus", "Venera"],
+      "correctAnswer": "Merkurijus"
+    },
+    {
+      "question": "Garsiausia meno galerija pasaulyje, įsikūrusi Paryžiuje?",
+      "answers": ["Louvre", "Metropolitan Museum of Art"],
+      "correctAnswer": "Louvre"
+    },
+    {
+      "question": "Nobelio taikos premijos įkūrėjas?",
+      "answers": ["Alfred Nobel", "Nelson Mandela"],
+      "correctAnswer": "Alfred Nobel"
+    },
+    {
+      "question": "Pirmasis žmogus, palydėjęs žemės orbitoje?",
+      "answers": ["Yuri Gagarin", "Neil Armstrong"],
+      "correctAnswer": "Yuri Gagarin"
+    },
+    {
+      "question": "Kuri iš šių upių yra ilgiausia pasaulyje?",
+      "answers": ["Amazonė", "Nilas"],
+      "correctAnswer": "Amazonė"
+    },
+    {
+      "question": "Kas yra garsiausias romantinis kompozitorius pasaulyje?",
+      "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart"],
+      "correctAnswer": "Ludwig van Beethoven"
+    },
+    {
+      "question": "Didžiausias pasaulyje upės debesis?",
+      "answers": ["Amazonės debesis", "Missisipės debesis"],
+      "correctAnswer": "Amazonės debesis"
+    },
+    {
+      "question": "Kas yra garsiausias pop muzikos atlikėjas pasaulyje, žinomas kaip 'King of Pop'?",
+      "answers": ["Michael Jackson", "Elvis Presley"],
+      "correctAnswer": "Michael Jackson"
+    },
+    {
+      "question": "Kas yra pirmasis žmogus, pabuvojęs ant Mėnulio paviršiaus?",
+      "answers": ["Neil Armstrong", "Yuri Gagarin"],
+      "correctAnswer": "Neil Armstrong"
+    },
+    {
+      "question": "Kuri šalis gali pasigirti turėjusi seniausią civilizaciją pasaulyje?",
+      "answers": ["Egiptas", "Graikija"],
+      "correctAnswer": "Egiptas"
+    },
+    {
+      "question": "Populiariausias pasaulyje sportas?",
+      "answers": ["Futbolas", "Krepšinis"],
+      "correctAnswer": "Futbolas"
+    }
+  ],
+  "level2": [
+    {
+      "question": "Didžiausia žemės dalis?",
+      "answers": ["Afrikos žemynas", "Europos žemynas", "Azijos žemynas"],
+      "correctAnswer": "Azijos žemynas"
+    },
+    {
+      "question": "Ilgiausias upės pasaulyje?",
+      "answers": ["Nilas", "Amazonė", "Missisipė"],
+      "correctAnswer": "Amazonė"
+    },
+    {
+      "question": "Didžiausias vandenynas pasaulyje?",
+      "answers": [
+        "Ramusis vandenynas",
+        "Atlanto vandenynas",
+        "Indijos vandenynas"
+      ],
+      "correctAnswer": "Ramusis vandenynas"
+    },
+    {
+      "question": "Kuri šalis yra žinoma kaip 'Australijos salynas'?",
+      "answers": ["Australija", "Naujoji Zelandija", "Indonezija"],
+      "correctAnswer": "Australija"
+    },
+    {
+      "question": "Aukščiausias kalnas pasaulyje?",
+      "answers": ["Mont Everestas", "K2", "Kilimandžaras"],
+      "correctAnswer": "Mont Everestas"
+    },
+    {
+      "question": "Kuri šalis yra žinoma kaip 'Šimtų ežerų šalis'?",
+      "answers": ["Suomija", "Švedija", "Kanada"],
+      "correctAnswer": "Suomija"
+    },
+    {
+      "question": "Kas yra didžiausias gyvūnas pasaulyje?",
+      "answers": ["Vėrinė", "Delfinas", "Mėlynasis banginis"],
+      "correctAnswer": "Mėlynasis banginis"
+    },
+    {
+      "question": "Kiek yra planetų mūsų Saulės sistemoje?",
+      "answers": ["6", "7", "8"],
+      "correctAnswer": "8"
+    },
+    {
+      "question": "Kuri šalis turi didžiausią teritoriją pasaulyje?",
+      "answers": ["Kanada", "Jungtinės Amerikos Valstijos", "Kinija"],
+      "correctAnswer": "Kanada"
+    },
+    {
+      "question": "Kuri jūra yra tarp Europos ir Azijos?",
+      "answers": ["Viduržemio jūra", "Juodoji jūra", "Kaspijos jūra"],
+      "correctAnswer": "Juodoji jūra"
+    },
+    {
+      "question": "Kas yra Sahara?",
+      "answers": [
+        "Didžiausia atogrąžų miškų zona",
+        "Didžiausia dykuma pasaulyje",
+        "Karštų šaltinių plotas"
+      ],
+      "correctAnswer": "Didžiausia dykuma pasaulyje"
+    },
+    {
+      "question": "Kurioje šalyje yra Machu Picchu?",
+      "answers": ["Brazilija", "Meksika", "Peru"],
+      "correctAnswer": "Peru"
+    },
+    {
+      "question": "Kuri šalis yra žinoma kaip 'Žalioji sala'?",
+      "answers": ["Islandija", "Airija", "Naujoji Zelandija"],
+      "correctAnswer": "Naujoji Zelandija"
+    },
+    {
+      "question": "Kuri šalis turi didžiausią gyventojų skaičių pasaulyje?",
+      "answers": ["Kinija", "Indija", "JAV"],
+      "correctAnswer": "Kinija"
+    },
+    {
+      "question": "Kuris upės tiltas yra žinomas kaip 'Aušros tiltas'?",
+      "answers": [
+        "Sankt Peterburgo tiltas",
+        "Paryžiaus tiltas",
+        "San Francisco tiltas"
+      ],
+      "correctAnswer": "San Francisco tiltas"
+    },
+    {
+      "question": "Kuri šalis yra žinoma kaip 'Smėlio dykumos šalis'?",
+      "answers": ["Arabijos pusiasalis", "Egiptas", "Izraelis"],
+      "correctAnswer": "Arabijos pusiasalis"
+    },
+    {
+      "question": "Kuri šalis yra žinoma kaip 'Vėjo ir garų laivų gimtinė'?",
+      "answers": ["JAV", "Jungtinė Karalystė", "Nyderlandai"],
+      "correctAnswer": "Nyderlandai"
+    },
 
-  {
-    "question": "Kas yra Mona Lizos paveikslas?",
-    "answers": [
-      "Renasanso tapyba",
-      "Sienos freska",
-      "Leonardo da Vinci kūrinys"
-    ],
-    "correctAnswer": "Leonardo da Vinci kūrinys"
-  },
-  {
-    "question": "Kuri šalis yra žinoma kaip 'Ugnies šalis' dėl savo aktyvių ugnikalnių?",
-    "answers": ["Italija", "Islandija", "Japonija"],
-    "correctAnswer": "Islandija"
-  },
-  {
-    "question": "Kas yra Paryžiaus katedra?",
-    "answers": ["Sporto arena", "Muziejus", "Gotikinė katalikų bažnyčia"],
-    "correctAnswer": "Gotikinė katalikų bažnyčia"
-  },
-  {
-    "question": "Kas yra Kilimandžaras?",
-    "answers": [
-      "Didžiausia kalnų grandinė",
-      "Ugnikalnis",
-      "Aukščiausias Afrikos kalnas"
-    ],
-    "correctAnswer": "Aukščiausias Afrikos kalnas"
-  },
-  {
-    "question": "Kas yra Machu Picchu?",
-    "answers": ["Senovės miestas Peru", "Didelis prekybos centras", "Knyga"],
-    "correctAnswer": "Senovės miestas Peru"
-  },
-  {
-    "question": "Kas yra Akropolis?",
-    "answers": [
-      "Atletikos stadionas",
-      "Senovės Graikijos miestas",
-      "Karšto šaltinio kompleksas"
-    ],
-    "correctAnswer": "Senovės Graikijos miestas"
-  },
-  {
-    "question": "Kas yra Amazonės miškai?",
-    "answers": [
-      "Didžiausi pasaulyje miškai",
-      "Vandens parkas",
-      "Didelis ežeras"
-    ],
-    "correctAnswer": "Didžiausi pasaulyje miškai"
-  },
-  {
-    "question": "Kas yra Niagaros krioklys?",
-    "answers": ["Kalnas", "Didžiausias pasaulyje krioklys", "Ežeras"],
-    "correctAnswer": "Didžiausias pasaulyje krioklys"
-  },
-  {
-    "question": "Kas yra Sahara?",
-    "answers": [
-      "Didžiausia dykuma pasaulyje",
-      "Graikijos sala",
-      "Vandens parkas"
-    ],
-    "correctAnswer": "Didžiausia dykuma pasaulyje"
-  },
-  {
-    "question": "JAV prezidento oficiali rezidencija?",
-    "answers": ["Baltoji rūmai", "Didelis miestas", "Laisvalaikio sodyba"],
-    "correctAnswer": "Baltoji rūmai"
-  },
-  {
-    "question": "Kas yra Petra?",
-    "answers": ["Šventykla", "Didelis prekybos centras", "Siena"],
-    "correctAnswer": "Šventykla"
-  },
-  {
-    "question": "Kas yra Grand Canyono nacionalinis parkas?",
-    "answers": ["Didžiulis ežeras", "Senovės miestas", "Gyvenvietė"],
-    "correctAnswer": "Didžiulis ežeras"
-  },
-  {
-    "question": "Kas yra Ayers Rock?",
-    "answers": ["Kalnas", "Didelis akmuo", "Žemės rūbas"],
-    "correctAnswer": "Kalnas"
-  },
-  {
-    "question": "Kas yra Stonehenge?",
-    "answers": ["Gyvenvietė", "Senovės paminklas", "Mūrinė siena"],
-    "correctAnswer": "Senovės paminklas"
-  },
-  {
-    "question": "Kuri šalis yra didžiausią ištekliais?",
-    "answers": ["Rusija", "Brazilija", "Kanada"],
-    "correctAnswer": "Rusija"
-  },
+    {
+      "question": "Kas yra Mona Lizos paveikslas?",
+      "answers": [
+        "Renasanso tapyba",
+        "Sienos freska",
+        "Leonardo da Vinci kūrinys"
+      ],
+      "correctAnswer": "Leonardo da Vinci kūrinys"
+    },
+    {
+      "question": "Kuri šalis yra žinoma kaip 'Ugnies šalis' dėl savo aktyvių ugnikalnių?",
+      "answers": ["Italija", "Islandija", "Japonija"],
+      "correctAnswer": "Islandija"
+    },
+    {
+      "question": "Kas yra Paryžiaus katedra?",
+      "answers": ["Sporto arena", "Muziejus", "Gotikinė katalikų bažnyčia"],
+      "correctAnswer": "Gotikinė katalikų bažnyčia"
+    },
+    {
+      "question": "Kas yra Kilimandžaras?",
+      "answers": [
+        "Didžiausia kalnų grandinė",
+        "Ugnikalnis",
+        "Aukščiausias Afrikos kalnas"
+      ],
+      "correctAnswer": "Aukščiausias Afrikos kalnas"
+    },
+    {
+      "question": "Kas yra Machu Picchu?",
+      "answers": ["Senovės miestas Peru", "Didelis prekybos centras", "Knyga"],
+      "correctAnswer": "Senovės miestas Peru"
+    },
+    {
+      "question": "Kas yra Akropolis?",
+      "answers": [
+        "Atletikos stadionas",
+        "Senovės Graikijos miestas",
+        "Karšto šaltinio kompleksas"
+      ],
+      "correctAnswer": "Senovės Graikijos miestas"
+    },
+    {
+      "question": "Kas yra Amazonės miškai?",
+      "answers": [
+        "Didžiausi pasaulyje miškai",
+        "Vandens parkas",
+        "Didelis ežeras"
+      ],
+      "correctAnswer": "Didžiausi pasaulyje miškai"
+    },
+    {
+      "question": "Kas yra Niagaros krioklys?",
+      "answers": ["Kalnas", "Didžiausias pasaulyje krioklys", "Ežeras"],
+      "correctAnswer": "Didžiausias pasaulyje krioklys"
+    },
+    {
+      "question": "Kas yra Sahara?",
+      "answers": [
+        "Didžiausia dykuma pasaulyje",
+        "Graikijos sala",
+        "Vandens parkas"
+      ],
+      "correctAnswer": "Didžiausia dykuma pasaulyje"
+    },
+    {
+      "question": "JAV prezidento oficiali rezidencija?",
+      "answers": ["Baltoji rūmai", "Didelis miestas", "Laisvalaikio sodyba"],
+      "correctAnswer": "Baltoji rūmai"
+    },
+    {
+      "question": "Kas yra Petra?",
+      "answers": ["Šventykla", "Didelis prekybos centras", "Siena"],
+      "correctAnswer": "Šventykla"
+    },
+    {
+      "question": "Kur yra Grand Canyon nacionalinis parkas?",
+      "answers": ["Arizonoje, JAV", "Kalifornijoje, JAV", "Nevadoje, JAV"],
+      "correctAnswer": "Arizonoje, JAV"
+    },
+    {
+      "question": "Kas yra Ayers Rock?",
+      "answers": ["Kalnas", "Didelis akmuo", "Žemės rūbas"],
+      "correctAnswer": "Kalnas"
+    },
+    {
+      "question": "Kas yra Stonehenge?",
+      "answers": ["Gyvenvietė", "Senovės paminklas", "Mūrinė siena"],
+      "correctAnswer": "Senovės paminklas"
+    },
+    {
+      "question": "Kuri šalis yra didžiausią ištekliais?",
+      "answers": ["Rusija", "Brazilija", "Kanada"],
+      "correctAnswer": "Rusija"
+    },
 
-  {
-    "question": "Kas yra Angkor Wat?",
-    "answers": [
-      "Didelis prekybos centras",
-      "Senovės šventykla",
-      "Valstybės rūmai"
-    ],
-    "correctAnswer": "Senovės šventykla"
-  },
-  {
-    "question": "Kas yra Tadž Mahal?",
-    "answers": ["Karalystės rūmai", "Mažas miestas", "Mausoliejus"],
-    "correctAnswer": "Mausoliejus"
-  },
-  {
-    "question": "Kuri šalis garsėja antikvarinių Romos atradimų?",
-    "answers": ["Italija", "Graikija", "Turkija"],
-    "correctAnswer": "Italija"
-  },
-  {
-    "question": "Kas yra Kremlius?",
-    "answers": [
-      "Didelis miestas",
-      "Katalikų bažnyčia",
-      "Rusijos prezidento rezidencija"
-    ],
-    "correctAnswer": "Rusijos prezidento rezidencija"
-  },
-  {
-    "question": "Kas yra Serengeti nac. parkas?",
-    "answers": ["Miestas", "Didžiausias Afrikos parkas", "Upė"],
-    "correctAnswer": "Didžiausias Afrikos parkas"
-  },
-  {
-    "question": "Kas yra Akmenų miestas?",
-    "answers": ["Didelis miestas", "Siena iš akmenų", "Didžiulė kalnų viršūnė"],
-    "correctAnswer": "Siena iš akmenų"
-  },
-  {
-    "question": "Kas yra Naujoji Gvineja?",
-    "answers": ["Salos valstybė", "Šalis Pietų Amerikoje", "Didelis upė"],
-    "correctAnswer": "Salos valstybė"
-  },
-  {
-    "question": "JAV didžiausias nacionalinis parkas?",
-    "answers": ["Alaskos ledkalniai", "Havajų vulkanai", "Didžiulė dykuma"],
-    "correctAnswer": "Alaskos ledkalniai"
-  }
-]
+    {
+      "question": "Kas yra Angkor Wat?",
+      "answers": [
+        "Didelis prekybos centras",
+        "Senovės šventykla",
+        "Valstybės rūmai"
+      ],
+      "correctAnswer": "Senovės šventykla"
+    },
+    {
+      "question": "Kas yra Tadž Mahal?",
+      "answers": ["Karalystės rūmai", "Mažas miestas", "Mausoliejus"],
+      "correctAnswer": "Mausoliejus"
+    },
+    {
+      "question": "Kuri šalis garsėja antikvarinių Romos atradimų?",
+      "answers": ["Italija", "Graikija", "Turkija"],
+      "correctAnswer": "Italija"
+    },
+    {
+      "question": "Kas yra Kremlius?",
+      "answers": [
+        "Didelis miestas",
+        "Katalikų bažnyčia",
+        "Rusijos prezidento rezidencija"
+      ],
+      "correctAnswer": "Rusijos prezidento rezidencija"
+    },
+    {
+      "question": "Kas yra Serengeti nac. parkas?",
+      "answers": ["Miestas", "Didžiausias Afrikos parkas", "Upė"],
+      "correctAnswer": "Didžiausias Afrikos parkas"
+    },
+    {
+      "question": "Kas yra Petra?",
+      "answers": [
+        "Didelis miestas su akmens struktūromis",
+        "Egipto sostinė",
+        "Jordano dykumos širdis"
+      ],
+      "correctAnswer": "Jordano dykumos širdis"
+    },
+    {
+      "question": "Kas yra Naujoji Gvineja?",
+      "answers": ["Salos valstybė", "Šalis Pietų Amerikoje", "Didelis upė"],
+      "correctAnswer": "Salos valstybė"
+    },
+    {
+      "question": "JAV didžiausias nacionalinis parkas?",
+      "answers": ["Alaskos ledkalniai", "Havajų vulkanai", "Didžiulė dykuma"],
+      "correctAnswer": "Alaskos ledkalniai"
+    }
+  ],
+  "level3": [
+    {
+      "question": "Kokia populiariausia kalba pasaulyje?",
+      "answers": ["Anglų", "Ispanų", "Kinų", "Hindi"],
+      "correctAnswer": "Anglų"
+    },
+    {
+      "question": "Įžymus matematikas ir fizikas, kuris sukūrė reliatyvumo teoriją?",
+      "answers": ["Isaac Newton", "Niels Bohr", "Albert Einstein", "Galileo Galilei"],
+      "correctAnswer": "Albert Einstein"
+    },
+    {
+      "question": "Kurioje šalyje gimė Leonardo da Vinci?",
+      "answers": ["Italija", "Prancūzija", "Nyderlandai", "Vokietija"],
+      "correctAnswer": "Italija"
+    },
+    {
+      "question": "Kas yra garsiausias dramaturgas pasaulyje ir autorius tokių tragedijų kaip 'Hamletas' ir 'Romeo ir Džiuljeta'?",
+      "answers": ["Moliere", "William Shakespeare", "Anton Pavlovič Čechov", "George Bernard Shaw"],
+      "correctAnswer": "William Shakespeare"
+    },
+    {
+      "question": "Kokia planeta, artimiausia Saulės sistemai?",
+      "answers": ["Merkurijus", "Venera", "Marsas", "Jupiteris"],
+      "correctAnswer": "Merkurijus"
+    },
+    {
+      "question": "Garsiausia meno galerija pasaulyje, įsikūrusi Paryžiuje?",
+      "answers": ["Louvre", "Metropolitan Museum of Art", "Vatikano muziejus", "British Museum"],
+      "correctAnswer": "Louvre"
+    },
+    {
+      "question": "Nobelio taikos premijos įkūrėjas?",
+      "answers": ["Alfred Nobel", "Winston Churchill", "Nelson Mandela", "Martin Luther King Jr."],
+      "correctAnswer": "Alfred Nobel"
+    },
+    {
+      "question": "Pirmasis žmogus, palydėjęs žemės orbitoje?",
+      "answers": ["Yuri Gagarin", "Neil Armstrong", "John Glenn", "Alan Shepard"],
+      "correctAnswer": "Yuri Gagarin"
+    },
+    {
+      "question": "Kuri iš šių upių yra ilgiausia pasaulyje?",
+      "answers": ["Amazonė", "Nilas", "Misisipė", "Jangce"],
+      "correctAnswer": "Amazonė"
+    },
+    {
+      "question": "Kas yra garsiausias dramaturgas pasaulyje ir autorius tokių tragedijų kaip 'Hamletas' ir 'Romeo ir Džiuljeta'?",
+      "answers": ["Moliere", "William Shakespeare", "Anton Pavlovič Čechov", "George Bernard Shaw"],
+      "correctAnswer": "William Shakespeare"
+    },
+    {
+      "question": "Kokia didžiausia pasaulyje dykuma?",
+      "answers": ["Gobi dykuma", "Arabijos dykuma", "Sahara", "Atakamos dykuma"],
+      "correctAnswer": "Sahara"
+    },
+    {
+      "question": "Kas yra garsiausias romantinis kompozitorius, kurio kūriniai apima simfonijas ir operas?",
+      "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Pyotr Ilyich Tchaikovsky"],
+      "correctAnswer": "Ludwig van Beethoven"
+    },
+    {
+      "question": "Koks yra didžiausias pasaulyje upės debesis?",
+      "answers": ["Amazonės debesis", "Nilas debesis", "Missisipės debesis", "Jangce debesis"],
+      "correctAnswer": "Amazonės debesis"
+    },
+    {
+      "question": "Kas yra garsiausias pop muzikos atlikėjas pasaulyje, žinomas kaip 'King of Pop'?",
+      "answers": ["Michael Jackson", "Elvis Presley", "Prince", "Madonna"],
+      "correctAnswer": "Michael Jackson"
+    },
+    {
+      "question": "Kuri iš šių šalių yra didžiausia pasaulyje pagal teritoriją?",
+      "answers": ["Rusija", "Kanada", "Kinija", "JAV"],
+      "correctAnswer": "Rusija"
+    },
+    {
+      "question": "Kas yra pirmasis žmogus, pakylėjęs ant Mėnulio paviršiaus?",
+      "answers": ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "John Glenn"],
+      "correctAnswer": "Neil Armstrong"
+    },
+    {
+      "question": "Kuri šalis gali pasigirti turėjusi seniausią civilizaciją pasaulyje?",
+      "answers": ["Egiptas", "Graikija", "Kinija", "Indija"],
+      "correctAnswer": "Egiptas"
+    },
+    {
+      "question": "Kas yra populiariausias pasaulyje sportas?",
+      "answers": ["Futbolas", "Krepšinis", "Tinklinis", "Tenisas"],
+      "correctAnswer": "Futbolas"
+    },
+    {
+      "question": "Koks dažniausiai naudojamas kompiuterio operacinės sistemos tipas?",
+      "answers": ["Windows", "Linux", "macOS", "Android"],
+      "correctAnswer": "Windows"
+    },
+    {
+      "question": "Kuris miestas yra Prancūzijos sostinė?",
+      "answers": ["Paryžius", "Marselis", "Lionas", "Nica"],
+      "correctAnswer": "Paryžius"
+    },
+    {
+      "question": "Kas yra didžiausia pasaulyje žinduolių rūšis?",
+      "answers": ["Afrikos drambliai", "Mėlynasis banginis", "Azijos drambliai", "Rikliai"],
+      "correctAnswer": "Mėlynasis banginis"
+    },
+    {
+      "question": "Didžiausia pasaulyje kalnų viršūnė?",
+      "answers": ["Everesto kalnas", "Kilimandžaras", "K2", "Mauna Kea"],
+      "correctAnswer": "Everesto kalnas"
+    },
+    {
+      "question": "Kokia yra mažiausia pasaulyje planeta?",
+      "answers": ["Merkurijus", "Venera", "Žeme", "Plutonas"],
+      "correctAnswer": "Plutonas"
+    },
+    {
+      "question": "Žinomiausias meno kūrinys pasaulyje?",
+      "answers": ["Mona Lisa", "Žvaigždėrytis", "Balta Pietūs", "Nakties serenada"],
+      "correctAnswer": "Mona Lisa"
+    },
+    {
+      "question": "Kas yra garsiausias matematikas pasaulyje?",
+      "answers": ["Pythagoras", "Euklidas", "Archimedes", "Leonhardas Euleris"],
+      "correctAnswer": "Leonhardas Euleris"
+    },
+    {
+      "question": "Kas yra garsiausias kompozitorius pasaulyje?",
+      "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Pyotr Ilyich Tchaikovsky"],
+      "correctAnswer": "Ludwig van Beethoven"
+    },
+    {
+      "question": "Kas yra garsiausias sportininkas pasaulyje?",
+      "answers": ["Usainas Boltas", "Michaelas Jordanas", "Cristiano Ronaldo", "Serena Williams"],
+      "correctAnswer": "Usainas Boltas"
+    },
+    {
+      "question": "Garsiausias žurnalas pasaulyje?",
+      "answers": ["Time", "Forbes", "Vogue", "National Geographic"],
+      "correctAnswer": "Time"
+    },
+    {
+      "question": "Garsiausia mokslininkė pasaulyje?",
+      "answers": ["Marie Curie", "Jane Goodall", "Rita Levi-Montalcini", "Barbara McClintock"],
+      "correctAnswer": "Marie Curie"
+    },
+    {
+      "question": "Kur yra Petra senovės miestas?",
+      "answers": ["Jordanija", "Egiptas", "Izraelis", "Sirija"],
+      "correctAnswer": "Jordanija"
+    },
+    {
+      "question": "Kas yra garsiausias karys pasaulyje?",
+      "answers": ["Aleksandras Didysis", "Napoleonas Bonapartas", "Julius Cezaris", "Genghis Khan"],
+      "correctAnswer": "Aleksandras Didysis"
+    },
+    {
+      "question": "Kas yra garsiausias filosofas pasaulyje?",
+      "answers": ["Aristotelis", "Platonas", "Immanuelis Kantas", "Friedrichas Nietzsche"],
+      "correctAnswer": "Aristotelis"
+    },
+    {
+      "question": "Garsiausias kino režisierius pasaulyje?",
+      "answers": ["Stevenas Spielbergas", "Martinas Scorsese", "Quentin Tarantino", "Alfredas Hitchcockas"],
+      "correctAnswer": "Stevenas Spielbergas"
+    },
+    {
+      "question": "Garsiausias mokslininkas pasaulyje?",
+      "answers": ["Albertas Einšteinas", "Niels Bohras", "Isaakas Niutonas", "Galilėjus Galilėjus"],
+      "correctAnswer": "Albertas Einšteinas"
+    },
+    {
+      "question": "Didžiausia pasaulyje upė?",
+      "answers": ["Amazonė", "Nilas", "Misisipė", "Jangce"],
+      "correctAnswer": "Amazonė"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulyje dailininkas?",
+      "answers": ["Leonardo da Vinci", "Vincentas van Gogas", "Pablo Picasso", "Michelangelas"],
+      "correctAnswer": "Leonardo da Vinci"
+    }
+  ],
+  "level4": [
+    {
+      "question": "Kur randami Jungtinių Tautų būstinės pastatai?",
+      "answers": ["Niujorke, JAV", "Londonas, Jungtinė Karalystė", "Paryžius, Prancūzija", "Vatikanas", "Sidnėjus, Australija"],
+      "correctAnswer": "Niujorke, JAV"
+    },
+    {
+      "question": "Kur yra Pietų Amerikos didžiausias miestas, žinomas dėl Tango šokių?",
+      "answers": ["Buenos Airės, Argentina", "Ryga, Latvija", "Barselona, Ispanija", "Sankt Peterburgas, Rusija", "Melburnas, Australija"],
+      "correctAnswer": "Buenos Airės, Argentina"
+    },
+    {
+      "question": "Kas yra garsiausias kompiuterinių žaidimų kūrėjas?",
+      "answers": ["Hideo Kojima", "Shigeru Miyamoto", "Gabe Newell", "Todd Howard", "Tim Sweeney"],
+      "correctAnswer": "Shigeru Miyamoto"
+    },
+    {
+      "question": "Kuri iš šių šalių yra pagarsėjusi skaniu sūriu?",
+      "answers": ["Prancūzija", "Indija", "Kanada", "Kinija", "Italija"],
+      "correctAnswer": "Prancūzija"
+    },
+    {
+      "question": "Seniausias pasaulyje žinomas raštas?",
+      "answers": ["Egiptiečių hieroglifai", "Sumerų kuneiforma", "Senovės kinų raštas", "Hebrajų alefbetas", "Droras script"],
+      "correctAnswer": "Sumerų kuneiforma"
+    },
+    {
+      "question": "Kas yra garsiausias daugiabalsis kompiuterių žaidimų personažas?",
+      "answers": ["Mario", "Sonic the Hedgehog", "Pac-Man", "Link", "Master Chief"],
+      "correctAnswer": "Mario"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulio dailininkas, žinomas dėl savo abstrakčiojo ekspresionizmo darbų?",
+      "answers": ["Pablo Picasso", "Leonardo da Vinci", "Vincent van Gogh", "Jackson Pollock", "Salvador Dalí"],
+      "correctAnswer": "Jackson Pollock"
+    },
+    {
+      "question": "Mažiausias pasaulyje žinomas gyvūnas?",
+      "answers": ["Mimoza", "Planktonas", "Tyrmų mikrobai", "Droselis", "Ameba"],
+      "correctAnswer": "Planktonas"
+    },
+    {
+      "question": "Kas yra garsiausias klasikinės muzikos kompozitorius?",
+      "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Pyotr Ilyich Tchaikovsky", "Antonio Vivaldi"],
+      "correctAnswer": "Ludwig van Beethoven"
+    },
+    {
+      "question": "Kas yra garsiausias klasikinės literatūros romanų autorius, kurio darbai apima 'Karas ir taika' ir 'Broliai Karamazovai'?",
+      "answers": ["Leo Tolstojus", "Fiodoras Dostojevskis", "Charles Dickens", "Jane Austen", "George Orwell"],
+      "correctAnswer": "Fiodoras Dostojevskis"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulyje matematikas ir fizikas, kuris sukūrė daugybos teoriją ir pasaulinę reaktyviosios jėgos teoriją?",
+      "answers": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Niels Bohr", "Stephen Hawking"],
+      "correctAnswer": "Albert Einstein"
+    },
+    {
+      "question": "Kuris miestas yra vadinamas 'meilės miestu' ir yra garsėjantis dėl savo romantinės atmosferos ir tilto su užrakto simbolika?",
+      "answers": ["Paryžius", "Roma", "Venicija", "Niujorkas", "Barselona"],
+      "correctAnswer": "Paryžius"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulyje šokėjas, žinomas dėl jo įspūdingų moonwalk judesių?",
+      "answers": ["Fred Astaire", "Michael Jackson", "Elvis Presley", "James Brown", "Gene Kelly"],
+      "correctAnswer": "Michael Jackson"
+    },
+    {
+      "question": "Garsiausias pasaulyje egzistuojantis didžiosios bangos teorijos eksponentas, kuris yra kosmologas ir fizikas?",
+      "answers": ["Stephen Hawking", "Carl Sagan", "Richard Feynman", "Michio Kaku", "Neil deGrasse Tyson"],
+      "correctAnswer": "Stephen Hawking"
+    },
+    {
+      "question": "Kuris iš šių kompozitorių yra žinomas dėl savo romantinių simfonijų, įskaitant 'Skonio simfoniją'?",
+      "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Pyotr Ilyich Tchaikovsky", "Antonín Dvořák", "Franz Liszt"],
+      "correctAnswer": "Ludwig van Beethoven"
+    },
+    {
+      "question": "Garsiausias pasaulyje filosofas, kuris sukūrė 'Nusistatymo būsenos' ir 'Kosminės sutarties' teorijas?",
+      "answers": ["Platonas", "Aristotelis", "Immanuelis Kantas", "Friedrichas Nietzsche", "Johnas Locke'as"],
+      "correctAnswer": "Immanuelis Kantas"
+    },
+    {
+      "question": "Kuris iš šių filmų yra laikomas garsiausiu visų laikų filmu, kuriame vaidino Marlonas Brando?",
+      "answers": ["Pirmasis mecenas", "Mergina su perlu auskarais", "Krikštatėvis", "Šarlatanas", "Užrištasis"],
+      "correctAnswer": "Šarlatanas"
+    },
+    {
+      "question": "Garsiausias pasaulyje architektas, žinomas dėl savo modernizmo kūrinių, tokiose vietose kaip 'Sydney Opera House'?",
+      "answers": ["Frank Lloyd Wright", "I. M. Pei", "Zaha Hadid", "Le Corbusier", "Jørn Utzon"],
+      "correctAnswer": "Jørn Utzon"
+    }
+  ]
+  
+}
