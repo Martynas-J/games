@@ -35,7 +35,7 @@ const Quiz = () => {
   const [resultSaved, setResultSaved] = useState(false);
   const [level, setLevel] = useState(1);
   const lvlUp = 7;
-  const maxScore = lvlUp * level +1
+  const maxScore = lvlUp * level + 1;
 
   useEffect(() => {
     const levelQuestions = questions[`level${level}`];
@@ -87,8 +87,8 @@ const Quiz = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 flex flex-col sm:flex-row">
-      <div className="flex-grow text-center  p-2 shadow-lg shadow-blue-900 rounded-md">
+    <div className="container mx-auto p-0 sm:p-4 flex flex-col sm:flex-row">
+      <div className="flex-grow text-center  p-2 pb-6 shadow-lg shadow-blue-900 rounded-md">
         <p className="text-xl font-semibold mt-4 text-center text-blue-800">
           Level: {level}
         </p>
@@ -132,14 +132,14 @@ const Quiz = () => {
           </div>
         ) : (
           currentQuestionIndex !== null && (
-            <div className=" mt-5 border-t-2" >
-              <p className="text-l font-semibold mt-2 text-left text-green-800">
-                Taškai: {point} 
-              </p>
-              <p className="text-l font-semibold mt-2 text-right text-green-800">
-                Klausimas: {currentQuestionIndex + 1}
-              </p>
-              <p className="text-lg font-semibold">
+            <div className=" mt-5 border-t-2">
+              <div className="text-l font-semibold mt-2 text-green-800 flex justify-between">
+                <p>Taškai: {point}</p>
+                <p>
+                  Klausimas: {currentQuestionIndex + 1}
+                </p>
+              </div>
+              <p className="text-lg font-semibold pb-4">
                 {questionsList[currentQuestionIndex]?.question}
               </p>
               <ul className="space-y-2">

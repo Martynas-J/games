@@ -2,7 +2,7 @@
   "level1": [
     {
       "question": "Didžiausias pasaulyje vandens telkinys?",
-      "answers": ["Kaspino jūra", "Amazonės upė"],
+      "answers": ["Amazonės upė","Kaspino jūra" ],
       "correctAnswer": "Amazonės upė"
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "question": "Kas pirmasis pasiekė Mėnulį?",
-      "answers": ["Neil Armstrong", "Yuri Gagarin"],
+      "answers": ["Yuri Gagarin", "Neil Armstrong"],
       "correctAnswer": "Neil Armstrong"
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "question": "Didžiausias pasaulyje kalnų grandinės?",
-      "answers": ["Andai", "Himalajai"],
+      "answers": ["Himalajai","Andai" ],
       "correctAnswer": "Himalajai"
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "question": "Kuri Saulės sistemos planeta yra arčiausiai Saulės?",
-      "answers": ["Merkurijus", "Venera"],
+      "answers": ["Venera", "Merkurijus" ],
       "correctAnswer": "Merkurijus"
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "question": "Nobelio taikos premijos įkūrėjas?",
-      "answers": ["Alfred Nobel", "Nelson Mandela"],
+      "answers": ["Nelson Mandela", "Alfred Nobel" ],
       "correctAnswer": "Alfred Nobel"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "question": "Kuri iš šių upių yra ilgiausia pasaulyje?",
-      "answers": ["Amazonė", "Nilas"],
+      "answers": ["Nilas", "Amazonė"],
       "correctAnswer": "Amazonė"
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "question": "Didžiausias pasaulyje upės debesis?",
-      "answers": ["Amazonės debesis", "Missisipės debesis"],
+      "answers": ["Missisipės debesis", "Amazonės debesis"],
       "correctAnswer": "Amazonės debesis"
     },
     {
@@ -77,12 +77,12 @@
     },
     {
       "question": "Kas yra pirmasis žmogus, pabuvojęs ant Mėnulio paviršiaus?",
-      "answers": ["Neil Armstrong", "Yuri Gagarin"],
+      "answers": ["Yuri Gagarin", "Neil Armstrong"],
       "correctAnswer": "Neil Armstrong"
     },
     {
       "question": "Kuri šalis gali pasigirti turėjusi seniausią civilizaciją pasaulyje?",
-      "answers": ["Egiptas", "Graikija"],
+      "answers": ["Graikija","Egiptas"],
       "correctAnswer": "Egiptas"
     },
     {
