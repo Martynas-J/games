@@ -88,7 +88,7 @@ const Quiz = () => {
 
   return (
     <div className="container mx-auto p-4 flex flex-col sm:flex-row">
-      <div className="flex-grow">
+      <div className="flex-grow text-center  p-2 shadow-lg shadow-blue-900 rounded-md">
         <p className="text-xl font-semibold mt-4 text-center text-blue-800">
           Level: {level}
         </p>
@@ -132,9 +132,12 @@ const Quiz = () => {
           </div>
         ) : (
           currentQuestionIndex !== null && (
-            <div>
+            <div className=" mt-5 border-t-2" >
               <p className="text-l font-semibold mt-2 text-left text-green-800">
-                Taškai: {point} Klausimas: {currentQuestionIndex + 1}
+                Taškai: {point} 
+              </p>
+              <p className="text-l font-semibold mt-2 text-right text-green-800">
+                Klausimas: {currentQuestionIndex + 1}
               </p>
               <p className="text-lg font-semibold">
                 {questionsList[currentQuestionIndex]?.question}
