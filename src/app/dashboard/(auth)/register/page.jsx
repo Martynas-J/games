@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import styles from "./register.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [error, setError] = useState(null);
@@ -26,11 +28,21 @@ const Register = () => {
           email,
           password,
         }),
-      });
-      res.status === 201 && router.push("/dashboard/login?success=Account has been created");
+      }); 
+      if (res.status === 201) {
+        toast.success("Vartotojas sukurtas")
+        router.push("/dashboard/login?success=Account has been created");
+      } else if (res.status === 409) {
+        toast.error("Toks vartotojas arba el. paštas jau yra sukurtas ")
+        setError("Username or email already exists.");
+      } else {
+        toast.error("Klaida")
+        setError("Something went wrong!");
+      }
     } catch (err) {
-      setError(err);
-      console.log(err);
+      toast.error("Tinklo klaida")
+      setError("Something went wrong!");
+      console.error(err);
     }
   };
 
@@ -59,7 +71,7 @@ const Register = () => {
         />
         <button className={styles.button}>Register</button>
       </form>
-      {error && "Something went wrong!"}
+      {error}
       <span className={styles.or}>- OR -</span>
       <Link className={styles.link} href="/dashboard/login">
         Login with an existing account

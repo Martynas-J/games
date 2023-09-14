@@ -1,13 +1,15 @@
-"use client"
+"use client";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import styles from './login.module.css'
-import { useEffect, useState } from 'react'
+import styles from "./login.module.css";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const session = useSession()
-  const router = useRouter()
+  const session = useSession();
+  const router = useRouter();
   const params = useSearchParams();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -19,25 +21,29 @@ const Login = () => {
 
   useEffect(() => {
     if (session.status === "authenticated") {
+      toast.success("Jūs prisijungėte");
       router?.push("/dashboard");
     }
   }, [session.status, router]);
 
   if (session.status === "loading") {
-    return <p>Loading...</p>
+    return <p>Loading...</p>;
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
-    signIn("credentials", { email, password })
+    signIn("credentials", { email, password });
   };
   if (session.status === "unauthenticated") {
     return (
       <div className={styles.container}>
+        <p>{error && toast.error(error)}</p>
         <h1 className={styles.title}>{success ? success : "Welcome Back"}</h1>
-        <h2 className={styles.subtitle}>Please sign in to see the dashboard.</h2>
+        <h2 className={styles.subtitle}>
+          Please sign in to see the dashboard.
+        </h2>
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
@@ -63,7 +69,7 @@ const Login = () => {
         >
           Login with Google
         </button>
-                <button
+        <button
           onClick={() => {
             signIn("facebook");
           }}
