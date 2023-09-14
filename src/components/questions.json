@@ -568,7 +568,7 @@
       "correctAnswer": "Ludwig van Beethoven"
     },
     {
-      "question": "Kas yra garsiausias klasikinės literatūros romanų autorius, kurio darbai apima 'Karas ir taika' ir 'Broliai Karamazovai'?",
+      "question": "Kas yra garsiausias klasikinės literatūros romanų autorius, kurio darbas 'Broliai Karamazovai'?",
       "answers": ["Leo Tolstojus", "Fiodoras Dostojevskis", "Charles Dickens", "Jane Austen", "George Orwell"],
       "correctAnswer": "Fiodoras Dostojevskis"
     },
@@ -611,6 +611,93 @@
       "question": "Garsiausias pasaulyje architektas, žinomas dėl savo modernizmo kūrinių, tokiose vietose kaip 'Sydney Opera House'?",
       "answers": ["Frank Lloyd Wright", "I. M. Pei", "Zaha Hadid", "Le Corbusier", "Jørn Utzon"],
       "correctAnswer": "Jørn Utzon"
+    }
+  ],
+  "level5": [
+    {
+      "question": "Pirmas elementas chemijos elementų lentelėje?",
+      "answers": ["Vandenilis", "Oksigenas", "Anglis", "Geležis", "Auksas"],
+      "correctAnswer": "Vandenilis"
+    },
+    {
+      "question": "Didžiausia planetas mūsų Saulės sistemoje?",
+      "answers": ["Merkurijus", "Venera", "Marsas", "Jupiteris", "Saturnas"],
+      "correctAnswer": "Jupiteris"
+    },
+    {
+      "question": "Garsiausia pasaulyje ugnikalnio išsiveržimo vieta?",
+      "answers": ["Vezuvijus", "Etna", "Krakatau", "Fuji", "Stromboli"],
+      "correctAnswer": "Krakatau"
+    },
+    {
+      "question": "Kas yra garsiausia pasaulyje džiazo muzikos atlikėja?",
+      "answers": ["Ella Fitzgerald", "Louis Armstrong", "Duke Ellington", "Miles Davis", "John Coltrane"],
+      "correctAnswer": "Ella Fitzgerald"
+    },
+    {
+      "question": "Garsiausias pasaulyje dailininkas, kuris nutapė 'Žvaigždėta naktis'?",
+      "answers": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dali", "Claude Monet"],
+      "correctAnswer": "Vincent van Gogh"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulyje mokslininkas, kuris atrado peniciliną?",
+      "answers": ["Isaac Newton", "Albert Einstein", "Charles Darwin", "Marie Curie", "Alexander Fleming"],
+      "correctAnswer": "Alexander Fleming"
+    },
+    {
+      "question": "Garsiausias pasaulyje filmų režisierius, kuris sukūrė 'Godfather' trilogiją?",
+      "answers": ["Steven Spielberg", "Martin Scorsese", "Francis Ford Coppola", "Alfred Hitchcock", "Quentin Tarantino"],
+      "correctAnswer": "Francis Ford Coppola"
+    },
+    {
+      "question": "Kurioje šalyje gimė garsusis kompozitorius Ludwig van Beethoven?",
+      "answers": ["Vokietija", "Austrija", "Prancūzija", "Italija", "Lenkija"],
+      "correctAnswer": "Vokietija"
+    },
+    {
+      "question": "Knygos 'Harry Potter' autorius?",
+      "answers": ["J.R.R. Tolkien", "C.S. Lewis", "George Orwell", "J.K. Rowling", "Stephen King"],
+      "correctAnswer": "J.K. Rowling"
+    },
+    {
+      "question": "Garsiausias pasaulyje aktorius, kuris vaidino James Bondo vaidmenį?",
+      "answers": ["Sean Connery", "Roger Moore", "Pierce Brosnan", "Daniel Craig", "Timothy Dalton"],
+      "correctAnswer": "Sean Connery"
+    },
+    {
+      "question": "Garsiausias pasaulyje dailininkas, kuris sukūrė 'Paskutinę vakarienę'?",
+      "answers": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dali", "Claude Monet"],
+      "correctAnswer": "Leonardo da Vinci"
+    },
+    {
+      "question": "Garsiausias pasaulyje muzikantas, kuris sukūrė 'Imagine'?",
+      "answers": ["The Beatles", "Elton John", "Michael Jackson", "John Lennon", "Bob Dylan"],
+      "correctAnswer": "John Lennon"
+    },
+    {
+      "question": "Aktorius, kuris vaidino 'Forrest Gump' vaidmenį?",
+      "answers": ["Tom Hanks", "Robert De Niro", "Al Pacino", "Denzel Washington", "Leonardo DiCaprio"],
+      "correctAnswer": "Tom Hanks"
+    },
+    {
+      "question": "Mokslininkas, kuris atrado peniciliną?",
+      "answers": ["Isaac Newton", "Albert Einstein", "Charles Darwin", "Marie Curie", "Alexander Fleming"],
+      "correctAnswer": "Alexander Fleming"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulyje filmų režisierius, kuris sukūrė 'Godfather' trilogiją?",
+      "answers": ["Steven Spielberg", "Martin Scorsese", "Francis Ford Coppola", "Alfred Hitchcock", "Quentin Tarantino"],
+      "correctAnswer": "Francis Ford Coppola"
+    },
+    {
+      "question": "Kurioje šalyje gimė garsusis kompozitorius Ludwig van Beethoven?",
+      "answers": ["Vokietija", "Austrija", "Prancūzija", "Italija", "Lenkija"],
+      "correctAnswer": "Vokietija"
+    },
+    {
+      "question": "Kas yra garsiausias pasaulyje knygos 'Harry Potter' autorius?",
+      "answers": ["J.R.R. Tolkien", "C.S. Lewis", "George Orwell", "J.K. Rowling", "Stephen King"],
+      "correctAnswer": "J.K. Rowling"
     }
   ]
   
