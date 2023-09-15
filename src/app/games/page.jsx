@@ -133,7 +133,7 @@ const Quiz = () => {
         ) : (
           currentQuestionIndex !== null && (
             <div className=" mt-5 border-t-2">
-              <div className="text-l font-semibold mt-2 text-green-800 flex justify-between">
+              <div className="pb-2 text-l font-semibold mt-2 text-green-800 flex justify-between border-b-2">
                 <p>Taškai: {point}</p>
                 <p>
                   Klausimas: {currentQuestionIndex + 1}
