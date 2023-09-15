@@ -58,7 +58,7 @@
     {
       "question": "Kuri iš šių upių yra ilgiausia pasaulyje?",
       "answers": ["Nilas", "Amazonė"],
-      "correctAnswer": "Amazonė"
+      "correctAnswer": "Nilas"
     },
     {
       "question": "Kas yra garsiausias romantinis kompozitorius pasaulyje?",
@@ -100,7 +100,7 @@
     {
       "question": "Ilgiausias upės pasaulyje?",
       "answers": ["Nilas", "Amazonė", "Missisipė"],
-      "correctAnswer": "Amazonė"
+      "correctAnswer": "Nilas"
     },
     {
       "question": "Didžiausias vandenynas pasaulyje?",
@@ -383,7 +383,7 @@
     {
       "question": "Kuri iš šių upių yra ilgiausia pasaulyje?",
       "answers": ["Amazonė", "Nilas", "Misisipė", "Jangce"],
-      "correctAnswer": "Amazonė"
+      "correctAnswer": "Nilas"
     },
     {
       "question": "Kas yra garsiausias dramaturgas pasaulyje ir autorius tokių tragedijų kaip 'Hamletas' ir 'Romeo ir Džiuljeta'?",
@@ -403,7 +403,7 @@
     {
       "question": "Koks yra didžiausias pasaulyje upės debesis?",
       "answers": ["Amazonės debesis", "Nilas debesis", "Missisipės debesis", "Jangce debesis"],
-      "correctAnswer": "Amazonės debesis"
+      "correctAnswer": "Nilas debesis"
     },
     {
       "question": "Kas yra garsiausias pop muzikos atlikėjas pasaulyje, žinomas kaip 'King of Pop'?",
@@ -513,7 +513,7 @@
     {
       "question": "Didžiausia pasaulyje upė?",
       "answers": ["Amazonė", "Nilas", "Misisipė", "Jangce"],
-      "correctAnswer": "Amazonė"
+      "correctAnswer": "Nilas"
     },
     {
       "question": "Kas yra garsiausias pasaulyje dailininkas?",

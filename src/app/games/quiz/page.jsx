@@ -36,9 +36,10 @@ const Quiz = () => {
   const [resultSaved, setResultSaved] = useState(false);
   const [level, setLevel] = useState(1);
   const [lives, setLives] = useState(3);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(false);
+  const [wrongAnswers, setWrongAnswers] = useState(false);
   const lvlUp = 7;
-  const maxScore = lvlUp * level**3 + 1;
+  const maxScore = lvlUp * level ** 3 + 1;
 
   useEffect(() => {
     const levelQuestions = questions[`level${level}`];
@@ -52,11 +53,18 @@ const Quiz = () => {
     if (selectedAnswer === questionsList[currentQuestionIndex].correctAnswer) {
       setScore((prev) => prev + level);
       setPoint((prev) => prev + level);
-      setCorrectAnswers((prev) => prev + 1);
+      setCorrectAnswers(true);
+      setTimeout(() => {
+        setCorrectAnswers(false);
+      }, 2000);
     } else {
       setLives((prev) => prev - 1);
+      setWrongAnswers(true);
+      setTimeout(() => {
+        setWrongAnswers(false);
+      }, 2000);
     }
-    if (score === lvlUp * level**3) {
+    if (score === lvlUp * level ** 3) {
       setLevel((prev) => prev + 1);
     }
 
@@ -104,7 +112,7 @@ const Quiz = () => {
             ></div>
           </div>
           <p className="text-center mt-2 text-sm font-semibold text-gray-600">
-            Kitas lygis: {Math.round((score / maxScore ) * 100)}%
+            Kitas lygis: {Math.round((score / maxScore) * 100)}%
           </p>
         </div>
         {showScore || lives === 0 ? (
@@ -116,7 +124,7 @@ const Quiz = () => {
                 setShowScore(false);
                 setResultSaved(false);
                 setLives(3);
-                setCorrectAnswers(0);
+                setCorrectAnswers(false);
                 if (!resultSaved) {
                   setLevel(result.level);
                   setScore(result.playerScore);
@@ -143,12 +151,22 @@ const Quiz = () => {
         ) : (
           currentQuestionIndex !== null && (
             <div className=" mt-5 border-t-2">
-              <div className="pb-2 text-l font-semibold mt-2 text-green-800 flex justify-between border-b-2">
-                <p>Taškai: {point}</p>
+              <div className="pb-2 text-l font-semibold mt-2 text-gray-800 flex justify-between border-b-2">
+                <p className=" relative ">
+                  Taškai: {point}
+                  {correctAnswers && (
+                    <span className=" text-green-500 absolute animate-fade-in">{`+${level}`}</span>
+                  )}
+                </p>
                 <p className="flex gap-1 items-center">
                   {" "}
                   <FaHeart className="text-red-500" />
-                  {lives}
+                  <span className="relative">
+                    {lives}
+                    {wrongAnswers && (
+                      <span className=" text-red-500 absolute animate-fade-in">{`-1`}</span>
+                    )}
+                  </span>
                 </p>
 
                 <p>Klausimas: {currentQuestionIndex + 1}</p>
