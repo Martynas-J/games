@@ -20,6 +20,11 @@
     opacity: 1;
   }
 }
+
+.animate-ping {
+  animation: ping 5s cubic-bezier(0, 0, 1, 1) infinite;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

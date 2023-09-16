@@ -181,6 +181,7 @@ const Quiz = () => {
                 <p>Klausimas: {currentQuestionIndex + 1}</p>
               </div>
               <p className="text-lg font-semibold pb-4">
+                <p className="text-transparent text-6xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text font-serif animate-ping h-full w-full rounded-full opacity-35 ">{questionsList.length === 0 && "Laimėjote"}</p>
                 {questionsList[currentQuestionIndex]?.question}
               </p>
               <ul className="space-y-2">
