@@ -114,8 +114,10 @@ const Quiz = () => {
           <p className=" relative text-center mt-2 text-sm font-semibold text-gray-600">
             Kitas lygis: {Math.round((score / maxScore) * 100)}%
             {correctAnswers && (
-                    <span className=" text-green-500 absolute animate-fade-in">{`+${Math.round((level / maxScore) * 100)}%`}</span>
-                  )}
+              <span className=" text-green-500 absolute animate-fade-in">{`+${Math.round(
+                (level / maxScore) * 100
+              )}%`}</span>
+            )}
           </p>
         </div>
         {showScore || lives === 0 ? (
@@ -128,7 +130,11 @@ const Quiz = () => {
                 setResultSaved(false);
                 setLives(3);
                 setCorrectAnswers(false);
-                if (!resultSaved) {
+                if (session.status === "unauthenticated") {
+                  setLevel(0);
+                  setScore(0);
+                  setPoint(0);
+                } else if (!resultSaved) {
                   setLevel(result.level);
                   setScore(result.playerScore);
                   setPoint(result.playerScore);
