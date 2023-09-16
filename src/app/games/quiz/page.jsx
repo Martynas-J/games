@@ -111,8 +111,11 @@ const Quiz = () => {
               style={{ width: `${(score / maxScore) * 100}%` }}
             ></div>
           </div>
-          <p className="text-center mt-2 text-sm font-semibold text-gray-600">
+          <p className=" relative text-center mt-2 text-sm font-semibold text-gray-600">
             Kitas lygis: {Math.round((score / maxScore) * 100)}%
+            {correctAnswers && (
+                    <span className=" text-green-500 absolute animate-fade-in">{`+${Math.round((level / maxScore) * 100)}%`}</span>
+                  )}
           </p>
         </div>
         {showScore || lives === 0 ? (
