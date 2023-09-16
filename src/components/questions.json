@@ -88,13 +88,261 @@
   ],
   "level2": [
     {
-      "question": "Didžiausia žemės dalis?",
-      "answers": ["Afrikos žemynas", "Europos žemynas", "Azijos žemynas"],
-      "correctAnswer": "Azijos žemynas"
+      "question": "Kuris klubas laimėjo 1986 m. FA taurės finalą?",
+      "answers": ["Liverpool", "Manchester United", "Arsenal"],
+      "correctAnswer": "Liverpool"
+    },
+    {
+      "question": "Kuris vartininkas turi rekordą, kad laimėjo daugiausiai Anglijos kepurių, per savo žaidimo karjerą iškovojęs 125 kepures?",
+      "answers": ["Peter Shilton", "David De Gea", "Gordon Banks"],
+      "correctAnswer": "Peter Shilton"
+    },
+    {
+      "question": "Kiek lygos įvarčių surinko Jurgenas Klinsmannas „Tottenham Hotspur“ komandai per 1994/1995 metų „Premier League“ sezoną per savo 41 lygos startą - 19, 20 ar 21?",
+      "answers": ["19", "20", "21"],
+      "correctAnswer": "21"
+    },
+    {
+      "question": "Kas valdė „West Ham United“ nuo 2008 iki 2010 m.?",
+      "answers": ["Harry Redknapp", "Slaven Bilić", "Gianfranco Zola"],
+      "correctAnswer": "Gianfranco Zola"
+    },
+    {
+      "question": "Koks yra Stockporto apygardos slapyvardis?",
+      "answers": ["Lionai", "Hatteriai", "Bocai"],
+      "correctAnswer": "Hatteriai (arba apskritis)"
+    },
+    {
+      "question": "Kuriais metais „Arsenal“ persikėlė į „Emirates“ stadioną iš Highbury?",
+      "answers": ["2003", "2005", "2006"],
+      "correctAnswer": "2006"
+    },
+    {
+      "question": "Koks yra sero Alexo Fergusono vardas?",
+      "answers": ["Alex", "Chapman", "Alexander"],
+      "correctAnswer": "Chapman"
+    },
+    {
+      "question": "Ar galite įvardyti „Sheffield United“ puolėją, kuris 1992 m. Rugpjūčio mėn. Įmušė pirmąjį „Premier League“ įvartį pergalę rezultatu 2: 1 prieš „Manchester United“?",
+      "answers": ["Brian Dean", "Alan Shearer", "Andy Cole"],
+      "correctAnswer": "Brian Dean"
+    },
+    {
+      "question": "Kuri „Lancashire“ komanda žaidžia savo namų žaidimus „Ewood Park“?",
+      "answers": ["Blackpool FC", "Preston North End", "Blackburn Rovers"],
+      "correctAnswer": "Blackburn Rovers"
+    },
+    {
+      "question": "Ar galite įvardyti vadybininką, kuris 1977 m. Vadovavo Anglijos nacionalinei komandai?",
+      "answers": ["Ron Greenwood", "Alf Ramsey", "Bobby Robson"],
+      "correctAnswer": "Ron Greenwood"
+    },
+    {
+      "question": "Kokia 1960-ųjų amerikiečių pop grupė sukūrė „bangos garsą“?",
+      "answers": ["Beach Boys", "The Beatles", "The Rolling Stones"],
+      "correctAnswer": "Beach Boys"
+    },
+    {
+      "question": "Kokiais metais „The Beatles“ pirmą kartą išvyko į JAV?",
+      "answers": ["1962", "1964", "1966"],
+      "correctAnswer": "1964"
+    },
+    {
+      "question": "Kas buvo pagrindinė dainininkė kartu su aštuntojo dešimtmečio pop grupe „Slade“?",
+      "answers": ["Dave Hill", "Noddy Holder", "Jim Lea"],
+      "correctAnswer": "Noddy Holder"
+    },
+    {
+      "question": "Kaip buvo vadinamas pirmasis Adele įrašas?",
+      "answers": ["Hello", "Someone Like You", "Chasing Pavements"],
+      "correctAnswer": "Chasing Pavements"
+    },
+    {
+      "question": "„Future Nostalgia“ su singlu „Don't Start Now“ yra antrasis studijinis albumas, iš kurio anglų dainininkės?",
+      "answers": ["Adele", "Dua Lipa", "Taylor Swift"],
+      "correctAnswer": "Dua Lipa"
+    },
+    {
+      "question": "Koks yra grupės, kurioje yra šie nariai: Johnas Diakonas, Brianas May, Freddie Mercury, Rogeris Tayloras, vardas?",
+      "answers": ["The Rolling Stones", "The Who", "Queen"],
+      "correctAnswer": "Queen"
+    },
+    {
+      "question": "Kuris dainininkas, be kita ko, buvo žinomas kaip „Popo karalius“ ir „Pirštinė“?",
+      "answers": ["Elvis Presley", "Michaelas Jacksonas", "Prince'as"],
+      "correctAnswer": "Michaelas Jacksonas"
+    },
+    {
+      "question": "Kuriai amerikiečių popmuzikos žvaigždei buvo sėkmingi 2015 m. Singlai „Sorry“ ir „Love Yourself“?",
+      "answers": ["Justin Bieber", "Bruno Mars", "Ed Sheeran"],
+      "correctAnswer": "Justin Bieber"
+    },
+    {
+      "question": "Kurios alternatyvios roko grupės 1991 m. Hitas buvo „prarasti savo religiją“?",
+      "answers": ["Nirvana", "Pearl Jam", "REM"],
+      "correctAnswer": "REM"
+    },
+    {
+      "question": "Kokios dainos tekstas yra toks: „Staiga nesu pusė žmogaus, kuris buvau anksčiau. / Ant manęs kabo šešėlis. “?",
+      "answers": [
+        "Imagine - John Lennon",
+        "Bohemian Rhapsody - Queen",
+        "Yesterday - The Beatles"
+      ],
+      "correctAnswer": "Imagine - John Lennon"
+    },
+    {
+      "question": "Kas numetė plaktuką ir plunksną Mėnulyje, kad parodytų, jog be oro jie krenta tokiu pat greičiu?",
+      "answers": ["Davidas R. Scottas", "Johnas Youngas", "Neilas Armstrongas"],
+      "correctAnswer": "Davidas R. Scottas"
+    },
+    {
+      "question": "Jei Žemė būtų padaryta į juodąją skylę, koks būtų jos įvykio horizonto skersmuo?",
+      "answers": ["10mm", "20mm", "30mm"],
+      "correctAnswer": "20mm"
+    },
+    {
+      "question": "Jei nukristumėte beorė, be trinties skylė, einanti visą kelią per Žemę, kiek laiko reikėtų kristi į kitą pusę? (Iki artimiausios minutės.)",
+      "answers": ["24 valandos", "42 minučių", "60 valandų"],
+      "correctAnswer": "42 minučių"
+    },
+    {
+      "question": "Kiek širdžių turi aštuonkojis?",
+      "answers": ["Dvi", "Trys", "Keturi"],
+      "correctAnswer": "Trys"
+    },
+    {
+      "question": "Kokiais metais produktą WD40 išrado chemikas Normas Larsenas?",
+      "answers": ["1950", "1953", "1955"],
+      "correctAnswer": "1953"
+    },
+    {
+      "question": "Jei žengtumėte vieną žingsnį kiekvieną sekundę per septynių lygų batelius, koks būtų jūsų greitis myliomis per valandą?",
+      "answers": [
+        "60 mylių per valandą",
+        "72 mylios per valandą",
+        "75,600 mylių per valandą"
+      ],
+      "correctAnswer": "75,600 mylių per valandą"
+    },
+    {
+      "question": "Kas yra toliausiai, ką galite pamatyti plika akimi?",
+      "answers": [
+        "Kitą planetą",
+        "Kitą žvaigždę",
+        "2.5 milijono šviesmečių atstumu galite pamatyti kitą galaktiką"
+      ],
+      "correctAnswer": "2.5 milijono šviesmečių atstumu galite pamatyti kitą galaktiką"
+    },
+    {
+      "question": "Kiek artimiausio tūkstančio yra plaukų, turinčių tipišką žmogaus galvą?",
+      "answers": ["100", "1,000", "10,000"],
+      "correctAnswer": "10,000"
+    },
+    {
+      "question": "Kas išrado gramofoną?",
+      "answers": ["Thomas Edisonas", "Emilis Berlineris", "Nikolas Tesla"],
+      "correctAnswer": "Emilis Berlineris"
+    },
+    {
+      "question": "Ką reiškia kompiuterio HAL 9000 inicialai HAL filme 2001: Kosminė odisėja?",
+      "answers": [
+        "Heuristiškai užprogramuotas ALgoritminis kompiuteris",
+        "Hibridinis autonomiškas linkimas",
+        "Holografinės analizės leksikonas"
+      ],
+      "correctAnswer": "Heuristiškai užprogramuotas ALgoritminis kompiuteris"
+    },
+    {
+      "question": "Kiek metų užtruks iš Žemės paleidžiamas erdvėlaivis, kad pasiektų Plutono planetą?",
+      "answers": ["5 metus", "9,5 metų", "12 metų"],
+      "correctAnswer": "9,5 metų"
+    },
+    {
+      "question": "Kas išrado žmogaus gaminamus gazuotus gėrimus?",
+      "answers": ["Coca-Cola kompanija", "PepsiCo", "Joseph Priestley"],
+      "correctAnswer": "Joseph Priestley"
+    },
+    {
+      "question": "1930 m. Albertui Einšteinui ir jo kolegai buvo išduotas JAV patentas 1781541. Kam jis skirtas?",
+      "answers": ["Kosminių erdvių tyrinėjimui", "Šaldytuvui", "Lazeriams"],
+      "correctAnswer": "Šaldytuvui"
+    },
+    {
+      "question": "Kokia yra didžiausia molekulė, kuri yra žmogaus kūno dalis?",
+      "answers": [
+        "Deoksiribonukleinio rūgšties (DNR) molekulė",
+        "Kolageno molekulė",
+        "Hemoglobino molekulė"
+      ],
+      "correctAnswer": "1 chromosoma"
+    },
+    {
+      "question": "Kiek vandens yra Žemėje vienam žmogui?",
+      "answers": [
+        "1000 000 000 litrų",
+        "10 000 000 000 litrų",
+        "210 000 000 000 000 litrų"
+      ],
+      "correctAnswer": "210 000 000 000 000 litrų"
+    },
+    {
+      "question": "Kiek gramų druskos (natrio chlorido) yra litre tipiško jūros vandens?",
+      "answers": ["5 gramai", "25 gramai", "Nė vienas"],
+      "correctAnswer": "Nė vienas"
+    },
+    {
+      "question": "Jei galėtumėte apdoroti milijardą atomų per sekundę, kiek laiko prireiktų teleportuoti tipišką žmogų?",
+      "answers": ["1 sekundė", "100 milijardų metų", "200 milijardų metų"],
+      "correctAnswer": "200 milijardų metų"
+    },
+    {
+      "question": "Kur buvo kuriamos pirmosios kompiuterinės animacijos?",
+      "answers": [
+        "Silicon Valley",
+        "Hollywood",
+        "Rutherford Appleton laboratorija"
+      ],
+      "correctAnswer": "Rutherford Appleton laboratorija"
+    },
+    {
+      "question": "Koks procentas saulės sistemos masės yra Saulėje 1 procento tikslumu?",
+      "answers": ["50%", "75%", "99%"],
+      "correctAnswer": "99%"
+    },
+    {
+      "question": "Kokia vidutinė Veneros paviršiaus temperatūra?",
+      "answers": ["200 °C", "460 °C", "600 °C"],
+      "correctAnswer": "460 °C"
+    },
+    {
+      "question": "Kada pirmą kartą žmonės nusileido Mėnulyje?",
+      "answers": ["1967", "1969", "1971"],
+      "correctAnswer": "1969"
+    },
+    {
+      "question": "Koks elementas yra pažymėtas cheminiu elementu Au periodinėje lentelėje?",
+      "answers": ["Sidabras", "Auksas", "Aliuminis"],
+      "correctAnswer": "Auksas"
+    },
+    {
+      "question": "Kokie yra septyni pagrindiniai regbistų pozicijų numeriai?",
+      "answers": ["5", "6", "7"],
+      "correctAnswer": "7"
+    },
+    {
+      "question": "Kas yra garbanojimo pasaulyje žinomas kaip 'Saulės karalius'?",
+      "answers": ["Elvis Presley", "Michael Jackson", "Bob Marley"],
+      "correctAnswer": "Bob Marley"
+    },
+    {
+      "question": "Koks miestas yra žinomas kaip 'Didysis obeliskas' ir yra Egipto sostinė?",
+      "answers": ["Gizė", "Kairas", "Luxoras"],
+      "correctAnswer": "Kairas"
     },
     {
       "question": "Ilgiausias upės pasaulyje?",
-      "answers": ["Nilas", "Amazonė", "Missisipė"],
+      "answers": ["Amazonė", "Nilas", "Missisipė"],
       "correctAnswer": "Nilas"
     },
     {
@@ -108,12 +356,12 @@
     },
     {
       "question": "Kuri šalis yra žinoma kaip 'Australijos salynas'?",
-      "answers": ["Australija", "Naujoji Zelandija", "Indonezija"],
+      "answers": ["Naujoji Zelandija", "Australija", "Indonezija"],
       "correctAnswer": "Australija"
     },
     {
       "question": "Aukščiausias kalnas pasaulyje?",
-      "answers": ["Mont Everestas", "K2", "Kilimandžaras"],
+      "answers": ["K2", "Mont Everestas", "Kilimandžaras"],
       "correctAnswer": "Mont Everestas"
     },
     {
@@ -144,9 +392,9 @@
     {
       "question": "Kas yra Sahara?",
       "answers": [
-        "Didžiausia atogrąžų miškų zona",
         "Didžiausia dykuma pasaulyje",
-        "Karštų šaltinių plotas"
+        "Karštų šaltinių plotas",
+        "Didžiausia atogrąžų miškų zona"
       ],
       "correctAnswer": "Didžiausia dykuma pasaulyje"
     },
@@ -162,7 +410,7 @@
     },
     {
       "question": "Kuri šalis turi didžiausią gyventojų skaičių pasaulyje?",
-      "answers": ["Kinija", "Indija", "JAV"],
+      "answers": ["Indija", "JAV", "Kinija"],
       "correctAnswer": "Kinija"
     },
     {
@@ -338,9 +586,9 @@
     {
       "question": "Kur amerikiečių beisbolo komanda „Tampa Bay Rays“ žaidžia savo namų žaidimus?",
       "answers": [
-        "'Tropicana' laukas",
         "'Fenway' Parkas",
         "'Yankee' Stadionas",
+        "'Tropicana' laukas",
         "'Dodger' Stadionas"
       ],
       "correctAnswer": "Tropicana laukas"
@@ -348,8 +596,8 @@
     {
       "question": "Kurios sporto šakos metu ginčijamasi Vaterlo taurė?",
       "answers": [
-        "Karūnos žali dubenėliai",
         "Ledo ritulys",
+        "Karūnos žali dubenėliai",
         "Regbis",
         "Boksas"
       ],
@@ -358,9 +606,9 @@
     {
       "question": "Kas 2001 m. Buvo BBC „Metų sporto asmenybė“?",
       "answers": [
-        "Davidas Beckhamas",
         "Roger Federer",
         "Lewisas Hamiltonas",
+        "Davidas Beckhamas",
         "Usainas Boltas"
       ],
       "correctAnswer": "Davidas Beckhamas"
@@ -368,8 +616,8 @@
     {
       "question": "Kur vyko Sandraugos žaidynės 1930 m.",
       "answers": [
-        "Hamiltonas, Kanada",
         "Londonas, Jungtinė Karalystė",
+        "Hamiltonas, Kanada",
         "Melburnas, Australija",
         "Los Andželas, JAV"
       ],
@@ -382,7 +630,7 @@
     },
     {
       "question": "Kokiomis sporto šakomis pasižymėjo Neilas Adamsas?",
-      "answers": ["Dziudo", "Tenisas", "Futbolas", "Baidarių sportas"],
+      "answers": ["Tenisas", "Futbolas", "Baidarių sportas", "Dziudo"],
       "correctAnswer": "Dziudo"
     },
     {
@@ -392,15 +640,15 @@
     },
     {
       "question": "Koks yra „Bradford City“ futbolo klubo slapyvardis?",
-      "answers": ["Bantams", "Lions", "Tigers", "Eagles"],
+      "answers": ["Lions", "Tigers", "Eagles", "Bantams"],
       "correctAnswer": "Bantams"
     },
     {
       "question": "Kuri komanda laimėjo Amerikos futbolo „Superbowl“ 1993, 1994 ir 1996 m.",
       "answers": [
-        "Dallas Cowboys",
         "New England Patriots",
         "San Francisco 49ers",
+        "Dallas Cowboys",
         "Green Bay Packers"
       ],
       "correctAnswer": "Dallas Cowboys"
@@ -408,9 +656,9 @@
     {
       "question": "Koks kurtas laimėjo derbį 2000 ir 2001 metais?",
       "answers": [
-        "Greitas reindžeris",
         "Piksiukas",
         "Spartos laivas",
+        "Greitas reindžeris",
         "Žaliasis"
       ],
       "correctAnswer": "Greitas reindžeris"
@@ -418,8 +666,8 @@
     {
       "question": "Kuris tenisininkas laimėjo „Ladies Australian Open“ 2012 m., įveikdamas Mariją Šarapovą 6-3, 6-0?",
       "answers": [
-        "Victoria Azarenka",
         "Serena Williams",
+        "Victoria Azarenka",
         "Naomi Osaka",
         "Simona Halep"
       ],
@@ -428,9 +676,9 @@
     {
       "question": "Kas įmušė papildomą laiką, kad Anglija laimėtų 2003 m. Regbio pasaulio taurę, įveikdama Australiją 20-17?",
       "answers": [
-        "Jonny Wilkinsonas",
         "Martin Johnsonas",
         "Jason Robinsonas",
+        "Jonny Wilkinsonas",
         "Lawrence'as Dallaglio"
       ],
       "correctAnswer": "Jonny Wilkinsonas"
@@ -448,8 +696,8 @@
     {
       "question": "Vimbldone 2017 laimėjo 14-oji sėkla, kuri finale stebėtinai įveikė Venus WIlliams. Kas ji?",
       "answers": [
-        "Garbiñe Muguruza",
         "Serena Williams",
+        "Garbiñe Muguruza",
         "Maria Sharapova",
         "Naomi Osaka"
       ],
@@ -463,16 +711,16 @@
     {
       "question": "Kas buvo paskutinis valas, laimėjęs „Snooker“ pasaulio čempionatą?",
       "answers": [
-        "Markas Viljamsas",
         "Ronnie O'Sullivan",
         "John Higgins",
+        "Markas Viljamsas",
         "Stephen Hendry"
       ],
       "correctAnswer": "Markas Viljamsas"
     },
     {
       "question": "Kurioje Amerikos miesto „Major League“ beisbolo komanda pavadinta „Cardinals“ vardu?",
-      "answers": ["Sent Luisas", "Čikaga", "San Fransiskas", "Bostonas"],
+      "answers": ["Čikaga", "San Fransiskas", "Bostonas", "Sent Luisas"],
       "correctAnswer": "Sent Luisas"
     },
     {
@@ -482,15 +730,15 @@
     },
     {
       "question": "Kuriais metais krikštatėvis buvo išleistas pirmą kartą?",
-      "answers": ["1972", "1980", "1975", "1968"],
+      "answers": ["1980", "1975", "1968", "1972"],
       "correctAnswer": "1972"
     },
     {
       "question": "Kuris aktorius pelnė geriausią aktoriaus Oskarą už filmus „Filadelfija“ (1993) ir „Forrest Gump“ (1994)?",
       "answers": [
-        "Tom Hanks",
         "Robert De Niro",
         "Denzel Washington",
+        "Tom Hanks",
         "Morgan Freeman"
       ],
       "correctAnswer": "Tom Hanks"
@@ -503,9 +751,9 @@
     {
       "question": "Kuris 1982 m. filmas buvo labai gerbėjų sutiktas dėl meilės tarp jauno, tėvo neturinčio priemiesčio berniuko ir pasiklydusio, geranoriško bei namuose gyvenančio svečio iš kitos planetos vaizdavimo?",
       "answers": [
-        "E.T. the Extra-Terrestrial",
         "Close Encounters of the Third Kind",
         "Starman",
+        "E.T. the Extra-Terrestrial",
         "Cocoon"
       ],
       "correctAnswer": "E.T. the Extra-Terrestrial"
@@ -513,8 +761,8 @@
     {
       "question": "Kuri aktorė vaidino Mary Poppins 1964 m. filme „Mary Poppins“?",
       "answers": [
-        "Julie Andrews",
         "Audrey Hepburn",
+        "Julie Andrews",
         "Meryl Streep",
         "Emma Thompson"
       ],
@@ -523,9 +771,9 @@
     {
       "question": "Kuriame 1963 m. klasikiniame filme pasirodė Charlesas Bronsonas?",
       "answers": [
-        "The Great Escape",
         "Once Upon a Time in the West",
         "Death Wish",
+        "The Great Escape",
         "Hard Times"
       ],
       "correctAnswer": "The Great Escape"
@@ -533,9 +781,9 @@
     {
       "question": "Kuriame 1995 m. filme Sandra Bullock vaidino personažą Angela Bennett - imtynes ​​Ernestą Hemingway?",
       "answers": [
-        "The Net",
         "Ernest Hemingway",
         "28 Days",
+        "The Net",
         "Miss Congeniality"
       ],
       "correctAnswer": "The Net"
@@ -543,8 +791,8 @@
     {
       "question": "Kuri Naujosios Zelandijos režisierė režisavo šiuos filmus - „Iškirpime“ (2003), „Vandens dienoraštis“ (2006) ir „Ryški žvaigždė“ (2009)?",
       "answers": [
-        "Jane Campion",
         "Peter Jackson",
+        "Jane Campion",
         "Taika Waititi",
         "Andrew Niccol"
       ],
@@ -553,9 +801,9 @@
     {
       "question": "Kuris aktorius pateikė balsą personažui Nemo 2003 m. filme „Rasti Nemo“?",
       "answers": [
-        "Alexander Gould",
         "Tom Hanks",
         "Ellen DeGeneres",
+        "Alexander Gould",
         "Albert Brooks"
       ],
       "correctAnswer": "Alexander Gould"
@@ -563,8 +811,8 @@
     {
       "question": "Kuris kalinys, pavadintas „smurtingiausiu kaliniu Didžiojoje Britanijoje“, buvo 2009 m. filmo tema?",
       "answers": [
-        "Charles Bronson",
         "Al Capone",
+        "Charles Bronson",
         "Ted Bundy",
         "John Dillinger"
       ],
@@ -603,9 +851,9 @@
     {
       "question": "Kuris amerikiečių aktorius vaidino kartu su Kim Bassinger filme „9½ savaitės“?",
       "answers": [
-        "Mickey Rourke",
         "Robert De Niro",
         "Harrison Ford",
+        "Mickey Rourke",
         "Tom Cruise"
       ],
       "correctAnswer": "Mickey Rourke"
@@ -613,8 +861,8 @@
     {
       "question": "Kuri buvusi „Doctor Who“ aktorė atliko „Ūko“ vaidmenį filme „Keršytojai: Begalybės karas“?",
       "answers": [
-        "Karen Gillan",
         "Billie Piper",
+        "Karen Gillan",
         "Catherine Tate",
         "Freema Agyeman"
       ],
@@ -623,9 +871,9 @@
     {
       "question": "Kas vaidino Juno MacGuffą priešais Michaelą Cera 2007 m. filme „Juno“?",
       "answers": [
-        "Ellen Page",
         "Emma Stone",
         "Saoirse Ronan",
+        "Ellen Page",
         "Dakota Fanning"
       ],
       "correctAnswer": "Ellen Page"
@@ -649,9 +897,9 @@
     {
       "question": "Kas išrado skardinę konservuoti maistą 1810 m.?",
       "answers": [
-        "Peter Durand",
         "Nicolas Appert",
         "John Mason",
+        "Peter Durand",
         "Alexander Parkes"
       ],
       "correctAnswer": "Peter Durand"
@@ -664,8 +912,8 @@
     {
       "question": "Koks yra pirmojo filmo „Carry On“, sukurto ir išleisto 1958 m., Pavadinimas?",
       "answers": [
-        "Carry On Laughing",
         "Carry On Camping",
+        "Carry On Laughing",
         "Carry On Screaming",
         "Carry On Spying"
       ],
@@ -679,8 +927,8 @@
     {
       "question": "Kuris dainininkas buvo aštuntojo dešimtmečio pop grupės „Showaddywaddy“ lyderis?",
       "answers": [
-        "Dave Bartram",
         "John Lennon",
+        "Dave Bartram",
         "Elton John",
         "Freddie Mercury"
       ],
@@ -702,7 +950,7 @@
         "Raymond van Barneveld",
         "Michael van Gerwen",
         "Jelle Klaasen",
-        "Wesley Harms"
+        "Christian Kist"
       ],
       "correctAnswer": "Christian Kist"
     },
@@ -719,9 +967,9 @@
     {
       "question": "Kiek kvėpavimų kasdien atlieka žmogaus kūnas?",
       "answers": [
-        "Apytiksliai 20 000",
         "Tikslus skaičius nežinomas",
         "Mažiau nei 100",
+        "Apytiksliai 20 000",
         "Apytiksliai 1 000 000"
       ],
       "correctAnswer": "Apytiksliai 20 000"
@@ -729,8 +977,8 @@
     {
       "question": "Kas buvo Didžiosios Britanijos ministras pirmininkas 1841–1846 m.?",
       "answers": [
-        "William Gladstone",
         "Benjamin Disraeli",
+        "William Gladstone",
         "Robert Peel",
         "John Russell"
       ],
@@ -744,9 +992,9 @@
     {
       "question": "Kas išrado „Cat's Eyes“ 1934 m., Kad pagerintų kelių saugumą?",
       "answers": [
-        "Percy Shaw",
         "Thomas Edison",
         "Henry Ford",
+        "Percy Shaw",
         "Albert Einstein"
       ],
       "correctAnswer": "Percy Shaw"
@@ -754,8 +1002,8 @@
     {
       "question": "Koks yra mažiausias paukštis pasaulyje?",
       "answers": [
-        "Bismarckinė musė",
         "Bičių kolibris",
+        "Bismarckinė musė",
         "Mažasis nykslys",
         "Mažasis svirplys"
       ],
@@ -764,9 +1012,9 @@
     {
       "question": "Kas grojo „Bodie“ ir „Doyle“ profesionalų grupėje?",
       "answers": [
-        "Lewis Collins ir Martin Shaw",
         "Michael Caine ir Sean Connery",
         "Tom Cruise ir Dustin Hoffman",
+        "Lewis Collins ir Martin Shaw",
         "Mel Gibson ir Danny Glover"
       ],
       "correctAnswer": "Lewis Collins ir Martin Shaw"
@@ -779,8 +1027,8 @@
     {
       "question": "Kokia buvo Al Capone vizitinė kortelė, kurioje teigiama, kad jis užsiėmė?",
       "answers": [
-        "Konteinerių prekyba",
         "Restoranų verslas",
+        "Konteinerių prekyba",
         "Naudotų baldų pardavėjas",
         "Elektronikos gamyba"
       ],
@@ -834,9 +1082,9 @@
     {
       "question": "Garsiausia meno galerija pasaulyje, įsikūrusi Paryžiuje?",
       "answers": [
-        "Louvre",
         "Metropolitan Museum of Art",
         "Vatikano muziejus",
+        "Louvre",
         "British Museum"
       ],
       "correctAnswer": "Louvre"
@@ -844,8 +1092,8 @@
     {
       "question": "Nobelio taikos premijos įkūrėjas?",
       "answers": [
-        "Alfred Nobel",
         "Winston Churchill",
+        "Alfred Nobel",
         "Nelson Mandela",
         "Martin Luther King Jr."
       ],
@@ -854,8 +1102,8 @@
     {
       "question": "Pirmasis žmogus, palydėjęs žemės orbitoje?",
       "answers": [
-        "Yuri Gagarin",
         "Neil Armstrong",
+        "Yuri Gagarin",
         "John Glenn",
         "Alan Shepard"
       ],
@@ -889,8 +1137,8 @@
     {
       "question": "Kas yra garsiausias romantinis kompozitorius, kurio kūriniai apima simfonijas ir operas?",
       "answers": [
-        "Ludwig van Beethoven",
         "Wolfgang Amadeus Mozart",
+        "Ludwig van Beethoven",
         "Johann Sebastian Bach",
         "Pyotr Ilyich Tchaikovsky"
       ],
@@ -959,8 +1207,8 @@
     {
       "question": "Žinomiausias meno kūrinys pasaulyje?",
       "answers": [
-        "Mona Lisa",
         "Žvaigždėrytis",
+        "Mona Lisa",
         "Balta Pietūs",
         "Nakties serenada"
       ],
@@ -1034,9 +1282,9 @@
     {
       "question": "Garsiausias kino režisierius pasaulyje?",
       "answers": [
-        "Stevenas Spielbergas",
         "Martinas Scorsese",
         "Quentin Tarantino",
+        "Stevenas Spielbergas",
         "Alfredas Hitchcockas"
       ],
       "correctAnswer": "Stevenas Spielbergas"
@@ -1044,8 +1292,8 @@
     {
       "question": "Garsiausias mokslininkas pasaulyje?",
       "answers": [
-        "Albertas Einšteinas",
         "Niels Bohras",
+        "Albertas Einšteinas",
         "Isaakas Niutonas",
         "Galilėjus Galilėjus"
       ],
@@ -1059,15 +1307,180 @@
     {
       "question": "Kas yra garsiausias pasaulyje dailininkas?",
       "answers": [
-        "Leonardo da Vinci",
         "Vincentas van Gogas",
         "Pablo Picasso",
+        "Leonardo da Vinci",
         "Michelangelas"
       ],
       "correctAnswer": "Leonardo da Vinci"
     }
   ],
   "level4": [
+    {
+      "question": "Pirmasis universitetas įkurtas Bolonijoje, Italijoje?",
+      "answers": ["1088 m", "1100 m", "1050 m", "1120 m"],
+      "correctAnswer": "1088 m"
+    },
+    {
+      "question": "Pirmojo pasaulinio karo pabaiga?",
+      "answers": ["1915 m", "1916 m", "1918 m", "1920 m"],
+      "correctAnswer": "1918 m"
+    },
+    {
+      "question": "Pirmosios kontraceptinės tabletės, skirtos moterims buvo sukurtos?",
+      "answers": ["1950 m", "1960 m", "1970 m", "1980 m"],
+      "correctAnswer": "1960 m"
+    },
+    {
+      "question": "Gimė Viljamas Šekspyras?",
+      "answers": ["1520 m", "1540 m", "1564 m", "1580 m"],
+      "correctAnswer": "1564 m"
+    },
+    {
+      "question": "Pirmasis šiuolaikinio popieriaus panaudojimas?",
+      "answers": [
+        "50 m. pr. Kr.",
+        "105 m. pr. Kr.",
+        "50 m. po Kr.",
+        "105 m. po Kr."
+      ],
+      "correctAnswer": "105AD"
+    },
+    {
+      "question": "Įkurta komunistinė Kinija?",
+      "answers": ["1939 m", "1945 m", "1949 m", "1955 m"],
+      "correctAnswer": "1949 m"
+    },
+    {
+      "question": "Martynas Liuteris pradeda reformaciją?",
+      "answers": ["1492 m", "1500 m", "1517 m", "1525 m"],
+      "correctAnswer": "1517 m"
+    },
+    {
+      "question": "Antrojo pasaulinio karo pabaiga?",
+      "answers": ["1939 m", "1942 m", "1945 m", "1948 m"],
+      "correctAnswer": "1945 m"
+    },
+    {
+      "question": "Čingischanas pradeda Azijos užkariavimą?",
+      "answers": ["1180 m", "1200 m", "1215 m", "1230 m"],
+      "correctAnswer": "1206 m"
+    },
+    {
+      "question": "Gimė Buda?",
+      "answers": [
+        "450 m. pr. Kr.",
+        "486 m. pr. Kr.",
+        "510 m. pr. Kr.",
+        "535 m. pr. Kr."
+      ],
+      "correctAnswer": "486 m. pr. Kr."
+    },
+    {
+      "question": "Kuris menininkas 1962 metais sukūrė „Campbello sriubos skardines“?",
+      "answers": [
+        "Andy Warhol",
+        "Pablo Picasso",
+        "Vincent van Gogh",
+        "Jackson Pollock",
+        "Roy Lichtenstein"
+      ],
+      "correctAnswer": "Andy Warhol"
+    },
+    {
+      "question": "Ar galite įvardyti skulptorių, sukūrusio „Šeimos grupę“ 1950 m., Tai yra pirmoji menininko komisija po Antrojo pasaulinio karo?",
+      "answers": [
+        "Henry Moore",
+        "Barbara Hepworth",
+        "Alexander Calder",
+        "Isamu Noguchi",
+        "Constantin Brâncuși"
+      ],
+      "correctAnswer": "Henry Moore"
+    },
+    {
+      "question": "Kokios tautybės buvo skulptorius Alberto Giacometti?",
+      "answers": [
+        "Šveicarijos",
+        "Italijos",
+        "Prancūzijos",
+        "Vokietijos",
+        "Ispanijos"
+      ],
+      "correctAnswer": "Šveicarijos"
+    },
+    {
+      "question": "Kiek saulėgrąžų buvo Van Gogho trečiojoje paveikslo „Saulėgrąžos“ versijoje?",
+      "answers": ["12", "24", "36", "48", "60"],
+      "correctAnswer": "12"
+    },
+    {
+      "question": "Kur pasaulyje eksponuojama Leonardo da Vinci „Mona Liza“?",
+      "answers": [
+        "Luvras, Paryžius, Prancūzija",
+        "British Museum, Londonas, Jungtinė Karalystė",
+        "Uffizi galerija, Florencija, Italija",
+        "Hermitage muziejus, Sankt Peterburgas, Rusija",
+        "Louvre Abu Dabi, Jungtiniai Arabų Emyratai"
+      ],
+      "correctAnswer": "Luvras, Paryžius, Prancūzija"
+    },
+    {
+      "question": "Kuris menininkas 1899 metais nutapė „Vandens lelijos tvenkinį“?",
+      "answers": [
+        "Claude Monet",
+        "Pierre-Auguste Renoir",
+        "Edgar Degas",
+        "Camille Pissarro",
+        "Georges Seurat"
+      ],
+      "correctAnswer": "Claude Monet"
+    },
+    {
+      "question": "Kuris šiuolaikinio menininko kūrinys naudoja mirtį kaip pagrindinę temą, išpopuliarėjusį meno kūrinių serijoje, kurioje buvo išsaugoti negyvi gyvūnai, įskaitant ryklį, avį ir karvę?",
+      "answers": [
+        "Damienas Hurstas",
+        "Banksy",
+        "Jeff Koons",
+        "Yayoi Kusama",
+        "Ai Weiwei"
+      ],
+      "correctAnswer": "Damienas Hurstas"
+    },
+    {
+      "question": "Kokios tautybės buvo menininkas Henri Matisse?",
+      "answers": [
+        "Prancūzijos",
+        "Ispanijos",
+        "Italijos",
+        "Vokietijos",
+        "Rusijos"
+      ],
+      "correctAnswer": "Prancūzijos"
+    },
+    {
+      "question": "Kuris menininkas VII amžiuje nutapė „Autoportretą dviem ratais“?",
+      "answers": [
+        "Rembranto van Reinas",
+        "Leonardo da Vinci",
+        "Michelangelas",
+        "Rafaelis",
+        "Titianas"
+      ],
+      "correctAnswer": "Rembranto van Reinas"
+    },
+    {
+      "question": "Ar galite įvardyti optinio meno kūrinį, kurį Bridget Riley sukūrė 1961 m. - „Šešėlių žaismas“, „Katarakta 3“ ar „Judėjimas kvadratuose“?",
+      "answers": [
+        "Judėjimas kvadratais",
+        "Šešėlių žaismas",
+        "Katarakta 3",
+        "Optinis maišelis",
+        "Geometrinė abstrakcija"
+      ],
+      "correctAnswer": "Judėjimas kvadratais"
+    },
+
     {
       "question": "Ji – tapytoja, grafikė ir fotografė iš Kupiškio rajono. Jos grafikoje vyrauja kaimo tematika, skurdus žmonių gyvenimas, tapyboje – Lietuvos peizažai ir gėlių natiurmortai. Tarpukariu darytose nuotraukose daugiausia fiksuotas jos ir jos aplinkos gyvenimas. Esama gana intymių jos nuotraukų su draugėmis bei autoportretų vilkint vyriškus drabužius. Kai kurių tyrėjų nuomone, pastarosiose menininkė atskleidė savo homoseksualumą. Kas ji?",
       "answers": [
@@ -1643,6 +2056,174 @@
     }
   ],
   "level5": [
+    {
+      "question": "Kuris stalo žaidimas susideda iš 40 erdvių, kuriose yra 28 ypatybės, keturi geležinkelio keliai, dvi komunalinės paslaugos, trys „Chance“ erdvės, trys bendruomenės skrynios vietos, prabangaus mokesčio vieta, pajamų mokesčio erdvė ir keturi kampiniai kvadratai: GO, kalėjimas, nemokama automobilių stovėjimo aikštelė ir Eiti į kalėjimą?",
+      "answers": ["Monopolija", "Riskas", "Šachmatai", "Pokeris", "Karaliai"],
+      "correctAnswer": "Monopolija"
+    },
+    {
+      "question": "Kuris stalo žaidimas buvo sukurtas 1998 m. Whit Alexander ir Richard Tait, tai yra partijos stalo žaidimas, pagrįstas Ludo?",
+      "answers": [
+        "Galvos smegenis",
+        "Šokis per galvą",
+        "Ludo",
+        "Kelionė į praeitį",
+        "Šeši žaislai"
+      ],
+      "correctAnswer": "Galvos smegenis"
+    },
+    {
+      "question": "Kurį stalo žaidimą lemia žaidėjo sugebėjimas atsakyti į bendrąsias žinias ir populiariosios kultūros klausimus, žaidimas, kuris buvo sukurtas 1979 m.?",
+      "answers": [
+        "Trivialus siekimas",
+        "Iššūkis",
+        "Jėga 4",
+        "Atminties žaidimas",
+        "Skatinimo žaidimas"
+      ],
+      "correctAnswer": "Trivialus siekimas"
+    },
+    {
+      "question": "Kurį žaidimą, pirmą kartą išleistą 1967 m., Sudaro plastikinis vamzdis, daugybė plastikinių strypų, vadinamų šiaudeliais, ir daugybė rutuliukų?",
+      "answers": [
+        "KerPlunk",
+        "Šerlokas Holmsas",
+        "Daugiafunkcinis",
+        "Laivų mūšis",
+        "Bingo"
+      ],
+      "correctAnswer": "KerPlunk"
+    },
+    {
+      "question": "Kuris stalo žaidimas žaidžiamas su žaidėjų komandomis, bandančiomis atpažinti konkrečius žodžius iš komandos draugų piešinių?",
+      "answers": ["Pictionary", "Charades", "Tabu", "Alias", "Scattergories"],
+      "correctAnswer": "Pictionary"
+    },
+    {
+      "question": "Koks tinklelio dydis žaidžiant „Scrabble“ - 15 x 15, 16 x 16 arba 17 x 17?",
+      "answers": ["15 x 15", "16 x 16", "17 x 17", "14 x 14", "18 x 18"],
+      "correctAnswer": "15 x 15"
+    },
+    {
+      "question": "Koks yra didžiausias žmonių, galinčių žaisti „Pelės gaudyklės“, skaičius - du, keturi ar šeši?",
+      "answers": ["Keturi", "Du", "Šeši", "Aštuoni", "Dešimt"],
+      "correctAnswer": "Keturi"
+    },
+    {
+      "question": "Ar galite įvardyti žaidimą, kuris imituoja žmogaus keliones per jo gyvenimą (nuo kolegijos iki pensijos) su darbais, santuokomis ir vaikais (ar ne) pakeliui. Viename žaidime gali dalyvauti nuo dviejų iki šešių žaidėjų?",
+      "answers": [
+        "Gyvenimo žaidimas",
+        "Monopolija",
+        "Karjera",
+        "Keliautojo žaidimas",
+        "Santykiai"
+      ],
+      "correctAnswer": "Gyvenimo žaidimas"
+    },
+    {
+      "question": "Koks buvo pirmasis Bondo filmas, 1962-aisiais pasiekęs ekranus, kai Seanas Connery vaidino 007?",
+      "answers": [
+        "Auksinė akis",
+        "007: Pirmoji misija",
+        "Dr. No",
+        "Agentas X",
+        "Mirtis laukia"
+      ],
+      "correctAnswer": "Dr. No"
+    },
+    {
+      "question": "Kiek Bondo filmų pasirodė Rogeris Moore'as kaip 007?",
+      "answers": ["Dešimt", "Aštuoni", "Septyni", "Penki", "Šeši"],
+      "correctAnswer": "Septyni"
+    },
+    {
+      "question": "Kuriame Bondo filme veikėjas Tee Hee pasirodė 1973 m.?",
+      "answers": [
+        "From Russia with Love",
+        "GoldenEye",
+        "Live and Let Die",
+        "The Spy Who Loved Me",
+        "Thunderball"
+      ],
+      "correctAnswer": "Live and Let Die"
+    },
+    {
+      "question": "Kuris Bondo filmas buvo išleistas 2006 m.?",
+      "answers": [
+        "Skyfall",
+        "Spectre",
+        "Quantum of Solace",
+        "No Time to Die",
+        "Casino Royale"
+      ],
+      "correctAnswer": "Casino Royale"
+    },
+    {
+      "question": "Kuris aktorius vaidino „Jaws“ ir padarė du Bondo vaidmenis filme „Šnipas, kuris mane mylėjo“ ir „Moonrakeris“?",
+      "answers": [
+        "Danielis Craig",
+        "Pierce Brosnan",
+        "Ričardas Kylis",
+        "Seanas Connery",
+        "Rogeris Moore'as"
+      ],
+      "correctAnswer": "Ričardas Kylis"
+    },
+    {
+      "question": "Tiesa ar netiesa: Aktorė Halle Berry pasirodė 2002-ųjų Bondo filme „Mirk dar vieną dieną“ vaidindama personažą Jinxą?",
+      "answers": [
+        "Tiesa",
+        "Netiesa",
+        "Nesvarbu",
+        "Tai priklauso nuo interpretacijos",
+        "Nežinau"
+      ],
+      "correctAnswer": "Tiesa"
+    },
+    {
+      "question": "Kuriame 1985 m. Bondo filme pasirodė dirižablis, kurio šone pasirodė žodžiai „Zorin Industries“?",
+      "answers": [
+        "The World Is Not Enough",
+        "GoldenEye",
+        "Peržiūrėti prie Kill",
+        "The Living Daylights",
+        "Moonrakeris"
+      ],
+      "correctAnswer": "Peržiūrėti prie Kill"
+    },
+    {
+      "question": "Ar galite pavadinti Bondo piktadarį 1963 m. Filme „Iš Rusijos su meile“; ją nušovė Tatjana Romanova, o ją vaidino aktorė Lotte Lenya?",
+      "answers": [
+        "Hugo Drax",
+        "Rosa Klebb",
+        "Maximilian Largo",
+        "Ernst Stavro Blofeld",
+        "Auric Goldfinger"
+      ],
+      "correctAnswer": "Rosa Klebb"
+    },
+    {
+      "question": "Kuris aktorius buvo Džeimsas Bondas prieš Danielį Craigą, kuriantį keturis filmus kaip 007?",
+      "answers": [
+        "Pierce Brosnan",
+        "Seanas Connery",
+        "George'as Lazenby",
+        "Rogeris Moore'as",
+        "Timothy Dalton"
+      ],
+      "correctAnswer": "Pierce Brosnan"
+    },
+    {
+      "question": "Kuris aktorius vaidino Bondo filmą „Jos Didenybės slaptojoje tarnyboje“, jo vienintelis Bondo pasirodymas?",
+      "answers": [
+        "Rogeris Moore'as",
+        "Danielis Craig",
+        "Pierce Brosnan",
+        "George'as Lazenby",
+        "Seanas Connery"
+      ],
+      "correctAnswer": "George'as Lazenby"
+    },
     {
       "question": "Kas yra kvantinė fizika ir kodėl ji yra toks svarbus moksle?",
       "answers": [
