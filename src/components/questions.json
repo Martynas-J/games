@@ -2,12 +2,12 @@
   "level1": [
     {
       "question": "Didžiausias pasaulyje vandens telkinys?",
-      "answers": ["Amazonės upė","Kaspino jūra" ],
+      "answers": ["Amazonės upė", "Kaspino jūra"],
       "correctAnswer": "Amazonės upė"
     },
     {
       "question": "Kas yra garsiausias dramaturgas pasaulyje?",
-      "answers": ["William Shakespeare","Anton Pavlovič Čechov"],
+      "answers": ["William Shakespeare", "Anton Pavlovič Čechov"],
       "correctAnswer": "William Shakespeare"
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "question": "Didžiausias pasaulyje kalnų grandinės?",
-      "answers": ["Himalajai","Andai" ],
+      "answers": ["Himalajai", "Andai"],
       "correctAnswer": "Himalajai"
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "question": "Kuri Saulės sistemos planeta yra arčiausiai Saulės?",
-      "answers": ["Venera", "Merkurijus" ],
+      "answers": ["Venera", "Merkurijus"],
       "correctAnswer": "Merkurijus"
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "question": "Nobelio taikos premijos įkūrėjas?",
-      "answers": ["Nelson Mandela", "Alfred Nobel" ],
+      "answers": ["Nelson Mandela", "Alfred Nobel"],
       "correctAnswer": "Alfred Nobel"
     },
     {
@@ -66,11 +66,6 @@
       "correctAnswer": "Ludwig van Beethoven"
     },
     {
-      "question": "Didžiausias pasaulyje upės debesis?",
-      "answers": ["Missisipės debesis", "Amazonės debesis"],
-      "correctAnswer": "Amazonės debesis"
-    },
-    {
       "question": "Kas yra garsiausias pop muzikos atlikėjas pasaulyje, žinomas kaip 'King of Pop'?",
       "answers": ["Michael Jackson", "Elvis Presley"],
       "correctAnswer": "Michael Jackson"
@@ -82,7 +77,7 @@
     },
     {
       "question": "Kuri šalis gali pasigirti turėjusi seniausią civilizaciją pasaulyje?",
-      "answers": ["Graikija","Egiptas"],
+      "answers": ["Graikija", "Egiptas"],
       "correctAnswer": "Egiptas"
     },
     {
@@ -341,13 +336,479 @@
   ],
   "level3": [
     {
+      "question": "Kur amerikiečių beisbolo komanda „Tampa Bay Rays“ žaidžia savo namų žaidimus?",
+      "answers": [
+        "'Tropicana' laukas",
+        "'Fenway' Parkas",
+        "'Yankee' Stadionas",
+        "'Dodger' Stadionas"
+      ],
+      "correctAnswer": "Tropicana laukas"
+    },
+    {
+      "question": "Kurios sporto šakos metu ginčijamasi Vaterlo taurė?",
+      "answers": [
+        "Karūnos žali dubenėliai",
+        "Ledo ritulys",
+        "Regbis",
+        "Boksas"
+      ],
+      "correctAnswer": "Karūnos žali dubenėliai"
+    },
+    {
+      "question": "Kas 2001 m. Buvo BBC „Metų sporto asmenybė“?",
+      "answers": [
+        "Davidas Beckhamas",
+        "Roger Federer",
+        "Lewisas Hamiltonas",
+        "Usainas Boltas"
+      ],
+      "correctAnswer": "Davidas Beckhamas"
+    },
+    {
+      "question": "Kur vyko Sandraugos žaidynės 1930 m.",
+      "answers": [
+        "Hamiltonas, Kanada",
+        "Londonas, Jungtinė Karalystė",
+        "Melburnas, Australija",
+        "Los Andželas, JAV"
+      ],
+      "correctAnswer": "Hamiltonas, Kanada"
+    },
+    {
+      "question": "Kiek žaidėjų yra „Water Polo“ komandoje?",
+      "answers": ["Septyni", "Penkiolika", "Devyniolika", "Dešimt"],
+      "correctAnswer": "Septyni"
+    },
+    {
+      "question": "Kokiomis sporto šakomis pasižymėjo Neilas Adamsas?",
+      "answers": ["Dziudo", "Tenisas", "Futbolas", "Baidarių sportas"],
+      "correctAnswer": "Dziudo"
+    },
+    {
+      "question": "Kuri šalis laimėjo 1982 m. Ispanijos pasaulio taurę, įveikdama Vakarų Vokietiją 3-1?",
+      "answers": ["Italija", "Brazilija", "Argentinos", "Prancūzija"],
+      "correctAnswer": "Italija"
+    },
+    {
+      "question": "Koks yra „Bradford City“ futbolo klubo slapyvardis?",
+      "answers": ["Bantams", "Lions", "Tigers", "Eagles"],
+      "correctAnswer": "Bantams"
+    },
+    {
+      "question": "Kuri komanda laimėjo Amerikos futbolo „Superbowl“ 1993, 1994 ir 1996 m.",
+      "answers": [
+        "Dallas Cowboys",
+        "New England Patriots",
+        "San Francisco 49ers",
+        "Green Bay Packers"
+      ],
+      "correctAnswer": "Dallas Cowboys"
+    },
+    {
+      "question": "Koks kurtas laimėjo derbį 2000 ir 2001 metais?",
+      "answers": [
+        "Greitas reindžeris",
+        "Piksiukas",
+        "Spartos laivas",
+        "Žaliasis"
+      ],
+      "correctAnswer": "Greitas reindžeris"
+    },
+    {
+      "question": "Kuris tenisininkas laimėjo „Ladies Australian Open“ 2012 m., įveikdamas Mariją Šarapovą 6-3, 6-0?",
+      "answers": [
+        "Victoria Azarenka",
+        "Serena Williams",
+        "Naomi Osaka",
+        "Simona Halep"
+      ],
+      "correctAnswer": "Victoria Azarenka"
+    },
+    {
+      "question": "Kas įmušė papildomą laiką, kad Anglija laimėtų 2003 m. Regbio pasaulio taurę, įveikdama Australiją 20-17?",
+      "answers": [
+        "Jonny Wilkinsonas",
+        "Martin Johnsonas",
+        "Jason Robinsonas",
+        "Lawrence'as Dallaglio"
+      ],
+      "correctAnswer": "Jonny Wilkinsonas"
+    },
+    {
+      "question": "Kokį sporto žaidimą 1891 metais išrado Jamesas Naismithas?",
+      "answers": ["Krepšinis", "Futbolas", "Tenisas", "Baidarių sportas"],
+      "correctAnswer": "Krepšinis"
+    },
+    {
+      "question": "Kiek kartų „Patriotai“ dalyvavo paskutiniame „Super Bowl“ žaidime?",
+      "answers": ["11", "9", "7", "5"],
+      "correctAnswer": "11"
+    },
+    {
+      "question": "Vimbldone 2017 laimėjo 14-oji sėkla, kuri finale stebėtinai įveikė Venus WIlliams. Kas ji?",
+      "answers": [
+        "Garbiñe Muguruza",
+        "Serena Williams",
+        "Maria Sharapova",
+        "Naomi Osaka"
+      ],
+      "correctAnswer": "Garbiñe Muguruza"
+    },
+    {
+      "question": "Kiek žaidėjų yra olimpinėje garbanojimo komandoje?",
+      "answers": ["Keturi", "Aštuoni", "Dešimt", "Šešiolika"],
+      "correctAnswer": "Keturi"
+    },
+    {
+      "question": "Kas buvo paskutinis valas, laimėjęs „Snooker“ pasaulio čempionatą?",
+      "answers": [
+        "Markas Viljamsas",
+        "Ronnie O'Sullivan",
+        "John Higgins",
+        "Stephen Hendry"
+      ],
+      "correctAnswer": "Markas Viljamsas"
+    },
+    {
+      "question": "Kurioje Amerikos miesto „Major League“ beisbolo komanda pavadinta „Cardinals“ vardu?",
+      "answers": ["Sent Luisas", "Čikaga", "San Fransiskas", "Bostonas"],
+      "correctAnswer": "Sent Luisas"
+    },
+    {
+      "question": "Kuriame sporte kanadietis Connor McDavid yra kylanti žvaigždė?",
+      "answers": ["Ledo ritulys", "Futbolas", "Krepšinis", "Tenisas"],
+      "correctAnswer": "Ledo ritulys"
+    },
+    {
+      "question": "Kuriais metais krikštatėvis buvo išleistas pirmą kartą?",
+      "answers": ["1972", "1980", "1975", "1968"],
+      "correctAnswer": "1972"
+    },
+    {
+      "question": "Kuris aktorius pelnė geriausią aktoriaus Oskarą už filmus „Filadelfija“ (1993) ir „Forrest Gump“ (1994)?",
+      "answers": [
+        "Tom Hanks",
+        "Robert De Niro",
+        "Denzel Washington",
+        "Morgan Freeman"
+      ],
+      "correctAnswer": "Tom Hanks"
+    },
+    {
+      "question": "Kiek savarankiškų komizionų padarė Alfredas Hitchcockas savo filmuose 1927–1976 metais?",
+      "answers": ["33", "35", "37", "40"],
+      "correctAnswer": "37"
+    },
+    {
+      "question": "Kuris 1982 m. filmas buvo labai gerbėjų sutiktas dėl meilės tarp jauno, tėvo neturinčio priemiesčio berniuko ir pasiklydusio, geranoriško bei namuose gyvenančio svečio iš kitos planetos vaizdavimo?",
+      "answers": [
+        "E.T. the Extra-Terrestrial",
+        "Close Encounters of the Third Kind",
+        "Starman",
+        "Cocoon"
+      ],
+      "correctAnswer": "E.T. the Extra-Terrestrial"
+    },
+    {
+      "question": "Kuri aktorė vaidino Mary Poppins 1964 m. filme „Mary Poppins“?",
+      "answers": [
+        "Julie Andrews",
+        "Audrey Hepburn",
+        "Meryl Streep",
+        "Emma Thompson"
+      ],
+      "correctAnswer": "Julie Andrews"
+    },
+    {
+      "question": "Kuriame 1963 m. klasikiniame filme pasirodė Charlesas Bronsonas?",
+      "answers": [
+        "The Great Escape",
+        "Once Upon a Time in the West",
+        "Death Wish",
+        "Hard Times"
+      ],
+      "correctAnswer": "The Great Escape"
+    },
+    {
+      "question": "Kuriame 1995 m. filme Sandra Bullock vaidino personažą Angela Bennett - imtynes ​​Ernestą Hemingway?",
+      "answers": [
+        "The Net",
+        "Ernest Hemingway",
+        "28 Days",
+        "Miss Congeniality"
+      ],
+      "correctAnswer": "The Net"
+    },
+    {
+      "question": "Kuri Naujosios Zelandijos režisierė režisavo šiuos filmus - „Iškirpime“ (2003), „Vandens dienoraštis“ (2006) ir „Ryški žvaigždė“ (2009)?",
+      "answers": [
+        "Jane Campion",
+        "Peter Jackson",
+        "Taika Waititi",
+        "Andrew Niccol"
+      ],
+      "correctAnswer": "Jane Campion"
+    },
+    {
+      "question": "Kuris aktorius pateikė balsą personažui Nemo 2003 m. filme „Rasti Nemo“?",
+      "answers": [
+        "Alexander Gould",
+        "Tom Hanks",
+        "Ellen DeGeneres",
+        "Albert Brooks"
+      ],
+      "correctAnswer": "Alexander Gould"
+    },
+    {
+      "question": "Kuris kalinys, pavadintas „smurtingiausiu kaliniu Didžiojoje Britanijoje“, buvo 2009 m. filmo tema?",
+      "answers": [
+        "Charles Bronson",
+        "Al Capone",
+        "Ted Bundy",
+        "John Dillinger"
+      ],
+      "correctAnswer": "Charles Bronson"
+    },
+    {
+      "question": "Kuris 2008 m. filmas, kuriame vaidina Christianas Bale'as, turi šią citatą: „Aš tikiu, kad tai, kas tavęs neužmuš, o tiesiog padaro tave ... keistuoliu“.",
+      "answers": [
+        "The Machinist",
+        "American Psycho",
+        "The Prestige",
+        "The Dark Knight"
+      ],
+      "correctAnswer": "The Dark Knight"
+    },
+    {
+      "question": "Amerikiečių aktorė, vaidinusi Tokijo požemio boso O-Ren Ishii vaidmenį filme „Kill Bill I I & II“",
+      "answers": ["Lucy Liu", "Uma Thurman", "Daryl Hannah", "Vivica A. Fox"],
+      "correctAnswer": "Lucy Liu"
+    },
+    {
+      "question": "Kuriame filme Hugh Jackmanas išgarsėjo kaip konkurentas burtininkas iš personažo, kurį vaidina Christianas Bale'as?",
+      "answers": ["The Prestige", "X-Men", "Logan", "Les Misérables"],
+      "correctAnswer": "The Prestige"
+    },
+    {
+      "question": "Kurioje Viduržemio jūros šalyje gimė kino režisierius Frankas Capra, garsėjantis nuostabiu gyvenimu?",
+      "answers": ["Italija", "Prancūzija", "Graikija", "Ispanija"],
+      "correctAnswer": "Italija"
+    },
+    {
+      "question": "Kuris britų aktorius vaidino Lee Christmas vaidmenį kartu su Sylvesteriu Stallone filme „The Expendables“?",
+      "answers": ["Jason Statham", "Daniel Craig", "Idris Elba", "Tom Hardy"],
+      "correctAnswer": "Jason Statham"
+    },
+    {
+      "question": "Kuris amerikiečių aktorius vaidino kartu su Kim Bassinger filme „9½ savaitės“?",
+      "answers": [
+        "Mickey Rourke",
+        "Robert De Niro",
+        "Harrison Ford",
+        "Tom Cruise"
+      ],
+      "correctAnswer": "Mickey Rourke"
+    },
+    {
+      "question": "Kuri buvusi „Doctor Who“ aktorė atliko „Ūko“ vaidmenį filme „Keršytojai: Begalybės karas“?",
+      "answers": [
+        "Karen Gillan",
+        "Billie Piper",
+        "Catherine Tate",
+        "Freema Agyeman"
+      ],
+      "correctAnswer": "Karen Gillan"
+    },
+    {
+      "question": "Kas vaidino Juno MacGuffą priešais Michaelą Cera 2007 m. filme „Juno“?",
+      "answers": [
+        "Ellen Page",
+        "Emma Stone",
+        "Saoirse Ronan",
+        "Dakota Fanning"
+      ],
+      "correctAnswer": "Ellen Page"
+    },
+    {
+      "question": "Kaip vadinasi 2015 m. filmas apie pasienietį 1820-ųjų prekybos kailiais ekspedicijoje ir jo kovą už išlikimą, kai mane nugvelbė meška?",
+      "answers": ["The Revenant", "The Grey", "Into the Wild", "The Edge"],
+      "correctAnswer": "The Revenant"
+    },
+    {
+      "question": "Kuris filmas, kuriame vaidina Chrisas Hemsworthas ir Danielis Brühlas, yra Jameso Hunto ir Niki Laudos lenktynių Formulės 1 sąraše?",
+      "answers": ["Rush", "Driven", "Senna", "Grand Prix"],
+      "correctAnswer": "Rush"
+    },
+
+    {
+      "question": "Kuriais metais buvo pagamintas pirmasis sunkvežimis „Tonka“ - 1945, 1947 ar 1949?",
+      "answers": ["1947", "1945", "1949", "1951"],
+      "correctAnswer": "1947"
+    },
+    {
+      "question": "Kas išrado skardinę konservuoti maistą 1810 m.?",
+      "answers": [
+        "Peter Durand",
+        "Nicolas Appert",
+        "John Mason",
+        "Alexander Parkes"
+      ],
+      "correctAnswer": "Peter Durand"
+    },
+    {
+      "question": "Kokiais metais „Titanikas“ nuskendo Atlanto vandenyne balandžio 15 d., Eidamas savo pirmąją kelionę iš Sautamptono?",
+      "answers": ["1912", "1914", "1907", "1916"],
+      "correctAnswer": "1912"
+    },
+    {
+      "question": "Koks yra pirmojo filmo „Carry On“, sukurto ir išleisto 1958 m., Pavadinimas?",
+      "answers": [
+        "Carry On Laughing",
+        "Carry On Camping",
+        "Carry On Screaming",
+        "Carry On Spying"
+      ],
+      "correctAnswer": "Carry On Sergeant"
+    },
+    {
+      "question": "Kaip pavadinta didžiausia technologijų kompanija Pietų Korėjoje?",
+      "answers": ["Samsung", "LG Electronics", "Hyundai", "Daewoo"],
+      "correctAnswer": "Samsung"
+    },
+    {
+      "question": "Kuris dainininkas buvo aštuntojo dešimtmečio pop grupės „Showaddywaddy“ lyderis?",
+      "answers": [
+        "Dave Bartram",
+        "John Lennon",
+        "Elton John",
+        "Freddie Mercury"
+      ],
+      "correctAnswer": "Dave Bartram"
+    },
+    {
+      "question": "Kuris dabar žinomas televizijos šefas pradėjo gaminti maistą būdamas aštuonerių savo tėvų užeigoje „The Cricketers“, Klaveringe, Esekse?",
+      "answers": [
+        "Gordon Ramsay",
+        "Jamie Oliver",
+        "Anthony Bourdain",
+        "Nigella Lawson"
+      ],
+      "correctAnswer": "Jamie Oliver"
+    },
+    {
+      "question": "Kuris Olandijos smiginio žaidėjas sausio 2012 d. Laimėjo 15 m. BDO pasaulio čempionatą „Lakeside“ šalies klube, Frimley Greenas?",
+      "answers": [
+        "Raymond van Barneveld",
+        "Michael van Gerwen",
+        "Jelle Klaasen",
+        "Wesley Harms"
+      ],
+      "correctAnswer": "Christian Kist"
+    },
+    {
+      "question": "Kurį metalą atrado Hansas Christianas Oerstedas 1825 m.",
+      "answers": ["Varis", "Aliuminis", "Nikelis", "Cinkas"],
+      "correctAnswer": "Aliuminis"
+    },
+    {
+      "question": "Kokia Portugalijos sostinė?",
+      "answers": ["Lisabona", "Porto", "Coimbra", "Faro"],
+      "correctAnswer": "Lisabona"
+    },
+    {
+      "question": "Kiek kvėpavimų kasdien atlieka žmogaus kūnas?",
+      "answers": [
+        "Apytiksliai 20 000",
+        "Tikslus skaičius nežinomas",
+        "Mažiau nei 100",
+        "Apytiksliai 1 000 000"
+      ],
+      "correctAnswer": "Apytiksliai 20 000"
+    },
+    {
+      "question": "Kas buvo Didžiosios Britanijos ministras pirmininkas 1841–1846 m.?",
+      "answers": [
+        "William Gladstone",
+        "Benjamin Disraeli",
+        "Robert Peel",
+        "John Russell"
+      ],
+      "correctAnswer": "Robert Peel"
+    },
+    {
+      "question": "Koks yra sidabro cheminis simbolis?",
+      "answers": ["Ag", "Si", "Sb", "Au"],
+      "correctAnswer": "Ag"
+    },
+    {
+      "question": "Kas išrado „Cat's Eyes“ 1934 m., Kad pagerintų kelių saugumą?",
+      "answers": [
+        "Percy Shaw",
+        "Thomas Edison",
+        "Henry Ford",
+        "Albert Einstein"
+      ],
+      "correctAnswer": "Percy Shaw"
+    },
+    {
+      "question": "Koks yra mažiausias paukštis pasaulyje?",
+      "answers": [
+        "Bismarckinė musė",
+        "Bičių kolibris",
+        "Mažasis nykslys",
+        "Mažasis svirplys"
+      ],
+      "correctAnswer": "Bičių kolibris"
+    },
+    {
+      "question": "Kas grojo „Bodie“ ir „Doyle“ profesionalų grupėje?",
+      "answers": [
+        "Lewis Collins ir Martin Shaw",
+        "Michael Caine ir Sean Connery",
+        "Tom Cruise ir Dustin Hoffman",
+        "Mel Gibson ir Danny Glover"
+      ],
+      "correctAnswer": "Lewis Collins ir Martin Shaw"
+    },
+    {
+      "question": "Koks yra lėlės, Barbės, vardas?",
+      "answers": ["Barbara", "Betty", "Beverly", "Bella"],
+      "correctAnswer": "Barbara"
+    },
+    {
+      "question": "Kokia buvo Al Capone vizitinė kortelė, kurioje teigiama, kad jis užsiėmė?",
+      "answers": [
+        "Konteinerių prekyba",
+        "Restoranų verslas",
+        "Naudotų baldų pardavėjas",
+        "Elektronikos gamyba"
+      ],
+      "correctAnswer": "Naudotų baldų pardavėjas"
+    },
+    {
+      "question": "Kokia yra laumžirgio gyvenimo trukmė?",
+      "answers": [
+        "Apytiksliai 20 valandų",
+        "Apytiksliai 15 valandų",
+        "Apytiksliai 40 valandų",
+        "Apytiksliai 24 valandos"
+      ],
+      "correctAnswer": "Apytiksliai 24 valandos"
+    },
+    {
       "question": "Kokia populiariausia kalba pasaulyje?",
       "answers": ["Anglų", "Ispanų", "Kinų", "Hindi"],
       "correctAnswer": "Anglų"
     },
     {
       "question": "Įžymus matematikas ir fizikas, kuris sukūrė reliatyvumo teoriją?",
-      "answers": ["Isaac Newton", "Niels Bohr", "Albert Einstein", "Galileo Galilei"],
+      "answers": [
+        "Isaac Newton",
+        "Niels Bohr",
+        "Albert Einstein",
+        "Galileo Galilei"
+      ],
       "correctAnswer": "Albert Einstein"
     },
     {
@@ -357,7 +818,12 @@
     },
     {
       "question": "Kas yra garsiausias dramaturgas pasaulyje ir autorius tokių tragedijų kaip 'Hamletas' ir 'Romeo ir Džiuljeta'?",
-      "answers": ["Moliere", "William Shakespeare", "Anton Pavlovič Čechov", "George Bernard Shaw"],
+      "answers": [
+        "Moliere",
+        "William Shakespeare",
+        "Anton Pavlovič Čechov",
+        "George Bernard Shaw"
+      ],
       "correctAnswer": "William Shakespeare"
     },
     {
@@ -367,17 +833,32 @@
     },
     {
       "question": "Garsiausia meno galerija pasaulyje, įsikūrusi Paryžiuje?",
-      "answers": ["Louvre", "Metropolitan Museum of Art", "Vatikano muziejus", "British Museum"],
+      "answers": [
+        "Louvre",
+        "Metropolitan Museum of Art",
+        "Vatikano muziejus",
+        "British Museum"
+      ],
       "correctAnswer": "Louvre"
     },
     {
       "question": "Nobelio taikos premijos įkūrėjas?",
-      "answers": ["Alfred Nobel", "Winston Churchill", "Nelson Mandela", "Martin Luther King Jr."],
+      "answers": [
+        "Alfred Nobel",
+        "Winston Churchill",
+        "Nelson Mandela",
+        "Martin Luther King Jr."
+      ],
       "correctAnswer": "Alfred Nobel"
     },
     {
       "question": "Pirmasis žmogus, palydėjęs žemės orbitoje?",
-      "answers": ["Yuri Gagarin", "Neil Armstrong", "John Glenn", "Alan Shepard"],
+      "answers": [
+        "Yuri Gagarin",
+        "Neil Armstrong",
+        "John Glenn",
+        "Alan Shepard"
+      ],
       "correctAnswer": "Yuri Gagarin"
     },
     {
@@ -387,23 +868,33 @@
     },
     {
       "question": "Kas yra garsiausias dramaturgas pasaulyje ir autorius tokių tragedijų kaip 'Hamletas' ir 'Romeo ir Džiuljeta'?",
-      "answers": ["Moliere", "William Shakespeare", "Anton Pavlovič Čechov", "George Bernard Shaw"],
+      "answers": [
+        "Moliere",
+        "William Shakespeare",
+        "Anton Pavlovič Čechov",
+        "George Bernard Shaw"
+      ],
       "correctAnswer": "William Shakespeare"
     },
     {
       "question": "Kokia didžiausia pasaulyje dykuma?",
-      "answers": ["Gobi dykuma", "Arabijos dykuma", "Sahara", "Atakamos dykuma"],
+      "answers": [
+        "Gobi dykuma",
+        "Arabijos dykuma",
+        "Sahara",
+        "Atakamos dykuma"
+      ],
       "correctAnswer": "Sahara"
     },
     {
       "question": "Kas yra garsiausias romantinis kompozitorius, kurio kūriniai apima simfonijas ir operas?",
-      "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Pyotr Ilyich Tchaikovsky"],
+      "answers": [
+        "Ludwig van Beethoven",
+        "Wolfgang Amadeus Mozart",
+        "Johann Sebastian Bach",
+        "Pyotr Ilyich Tchaikovsky"
+      ],
       "correctAnswer": "Ludwig van Beethoven"
-    },
-    {
-      "question": "Koks yra didžiausias pasaulyje upės debesis?",
-      "answers": ["Amazonės debesis", "Nilas debesis", "Missisipės debesis", "Jangce debesis"],
-      "correctAnswer": "Nilas debesis"
     },
     {
       "question": "Kas yra garsiausias pop muzikos atlikėjas pasaulyje, žinomas kaip 'King of Pop'?",
@@ -417,7 +908,12 @@
     },
     {
       "question": "Kas yra pirmasis žmogus, pakylėjęs ant Mėnulio paviršiaus?",
-      "answers": ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "John Glenn"],
+      "answers": [
+        "Neil Armstrong",
+        "Buzz Aldrin",
+        "Yuri Gagarin",
+        "John Glenn"
+      ],
       "correctAnswer": "Neil Armstrong"
     },
     {
@@ -442,7 +938,12 @@
     },
     {
       "question": "Kas yra didžiausia pasaulyje žinduolių rūšis?",
-      "answers": ["Afrikos drambliai", "Mėlynasis banginis", "Azijos drambliai", "Rikliai"],
+      "answers": [
+        "Afrikos drambliai",
+        "Mėlynasis banginis",
+        "Azijos drambliai",
+        "Rikliai"
+      ],
       "correctAnswer": "Mėlynasis banginis"
     },
     {
@@ -457,7 +958,12 @@
     },
     {
       "question": "Žinomiausias meno kūrinys pasaulyje?",
-      "answers": ["Mona Lisa", "Žvaigždėrytis", "Balta Pietūs", "Nakties serenada"],
+      "answers": [
+        "Mona Lisa",
+        "Žvaigždėrytis",
+        "Balta Pietūs",
+        "Nakties serenada"
+      ],
       "correctAnswer": "Mona Lisa"
     },
     {
@@ -467,12 +973,22 @@
     },
     {
       "question": "Kas yra garsiausias kompozitorius pasaulyje?",
-      "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Pyotr Ilyich Tchaikovsky"],
+      "answers": [
+        "Ludwig van Beethoven",
+        "Wolfgang Amadeus Mozart",
+        "Johann Sebastian Bach",
+        "Pyotr Ilyich Tchaikovsky"
+      ],
       "correctAnswer": "Ludwig van Beethoven"
     },
     {
       "question": "Kas yra garsiausias sportininkas pasaulyje?",
-      "answers": ["Usainas Boltas", "Michaelas Jordanas", "Cristiano Ronaldo", "Serena Williams"],
+      "answers": [
+        "Usainas Boltas",
+        "Michaelas Jordanas",
+        "Cristiano Ronaldo",
+        "Serena Williams"
+      ],
       "correctAnswer": "Usainas Boltas"
     },
     {
@@ -482,7 +998,12 @@
     },
     {
       "question": "Garsiausia mokslininkė pasaulyje?",
-      "answers": ["Marie Curie", "Jane Goodall", "Rita Levi-Montalcini", "Barbara McClintock"],
+      "answers": [
+        "Marie Curie",
+        "Jane Goodall",
+        "Rita Levi-Montalcini",
+        "Barbara McClintock"
+      ],
       "correctAnswer": "Marie Curie"
     },
     {
@@ -492,22 +1013,42 @@
     },
     {
       "question": "Kas yra garsiausias karys pasaulyje?",
-      "answers": ["Aleksandras Didysis", "Napoleonas Bonapartas", "Julius Cezaris", "Genghis Khan"],
+      "answers": [
+        "Aleksandras Didysis",
+        "Napoleonas Bonapartas",
+        "Julius Cezaris",
+        "Genghis Khan"
+      ],
       "correctAnswer": "Aleksandras Didysis"
     },
     {
       "question": "Kas yra garsiausias filosofas pasaulyje?",
-      "answers": ["Aristotelis", "Platonas", "Immanuelis Kantas", "Friedrichas Nietzsche"],
+      "answers": [
+        "Aristotelis",
+        "Platonas",
+        "Immanuelis Kantas",
+        "Friedrichas Nietzsche"
+      ],
       "correctAnswer": "Aristotelis"
     },
     {
       "question": "Garsiausias kino režisierius pasaulyje?",
-      "answers": ["Stevenas Spielbergas", "Martinas Scorsese", "Quentin Tarantino", "Alfredas Hitchcockas"],
+      "answers": [
+        "Stevenas Spielbergas",
+        "Martinas Scorsese",
+        "Quentin Tarantino",
+        "Alfredas Hitchcockas"
+      ],
       "correctAnswer": "Stevenas Spielbergas"
     },
     {
       "question": "Garsiausias mokslininkas pasaulyje?",
-      "answers": ["Albertas Einšteinas", "Niels Bohras", "Isaakas Niutonas", "Galilėjus Galilėjus"],
+      "answers": [
+        "Albertas Einšteinas",
+        "Niels Bohras",
+        "Isaakas Niutonas",
+        "Galilėjus Galilėjus"
+      ],
       "correctAnswer": "Albertas Einšteinas"
     },
     {
@@ -517,11 +1058,257 @@
     },
     {
       "question": "Kas yra garsiausias pasaulyje dailininkas?",
-      "answers": ["Leonardo da Vinci", "Vincentas van Gogas", "Pablo Picasso", "Michelangelas"],
+      "answers": [
+        "Leonardo da Vinci",
+        "Vincentas van Gogas",
+        "Pablo Picasso",
+        "Michelangelas"
+      ],
       "correctAnswer": "Leonardo da Vinci"
     }
   ],
   "level4": [
+    {
+      "question": "Ji – tapytoja, grafikė ir fotografė iš Kupiškio rajono. Jos grafikoje vyrauja kaimo tematika, skurdus žmonių gyvenimas, tapyboje – Lietuvos peizažai ir gėlių natiurmortai. Tarpukariu darytose nuotraukose daugiausia fiksuotas jos ir jos aplinkos gyvenimas. Esama gana intymių jos nuotraukų su draugėmis bei autoportretų vilkint vyriškus drabužius. Kai kurių tyrėjų nuomone, pastarosiose menininkė atskleidė savo homoseksualumą. Kas ji?",
+      "answers": [
+        "Veronika Mačiukaitė",
+        "Birutė Paukštaitė",
+        "Sofija Veiverytė",
+        "Adelė Mikutavičiūtė",
+        "Ona Narbutaitė"
+      ],
+      "correctAnswer": "Birutė Paukštaitė"
+    },
+    {
+      "question": "Kaip vadinasi Mariaus Jovaišos albumas su Lietuvos nuotraukomis iš paukščio skrydžio?",
+      "answers": [
+        "Lietuvos panorama",
+        "Aukštai ir toli",
+        "Žemė iš aukšto",
+        "Paukščio akimis",
+        "Virš žemės"
+      ],
+      "correctAnswer": "Aukštai ir toli"
+    },
+    {
+      "question": "Ši skulptūra San Paule (Brazilija) yra J. Zikaro skulptūros, stovinčios Kaune, kopija. Ji pastatyta 1985 m. ir tuo metu buvo vienintelė, nes skulptūrą Kaune buvo nugriovę sovietai. 1989 m. atstatyta ir skulptūra Kaune. Kaip vadinasi ši skulptūra?",
+      "answers": [
+        "Pergalės diena",
+        "Ateitis",
+        "Švyturys",
+        "Svajonė",
+        "Gelbėtojas"
+      ],
+      "correctAnswer": "Ateitis"
+    },
+    {
+      "question": "Kuriame Lietuvos kaime galima išvysti šią liūdinčią motiną?",
+      "answers": [
+        "Žarėnai",
+        "Čiobiškis",
+        "Svirpliai",
+        "Krikščionys",
+        "Linkmenys"
+      ],
+      "correctAnswer": "Čiobiškis"
+    },
+    {
+      "question": "Kokiame meno konkurse, reklamose įvardytame kaip „meno olimpiada“, 2019 m. auksinį liūtą laimėjo Lietuva?",
+      "answers": [
+        "Eurovizija",
+        "Baltijos šalių šokis",
+        "Pabandom iš naujo",
+        "Pavasario festivalis",
+        "Vaikų Eurovizija"
+      ],
+      "correctAnswer": "Pabandom iš naujo"
+    },
+    {
+      "question": "Šis lietuvių kilmės filosofas, matematikas ir politikas 1995-1998 m. buvo Bogotos (Kolumbija) meras. Jis pagarsėjo tokiomis novatoriškomis iniciatyvomis kaip, pavyzdžiui, pakviesti 420 mimų išjuokti eismo taisyklių nesilaikančius vairuotojus. Vėliau jis nesėkmingai kandidatavo į Kolumbijos prezidento postą. Kas jis?",
+      "answers": [
+        "Bronislovas Lubys",
+        "Jonas Kubilius",
+        "Mikalojus Konstantinas Čiurlionis",
+        "Aleksandras Barauskas",
+        "Augustinas Voldemaras"
+      ],
+      "correctAnswer": "Augustinas Voldemaras"
+    },
+    {
+      "question": "Šis kultūros savaitraštis Lietuvoje pradėtas leisti 1990 m., eina iki šiol. Taip pat, kaip vadinasi savaitraštis, poetė Judita Vaičiūnaitė viename eilėraštyje vadino Vilnių. Kaip vadinasi šis savaitraštis?",
+      "answers": [
+        "Naujoji Rytija",
+        "Lietuvos kultūra",
+        "Senoji Europa",
+        "Nemunas",
+        "Kultūros barai"
+      ],
+      "correctAnswer": "Kultūros barai"
+    },
+    {
+      "question": "Tikriausiai prisimenate, kad Vilniaus herbe vaizduojamas šv. Kristoforas. Tačiau didžiausių Lietuvos miestų dešimtuke yra ir dar vienas miestas, kurio herbe yra vaizduojamas šventasis (šv. Jurgis). Koks tai miestas?",
+      "answers": ["Kaunas", "Klaipėda", "Panevėžys", "Šiauliai", "Alytus"],
+      "correctAnswer": "Klaipėda"
+    },
+    {
+      "question": "Tai – apie 40 tūkst. gyventojų turinčio miesto herbas, kuriame mėlyna spalva simbolizuoja upę. Nors ir nėra Lietuvoje, šis miestas labai svarbus Lietuvos istorijai ir jį galima matyti iš Lietuvos teritorijos. 1946 m. miesto pavadinimas buvo pakeistas. Parašykite arba senąjį, arba dabartinį jo pavadinimą.",
+      "answers": [
+        "Kaliningradas",
+        "Gdanskas",
+        "Klaipėda",
+        "Gdynia",
+        "Svetlogorsk"
+      ],
+      "correctAnswer": "Klaipėda"
+    },
+    {
+      "question": "Koks gyvūnas yra vaizduojamas Žemaitijos herbe? Dabar šis gyvūnas Lietuvoje nuolat negyvena.",
+      "answers": ["Lokys", "Vilkas", "Elnias", "Stumbras", "Briedis"],
+      "correctAnswer": "Lokys"
+    },
+    {
+      "question": "Lietuvių ____ kalbą Lietuvoje vartoja daugiau negu 6 tūkstančiai asmenų. Ji 1995 m. buvo oficialiai pripažinta dalies Lietuvos gyventojų gimtąja kalba. Kokį žodį praleidome pirmajame sakinyje po žodžio „lietuvių”?",
+      "answers": ["Šventoji", "Katalikiška", "Bažnytinė", "Romos", "Šiaurės"],
+      "correctAnswer": "Romos"
+    },
+    {
+      "question": "Šiame Lenkijos miestelyje Seinų apskrityje gyvena kiek daugiau negu tūkstantis gyventojų, ~75 proc. jų – lietuviai. Mieste veikia lietuvių kultūros namai, Kovo 11-osios licėjus. Daug gyventojų šiame miestelyje kalba lietuvių kalbos dzūkų tarme, kuri čia puikiai „užsikonservavo“. Koks tai miestelis?",
+      "answers": [
+        "Suvalkai",
+        "Augustavas",
+        "Seinai",
+        "Lazdijai",
+        "Marijampolė"
+      ],
+      "correctAnswer": "Seinai"
+    },
+    {
+      "question": "Kaip vadinosi iki metrinės sistemos įvedimo Lietuvoje dažnai naudotas ilgio matas, lygus atstumui nuo alkūnės iki pirštų galų? Trys tokie ilgio matai sudarė sieksnį.",
+      "answers": ["Kilometras", "Judėjimas", "Pėda", "Tūzas", "Veršelis"],
+      "correctAnswer": "Pėda"
+    },
+    {
+      "question": "Šio žodžio reikšmė yra „galvos plaukai, kuodas”. Šis žodis vienas pats lietuvių kalboje vartojamas gana retai, tačiau jį rasime frazeologizme greta žodžio „nešti”. Koks tai žodis?",
+      "answers": ["Kirpėja", "Kučiukas", "Ponis", "Šukuosena", "Kerpė"],
+      "correctAnswer": "Kerpė"
+    },
+    {
+      "question": "VLKK teigimu, šis „jaunimo kultūros žodis“ yra vartotinas. Tačiau VLKK taip pat siūlo ir tokius jo lietuviškus pakaitus: veltinės kasytės (kaselės), vėlinukai, vėliniai, veltūnas. Koks tai žodis?",
+      "answers": ["Spajis", "Brenksniukas", "Piknikas", "Pumpuras", "Pokšt"],
+      "correctAnswer": "Piknikas"
+    },
+    {
+      "question": "Šiąnakt kompetentingas gydytojas visgi suklydo, o po to sušalo. Kuris žodis prieš tai esančiame sakinyje yra parašytas su klaida?",
+      "answers": [
+        "Suklydo",
+        "Kompetentingas",
+        "Gydytojas",
+        "Šiąnakt",
+        "Sušalo"
+      ],
+      "correctAnswer": "Sušalo"
+    },
+    {
+      "question": "Kuris rašytinės lietuvių kalbos žodis, 2009 m. VDU mokslininkų atlikto tyrimo duomenimis yra dažniausias? Beje, tas žodis, užrašytas didžiosiomis raidėmis, sutampa su tam tikro ilgio elektromagnetinių bangų pavadinimo santrumpa.",
+      "answers": ["Ir", "Kai", "Tau", "Kas", "Aš"],
+      "correctAnswer": "Ir"
+    },
+    {
+      "question": "Mažojoje Lietuvoje lietuvių kalba buvo rašoma ypatingu šriftu, vadinamu fraktūra. Kokią mums įprasto rašto raidę atitinka ši fraktūros raidė?",
+      "answers": ["A", "E", "R", "S", "T"],
+      "correctAnswer": "R"
+    },
+    {
+      "question": "Šiuo žodžiu rusai kartais pravardžiuoja lietuvių tautos atstovus. Ši pravardė kilo iš dažnai lietuvių vartojamo žodžio. Kokia tai pravardė?",
+      "answers": ["Graikas", "Kareivis", "Stiprybė", "Knyžius", "Žemdirbys"],
+      "correctAnswer": "Kareivis"
+    },
+    {
+      "question": "Tai – vienas iš ekspedicijų „Tikslas – Amerika“ metu sudarytų žemėlapių. Jame sužymėtos visos šiame regione esančios tokios vietos. Visos kokios vietos?",
+      "answers": [
+        "Vasaros gėlės",
+        "Nuskendės miestai",
+        "Niekšingi miestai",
+        "Pasaulio šalys",
+        "Miestai"
+      ]
+    },
+    {
+      "question": "Kokiam architektūros stiliui įprastai priskiriami šv. Onos bažnyčia Vilniuje ir Perkūno namas Kaune?",
+      "answers": [
+        "Gotika",
+        "Barokas",
+        "Renesansas",
+        "Neogotika",
+        "Modernizmas"
+      ],
+      "correctAnswer": "Gotika"
+    },
+    {
+      "question": "Kaip vadinami lietuviški kaimai, kuriuos sudaro laisvai, be aiškaus plano išsidėsčiusios sodybos? Tai – vienas seniausių gyvenvietės tipų Lietuvoje. Iki Valakų reformos XVI a. tokie kaimai sudarė didžiąją dalį Lietuvos gyvenviečių. Dabar jų likę mažai, o jų pavadinimas kilęs iš žodžio, kurį žodynas apibrėžia kaip tam tikrų dalykų krūvą.",
+      "answers": ["Kaimynija", "Kaimas", "Gamtinė vieta", "Sodyba", "Klepė"],
+      "correctAnswer": "Kaimynija"
+    },
+    {
+      "question": "Antakalnio gyvenamasis rajonas Vilniuje, Vilniaus autobusų stotis, Vilniaus dailės akademijos tiltas – visi jie pastatyti pagal šio architekto projektus. Na, o 1974 m. už Lazdynų rajono projektavimą jis kartu su Vytautu Čekanausku, Vytautu Balčiūnu, Gediminu Valiuškiu, Algimantu Kleinotu ir Vincentu Šileika buvo apdovanotas Lenino premija. Kas šis architektas?",
+      "answers": [
+        "Antanas Vivulskis",
+        "Vytautas Landsbergis-Žemkalnis",
+        "Juozas Bagdonas",
+        "Algirdas Šakalys",
+        "Vytautas Nasvytis"
+      ],
+      "correctAnswer": "Juozas Bagdonas"
+    },
+    {
+      "question": "Šio komunizmo ideologo name Vilniuje tebeveikia memorialinis muziejus. Viduje galima pamatyti, kaip gyveno sovietinė nomenklatūra, name yra netgi kambarys tarnaitei. Parašykite jo pavardę. Jis – vienas tų, kurie Maskvoje prašė Lietuvą priimti į Sovietų Sąjungą, taip pat buvo LTSR liaudies švietimo ministras.",
+      "answers": [
+        "Vladimiras Leninas",
+        "Josifas Stalinas",
+        "Mikalojus Vilutis",
+        "Karolis Požela",
+        "Antanas Sniečkus"
+      ],
+      "correctAnswer": "Karolis Požela"
+    },
+    {
+      "question": "Jų muziejus veikia Ustronės vienkiemyje Krekenavos apylinkėse. Jurgis Bielinis, Juozas Masiulis, Liudas Vaineikis, Magdė Bankaitė – tai keli jų. Kas jie?",
+      "answers": [
+        "Lietuvos didikai",
+        "Lietuvos revoliucionieriai",
+        "Lietuvos rašytojai",
+        "Lietuvos mokslininkai",
+        "Lietuvos komunistai"
+      ],
+      "correctAnswer": "Lietuvos rašytojai"
+    },
+    {
+      "question": "Profesorius Adomas Hrebnickis buvo vienas žymiausių visų laikų Lietuvos pomologų (pomologija – mokslas apie vaismedžius ir uogakrūmius). Jo memorialinis muziejus yra Ignalinos rajono kaimelyje skambiu, iš Biblijos kilusiu pavadinimu. Kaimas tokį vardą gavo būtent todėl kad jame A. Hrebnickis buvo užveisęs ypač didelį sodą su per 1000 vaismedžių veislių. Kaip vadinasi tas kaimas?",
+      "answers": ["Varniai", "Klaipėda", "Panevėžys", "Skuodas", "Rokiškis"],
+      "correctAnswer": "Varniai"
+    },
+    {
+      "question": "Pranciškus Smuglevičius laikomas Vilniaus meno mokyklos pradininku ir žymiausiu klasicizmo atstovu Lietuvos tapyboje. Tarp jo garsiausių darbų yra 1802-1804 m. dekoruota salė. Tuomet ta salė buvo paskirta bibliotekai, biblioteka toje salėje įsikūrusi ir dabar. Kaip dabar vadinasi įstaiga, kurios bibliotekos viena salių vadinasi P. Smuglevičiaus sale?",
+      "answers": [
+        "Vilniaus dailės muziejus",
+        "Nacionalinė dailės galerija",
+        "Vilniaus universiteto biblioteka",
+        "Vilniaus dailės akademijos biblioteka",
+        "Vilniaus galerija"
+      ],
+      "correctAnswer": "Vilniaus dailės akademijos biblioteka"
+    },
+    {
+      "question": "Kaip vadinasi miestelis Žemaitijoje, kuriame nuo XVII a. kasmet liepą vyksta žmonių gausa pasižymintys katalikiški atlaidai?",
+      "answers": [
+        "Kalvarija",
+        "Šventaragis",
+        "Siauliai",
+        "Varduva",
+        "Kazlų Rūda"
+      ],
+      "correctAnswer": "Kalvarija"
+    },
     {
       "question": "Pirmas elementas chemijos elementų lentelėje?",
       "answers": ["Vandenilis", "Oksigenas", "Anglis", "Geležis", "Auksas"],
@@ -539,22 +1326,46 @@
     },
     {
       "question": "Kas yra garsiausia pasaulyje džiazo muzikos atlikėja?",
-      "answers": ["Ella Fitzgerald", "Louis Armstrong", "Duke Ellington", "Miles Davis", "John Coltrane"],
+      "answers": [
+        "Ella Fitzgerald",
+        "Louis Armstrong",
+        "Duke Ellington",
+        "Miles Davis",
+        "John Coltrane"
+      ],
       "correctAnswer": "Ella Fitzgerald"
     },
     {
       "question": "Garsiausias pasaulyje dailininkas, kuris nutapė 'Žvaigždėta naktis'?",
-      "answers": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dali", "Claude Monet"],
+      "answers": [
+        "Leonardo da Vinci",
+        "Pablo Picasso",
+        "Vincent van Gogh",
+        "Salvador Dali",
+        "Claude Monet"
+      ],
       "correctAnswer": "Vincent van Gogh"
     },
     {
       "question": "Kas yra garsiausias pasaulyje mokslininkas, kuris atrado peniciliną?",
-      "answers": ["Isaac Newton", "Albert Einstein", "Charles Darwin", "Marie Curie", "Alexander Fleming"],
+      "answers": [
+        "Isaac Newton",
+        "Albert Einstein",
+        "Charles Darwin",
+        "Marie Curie",
+        "Alexander Fleming"
+      ],
       "correctAnswer": "Alexander Fleming"
     },
     {
       "question": "Garsiausias pasaulyje filmų režisierius, kuris sukūrė 'Godfather' trilogiją?",
-      "answers": ["Steven Spielberg", "Martin Scorsese", "Francis Ford Coppola", "Alfred Hitchcock", "Quentin Tarantino"],
+      "answers": [
+        "Steven Spielberg",
+        "Martin Scorsese",
+        "Francis Ford Coppola",
+        "Alfred Hitchcock",
+        "Quentin Tarantino"
+      ],
       "correctAnswer": "Francis Ford Coppola"
     },
     {
@@ -564,32 +1375,68 @@
     },
     {
       "question": "Knygos 'Harry Potter' autorius?",
-      "answers": ["J.R.R. Tolkien", "C.S. Lewis", "George Orwell", "J.K. Rowling", "Stephen King"],
+      "answers": [
+        "J.R.R. Tolkien",
+        "C.S. Lewis",
+        "George Orwell",
+        "J.K. Rowling",
+        "Stephen King"
+      ],
       "correctAnswer": "J.K. Rowling"
     },
     {
       "question": "Garsiausias pasaulyje dailininkas, kuris sukūrė 'Paskutinę vakarienę'?",
-      "answers": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Salvador Dali", "Claude Monet"],
+      "answers": [
+        "Leonardo da Vinci",
+        "Pablo Picasso",
+        "Vincent van Gogh",
+        "Salvador Dali",
+        "Claude Monet"
+      ],
       "correctAnswer": "Leonardo da Vinci"
     },
     {
       "question": "Garsiausias pasaulyje muzikantas, kuris sukūrė 'Imagine'?",
-      "answers": ["The Beatles", "Elton John", "Michael Jackson", "John Lennon", "Bob Dylan"],
+      "answers": [
+        "The Beatles",
+        "Elton John",
+        "Michael Jackson",
+        "John Lennon",
+        "Bob Dylan"
+      ],
       "correctAnswer": "John Lennon"
     },
     {
       "question": "Aktorius, kuris vaidino 'Forrest Gump' vaidmenį?",
-      "answers": ["Tom Hanks", "Robert De Niro", "Al Pacino", "Denzel Washington", "Leonardo DiCaprio"],
+      "answers": [
+        "Tom Hanks",
+        "Robert De Niro",
+        "Al Pacino",
+        "Denzel Washington",
+        "Leonardo DiCaprio"
+      ],
       "correctAnswer": "Tom Hanks"
     },
     {
       "question": "Mokslininkas, kuris atrado peniciliną?",
-      "answers": ["Isaac Newton", "Albert Einstein", "Charles Darwin", "Marie Curie", "Alexander Fleming"],
+      "answers": [
+        "Isaac Newton",
+        "Albert Einstein",
+        "Charles Darwin",
+        "Marie Curie",
+        "Alexander Fleming"
+      ],
       "correctAnswer": "Alexander Fleming"
     },
     {
       "question": "Kas yra garsiausias pasaulyje filmų režisierius, kuris sukūrė 'Godfather' trilogiją?",
-      "answers": ["Steven Spielberg", "Martin Scorsese", "Francis Ford Coppola", "Alfred Hitchcock", "Quentin Tarantino"],
+      "answers": [
+        "Steven Spielberg",
+        "Martin Scorsese",
+        "Francis Ford Coppola",
+        "Alfred Hitchcock",
+        "Quentin Tarantino"
+      ],
       "correctAnswer": "Francis Ford Coppola"
     },
     {
@@ -599,22 +1446,46 @@
     },
     {
       "question": "Kas yra garsiausias pasaulyje knygos 'Harry Potter' autorius?",
-      "answers": ["J.R.R. Tolkien", "C.S. Lewis", "George Orwell", "J.K. Rowling", "Stephen King"],
+      "answers": [
+        "J.R.R. Tolkien",
+        "C.S. Lewis",
+        "George Orwell",
+        "J.K. Rowling",
+        "Stephen King"
+      ],
       "correctAnswer": "J.K. Rowling"
     },
     {
       "question": "Kur randami Jungtinių Tautų būstinės pastatai?",
-      "answers": ["Niujorke, JAV", "Londonas, Jungtinė Karalystė", "Paryžius, Prancūzija", "Vatikanas", "Sidnėjus, Australija"],
+      "answers": [
+        "Niujorke, JAV",
+        "Londonas, Jungtinė Karalystė",
+        "Paryžius, Prancūzija",
+        "Vatikanas",
+        "Sidnėjus, Australija"
+      ],
       "correctAnswer": "Niujorke, JAV"
     },
     {
       "question": "Kur yra Pietų Amerikos didžiausias miestas, žinomas dėl Tango šokių?",
-      "answers": ["Buenos Airės, Argentina", "Ryga, Latvija", "Barselona, Ispanija", "Sankt Peterburgas, Rusija", "Melburnas, Australija"],
+      "answers": [
+        "Buenos Airės, Argentina",
+        "Ryga, Latvija",
+        "Barselona, Ispanija",
+        "Sankt Peterburgas, Rusija",
+        "Melburnas, Australija"
+      ],
       "correctAnswer": "Buenos Airės, Argentina"
     },
     {
       "question": "Kas yra garsiausias kompiuterinių žaidimų kūrėjas?",
-      "answers": ["Hideo Kojima", "Shigeru Miyamoto", "Gabe Newell", "Todd Howard", "Tim Sweeney"],
+      "answers": [
+        "Hideo Kojima",
+        "Shigeru Miyamoto",
+        "Gabe Newell",
+        "Todd Howard",
+        "Tim Sweeney"
+      ],
       "correctAnswer": "Shigeru Miyamoto"
     },
     {
@@ -624,37 +1495,79 @@
     },
     {
       "question": "Seniausias pasaulyje žinomas raštas?",
-      "answers": ["Egiptiečių hieroglifai", "Sumerų kuneiforma", "Senovės kinų raštas", "Hebrajų alefbetas", "Droras script"],
+      "answers": [
+        "Egiptiečių hieroglifai",
+        "Sumerų kuneiforma",
+        "Senovės kinų raštas",
+        "Hebrajų alefbetas",
+        "Droras script"
+      ],
       "correctAnswer": "Sumerų kuneiforma"
     },
     {
       "question": "Kas yra garsiausias daugiabalsis kompiuterių žaidimų personažas?",
-      "answers": ["Mario", "Sonic the Hedgehog", "Pac-Man", "Link", "Master Chief"],
+      "answers": [
+        "Mario",
+        "Sonic the Hedgehog",
+        "Pac-Man",
+        "Link",
+        "Master Chief"
+      ],
       "correctAnswer": "Mario"
     },
     {
       "question": "Kas yra garsiausias pasaulio dailininkas, žinomas dėl savo abstrakčiojo ekspresionizmo darbų?",
-      "answers": ["Pablo Picasso", "Leonardo da Vinci", "Vincent van Gogh", "Jackson Pollock", "Salvador Dalí"],
+      "answers": [
+        "Pablo Picasso",
+        "Leonardo da Vinci",
+        "Vincent van Gogh",
+        "Jackson Pollock",
+        "Salvador Dalí"
+      ],
       "correctAnswer": "Jackson Pollock"
     },
     {
       "question": "Mažiausias pasaulyje žinomas gyvūnas?",
-      "answers": ["Mimoza", "Planktonas", "Tyrmų mikrobai", "Droselis", "Ameba"],
+      "answers": [
+        "Mimoza",
+        "Planktonas",
+        "Tyrmų mikrobai",
+        "Droselis",
+        "Ameba"
+      ],
       "correctAnswer": "Planktonas"
     },
     {
       "question": "Kas yra garsiausias klasikinės muzikos kompozitorius?",
-      "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Pyotr Ilyich Tchaikovsky", "Antonio Vivaldi"],
+      "answers": [
+        "Ludwig van Beethoven",
+        "Wolfgang Amadeus Mozart",
+        "Johann Sebastian Bach",
+        "Pyotr Ilyich Tchaikovsky",
+        "Antonio Vivaldi"
+      ],
       "correctAnswer": "Ludwig van Beethoven"
     },
     {
       "question": "Kas yra garsiausias klasikinės literatūros romanų autorius, kurio darbas 'Broliai Karamazovai'?",
-      "answers": ["Leo Tolstojus", "Fiodoras Dostojevskis", "Charles Dickens", "Jane Austen", "George Orwell"],
+      "answers": [
+        "Leo Tolstojus",
+        "Fiodoras Dostojevskis",
+        "Charles Dickens",
+        "Jane Austen",
+        "George Orwell"
+      ],
       "correctAnswer": "Fiodoras Dostojevskis"
     },
     {
       "question": "Kas yra garsiausias pasaulyje matematikas ir fizikas, kuris sukūrė daugybos teoriją ir pasaulinę reaktyviosios jėgos teoriją?",
-      "answers": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Niels Bohr", "Stephen Hawking"],
+      "answers": [
+        "Albert Einstein",
+        "Isaac Newton",
+        "Galileo Galilei",
+        "Niels Bohr",
+        "Stephen Hawking"
+      ],
       "correctAnswer": "Albert Einstein"
     },
     {
@@ -664,32 +1577,68 @@
     },
     {
       "question": "Kas yra garsiausias pasaulyje šokėjas, žinomas dėl jo įspūdingų moonwalk judesių?",
-      "answers": ["Fred Astaire", "Michael Jackson", "Elvis Presley", "James Brown", "Gene Kelly"],
+      "answers": [
+        "Fred Astaire",
+        "Michael Jackson",
+        "Elvis Presley",
+        "James Brown",
+        "Gene Kelly"
+      ],
       "correctAnswer": "Michael Jackson"
     },
     {
       "question": "Garsiausias pasaulyje egzistuojantis didžiosios bangos teorijos eksponentas, kuris yra kosmologas ir fizikas?",
-      "answers": ["Stephen Hawking", "Carl Sagan", "Richard Feynman", "Michio Kaku", "Neil deGrasse Tyson"],
+      "answers": [
+        "Stephen Hawking",
+        "Carl Sagan",
+        "Richard Feynman",
+        "Michio Kaku",
+        "Neil deGrasse Tyson"
+      ],
       "correctAnswer": "Stephen Hawking"
     },
     {
       "question": "Kuris iš šių kompozitorių yra žinomas dėl savo romantinių simfonijų, įskaitant 'Skonio simfoniją'?",
-      "answers": ["Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Pyotr Ilyich Tchaikovsky", "Antonín Dvořák", "Franz Liszt"],
+      "answers": [
+        "Ludwig van Beethoven",
+        "Wolfgang Amadeus Mozart",
+        "Pyotr Ilyich Tchaikovsky",
+        "Antonín Dvořák",
+        "Franz Liszt"
+      ],
       "correctAnswer": "Ludwig van Beethoven"
     },
     {
       "question": "Garsiausias pasaulyje filosofas, kuris sukūrė 'Nusistatymo būsenos' ir 'Kosminės sutarties' teorijas?",
-      "answers": ["Platonas", "Aristotelis", "Immanuelis Kantas", "Friedrichas Nietzsche", "Johnas Locke'as"],
+      "answers": [
+        "Platonas",
+        "Aristotelis",
+        "Immanuelis Kantas",
+        "Friedrichas Nietzsche",
+        "Johnas Locke'as"
+      ],
       "correctAnswer": "Immanuelis Kantas"
     },
     {
       "question": "Kuris iš šių filmų yra laikomas garsiausiu visų laikų filmu, kuriame vaidino Marlonas Brando?",
-      "answers": ["Pirmasis mecenas", "Mergina su perlu auskarais", "Krikštatėvis", "Šarlatanas", "Užrištasis"],
+      "answers": [
+        "Pirmasis mecenas",
+        "Mergina su perlu auskarais",
+        "Krikštatėvis",
+        "Šarlatanas",
+        "Užrištasis"
+      ],
       "correctAnswer": "Šarlatanas"
     },
     {
       "question": "Garsiausias pasaulyje architektas, žinomas dėl savo modernizmo kūrinių, tokiose vietose kaip 'Sydney Opera House'?",
-      "answers": ["Frank Lloyd Wright", "I. M. Pei", "Zaha Hadid", "Le Corbusier", "Jørn Utzon"],
+      "answers": [
+        "Frank Lloyd Wright",
+        "I. M. Pei",
+        "Zaha Hadid",
+        "Le Corbusier",
+        "Jørn Utzon"
+      ],
       "correctAnswer": "Jørn Utzon"
     }
   ],
@@ -740,13 +1689,7 @@
     },
     {
       "question": "Koks elementas buvo pirmasis sukurtas žmogaus?",
-      "answers": [
-        "Vandenilis",
-        "Oksigenas",
-        "Sidabras",
-        "Geležis",
-        "Titanas"
-      ],
+      "answers": ["Vandenilis", "Oksigenas", "Sidabras", "Geležis", "Titanas"],
       "correctAnswer": "Vandenilis"
     },
     {
@@ -784,104 +1727,103 @@
     },
     {
       "question": "Kas yra Higgs bozonas ir kodėl jis svarbus fizikoje?",
-    "answers": [
-    "Tai didelės energijos dalelių greitintuvo branduolys.",
-    "Tai elementarioji dalelė, suteikianti masę kitiems daleliams.",
-    "Tai garsus matematinis dalelių modelis.",
-    "Tai pirmasis atrastas subatomų dalelis.",
-    "Tai pagrindinė fizikos teorija."
-    ],
-    "correctAnswer": "Tai elementarioji dalelė, suteikianti masę kitiems daleliams."
+      "answers": [
+        "Tai didelės energijos dalelių greitintuvo branduolys.",
+        "Tai elementarioji dalelė, suteikianti masę kitiems daleliams.",
+        "Tai garsus matematinis dalelių modelis.",
+        "Tai pirmasis atrastas subatomų dalelis.",
+        "Tai pagrindinė fizikos teorija."
+      ],
+      "correctAnswer": "Tai elementarioji dalelė, suteikianti masę kitiems daleliams."
     },
     {
-    "question": "Kas yra Schrödingerio lygtis kvantinėje mechanikoje?",
-    "answers": [
-    "Tai paprasta lygtis aprašanti judančias daleles.",
-    "Tai lygtis, apibrėžianti elektronų elgesį atomoje.",
-    "Tai lygtis, nustatanti masės ir greičio santykį.",
-    "Tai Einsteinio formulė.",
-    "Tai fantazijos kūrinys."
-    ],
-    "correctAnswer": "Tai lygtis, apibrėžianti elektronų elgesį atomoje."
+      "question": "Kas yra Schrödingerio lygtis kvantinėje mechanikoje?",
+      "answers": [
+        "Tai paprasta lygtis aprašanti judančias daleles.",
+        "Tai lygtis, apibrėžianti elektronų elgesį atomoje.",
+        "Tai lygtis, nustatanti masės ir greičio santykį.",
+        "Tai Einsteinio formulė.",
+        "Tai fantazijos kūrinys."
+      ],
+      "correctAnswer": "Tai lygtis, apibrėžianti elektronų elgesį atomoje."
     },
     {
-    "question": "Kas yra Planck skaičius ir kaip jis susijęs su kvantine fizika?",
-    "answers": [
-    "Tai fundamentali fizikos konstanta, susijusi su kvantinės mechanikos pagrindais.",
-    "Tai skaičius, nusakantis planetų judėjimo greitį.",
-    "Tai skaičius, kuris naudojamas mokant matematiką.",
-    "Tai keistas skaičius, kurį sugalvojo Maxas Planckas.",
-    "Tai skaičius, kurį Einsteinas naudojo savo teorijose."
-    ],
-    "correctAnswer": "Tai fundamentali fizikos konstanta, susijusi su kvantinės mechanikos pagrindais."
+      "question": "Kas yra Planck skaičius ir kaip jis susijęs su kvantine fizika?",
+      "answers": [
+        "Tai fundamentali fizikos konstanta, susijusi su kvantinės mechanikos pagrindais.",
+        "Tai skaičius, nusakantis planetų judėjimo greitį.",
+        "Tai skaičius, kuris naudojamas mokant matematiką.",
+        "Tai keistas skaičius, kurį sugalvojo Maxas Planckas.",
+        "Tai skaičius, kurį Einsteinas naudojo savo teorijose."
+      ],
+      "correctAnswer": "Tai fundamentali fizikos konstanta, susijusi su kvantinės mechanikos pagrindais."
     },
     {
-    "question": "Kas yra kvarkas?",
-    "answers": [
-    "Tai mažas gaminys.",
-    "Tai branduolinė dalis, sudaranti protonus ir neutronus.",
-    "Tai paprastas atomų komponentas.",
-    "Tai senovinis filosofinis terminas.",
-    "Tai visiškai neegzistuojantis dalelis."
-    ],
-    "correctAnswer": "Tai branduolinė dalis, sudaranti protonus ir neutronus."
+      "question": "Kas yra kvarkas?",
+      "answers": [
+        "Tai mažas gaminys.",
+        "Tai branduolinė dalis, sudaranti protonus ir neutronus.",
+        "Tai paprastas atomų komponentas.",
+        "Tai senovinis filosofinis terminas.",
+        "Tai visiškai neegzistuojantis dalelis."
+      ],
+      "correctAnswer": "Tai branduolinė dalis, sudaranti protonus ir neutronus."
     },
 
     {
-    "question": "Kas yra kvazarus?",
-    "answers": [
-    "Tai smalsūs žmonės.",
-    "Tai kosminiai objektai su ekstremaliais energijos išmetimo savybėmis.",
-    "Tai mokslininkų sugebėjimas suprasti sudėtingas problemas.",
-    "Tai šaltiniai, iš kurių gauname elektrą.",
-    "Tai fantastinė būtybė."
-    ],
-    "correctAnswer": "Tai kosminiai objektai su ekstremaliais energijos išmetimo savybėmis."
+      "question": "Kas yra kvazarus?",
+      "answers": [
+        "Tai smalsūs žmonės.",
+        "Tai kosminiai objektai su ekstremaliais energijos išmetimo savybėmis.",
+        "Tai mokslininkų sugebėjimas suprasti sudėtingas problemas.",
+        "Tai šaltiniai, iš kurių gauname elektrą.",
+        "Tai fantastinė būtybė."
+      ],
+      "correctAnswer": "Tai kosminiai objektai su ekstremaliais energijos išmetimo savybėmis."
     },
     {
-    "question": "Kas yra Diraco dalelė ir kodėl ji svarbi fizikoje?",
-    "answers": [
-    "Tai muzikos instrumentas.",
-    "Tai klasikinės fizikos objektas.",
-    "Tai elementarioji dalelė, numatyta Paulio Diraco.",
-    "Tai fantastinis dalelių tipas.",
-    "Tai biologinis organizmas."
-    ],
-    "correctAnswer": "Tai elementarioji dalelė, numatyta Paulio Diraco."
+      "question": "Kas yra Diraco dalelė ir kodėl ji svarbi fizikoje?",
+      "answers": [
+        "Tai muzikos instrumentas.",
+        "Tai klasikinės fizikos objektas.",
+        "Tai elementarioji dalelė, numatyta Paulio Diraco.",
+        "Tai fantastinis dalelių tipas.",
+        "Tai biologinis organizmas."
+      ],
+      "correctAnswer": "Tai elementarioji dalelė, numatyta Paulio Diraco."
     },
     {
-    "question": "Kas yra Turingo mašina ir kaip ji susijusi su kompiuterijos pradžia?",
-    "answers": [
-    "Tai kelionės kompiuteris.",
-    "Tai programa rašyti programų.",
-    "Tai pirmasis kompiuteris pasaulyje.",
-    "Tai matematinė koncepcija, numatyta Alanui Turingui.",
-    "Tai mašina, kuri gaminama iš Turingo juostelės."
-    ],
-    "correctAnswer": "Tai matematinė koncepcija, numatyta Alanui Turingui."
+      "question": "Kas yra Turingo mašina ir kaip ji susijusi su kompiuterijos pradžia?",
+      "answers": [
+        "Tai kelionės kompiuteris.",
+        "Tai programa rašyti programų.",
+        "Tai pirmasis kompiuteris pasaulyje.",
+        "Tai matematinė koncepcija, numatyta Alanui Turingui.",
+        "Tai mašina, kuri gaminama iš Turingo juostelės."
+      ],
+      "correctAnswer": "Tai matematinė koncepcija, numatyta Alanui Turingui."
     },
     {
-    "question": "Kas yra Schrödingerio katės paradoksas?",
-    "answers": [
-    "Tai katės gimimo ir mirties būsena kvantinėje mechanikoje.",
-    "Tai fizikinis paradoksas, apibūdinantis šiukšlių dėžėje būseną.",
-    "Tai garsus gyvūnas.",
-    "Tai Schrödingerio atradimas.",
-    "Tai kvantinė fizika."
-    ],
-    "correctAnswer": "Tai katės gimimo ir mirties būsena kvantinėje mechanikoje."
+      "question": "Kas yra Schrödingerio katės paradoksas?",
+      "answers": [
+        "Tai katės gimimo ir mirties būsena kvantinėje mechanikoje.",
+        "Tai fizikinis paradoksas, apibūdinantis šiukšlių dėžėje būseną.",
+        "Tai garsus gyvūnas.",
+        "Tai Schrödingerio atradimas.",
+        "Tai kvantinė fizika."
+      ],
+      "correctAnswer": "Tai katės gimimo ir mirties būsena kvantinėje mechanikoje."
     },
     {
-    "question": "Kas yra naujoji fizikos teorija?",
-    "answers": [
-    "Tai moderni fizikos disciplina.",
-    "Tai fizikos teorija, kurios dar nėra atrasta.",
-    "Tai fizikos teorija, kuri pakeis Einšteino teorijas.",
-    "Tai fizikos teorija, siejanti visus fizikos reiškinius.",
-    "Tai fantastinė fizikos kryptis."
-    ],
-    "correctAnswer": "Tai fizikos teorija, kuri pakeis Einšteino teorijas."
+      "question": "Kas yra naujoji fizikos teorija?",
+      "answers": [
+        "Tai moderni fizikos disciplina.",
+        "Tai fizikos teorija, kurios dar nėra atrasta.",
+        "Tai fizikos teorija, kuri pakeis Einšteino teorijas.",
+        "Tai fizikos teorija, siejanti visus fizikos reiškinius.",
+        "Tai fantastinė fizikos kryptis."
+      ],
+      "correctAnswer": "Tai fizikos teorija, kuri pakeis Einšteino teorijas."
     }
   ]
-  
 }
