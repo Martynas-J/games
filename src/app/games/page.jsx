@@ -12,12 +12,12 @@ const Games = () => {
         src="/Viktorina.png"
       />
       <Card
-        title={"Klausimų žaidimas"}
+        title={"Stalo žaidimas"}
         description={
-          "Tai yra klausimų viktorina. Žaidimas turintiems ir norintiems naujų žinių"
+          "Ridenk kauliuka ir keliauk"
         }
-        href={"games/quiz"}
-        src="/Viktorina.png"
+        href="https://pirmasis-zaidimas.vercel.app/zaidimas2.html"
+        src="/pimas-zaidimas.png"
       />
       <Card
         title={"Klausimų žaidimas"}
