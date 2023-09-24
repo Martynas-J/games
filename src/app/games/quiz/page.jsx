@@ -38,6 +38,7 @@ const Quiz = () => {
   const [lives, setLives] = useState(3);
   const [correctAnswers, setCorrectAnswers] = useState(false);
   const [wrongAnswers, setWrongAnswers] = useState(false);
+  const [helpUsed, setHelpUsed] = useState(false);
   const lvlUp = 7;
   const maxScore = lvlUp * level ** 3 + 1;
 
@@ -77,6 +78,30 @@ const Quiz = () => {
       );
       setCurrentQuestionIndex(0);
       setShowScore(true);
+    }
+  };
+  const hideWrongAnswer = () => {
+    if (!helpUsed) {
+      const wrongAnswers = questionsList[currentQuestionIndex].answers.filter(
+        (answer) => answer !== questionsList[currentQuestionIndex].correctAnswer
+      );
+      const randomWrongAnswerIndex = Math.floor(
+        Math.random() * wrongAnswers.length
+      );
+      const updatedAnswers = questionsList[currentQuestionIndex].answers.filter(
+        (answer) => answer !== wrongAnswers[randomWrongAnswerIndex]
+      );
+
+      const updatedQuestion = {
+        ...questionsList[currentQuestionIndex],
+        answers: updatedAnswers,
+      };
+
+      const updatedQuestionsList = [...questionsList];
+      updatedQuestionsList[currentQuestionIndex] = updatedQuestion;
+
+      setHelpUsed(true);
+      setQuestionsList(updatedQuestionsList);
     }
   };
 
@@ -126,6 +151,7 @@ const Quiz = () => {
             <button
               onClick={() => {
                 setCurrentQuestionIndex(0);
+                setHelpUsed(false);
                 setShowScore(false);
                 setResultSaved(false);
                 setLives(3);
@@ -181,7 +207,9 @@ const Quiz = () => {
                 <p>Klausimas: {currentQuestionIndex + 1}</p>
               </div>
               <p className="text-lg font-semibold pb-4">
-                <p className="text-transparent text-6xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text font-serif animate-ping h-full w-full rounded-full opacity-35 ">{questionsList.length === 0 && "Laimėjote"}</p>
+                <p className="text-transparent text-6xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text font-serif animate-ping h-full w-full rounded-full opacity-35 ">
+                  {questionsList.length === 0 && "Laimėjote"}
+                </p>
                 {questionsList[currentQuestionIndex]?.question}
               </p>
               <ul className="space-y-2">
@@ -197,6 +225,13 @@ const Quiz = () => {
                     </li>
                   )
                 )}
+                <button
+                  onClick={hideWrongAnswer}
+                  className={`${helpUsed && 'hidden'} bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full mt-2`}  
+                  disabled={helpUsed}
+                >
+                  Pagalba
+                </button>
               </ul>
             </div>
           )
