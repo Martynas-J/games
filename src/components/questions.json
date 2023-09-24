@@ -110,7 +110,7 @@
     {
       "question": "Koks yra Stockporto apygardos slapyvardis?",
       "answers": ["Lionai", "Hatteriai", "Bocai"],
-      "correctAnswer": "Hatteriai (arba apskritis)"
+      "correctAnswer": "Hatteriai"
     },
     {
       "question": "Kuriais metais „Arsenal“ persikėlė į „Emirates“ stadioną iš Highbury?",
@@ -219,11 +219,11 @@
     {
       "question": "Jei žengtumėte vieną žingsnį kiekvieną sekundę per septynių lygų batelius, koks būtų jūsų greitis myliomis per valandą?",
       "answers": [
-        "60 mylių per valandą",
-        "72 mylios per valandą",
-        "75,600 mylių per valandą"
+        "5,25 mylių per valandą",
+        "3,39 mylios per valandą",
+        "4,77 mylių per valandą"
       ],
-      "correctAnswer": "75,600 mylių per valandą"
+      "correctAnswer": "4,77 mylių per valandą"
     },
     {
       "question": "Kas yra toliausiai, ką galite pamatyti plika akimi?",
