@@ -41,6 +41,7 @@ const Quiz = () => {
   const [wrongAnswers, setWrongAnswers] = useState(false);
   const [helpUsed, setHelpUsed] = useState(false);
   const [help, setHelp] = useState(2);
+  const [isInfoVisible, setInfoVisible] = useState(false);
   const lvlUp = 7;
   const maxScore = lvlUp * level ** 3 + 1;
 
@@ -128,7 +129,9 @@ const Quiz = () => {
       console.error(error);
     }
   };
-
+  const toggleInfo = () => {
+    setInfoVisible(!isInfoVisible);
+  };
   return (
     <div className="container mx-auto p-0 sm:p-4 flex flex-col sm:flex-row">
       {isLoading ? (
@@ -136,6 +139,29 @@ const Quiz = () => {
       ) : (
         <>
           <div className="flex-grow text-center  p-2 pb-6 shadow-lg shadow-blue-900 rounded-md">
+            <span
+              title="Turite atsakyti į 10 klausimų, kad rezultatas taptu saugus, tam jūs turite 3 givybes. Padidėjus lygiui jūsų klausimai sudetingėja ir padidėja atsakymų variantų, tačiau gaunate +1 pagalbą ir daugiau taškų už teisingą atsakymą"
+              className=" cursor-help float-right bg-blue-400 text-sm text-white px-2 rounded-full"
+              onClick={toggleInfo}
+            >
+              &#x2139;
+            </span>
+            {isInfoVisible && (
+              <div className="bg-white p-4 border border-gray-300 rounded shadow-md absolute z-10 top-0 right-0 mt-8">
+                <p>
+                  Turite atsakyti į 10 klausimų, kad rezultatas taptų saugus,
+                  tam jūs turite 3 gyvybes. Padidėjus lygiui jūsų klausimai
+                  sudėtingėja ir padidėja atsakymų variantų, tačiau gaunate +1
+                  pagalbą ir daugiau taškų už teisingą atsakymą.
+                </p>
+                <button
+                  className="mt-2 bg-blue-500 text-white px-2 py-1 rounded-full"
+                  onClick={toggleInfo}
+                >
+                  Uždaryti
+                </button>
+              </div>
+            )}
             <p className="text-xl font-semibold mt-4 text-center text-blue-800">
               Level: {level}
             </p>
