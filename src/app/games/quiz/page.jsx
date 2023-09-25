@@ -133,7 +133,7 @@ const Quiz = () => {
     setInfoVisible(!isInfoVisible);
   };
   return (
-    <div className="container mx-auto p-0 sm:p-4 flex flex-col sm:flex-row">
+    <div className="container mx-auto p-0 sm:p-4 flex flex-col lg:flex-row">
       {isLoading ? (
         <span>Loading...</span>
       ) : (
@@ -141,7 +141,7 @@ const Quiz = () => {
           <div className="flex-grow text-center  p-2 pb-6 shadow-lg shadow-blue-900 rounded-md">
             <span
               title="Turite atsakyti į 10 klausimų, kad rezultatas taptu saugus, tam jūs turite 3 givybes. Padidėjus lygiui jūsų klausimai sudetingėja ir padidėja atsakymų variantų, tačiau gaunate +1 pagalbą ir daugiau taškų už teisingą atsakymą"
-              className=" cursor-help float-right bg-blue-400 text-sm text-white px-2 rounded-full"
+              className=" cursor-help float-right  md:bg-blue-400 text-sm md:text-white px-2 rounded-full"
               onClick={toggleInfo}
             >
               &#x2139;
@@ -214,7 +214,7 @@ const Quiz = () => {
                   }}
                   className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mt-4"
                 >
-                  Žaisti iš naujo
+                  {lives !== 0 ? "Tęsti" : "Žaisti iš naujo"}
                 </button>
                 {!resultSaved &&
                 session.status === "authenticated" &&

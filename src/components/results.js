@@ -8,7 +8,7 @@ const Results = ({ data }) => {
   data.sort((a, b) => b.playerScore - a.playerScore);
 
   return (
-    <div className="results-sidebar ml-auto p-4 text-center">
+    <div className="results-sidebar p-4 text-center">
       <h2 className="text-lg font-semibold mb-2">Visi Rezultatai:</h2>
       <ul className="space-y-2">
         {data.length > 0 ? (
