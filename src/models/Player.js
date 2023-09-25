@@ -16,6 +16,10 @@ const playerSchema = new Schema({
         type: Number, 
         required: true,
     },
+    help: {
+        type: Number, 
+        required: true,
+    },
 }, {timestamps: true})
 
 let playerModel

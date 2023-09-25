@@ -1,6 +1,6 @@
 import { API_URL } from "@/app/config/config";
 
-export const updateResultData = async (playerName, score, level) => {
+export const updateResultData = async (playerName, score, level, help) => {
   const response = await fetch(`${API_URL}/api/saveResult/${playerName}`, {
     method: "PATCH",
     headers: {
@@ -10,6 +10,7 @@ export const updateResultData = async (playerName, score, level) => {
       playerName,
       playerScore: score,
       level,
+      help,
     }),
   });
   return response;
