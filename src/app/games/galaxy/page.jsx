@@ -94,7 +94,7 @@ const Game = () => {
 
   return (
     <div></div>
-    // <div className="">
+    // <div className=""> 
     //   {gameOver ? (
     //     <div className="text-4xl text-red-500 font-bold text-center mt-20">
     //       Žaidimas baigtas! Jūs surinkote {score} taškus.
