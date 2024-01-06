@@ -1,5 +1,5 @@
-"use client";
-import React, { useEffect, useState } from "react";
+// "use client";
+// import React, { useEffect, useState } from "react";
 
 const Game = () => {
   // const [playerPosition, setPlayerPosition] = useState({ x: 500, y: 500 });
