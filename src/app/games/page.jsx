@@ -20,21 +20,14 @@ const Games = () => {
         src="/pimas-zaidimas.png"
       />
       <Card
-        title={"Klausimų žaidimas"}
+        title={"Sukam"}
         description={
-          "Tai yra klausimų viktorina. Žaidimas turintiems ir norintiems naujų žinių"
+          "Pasitikrink savo Laimę!"
         }
-        href={"games/quiz"}
-        src="/Viktorina.png"
+        href={"games/spin"}
+        src="/spin.png"
       />
-      <Card
-        title={"Klausimų žaidimas"}
-        description={
-          "Tai yra klausimų viktorina. Žaidimas turintiems ir norintiems naujų žinių"
-        }
-        href={"games/quiz"}
-        src="/Viktorina.png"
-      />
+    
      
     </div>
   );
