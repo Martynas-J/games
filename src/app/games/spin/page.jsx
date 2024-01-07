@@ -193,7 +193,7 @@ const Engine = () => {
           <div key={index} className={`relative `}>
             <div
               className={` myShadowOut border-teal-500 w-24 h-24 border-2  border-solid rounded-full 
-      ${value === 0 ? "bg-gradient-to-r from-white via-black to-white" : ""}
+      ${value === 0 ? "bg-gradient-to-r from-black to-white" : ""}
       ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${
                 intervalColors[value] || ""
               }
@@ -213,7 +213,7 @@ const Engine = () => {
       </div>
       <div className=" relative">
         <button
-          className={` bg-blue-500 text-white px-4 py-2 rounded-md text-lg font-semibold transition duration-300 hover:bg-blue-700 mt-4 mb-10 ${
+          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-3 px-4 rounded-full transform transition-transform hover:rotate-3 shadow-md ${
             isSpinning ? "cursor-not-allowed" : ""
           }`}
           onClick={
