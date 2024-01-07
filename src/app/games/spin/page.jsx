@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const Page2 = () => {
+const Engine = () => {
   const [results, setResults] = useState(["", "", ""]);
   const [isSpinning, setIsSpinning] = useState(false);
   const [intervals, setIntervals] = useState([0, 0, 0]);
@@ -47,11 +47,10 @@ const Page2 = () => {
       ? "bg-gradient-to-r from-green-300 to-green-200  hover:from-green-300 hover:to-green-100"
       : "bg-gradient-to-r from-blue-500 to-blue-200  hover:from-blue-400 hover:to-blue-100";
 
-    const buttonClass = `w-14 h-14 ${gradientColors} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg ${
-      canAutoSpin ? "" : "hover:cursor-not-allowed"
-    }`;
+    const buttonClass = `w-14 h-14 ${gradientColors} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
 
-    const textStyle = `${canBay ? "text-gray-800" : "text-red-800 font-bold"}`;
+    const textStyle = `${canBay ? (canAutoSpin  ? "text-gray-800" : "cursor-not-allowed")
+     : "text-red-800 font-bold cursor-not-allowed"}`;
 
     return (
       <div
@@ -157,7 +156,8 @@ const Page2 = () => {
     }
   }, [addMoney]);
   return (
-    <div className="text-center p-6 bg-gray-100 rounded-lg shadow-md w-[360px] mx-auto">
+    <div >
+
       <div className="text-2xl font-bold text-gray-800 flex justify-between items-center gap-5">
         <div className="text-sm">Losimas:{formatLargeNumber(spins, 0)}</div>{" "}
         <div>
@@ -172,17 +172,18 @@ const Page2 = () => {
 
       <div
         className={`mb-5 h-10 ${
-          winMoney > 2 ? " text-[34px] text-lime-700" : ""
-        }  text-xl font-bold text-gray-800 `}
+          winMoney > 2 ? "text-[34px] text-lime-700" : ""
+        } text-xl font-bold text-gray-800`}
       >
-        {!isSpinning && winMoney ? (
-          `+ ${formatLargeNumber(winMoney, 0)} €`
-        ) : (
-          <div class="flex justify-center items-center">
-            <div class="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
-          </div>
-        )}
+        {!isSpinning && winMoney
+          ? `+ ${formatLargeNumber(winMoney, 0)} €`
+          : isSpinning && (
+              <div className="flex justify-center items-center">
+                <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
+              </div>
+            )}
       </div>
+
       <div
         className={`flex justify-center space-x-4 slot-machine ${
           isSpinning ? "spinning" : ""
@@ -235,4 +236,4 @@ const Page2 = () => {
   );
 };
 
-export default Page2;
+export default Engine;
