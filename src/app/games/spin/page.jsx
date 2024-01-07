@@ -5,34 +5,13 @@ const Page2 = () => {
   const [results, setResults] = useState(["", "", ""]);
   const [isSpinning, setIsSpinning] = useState(false);
   const [intervals, setIntervals] = useState([0, 0, 0]);
-  const [money, setMoney] = useState(1000000);
+  const [money, setMoney] = useState(10000);
   const [winMoney, setWinMoney] = useState(0);
   const [spins, setSpins] = useState(0);
   const [multiply, setMultiply] = useState(1);
   const [biggestWin, setBiggestWin] = useState(0);
   const [addMoney, setAddMoney] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
-
-  const spinOptions = [
-    { amount: 5, cost: 6, multiplier: 1, symbol: "+" },
-    { amount: 10, cost: 13, multiplier: 1, symbol: "+" },
-    { amount: 50, cost: 70, multiplier: 1, symbol: "+" },
-    { amount: 100, cost: 200, multiplier: 1, symbol: "+" },
-
-    { amount: 5, cost: 500, multiplier: 5, symbol: "X" },
-    { amount: 10, cost: 1500, multiplier: 10, symbol: "X" },
-    { amount: 50, cost: 100000, multiplier: 50, symbol: "X" },
-    { amount: 100, cost: 300000, multiplier: 100, symbol: "X" },
-  ];
-
-  const checkIntervals = (value) => {
-    if (value >= 1 && value < 40) return "Normal";
-    if (value >= 77 && value <= 99) return "Rare";
-    if (value >= 40 && value < 58) return "Blue";
-    if (value >= 60 && value < 72) return "Gold";
-    if (value >= 72 && value < 77) return "Platina";
-    if (value >= 58 && value < 60) return "Nova";
-  };
 
   const intervalColors = {
     Normal: "bg-gradient-to-r from-blue-100 via-blue-300 to-blue-100 ",
@@ -44,30 +23,53 @@ const Page2 = () => {
     Nova: "bg-gradient-to-r from-purple-200 via-purple-500 to-purple-200",
   };
 
-  const renderSpinOption = ({ amount, cost, multiplier, symbol }) => (
-    <div
-      onClick={() =>
-        money >= cost && !isSpinning && multiply === 1 && !buttonClicked
-          ? autoSpin(amount, cost, multiplier, symbol)
-          : null
-      }
-      className={`w-14 h-14 border-teal-500 bg-gradient-to-r from-green-300 to-green-200 hover:cursor-pointer hover:xl hover:bg-gradient-to-r hover:from-green-300 hover:to-green-100 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg  ${
-        money >= cost ? "" : "hover:cursor-not-allowed"
-      }`}
-    >
+  const spinOptions = [
+    { amount: 5, cost: 6 },
+    { amount: 10, cost: 13 },
+    { amount: 50, cost: 70 },
+    { amount: 100, cost: 200 },
+
+    { amount: 5, cost: 500, multiplier: 5 },
+    { amount: 10, cost: 1500, multiplier: 10 },
+    { amount: 50, cost: 100000, multiplier: 50 },
+    { amount: 100, cost: 300000, multiplier: 100 },
+  ];
+
+  const renderSpinOption = ({ amount, cost, multiplier = 1 }, index) => {
+    const buttonType = index < 4;
+
+    const canAutoSpin =
+      money >= cost && !isSpinning && multiply === 1 && !buttonClicked;
+
+    const canBay = money >= cost;
+
+    const gradientColors = buttonType
+      ? "bg-gradient-to-r from-green-300 to-green-200  hover:from-green-300 hover:to-green-100"
+      : "bg-gradient-to-r from-blue-500 to-blue-200  hover:from-blue-400 hover:to-blue-100";
+
+    const buttonClass = `w-14 h-14 ${gradientColors} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg ${
+      canAutoSpin ? "" : "hover:cursor-not-allowed"
+    }`;
+
+    const textStyle = `${canBay ? "text-gray-800" : "text-red-800 font-bold"}`;
+
+    return (
       <div
-        className={`${
-          money >= cost ? "text-gray-800" : "text-red-800 font-bold"
-        }`}
+        onClick={() =>
+          canAutoSpin ? autoSpin(amount, cost, multiplier) : null
+        }
+        className={buttonClass}
       >
-        <span className="text-lg">
-          {symbol}
-          {amount}
-        </span>
-        <div className="text-[8px]">-{formatLargeNumber(cost, 0)}€</div>
+        <div className={textStyle}>
+          <span className="text-lg">
+            {buttonType ? "+" : "X"}
+            {amount}
+          </span>
+          <div className="text-[8px]">-{formatLargeNumber(cost, 0)}€</div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const spinSlotMachine = () => {
     setIsSpinning(true);
@@ -84,7 +86,14 @@ const Page2 = () => {
       MoneyPlusHandler(newResults);
     }, 1000);
   };
-
+  const checkIntervals = (value) => {
+    if (value >= 1 && value < 40) return "Normal";
+    if (value >= 77 && value <= 99) return "Rare";
+    if (value >= 40 && value < 58) return "Blue";
+    if (value >= 60 && value < 72) return "Gold";
+    if (value >= 72 && value < 77) return "Platina";
+    if (value >= 58 && value < 60) return "Nova";
+  };
   const MoneyPlusHandler = (newResults) => {
     const winMappings = {
       Normal: 10,
@@ -98,24 +107,26 @@ const Page2 = () => {
     const isAllResultsSame = newResults.every(
       (value) => value === newResults[0]
     );
-    const moneyPlus = isAllResultsSame ? winMultiplier * multiply : 1;
+    const moneyPlus = isAllResultsSame
+      ? winMultiplier * multiply
+      : 1 * multiply;
 
     setWinMoney(moneyPlus);
     setBiggestWin((prev) => Math.max(prev, moneyPlus));
   };
   const formatLargeNumber = (value, toFixedNr) => {
-    const suffixes = ["", "K", "M", "B", "T"]; 
-  
+    const suffixes = ["", "K", "M", "B", "T"];
+
     let suffixIndex = 0;
     let formattedValue = value;
-  
+
     while (formattedValue >= 1000 && suffixIndex < suffixes.length - 1) {
       formattedValue /= 1000;
       suffixIndex++;
     }
-  
+
     return `${formattedValue.toFixed(toFixedNr)}${suffixes[suffixIndex]}`;
-};
+  };
   const autoSpin = async (nr, cost, multiply) => {
     setButtonClicked(true);
     setMoney((prev) => prev - cost);
@@ -147,25 +158,31 @@ const Page2 = () => {
   }, [addMoney]);
   return (
     <div className="text-center p-6 bg-gray-100 rounded-lg shadow-md w-[360px] mx-auto">
-      <div className="text-2xl font-bold text-gray-800 mb-10 flex justify-between items-center gap-5">
-        {!isSpinning && winMoney ? (
-          <div
-            className={` z-50 ${
-              winMoney > 2 ? " text-[34px] text-lime-700" : ""
-            } absolute top-[70px] right-[170px] text-xl font-bold text-gray-800 `}
-          >
-            + {formatLargeNumber(winMoney, 0)} €
-          </div>
-        ) : (
-          ""
-        )}
+      <div className="text-2xl font-bold text-gray-800 flex justify-between items-center gap-5">
         <div className="text-sm">Losimas:{formatLargeNumber(spins, 0)}</div>{" "}
         <div>
-          <div className=" relatyve text-sm">Top win: {formatLargeNumber(biggestWin, 0)}</div>
-          <div className="text-xl font-bold text-gray-800 ">{formatLargeNumber(money, 2)} €</div>
+          <div className=" relatyve text-sm">
+            Top win: {formatLargeNumber(biggestWin, 0)}
+          </div>
+          <div className="text-xl font-bold text-gray-800 ">
+            {formatLargeNumber(money, 2)} €
+          </div>
         </div>
       </div>
 
+      <div
+        className={`mb-5 h-10 ${
+          winMoney > 2 ? " text-[34px] text-lime-700" : ""
+        }  text-xl font-bold text-gray-800 `}
+      >
+        {!isSpinning && winMoney ? (
+          `+ ${formatLargeNumber(winMoney, 0)} €`
+        ) : (
+          <div class="flex justify-center items-center">
+            <div class="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
+          </div>
+        )}
+      </div>
       <div
         className={`flex justify-center space-x-4 slot-machine ${
           isSpinning ? "spinning" : ""
@@ -209,7 +226,7 @@ const Page2 = () => {
         <div className="flex justify-center items-center gap-5">
           <div className="flex flex-wrap justify-center items-center gap-4">
             {spinOptions.map((option, index) => (
-              <div key={index}> {renderSpinOption(option)}</div>
+              <div key={index}> {renderSpinOption(option, index)}</div>
             ))}
           </div>
         </div>
@@ -219,4 +236,3 @@ const Page2 = () => {
 };
 
 export default Page2;
-
