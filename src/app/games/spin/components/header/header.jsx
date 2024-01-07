@@ -2,15 +2,15 @@ import Link from "next/link";
 
 const HeaderSpin = () => {
   return (
-    <div className="flex justify-between  bg-teal-500  w-[360px] mx-auto">
+    <div className="flex justify-around  bg-teal-600 rounded-t-lg myShadow w-[360px] mx-auto">
       <div className="p-1 hover:scale-110  cursor-pointer hover:text-gray-300 transition-all duration-500">
-        <Link href="info" >Info</Link>
+        <Link href="/games/spin/info" >Info</Link>
       </div>
       <div className="p-1 hover:scale-110  cursor-pointer hover:text-gray-300 transition-all duration-500">
-        Tobulinimai
+        <Link href="/games/spin/upgrade">Tobulinimai</Link>
       </div>
       <div className="p-1 hover:scale-110  cursor-pointer hover:text-gray-300 transition-all duration-500">
-      <Link href="pages" >Ridenk</Link>
+      <Link href="/games/spin" >Ridenk</Link>
       </div>
     </div>
   );

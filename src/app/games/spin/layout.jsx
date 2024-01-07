@@ -7,7 +7,7 @@ export default function RootLayoutSpin({ children }) {
   return (
     <>
       <HeaderSpin />
-      <div className="text-center p-6 pt-0 bg-gray-100 rounded-lg shadow-md w-[360px] mx-auto">
+      <div className="text-center p-6 pt-0 bg-gray-100 rounded-b-lg shadow-md w-[360px] mx-auto">
         {children}
       </div>
     </>

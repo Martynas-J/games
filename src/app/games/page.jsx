@@ -24,8 +24,8 @@ const Games = () => {
         description={
           "Pasitikrink savo Laimę!"
         }
-        href={"games/spin/pages"}
-        src="/spin.png"
+        href={"games/spin"}
+        src="/spin2.png"
       />
     
      

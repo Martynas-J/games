@@ -14,13 +14,13 @@ const Engine = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   const intervalColors = {
-    Normal: "bg-gradient-to-r from-blue-100 via-blue-300 to-blue-100 ",
-    Rare: "bg-gradient-to-r from-orange-100  via-orange-500  to-orange-100",
-    Blue: "bg-gradient-to-r from-blue-300  via-blue-700  to-blue-300 border border-gray-300",
-    Gold: "bg-gradient-to-r from-yellow-300  via-yellow-700  to-yellow-300 border border-blue-300",
+    Normal: "bg-gradient-to-r from-blue-300 to-blue-50 ",
+    Rare: "bg-gradient-to-r from-orange-500  to-orange-100",
+    Blue: "bg-gradient-to-r from-blue-700  to-blue-300 border border-gray-200",
+    Gold: "bg-gradient-to-r from-yellow-700  to-yellow-200 border border-blue-300",
     Platina:
-      "bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400  border border-yellow-300",
-    Nova: "bg-gradient-to-r from-purple-200 via-purple-500 to-purple-200",
+      "bg-gradient-to-r from-gray-300 to-gray-400  border border-yellow-200",
+    Nova: "bg-gradient-to-r from-purple-500 to-purple-100",
   };
 
   const spinOptions = [
@@ -47,9 +47,9 @@ const Engine = () => {
       ? "bg-gradient-to-r from-green-300 to-green-200  hover:from-green-300 hover:to-green-100"
       : "bg-gradient-to-r from-blue-500 to-blue-200  hover:from-blue-400 hover:to-blue-100";
 
-    const buttonClass = `w-14 h-14 ${gradientColors} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
+    const buttonClass = `myShadow w-14 h-14 ${gradientColors} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
 
-    const textStyle = `${canBay ? (canAutoSpin  ? "text-gray-800" : "cursor-not-allowed")
+    const textStyle = ` ${canBay ? (canAutoSpin  ? "" : "cursor-not-allowed text-gray-800")
      : "text-red-800 font-bold cursor-not-allowed"}`;
 
     return (
@@ -192,7 +192,7 @@ const Engine = () => {
         {intervals.map((value, index) => (
           <div key={index} className={`relative `}>
             <div
-              className={`border-teal-500 w-24 h-24 border-2  border-solid rounded-full 
+              className={` myShadowOut border-teal-500 w-24 h-24 border-2  border-solid rounded-full 
       ${value === 0 ? "bg-gradient-to-r from-white via-black to-white" : ""}
       ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${
                 intervalColors[value] || ""
