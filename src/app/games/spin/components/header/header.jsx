@@ -10,7 +10,7 @@ const HeaderSpin = () => {
         <Link href="/games/spin/upgrade">Tobulinimai</Link>
       </div>
       <div className="p-1 hover:scale-110  cursor-pointer hover:text-gray-300 transition-all duration-500">
-      <Link href="/games/spin" >Ridenk</Link>
+      <Link href="/games/spin" >Sukti</Link>
       </div>
     </div>
   );

@@ -113,12 +113,12 @@ const Quiz = () => {
 
   const saveResult = async () => {
     try {
-      const response = await updateResultData(
-        session.data.user.name,
-        score,
+      const response = await updateResultData({
+        playerName: session.data.user.name,
+        playerScore: score,
         level,
-        help
-      );
+        help,
+      },"saveResult");
       if (response.ok) {
         setResultSaved(true);
         mutate();

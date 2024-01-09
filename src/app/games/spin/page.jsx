@@ -1,7 +1,30 @@
 "use client";
+import { API_URL } from "@/app/config/config";
+import { updateResultData } from "@/components/updateResultData";
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import useSWR from "swr";
 
 const Engine = () => {
+  const session = useSession();
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data: resultants, mutate } = useSWR(
+    `${API_URL}/api/getSpinResults`,
+    fetcher
+  );
+  const { data: result, isLoading } = useSWR(
+    `${API_URL}/api/getSpinResults/${session.data?.user.name}`,
+    fetcher
+  );
+
+  useEffect(() => {
+    if (result) {
+      setMoney(result.spinMoney);
+      setBiggestWin(result.bestWin);
+      setSpins(result.spins);
+    }
+  }, [result]);
+
   const [results, setResults] = useState(["", "", ""]);
   const [isSpinning, setIsSpinning] = useState(false);
   const [intervals, setIntervals] = useState([0, 0, 0]);
@@ -49,8 +72,13 @@ const Engine = () => {
 
     const buttonClass = `myShadow w-14 h-14 ${gradientColors} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
 
-    const textStyle = ` ${canBay ? (canAutoSpin  ? "" : "cursor-not-allowed text-gray-800")
-     : "text-red-800 font-bold cursor-not-allowed"}`;
+    const textStyle = ` ${
+      canBay
+        ? canAutoSpin
+          ? ""
+          : "cursor-not-allowed text-gray-800"
+        : "text-red-800 font-bold cursor-not-allowed"
+    }`;
 
     return (
       <div
@@ -68,6 +96,27 @@ const Engine = () => {
         </div>
       </div>
     );
+  };
+
+  const saveResult = async () => {
+    try {
+      const response = await updateResultData(
+        {
+          playerName: session.data.user.name,
+          spinMoney: money,
+          spins: spins,
+          bestWin: biggestWin,
+        },
+        "saveSpinResults"
+      );
+      if (response.ok) {
+        mutate();
+      } else {
+        console.error("Failed to save the result.");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const spinSlotMachine = () => {
@@ -153,11 +202,23 @@ const Engine = () => {
     if (addMoney) {
       setAddMoney(false);
       setMoney((prevMoney) => prevMoney + winMoney);
+      session.data ? saveResult() : "";
     }
   }, [addMoney]);
-  return (
-    <div >
 
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-500 border-4 border-solid"></div>
+        <div className="ml-4 text-blue-500 text-2xl font-semibold">
+          Loading...
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
       <div className="text-2xl font-bold text-gray-800 flex justify-between items-center gap-5">
         <div className="text-sm">Losimas:{formatLargeNumber(spins, 0)}</div>{" "}
         <div>
@@ -213,7 +274,7 @@ const Engine = () => {
       </div>
       <div className=" relative">
         <button
-          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white font-bold py-3 px-4 rounded-full transform transition-transform hover:rotate-3 shadow-md ${
+          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${
             isSpinning ? "cursor-not-allowed" : ""
           }`}
           onClick={
