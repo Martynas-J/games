@@ -12,3 +12,5 @@ export const updateResultData = async (resultData, toRoute)  => {
   });
   return response;
 };
+
+

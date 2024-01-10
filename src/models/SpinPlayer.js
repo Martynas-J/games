@@ -20,11 +20,11 @@ const playerSchema = new Schema({
         type: Number, 
         required: true,
     },
-    UpgradeX: {
+    upgradeX: {
         type: Number, 
         required: true,
     },
-    UpgradeLucky: {
+    upgradeLucky: {
         type: Number, 
         required: true,
     },

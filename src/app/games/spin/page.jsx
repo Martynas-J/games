@@ -1,5 +1,6 @@
 "use client";
 import { API_URL } from "@/app/config/config";
+import { formatLargeNumber } from "@/components/Functions/simpleFunctions";
 import { updateResultData } from "@/components/updateResultData";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
@@ -22,17 +23,21 @@ const Engine = () => {
       setMoney(result.spinMoney);
       setBiggestWin(result.bestWin);
       setSpins(result.spins);
+      setUpgradeX(result.upgradeX == 0 ? 1 : result.upgradeX);
+      setUpgradeLucky(result.upgradeLucky/5);
     }
   }, [result]);
 
   const [results, setResults] = useState(["", "", ""]);
   const [isSpinning, setIsSpinning] = useState(false);
   const [intervals, setIntervals] = useState([0, 0, 0]);
-  const [money, setMoney] = useState(10000);
+  const [money, setMoney] = useState(100000);
   const [winMoney, setWinMoney] = useState(0);
   const [spins, setSpins] = useState(0);
   const [multiply, setMultiply] = useState(1);
   const [biggestWin, setBiggestWin] = useState(0);
+  const [upgradeX, setUpgradeX] = useState(1);
+  const [upgradeLucky, setUpgradeLucky] = useState(0);
   const [addMoney, setAddMoney] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
 
@@ -156,25 +161,13 @@ const Engine = () => {
       (value) => value === newResults[0]
     );
     const moneyPlus = isAllResultsSame
-      ? winMultiplier * multiply
-      : 1 * multiply;
+      ? winMultiplier * multiply * upgradeX
+      : 1 * multiply * upgradeX;
 
     setWinMoney(moneyPlus);
     setBiggestWin((prev) => Math.max(prev, moneyPlus));
   };
-  const formatLargeNumber = (value, toFixedNr) => {
-    const suffixes = ["", "K", "M", "B", "T"];
 
-    let suffixIndex = 0;
-    let formattedValue = value;
-
-    while (formattedValue >= 1000 && suffixIndex < suffixes.length - 1) {
-      formattedValue /= 1000;
-      suffixIndex++;
-    }
-
-    return `${formattedValue.toFixed(toFixedNr)}${suffixes[suffixIndex]}`;
-  };
   const autoSpin = async (nr, cost, multiply) => {
     setButtonClicked(true);
     setMoney((prev) => prev - cost);
