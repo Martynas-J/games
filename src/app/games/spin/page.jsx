@@ -147,13 +147,74 @@ const Engine = () => {
       if (value >= 72 && value < 77) return "Platina";
       if (value >= 58 && value < 60) return "Nova";
     } else if (upgradeLucky === 10) {
-      // if (value >= 1 && value < 38) return "Normal";
-      // if (value >= 80 && value <= 99) return "Rare";
-      // if (value >= 38 && value < 54) return "Blue";
-      // if (value >= 57 && value < 71) return "Gold";
-      // if (value >= 71 && value < 80) return "Platina";
-      if (value >= 1 && value < 99) return "Nova";
-    } else {
+      if (value >= 1 && value < 38) return "Normal";
+      if (value >= 80 && value <= 99) return "Rare";
+      if (value >= 38 && value < 54) return "Blue";
+      if (value >= 57 && value < 71) return "Gold";
+      if (value >= 71 && value < 80) return "Platina";
+      if (value >= 54 && value < 57) return "Nova";
+    } else if (upgradeLucky === 15) {
+      if (value >= 1 && value < 36) return "Normal";
+      if (value >= 81 && value <= 99) return "Rare";
+      if (value >= 36 && value < 50) return "Blue";
+      if (value >= 54 && value < 70) return "Gold";
+      if (value >= 70 && value < 81) return "Platina";
+      if (value >= 50 && value < 54) return "Nova";
+    } else if (upgradeLucky === 20) {
+      if (value >= 1 && value < 34) return "Normal";
+      if (value >= 78 && value <= 99) return "Rare";
+      if (value >= 34 && value < 46) return "Blue";
+      if (value >= 51 && value < 67) return "Gold";
+      if (value >= 67 && value < 78) return "Platina";
+      if (value >= 46 && value < 51) return "Nova";
+    } else if (upgradeLucky === 25) {
+      if (value >= 1 && value < 32) return "Normal";
+      if (value >= 79 && value <= 99) return "Rare";
+      if (value >= 32 && value < 44) return "Blue";
+      if (value >= 50 && value < 67) return "Gold";
+      if (value >= 67 && value < 79) return "Platina";
+      if (value >= 44 && value < 50) return "Nova";
+    } else if (upgradeLucky === 30) {
+      if (value >= 1 && value < 30) return "Normal";
+      if (value >= 80 && value <= 99) return "Rare";
+      if (value >= 30 && value < 42) return "Blue";
+      if (value >= 49 && value < 67) return "Gold";
+      if (value >= 67 && value < 80) return "Platina";
+      if (value >= 42 && value < 49) return "Nova";
+    } else if (upgradeLucky === 35) {
+      if (value >= 1 && value < 28) return "Normal";
+      if (value >= 78 && value <= 99) return "Rare";
+      if (value >= 28 && value < 40) return "Blue";
+      if (value >= 48 && value < 64) return "Gold";
+      if (value >= 64 && value < 78) return "Platina";
+      if (value >= 40 && value < 48) return "Nova";
+    } else if (upgradeLucky === 40) {
+      if (value >= 1 && value < 26) return "Normal";
+      if (value >= 78 && value <= 99) return "Rare";
+      if (value >= 26 && value < 38) return "Blue";
+      if (value >= 47 && value < 63) return "Gold";
+      if (value >= 63 && value < 78) return "Platina";
+      if (value >= 38 && value < 47) return "Nova";
+    } else if (upgradeLucky === 45) {
+      console.log("9")
+      if (value >= 1 && value < 24) return "Normal";
+      if (value >= 78 && value <= 99) return "Rare";
+      if (value >= 24 && value < 36) return "Blue";
+      if (value >= 46 && value < 62) return "Gold";
+      if (value >= 62 && value < 78) return "Platina";
+      if (value >= 36 && value < 46) return "Nova";
+    }
+    //  else if (upgradeLucky === 50) {
+    //   console.log("max")
+    //   if (value >= 1 && value < 22) return "Normal";
+    //   if (value >= 79 && value <= 99) return "Rare";
+    //   if (value >= 22 && value < 34) return "Blue";
+    //   if (value >= 45 && value < 61) return "Gold";
+    //   if (value >= 61 && value < 79) return "Platina";
+    //   if (value >= 34 && value < 45) return "Nova";
+    // }
+     else {
+      console.log("rest")
       if (value >= 1 && value < 40) return "Normal";
       if (value >= 77 && value <= 99) return "Rare";
       if (value >= 40 && value < 58) return "Blue";
