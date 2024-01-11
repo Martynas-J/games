@@ -9,7 +9,7 @@ export const patchRoute = async (model, request, id) => {
       .findOneAndUpdate({ playerName: id }, data, { new: true })
       .lean();
     if (!updatedData) {
-        const newItem = new model(data);
+      const newItem = new model(data);
         await newItem.save();
       }
     return new NextResponse(`${model.modelName} has been updated`, {

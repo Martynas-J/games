@@ -102,7 +102,6 @@ const Engine = () => {
       </div>
     );
   };
-
   const saveResult = async () => {
     try {
       const response = await updateResultData(

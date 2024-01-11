@@ -23,10 +23,12 @@ const playerSchema = new Schema({
     upgradeX: {
         type: Number, 
         required: true,
+        default: 0,
     },
     upgradeLucky: {
         type: Number, 
         required: true,
+        default: 0,
     },
 }, {timestamps: true})
 
