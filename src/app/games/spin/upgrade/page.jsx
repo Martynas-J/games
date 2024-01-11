@@ -119,7 +119,9 @@ const Upgrade = () => {
   ];
   let uXCost = uXArray[uX - 2];
   let uLuckyCost = uLuckyArray[uLucky / 5 - 1];
-
+if (session.status === "unauthenticated") {
+ return <div>Reikia prisijungti</div>
+}
   return (
     <div className="pt-2 flex flex-col gap-2">
       <h1 className="font-bold text-2xl">

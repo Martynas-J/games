@@ -24,7 +24,7 @@ const Engine = () => {
       setBiggestWin(result.bestWin);
       setSpins(result.spins);
       setUpgradeX(result.upgradeX == 0 ? 1 : result.upgradeX);
-      setUpgradeLucky(result.upgradeLucky/5);
+      setUpgradeLucky(result.upgradeLucky);
     }
   }, [result]);
 
@@ -140,12 +140,28 @@ const Engine = () => {
     }, 1000);
   };
   const checkIntervals = (value) => {
-    if (value >= 1 && value < 40) return "Normal";
-    if (value >= 77 && value <= 99) return "Rare";
-    if (value >= 40 && value < 58) return "Blue";
-    if (value >= 60 && value < 72) return "Gold";
-    if (value >= 72 && value < 77) return "Platina";
-    if (value >= 58 && value < 60) return "Nova";
+    if (upgradeLucky === 0) {
+      if (value >= 1 && value < 40) return "Normal";
+      if (value >= 77 && value <= 99) return "Rare";
+      if (value >= 40 && value < 58) return "Blue";
+      if (value >= 60 && value < 72) return "Gold";
+      if (value >= 72 && value < 77) return "Platina";
+      if (value >= 58 && value < 60) return "Nova";
+    } else if (upgradeLucky === 10) {
+      // if (value >= 1 && value < 38) return "Normal";
+      // if (value >= 80 && value <= 99) return "Rare";
+      // if (value >= 38 && value < 54) return "Blue";
+      // if (value >= 57 && value < 71) return "Gold";
+      // if (value >= 71 && value < 80) return "Platina";
+      if (value >= 1 && value < 99) return "Nova";
+    } else {
+      if (value >= 1 && value < 40) return "Normal";
+      if (value >= 77 && value <= 99) return "Rare";
+      if (value >= 40 && value < 58) return "Blue";
+      if (value >= 60 && value < 72) return "Gold";
+      if (value >= 72 && value < 77) return "Platina";
+      if (value >= 58 && value < 60) return "Nova";
+    }
   };
   const MoneyPlusHandler = (newResults) => {
     const winMappings = {
