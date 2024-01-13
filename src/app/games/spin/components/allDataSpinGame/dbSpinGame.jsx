@@ -1,8 +1,8 @@
 "use client"
-import Results from "@/components/results";
 import useSWR from "swr";
-import { API_URL } from "@/app/config/config";
 import Loading from "@/components/Loading/Loading";
+import Results from "@/components/results";
+import { API_URL } from "@/app/config/config";
 
 const DbSpinGame = () => {
     const fetcher = (...args) => fetch(...args).then((res) => res.json());
