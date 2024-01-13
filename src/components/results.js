@@ -1,16 +1,10 @@
 import { FaMedal } from "react-icons/fa";
 import { formatLargeNumber } from "./Functions/simpleFunctions";
+import Loading from "./Loading/Loading";
 
 const Results = ({ data, game }) => {
   if (!data) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-500 border-4 border-solid"></div>
-        <div className="ml-4 text-blue-500 text-2xl font-semibold">
-          Loading...
-        </div>
-      </div>
-    );
+    return <Loading />
   }
 
   game === "quiz" && data.sort((a, b) => b.playerScore - a.playerScore);
@@ -47,7 +41,7 @@ const Results = ({ data, game }) => {
                   <FaMedal />
                 </span>
               ) : null}
-              <p className="text-gray-700">
+              <div className="text-gray-700">
                 {new Date(result.createdAt).toLocaleString("lt-LT")} -{" "}
                 <span className="font-semibold">{result.playerName}</span> -{" "}
                 {game === "quiz" && (
@@ -72,7 +66,7 @@ const Results = ({ data, game }) => {
                     </div>
                   </>
                 )}
-              </p>
+              </div>
             </li>
           ))
         ) : (

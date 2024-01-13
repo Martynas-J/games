@@ -8,6 +8,7 @@ import { useSession } from "next-auth/react";
 import { updateResultData } from "@/components/updateResultData";
 import { API_URL } from "@/app/config/config";
 import { FaHeart } from "react-icons/fa";
+import Loading from "@/components/Loading/Loading";
 
 const Quiz = () => {
   const session = useSession();
@@ -135,7 +136,7 @@ const Quiz = () => {
   return (
     <div className="container mx-auto p-0 sm:p-4 flex flex-col lg:flex-row">
       {isLoading ? (
-        <span>Loading...</span>
+        <Loading />
       ) : (
         <>
           <div className="flex-grow text-center  p-2 pb-6 shadow-lg shadow-blue-900 rounded-md">
