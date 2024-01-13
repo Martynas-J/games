@@ -9,10 +9,6 @@ import useSWR from "swr";
 const Engine = () => {
   const session = useSession();
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data: resultants, mutate } = useSWR(
-    `${API_URL}/api/getSpinResults`,
-    fetcher
-  );
   const { data: result, isLoading } = useSWR(
     `${API_URL}/api/getSpinResults/${session.data?.user.name}`,
     fetcher
@@ -31,7 +27,7 @@ const Engine = () => {
   const [results, setResults] = useState(["", "", ""]);
   const [isSpinning, setIsSpinning] = useState(false);
   const [intervals, setIntervals] = useState([0, 0, 0]);
-  const [money, setMoney] = useState(100000);
+  const [money, setMoney] = useState(10);
   const [winMoney, setWinMoney] = useState(0);
   const [spins, setSpins] = useState(0);
   const [multiply, setMultiply] = useState(1);
@@ -196,7 +192,7 @@ const Engine = () => {
       if (value >= 63 && value < 78) return "Platina";
       if (value >= 38 && value < 47) return "Nova";
     } else if (upgradeLucky === 45) {
-      console.log("9")
+      console.log("9");
       if (value >= 1 && value < 24) return "Normal";
       if (value >= 78 && value <= 99) return "Rare";
       if (value >= 24 && value < 36) return "Blue";
@@ -213,8 +209,8 @@ const Engine = () => {
     //   if (value >= 61 && value < 79) return "Platina";
     //   if (value >= 34 && value < 45) return "Nova";
     // }
-     else {
-      console.log("rest")
+    else {
+      console.log("rest");
       if (value >= 1 && value < 40) return "Normal";
       if (value >= 77 && value <= 99) return "Rare";
       if (value >= 40 && value < 58) return "Blue";
@@ -289,7 +285,7 @@ const Engine = () => {
   return (
     <div>
       <div className="text-2xl font-bold text-gray-800 flex justify-between items-center gap-5">
-        <div className="text-sm">Losimas:{formatLargeNumber(spins, 0)}</div>{" "}
+        <div className="text-sm">Losimas:{formatLargeNumber(spins, spins > 1000 && 2)}</div>{" "}
         <div>
           <div className=" relatyve text-sm">
             Top win: {formatLargeNumber(biggestWin, 0)}

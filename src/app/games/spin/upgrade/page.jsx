@@ -86,13 +86,13 @@ const Upgrade = () => {
       </div>
     );
   };
-  let uX = result?.upgradeX == 0 ? 2:result?.upgradeX;
+  let uX = result?.upgradeX == 0 ? 2 : result?.upgradeX;
   let uLucky = result?.upgradeLucky == 0 ? 5 : result?.upgradeLucky;
   const uXArray = [
     1000000, 3000000, 10000000, 23000000, 50000000, 150000000, 350000000,
     900000000, 2000000000, 10,
   ];
-  const nr = 5
+  const nr = 5;
   const uLuckyArray = [
     1000000 * nr,
     3000000 * nr,
@@ -119,12 +119,13 @@ const Upgrade = () => {
   ];
   let uXCost = uXArray[uX - 2];
   let uLuckyCost = uLuckyArray[uLucky / 5 - 1];
-if ( !result?.spins) {
- return <div>Pasuk nors kartą ir sužinosi</div>
-}
-if (session.status === "unauthenticated") {
-  return <div>Reikia prisijungti</div>
- }
+  if (session.status === "unauthenticated") {
+    return <div>Reikia prisijungti</div>;
+  }
+  if (!result?.spins) {
+    return <div>Pasuk nors kartą ir sužinosi</div>;
+  }
+
   return (
     <div className="pt-2 flex flex-col gap-2">
       <h1 className="font-bold text-2xl">

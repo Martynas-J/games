@@ -1,11 +1,20 @@
 import { FaMedal } from "react-icons/fa";
+import { formatLargeNumber } from "./Functions/simpleFunctions";
 
-const Results = ({ data }) => {
+const Results = ({ data, game }) => {
   if (!data) {
-    return null;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-500 border-4 border-solid"></div>
+        <div className="ml-4 text-blue-500 text-2xl font-semibold">
+          Loading...
+        </div>
+      </div>
+    );
   }
 
-  data.sort((a, b) => b.playerScore - a.playerScore);
+  game === "quiz" && data.sort((a, b) => b.playerScore - a.playerScore);
+  game === "spin" && data.sort((a, b) => b.spinMoney - a.spinMoney);
 
   return (
     <div className="results-sidebar p-4 text-center">
@@ -41,13 +50,28 @@ const Results = ({ data }) => {
               <p className="text-gray-700">
                 {new Date(result.createdAt).toLocaleString("lt-LT")} -{" "}
                 <span className="font-semibold">{result.playerName}</span> -{" "}
-                <span className="text-blue-600">
-                  Taškai: {result.playerScore}
-                </span>
-                <span className="font-semibold text-gray-600">
-                  {" "}
-                  Lvl: {result.level}
-                </span>
+                {game === "quiz" && (
+                  <>
+                    <span className="text-blue-600">
+                      Taškai: {result.playerScore}
+                    </span>
+
+                    <span className="font-semibold text-gray-600">
+                      {" "}
+                      Lvl: {result.level}
+                    </span>
+                  </>
+                )}
+                {game === "spin" && (
+                  <>
+                    <span className="text-blue-600">
+                      Pinigai: {formatLargeNumber(result.spinMoney, 2)}€
+                    </span>
+                    <div>
+                      Sukimai: {formatLargeNumber(result.spins, result.spins > 1000 && 2)}
+                    </div>
+                  </>
+                )}
               </p>
             </li>
           ))

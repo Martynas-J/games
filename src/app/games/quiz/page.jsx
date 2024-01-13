@@ -295,7 +295,7 @@ const Quiz = () => {
               )
             )}
           </div>
-          <Results data={results} />
+          <Results data={results} game={"quiz"} />
         </>
       )}
     </div>
