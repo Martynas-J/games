@@ -1,4 +1,4 @@
-"use client";
+
 import Results from "@/components/results";
 import HeaderSpin from "./components/header/header";
 import useSWR from "swr";
