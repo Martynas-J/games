@@ -20,7 +20,7 @@ const Games = () => {
         src="/pimas-zaidimas.png"
       />
       <Card
-        title={"Sukam"}
+        title={"Sukam!"}
         description={
           "Pasitikrink savo Laimę!"
         }

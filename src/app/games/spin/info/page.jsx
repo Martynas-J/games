@@ -1,7 +1,9 @@
-import Image from "next/image";
+import Balls from "../components/balls/Balls";
+import { ballsData } from "../config/config";
 
 const Info = () => {
   const time = [1, 2, 3];
+
   return (
     <div>
       <div className="flex items-center">
@@ -19,54 +21,9 @@ const Info = () => {
       </div>
       <div className="flex justify-between items-start ">
         <div>
-          <div className="flex items-center mt-2">
-            <div
-              className={`flex justify-center items-center  myShadowOut  w-10 h-10 rounded-full mx-1 bg-gradient-to-r from-blue-300 to-blue-50`}
-            >
-              <span className="text-[10px]">Normal </span>
-            </div>
-            <span className=""> +1 Euras </span>
-          </div>
-          <div className="flex items-center mt-2">
-            <div
-              className={`flex justify-center items-center  myShadowOut  w-10 h-10 rounded-full mx-1 bg-gradient-to-r from-orange-500  to-orange-100`}
-            >
-              <span className="text-[10px]">Rare </span>
-            </div>
-            <span className=""> +50 Eurų </span>
-          </div>
-          <div className="flex items-center mt-2">
-            <div
-              className={`flex justify-center items-center  myShadowOut  w-10 h-10 rounded-full mx-1 bg-gradient-to-r from-blue-700  to-blue-300 border border-gray-200`}
-            >
-              <span className="text-[10px]">Blue </span>
-            </div>
-            <span className=""> +500 Eurų </span>
-          </div>
-          <div className="flex items-center mt-2">
-            <div
-              className={`flex justify-center items-center  myShadowOut  w-10 h-10 rounded-full mx-1 bg-gradient-to-r from-yellow-700  to-yellow-200 border border-blue-300`}
-            >
-              <span className="text-[10px]">Gold </span>
-            </div>
-            <span className=""> +1K Eurų </span>
-          </div>
-          <div className="flex items-center mt-2">
-            <div
-              className={`flex justify-center items-center  myShadowOut  w-10 h-10 rounded-full mx-1 bg-gradient-to-r from-gray-300 to-gray-400  border border-yellow-200`}
-            >
-              <span className="text-[10px]">Platina </span>
-            </div>
-            <span className=""> +50K Eurų </span>
-          </div>
-          <div className="flex items-center mt-2">
-            <div
-              className={`flex justify-center items-center  myShadowOut  w-10 h-10 rounded-full mx-1 bg-gradient-to-r from-purple-500 to-purple-100`}
-            >
-              <span className="text-[10px]">Nova </span>
-            </div>
-            <span className=""> +1M Eurų </span>
-          </div>
+          {ballsData.map((data, index) => (
+            <Balls key={index} {...data} texts={true} />
+          ))}
         </div>
         <div className="w-[170px]">
           <div className="flex justify-center items-center mt-2">
