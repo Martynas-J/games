@@ -4,7 +4,7 @@ import Loading from "./Loading/Loading";
 
 const Results = ({ data, game }) => {
   if (!data) {
-    return <Loading />
+    return <Loading />;
   }
 
   game === "quiz" && data.sort((a, b) => b.playerScore - a.playerScore);
@@ -62,7 +62,19 @@ const Results = ({ data, game }) => {
                       Pinigai: {formatLargeNumber(result.spinMoney, 2)}€
                     </span>
                     <div>
-                      Sukimai: {formatLargeNumber(result.spins, result.spins > 1000 && 2)}
+                      Sukimai:{" "}
+                      {formatLargeNumber(
+                        result.spins,
+                        result.spins > 1000 && 2
+                      )}
+                    </div>
+                    <div>
+                      Viso laiko laimėta:{" "}
+                      {formatLargeNumber(
+                        result.allTimeMoney,
+                        result.allTimeMoney > 1000 && 2
+                      )}
+                      €
                     </div>
                   </>
                 )}

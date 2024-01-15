@@ -5,6 +5,13 @@ import { updateResultData } from "@/components/updateResultData";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
+import {
+  checkIntervals,
+  intervalColors,
+  spinOptions,
+  winMappings,
+} from "./config/config";
+import Loading from "@/components/Loading/Loading";
 
 const Engine = () => {
   const session = useSession();
@@ -16,18 +23,51 @@ const Engine = () => {
 
   useEffect(() => {
     if (result) {
-      setMoney(result.spinMoney);
-      setBiggestWin(result.bestWin);
-      setSpins(result.spins);
-      setUpgradeX(result.upgradeX == 0 ? 1 : result.upgradeX);
-      setUpgradeLucky(result.upgradeLucky);
+      const {
+        spinMoney,
+        bestWin,
+        spins,
+        upgradeX,
+        upgradeLucky,
+        allTimeMoney,
+        ballsNormal,
+        ballsRare,
+        ballsBlue,
+        ballsGold,
+        ballsPlatina,
+        ballsNova,
+      } = result;
+
+      setMoney(spinMoney);
+      setBiggestWin(bestWin);
+      setSpins(spins);
+      setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
+      setUpgradeLucky(upgradeLucky);
+      setAllMoney(allTimeMoney);
+      setWinBalls({
+        Normal: ballsNormal,
+        Rare: ballsRare,
+        Blue: ballsBlue,
+        Gold: ballsGold,
+        Platina: ballsPlatina,
+        Nova: ballsNova,
+      });
     }
   }, [result]);
 
   const [results, setResults] = useState(["", "", ""]);
   const [isSpinning, setIsSpinning] = useState(false);
   const [intervals, setIntervals] = useState([0, 0, 0]);
+  const [winBalls, setWinBalls] = useState({
+    Normal: 0,
+    Rare: 0,
+    Blue: 0,
+    Gold: 0,
+    Platina: 0,
+    Nova: 0,
+  });
   const [money, setMoney] = useState(10);
+  const [allMoney, setAllMoney] = useState(0);
   const [winMoney, setWinMoney] = useState(0);
   const [spins, setSpins] = useState(0);
   const [multiply, setMultiply] = useState(1);
@@ -36,28 +76,6 @@ const Engine = () => {
   const [upgradeLucky, setUpgradeLucky] = useState(0);
   const [addMoney, setAddMoney] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
-
-  const intervalColors = {
-    Normal: "bg-gradient-to-r from-blue-300 to-blue-50 ",
-    Rare: "bg-gradient-to-r from-orange-500  to-orange-100",
-    Blue: "bg-gradient-to-r from-blue-700  to-blue-300 border border-gray-200",
-    Gold: "bg-gradient-to-r from-yellow-700  to-yellow-200 border border-blue-300",
-    Platina:
-      "bg-gradient-to-r from-gray-300 to-gray-400  border border-yellow-200",
-    Nova: "bg-gradient-to-r from-purple-500 to-purple-100",
-  };
-
-  const spinOptions = [
-    { amount: 5, cost: 6 },
-    { amount: 10, cost: 13 },
-    { amount: 50, cost: 70 },
-    { amount: 100, cost: 200 },
-
-    { amount: 5, cost: 500, multiplier: 5 },
-    { amount: 10, cost: 1500, multiplier: 10 },
-    { amount: 50, cost: 100000, multiplier: 50 },
-    { amount: 100, cost: 300000, multiplier: 100 },
-  ];
 
   const renderSpinOption = ({ amount, cost, multiplier = 1 }, index) => {
     const buttonType = index < 4;
@@ -93,11 +111,12 @@ const Engine = () => {
             {buttonType ? "+" : "X"}
             {amount}
           </span>
-          <div className="text-[8px]">-{formatLargeNumber(cost, 0)}€</div>
+          <div className="text-[8px]">-{formatLargeNumber(cost)}€</div>
         </div>
       </div>
     );
   };
+
   const saveResult = async () => {
     try {
       const response = await updateResultData(
@@ -106,11 +125,17 @@ const Engine = () => {
           spinMoney: money,
           spins: spins,
           bestWin: biggestWin,
+          allTimeMoney: allMoney,
+          ballsNormal: winBalls.Normal,
+          ballsRare: winBalls.Rare,
+          ballsBlue: winBalls.Blue,
+          ballsGold: winBalls.Gold,
+          ballsPlatina: winBalls.Platina,
+          ballsNova: winBalls.Nova,
         },
         "saveSpinResults"
       );
       if (response.ok) {
-        mutate();
       } else {
         console.error("Failed to save the result.");
       }
@@ -130,104 +155,14 @@ const Engine = () => {
     setTimeout(() => {
       setIsSpinning(false);
       setResults(newResults);
-      setIntervals(newResults.map(checkIntervals));
+      setIntervals(
+        newResults.map((value) => checkIntervals(value, upgradeLucky))
+      );
       MoneyPlusHandler(newResults);
     }, 1000);
   };
-  const checkIntervals = (value) => {
-    if (upgradeLucky === 0) {
-      if (value >= 1 && value < 40) return "Normal";
-      if (value >= 77 && value <= 99) return "Rare";
-      if (value >= 40 && value < 58) return "Blue";
-      if (value >= 60 && value < 72) return "Gold";
-      if (value >= 72 && value < 77) return "Platina";
-      if (value >= 58 && value < 60) return "Nova";
-    } else if (upgradeLucky === 10) {
-      if (value >= 1 && value < 38) return "Normal";
-      if (value >= 80 && value <= 99) return "Rare";
-      if (value >= 38 && value < 54) return "Blue";
-      if (value >= 57 && value < 71) return "Gold";
-      if (value >= 71 && value < 80) return "Platina";
-      if (value >= 54 && value < 57) return "Nova";
-    } else if (upgradeLucky === 15) {
-      if (value >= 1 && value < 36) return "Normal";
-      if (value >= 81 && value <= 99) return "Rare";
-      if (value >= 36 && value < 50) return "Blue";
-      if (value >= 54 && value < 70) return "Gold";
-      if (value >= 70 && value < 81) return "Platina";
-      if (value >= 50 && value < 54) return "Nova";
-    } else if (upgradeLucky === 20) {
-      if (value >= 1 && value < 34) return "Normal";
-      if (value >= 78 && value <= 99) return "Rare";
-      if (value >= 34 && value < 46) return "Blue";
-      if (value >= 51 && value < 67) return "Gold";
-      if (value >= 67 && value < 78) return "Platina";
-      if (value >= 46 && value < 51) return "Nova";
-    } else if (upgradeLucky === 25) {
-      if (value >= 1 && value < 32) return "Normal";
-      if (value >= 79 && value <= 99) return "Rare";
-      if (value >= 32 && value < 44) return "Blue";
-      if (value >= 50 && value < 67) return "Gold";
-      if (value >= 67 && value < 79) return "Platina";
-      if (value >= 44 && value < 50) return "Nova";
-    } else if (upgradeLucky === 30) {
-      if (value >= 1 && value < 30) return "Normal";
-      if (value >= 80 && value <= 99) return "Rare";
-      if (value >= 30 && value < 42) return "Blue";
-      if (value >= 49 && value < 67) return "Gold";
-      if (value >= 67 && value < 80) return "Platina";
-      if (value >= 42 && value < 49) return "Nova";
-    } else if (upgradeLucky === 35) {
-      if (value >= 1 && value < 28) return "Normal";
-      if (value >= 78 && value <= 99) return "Rare";
-      if (value >= 28 && value < 40) return "Blue";
-      if (value >= 48 && value < 64) return "Gold";
-      if (value >= 64 && value < 78) return "Platina";
-      if (value >= 40 && value < 48) return "Nova";
-    } else if (upgradeLucky === 40) {
-      if (value >= 1 && value < 26) return "Normal";
-      if (value >= 78 && value <= 99) return "Rare";
-      if (value >= 26 && value < 38) return "Blue";
-      if (value >= 47 && value < 63) return "Gold";
-      if (value >= 63 && value < 78) return "Platina";
-      if (value >= 38 && value < 47) return "Nova";
-    } else if (upgradeLucky === 45) {
-      console.log("9");
-      if (value >= 1 && value < 24) return "Normal";
-      if (value >= 78 && value <= 99) return "Rare";
-      if (value >= 24 && value < 36) return "Blue";
-      if (value >= 46 && value < 62) return "Gold";
-      if (value >= 62 && value < 78) return "Platina";
-      if (value >= 36 && value < 46) return "Nova";
-    }
-    //  else if (upgradeLucky === 50) {
-    //   console.log("max")
-    //   if (value >= 1 && value < 22) return "Normal";
-    //   if (value >= 79 && value <= 99) return "Rare";
-    //   if (value >= 22 && value < 34) return "Blue";
-    //   if (value >= 45 && value < 61) return "Gold";
-    //   if (value >= 61 && value < 79) return "Platina";
-    //   if (value >= 34 && value < 45) return "Nova";
-    // }
-    else {
-      console.log("rest");
-      if (value >= 1 && value < 40) return "Normal";
-      if (value >= 77 && value <= 99) return "Rare";
-      if (value >= 40 && value < 58) return "Blue";
-      if (value >= 60 && value < 72) return "Gold";
-      if (value >= 72 && value < 77) return "Platina";
-      if (value >= 58 && value < 60) return "Nova";
-    }
-  };
+
   const MoneyPlusHandler = (newResults) => {
-    const winMappings = {
-      Normal: 10,
-      Rare: 50,
-      Blue: 500,
-      Gold: 10000,
-      Platina: 50000,
-      Nova: 1000000,
-    };
     const winMultiplier = winMappings[newResults[0]] || 1;
     const isAllResultsSame = newResults.every(
       (value) => value === newResults[0]
@@ -235,11 +170,16 @@ const Engine = () => {
     const moneyPlus = isAllResultsSame
       ? winMultiplier * multiply * upgradeX
       : 1 * multiply * upgradeX;
+    isAllResultsSame &&
+      setWinBalls((prev) => ({
+        ...prev,
+        [newResults[0]]: prev[newResults[0]] + 1,
+      }));
 
+    // setWinBalls([newResults[0]]);
     setWinMoney(moneyPlus);
     setBiggestWin((prev) => Math.max(prev, moneyPlus));
   };
-
   const autoSpin = async (nr, cost, multiply) => {
     setButtonClicked(true);
     setMoney((prev) => prev - cost);
@@ -267,31 +207,36 @@ const Engine = () => {
     if (addMoney) {
       setAddMoney(false);
       setMoney((prevMoney) => prevMoney + winMoney);
+      setAllMoney((prev) => prev + winMoney);
       session.data ? saveResult() : "";
     }
   }, [addMoney]);
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-500 border-4 border-solid"></div>
-        <div className="ml-4 text-blue-500 text-2xl font-semibold">
-          Loading...
-        </div>
-      </div>
-    );
+    return <Loading />;
   }
-
   return (
     <div>
       <div className="text-2xl font-bold text-gray-800 flex justify-between items-center gap-5">
-        <div className="text-sm">Losimas:{formatLargeNumber(spins, spins > 1000 && 2)}</div>{" "}
-        <div>
-          <div className=" relatyve text-sm">
-            Top win: {formatLargeNumber(biggestWin, 0)}
+        <div className="text-sm">
+          <span className="text-gray-600">Losimas: </span>
+          <span className="text-blue-500">{formatLargeNumber(spins)}</span>
+        </div>{" "}
+        <div className="flex flex-col items-end">
+          <div className="text-sm text-gray-600">
+            Viso laiko laimėta:{" "}
+            <span className="text-green-500">
+              {formatLargeNumber(allMoney)}€
+            </span>
           </div>
-          <div className="text-xl font-bold text-gray-800 ">
-            {formatLargeNumber(money, 2)} €
+          <div className="text-sm text-gray-600">
+            Top win:{" "}
+            <span className="text-red-500">
+              {formatLargeNumber(biggestWin, 0)}€
+            </span>
+          </div>
+          <div className="text-2xl font-bold text-gray-800">
+            {formatLargeNumber(money)}€
           </div>
         </div>
       </div>
@@ -302,7 +247,7 @@ const Engine = () => {
         } text-xl font-bold text-gray-800`}
       >
         {!isSpinning && winMoney
-          ? `+ ${formatLargeNumber(winMoney, 0)} €`
+          ? `+ ${formatLargeNumber(winMoney)} €`
           : isSpinning && (
               <div className="flex justify-center items-center">
                 <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>

@@ -1,5 +1,4 @@
 const Balls = ({ color, title, text, texts }) => {
-    console.log(texts)
   return (
     <div className="flex items-center mt-2">
       <div

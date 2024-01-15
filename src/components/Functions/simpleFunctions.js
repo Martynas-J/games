@@ -9,5 +9,5 @@ export const formatLargeNumber = (value, toFixedNr) => {
       suffixIndex++;
     }
 
-    return `${formattedValue.toFixed(toFixedNr)}${suffixes[suffixIndex]}`;
+    return `${formattedValue.toFixed(value > 1000 ? 2 : 0)}${suffixes[suffixIndex]}`;
   };
