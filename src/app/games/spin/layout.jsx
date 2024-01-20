@@ -1,3 +1,4 @@
+import React from "react";
 import DbSpinGame from "./components/allDataSpinGame/dbSpinGame";
 import HeaderSpin from "./components/header/header";
 

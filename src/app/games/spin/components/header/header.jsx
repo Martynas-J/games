@@ -1,9 +1,16 @@
 "use client";
+import { FromDb } from "@/components/Functions/simpleFunctions";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState } from "react";
+import { uLuckyArray, uXArray } from "../../config/config";
 
 const HeaderSpin = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const session = useSession();
+  const { result, isLoading, mutate } = FromDb(
+    `getSpinResults/${session.data?.user.name}`
+  );
 
   const handleItemClick = (index) => {
     setActiveIndex(index);
@@ -16,13 +23,24 @@ const HeaderSpin = () => {
     { href: "/games/spin", label: "Sukti" },
   ];
   const NavigationItem = ({ href, label, index, activeIndex, onClick }) => {
+    let uX = result?.upgradeX == 0 ? 1 : result?.upgradeX;
+    let uLucky = result?.upgradeLucky == 0 ? 5 : result?.upgradeLucky;
+    const isUpgrade =
+      result?.spinMoney >= uXArray[uX - 1] ||
+      result?.spinMoney >= uLuckyArray[uLucky / 5 - 1];
+    console.log(isUpgrade);
     return (
       <div
-        className={`p-1 hover:scale-110 cursor-pointer hover:text-gray-300 transition-all duration-500 ${
-          index === activeIndex ? "text-red-800 hover:text-red-300 font-bold" : ""
+        className={` relative p-1 hover:scale-110 cursor-pointer hover:text-gray-300 transition-all duration-500 ${
+          index === activeIndex
+            ? "text-red-800 hover:text-red-300 font-bold"
+            : ""
         }`}
         onClick={() => onClick(index)}
       >
+        {label === "Tobulinimai" && isUpgrade && (
+          <span className=" absolute top-1 -right-1 w-2 h-2 bg-red-500 myShadowGreen rounded-full animate-pulse"></span>
+        )}
         <Link href={href}>{label}</Link>
       </div>
     );

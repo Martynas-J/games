@@ -1,10 +1,8 @@
 "use client";
-import { API_URL } from "@/app/config/config";
-import { formatLargeNumber } from "@/components/Functions/simpleFunctions";
+import { FromDb, formatLargeNumber } from "@/components/Functions/simpleFunctions";
 import { updateResultData } from "@/components/updateResultData";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
-import useSWR from "swr";
 import {
   checkIntervals,
   intervalColors,
@@ -15,12 +13,7 @@ import Loading from "@/components/Loading/Loading";
 
 const Engine = () => {
   const session = useSession();
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data: result, isLoading } = useSWR(
-    `${API_URL}/api/getSpinResults/${session.data?.user.name}`,
-    fetcher
-  );
-
+  const { result, isLoading} = FromDb(`getSpinResults/${session.data?.user.name}`)
   useEffect(() => {
     if (result) {
       const {
@@ -217,7 +210,7 @@ const Engine = () => {
   }
   return (
     <div>
-      <div className="text-2xl font-bold text-gray-800 flex justify-between items-center gap-5">
+      <div className="text-2xl font-bold text-gray-800 flex justify-between items-center">
         <div className="text-sm">
           <span className="text-gray-600">Losimas: </span>
           <span className="text-blue-500">{formatLargeNumber(spins)}</span>

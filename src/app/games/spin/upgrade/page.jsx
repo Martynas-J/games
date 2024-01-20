@@ -1,21 +1,14 @@
 "use client";
-import { API_URL } from "@/app/config/config";
-import { formatLargeNumber } from "@/components/Functions/simpleFunctions";
+import { FromDb, formatLargeNumber } from "@/components/Functions/simpleFunctions";
 import { updateResultData } from "@/components/updateResultData";
 import { useSession } from "next-auth/react";
-import useSWR from "swr";
+import { uLuckyArray, uXArray } from "../config/config";
 
 const Upgrade = () => {
   const session = useSession();
-  const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const {
-    data: result,
-    mutate,
-    isLoading,
-  } = useSWR(
-    `${API_URL}/api/getSpinResults/${session.data?.user.name}`,
-    fetcher
-  );
+
+  const { result, isLoading, mutate} = FromDb(`getSpinResults/${session.data?.user.name}`)
+  
   const money = result?.spinMoney;
   const saveResult = async (money, uX, uLucky) => {
     try {
@@ -86,25 +79,9 @@ const Upgrade = () => {
       </div>
     );
   };
-  let uX = result?.upgradeX == 0 ? 2 : result?.upgradeX;
+  let uX = result?.upgradeX == 0 ? 1 : result?.upgradeX;
   let uLucky = result?.upgradeLucky == 0 ? 5 : result?.upgradeLucky;
-  const uXArray = [
-    1000000, 3000000, 10000000, 23000000, 50000000, 150000000, 350000000,
-    900000000, 2000000000, 10,
-  ];
-  const nr = 5;
-  const uLuckyArray = [
-    1000000 * nr,
-    3000000 * nr,
-    10000000 * nr,
-    23000000 * nr,
-    50000000 * nr,
-    150000000 * nr,
-    350000000 * nr,
-    900000000 * nr,
-    2000000000 * nr,
-    10,
-  ];
+
   const RomNumber = [
     "I",
     "II",
@@ -117,7 +94,7 @@ const Upgrade = () => {
     "IX",
     "MAX",
   ];
-  let uXCost = uXArray[uX - 2];
+  let uXCost = uXArray[uX - 1];
   let uLuckyCost = uLuckyArray[uLucky / 5 - 1];
   if (session.status === "unauthenticated") {
     return <div>Reikia prisijungti</div>;
@@ -136,8 +113,8 @@ const Upgrade = () => {
         "bg-gradient-to-r from-lime-900 to-green-400",
         "border-lime-950",
         "Visam laikui",
-        `X${uX}`,
-        () => saveResult(money - uXCost, uX + 1),
+        `X${uX+1}`,
+        () => saveResult(money - uXCost, uX+1),
         RomNumber[uX - 2]
       )}
       {buttons(

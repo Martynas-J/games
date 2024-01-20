@@ -1,3 +1,8 @@
+"use client"
+
+import { API_URL } from "@/app/config/config";
+import useSWR from "swr";
+
 export const formatLargeNumber = (value, toFixedNr) => {
     const suffixes = ["", "K", "M", "B", "T"];
 
@@ -9,5 +14,14 @@ export const formatLargeNumber = (value, toFixedNr) => {
       suffixIndex++;
     }
 
-    return `${formattedValue.toFixed(value > 1000 ? 2 : 0)}${suffixes[suffixIndex]}`;
+    return `${parseFloat(formattedValue.toFixed(2))}${suffixes[suffixIndex]}`;
   };
+
+  export const FromDb = (link) => {
+    const fetcher = (...args) => fetch(...args).then((res) => res.json());
+    const { data: result, isLoading, mutate } = useSWR(
+      `${API_URL}/api/${link}`,
+      fetcher
+    );
+    return {result, isLoading, mutate};
+  }

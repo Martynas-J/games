@@ -63,6 +63,25 @@ export const winMappings = {
   Nova: 1000000,
 };
 
+export const uXArray = [
+  1000000, 3000000, 10000000, 23000000, 50000000, 150000000, 350000000,
+  900000000, 2000000000, 10,
+];
+
+const nr = 5;
+export const uLuckyArray = [
+  1000000 * nr,
+  3000000 * nr,
+  10000000 * nr,
+  23000000 * nr,
+  50000000 * nr,
+  150000000 * nr,
+  350000000 * nr,
+  900000000 * nr,
+  2000000000 * nr,
+  10,
+];
+
 export const checkIntervals = (value, upgradeLucky) => {
   if (upgradeLucky === 0) {
     if (value >= 1 && value < 40) return "Normal";
