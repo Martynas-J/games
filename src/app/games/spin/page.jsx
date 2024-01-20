@@ -217,7 +217,7 @@ const Engine = () => {
         setLvl((prev) => prev + 1);
         addPremiumMoney = premiumMoney[lvl];
         toast.success(
-          `Pakiekėte: ${lvl + 1} lygi ir gavote ${premiumMoney[lvl]}`
+          `Jūs pasiekėte: ${lvl + 1} lygi ir gavote ${premiumMoney[lvl]}`
         );
       }
 
