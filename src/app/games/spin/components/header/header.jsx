@@ -28,7 +28,6 @@ const HeaderSpin = () => {
     const isUpgrade =
       result?.spinMoney >= uXArray[uX - 1] ||
       result?.spinMoney >= uLuckyArray[uLucky / 5 - 1];
-    console.log(isUpgrade);
     return (
       <div
         className={` relative p-1 hover:scale-110 cursor-pointer hover:text-gray-300 transition-all duration-500 ${

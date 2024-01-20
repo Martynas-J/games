@@ -43,6 +43,13 @@ export const intervalColors = {
   Nova: "bg-gradient-to-r from-purple-500 to-purple-100",
 };
 
+export const premiumMoney = [
+  500, 1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000, 1,
+];
+export const premiumSpins = [
+  100, 500, 1000, 2000, 4000, 8000, 10000, 20000, 40000, 80000, 1000000000000000,
+];
+
 export const spinOptions = [
   { amount: 5, cost: 6 },
   { amount: 10, cost: 13 },

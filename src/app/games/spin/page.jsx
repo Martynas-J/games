@@ -1,19 +1,28 @@
 "use client";
-import { FromDb, formatLargeNumber } from "@/components/Functions/simpleFunctions";
+import {
+  FromDb,
+  formatLargeNumber,
+} from "@/components/Functions/simpleFunctions";
 import { updateResultData } from "@/components/updateResultData";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 import {
   checkIntervals,
   intervalColors,
+  premiumMoney,
+  premiumSpins,
   spinOptions,
   winMappings,
 } from "./config/config";
 import Loading from "@/components/Loading/Loading";
+import { toast } from "react-toastify";
 
 const Engine = () => {
   const session = useSession();
-  const { result, isLoading} = FromDb(`getSpinResults/${session.data?.user.name}`)
+  const { result, isLoading } = FromDb(
+    `getSpinResults/${session.data?.user.name}`
+  );
   useEffect(() => {
     if (result) {
       const {
@@ -29,6 +38,7 @@ const Engine = () => {
         ballsGold,
         ballsPlatina,
         ballsNova,
+        level,
       } = result;
 
       setMoney(spinMoney);
@@ -37,6 +47,7 @@ const Engine = () => {
       setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
       setUpgradeLucky(upgradeLucky);
       setAllMoney(allTimeMoney);
+      setLvl(level);
       setWinBalls({
         Normal: ballsNormal,
         Rare: ballsRare,
@@ -60,6 +71,7 @@ const Engine = () => {
     Nova: 0,
   });
   const [money, setMoney] = useState(10);
+  const [lvl, setLvl] = useState(0);
   const [allMoney, setAllMoney] = useState(0);
   const [winMoney, setWinMoney] = useState(0);
   const [spins, setSpins] = useState(0);
@@ -119,6 +131,7 @@ const Engine = () => {
           spins: spins,
           bestWin: biggestWin,
           allTimeMoney: allMoney,
+          level: lvl,
           ballsNormal: winBalls.Normal,
           ballsRare: winBalls.Rare,
           ballsBlue: winBalls.Blue,
@@ -169,7 +182,6 @@ const Engine = () => {
         [newResults[0]]: prev[newResults[0]] + 1,
       }));
 
-    // setWinBalls([newResults[0]]);
     setWinMoney(moneyPlus);
     setBiggestWin((prev) => Math.max(prev, moneyPlus));
   };
@@ -199,8 +211,18 @@ const Engine = () => {
   useEffect(() => {
     if (addMoney) {
       setAddMoney(false);
-      setMoney((prevMoney) => prevMoney + winMoney);
-      setAllMoney((prev) => prev + winMoney);
+      let addPremiumMoney = 0;
+
+      if (spins >= premiumSpins[lvl]) {
+        setLvl((prev) => prev + 1);
+        addPremiumMoney = premiumMoney[lvl];
+        toast.success(
+          `Pakiekėte: ${lvl + 1} lygi ir gavote ${premiumMoney[lvl]}`
+        );
+      }
+
+      setMoney((prevMoney) => prevMoney + winMoney + addPremiumMoney);
+      setAllMoney((prev) => prev + winMoney + addPremiumMoney);
       session.data ? saveResult() : "";
     }
   }, [addMoney]);
@@ -208,13 +230,35 @@ const Engine = () => {
   if (isLoading) {
     return <Loading />;
   }
+  const progress = parseFloat(
+    (
+      (lvl === 0 ? spins * 100 : (spins - premiumSpins[lvl - 1]) * 100) /
+      (lvl === 0
+        ? premiumSpins[lvl]
+        : premiumSpins[lvl] - premiumSpins[lvl - 1])
+    ).toFixed(2)
+  );
+
   return (
-    <div>
-      <div className="text-2xl font-bold text-gray-800 flex justify-between items-center">
-        <div className="text-sm">
-          <span className="text-gray-600">Losimas: </span>
-          <span className="text-blue-500">{formatLargeNumber(spins)}</span>
-        </div>{" "}
+    <div className="relative">
+      <div className="relative bg-slate-400 h-5 w-full rounded-lg overflow-hidden">
+        <span
+          className={`absolute left-0 rounded-2xl bg-gradient-to-r from-green-200 to-green-700 h-5  overflow-hidden`}
+          style={{ width: `${progress}%` }}
+        ></span>
+        <span className="absolute left-[47%] text-black z-50 ">{`${progress}%`}</span>
+      </div>
+      <div className="  text-2xl font-bold text-gray-800 flex justify-between items-center">
+        <div className="flex flex-col">
+          <div className="text-sm">
+            <span className="text-gray-600">Lygis: </span>
+            <span className="text-red-500">{lvl} lvl</span>
+          </div>
+          <div className="text-sm">
+            <span className="text-gray-600">Losimas: </span>
+            <span className="text-blue-500">{formatLargeNumber(spins)}</span>
+          </div>
+        </div>
         <div className="flex flex-col items-end">
           <div className="text-sm text-gray-600">
             Viso laiko laimėta:{" "}

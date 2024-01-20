@@ -66,6 +66,11 @@ const playerSchema = new Schema(
       required: true,
       default: 0,
     },
+    level: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
   },
   { timestamps: true }
 );
