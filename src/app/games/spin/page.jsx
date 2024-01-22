@@ -286,11 +286,13 @@ const Engine = () => {
       </div>
       <div className="flex">
         <div
-          className={` w-[90%]  mb-5 h-10 text-gray-800 ${
-            winMoney > 2 && winMoney < 10000 ? "text-[34px] text-lime-700" : ""
-          } ${
-            winMoney >= 10000 ? "text-[36px] text-red-600" : ""
-          }text-xl font-bold `}
+          className={`w-[90%] mb-5 h-10 text-gray-800 ${
+            winMoney <= 10
+              ? "text-black text-[36px]"
+              : winMoney <= 10000
+              ? "text-lime-700 text-[36px]"
+              : "text-red-600 text-[36px]"
+          } text-xl font-bold`}
         >
           {!isSpinning && winMoney
             ? `+ ${formatLargeNumber(winMoney)} €`
@@ -300,10 +302,9 @@ const Engine = () => {
                 </div>
               )}
         </div>
-        {/* <div>{leftSpins > 0 && leftSpins}</div> */}
-        
+
         {leftSpins > 0 && (
-          <div className="w-10 h-10 flex justify-center items-center myShadowOut  rounded-full ">
+          <div className="w-10 h-10  myShadowOut  rounded-full ">
             <CircularProgressbar
               value={leftSpins}
               maxValue={leftSpinsMax}
@@ -312,7 +313,7 @@ const Engine = () => {
               styles={buildStyles({
                 rotation: 1,
                 strokeLinecap: "but",
-                 textSize: "34px",
+                textSize: "34px",
                 pathTransitionDuration: 0.5,
                 marginTop: -100,
                 // Colors
