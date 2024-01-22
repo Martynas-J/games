@@ -286,11 +286,11 @@ const Engine = () => {
       </div>
       <div className="flex">
         <div
-          className={` w-[90%]  mb-5 h-10 ${
+          className={` w-[90%]  mb-5 h-10 text-gray-800 ${
             winMoney > 2 && winMoney < 10000 ? "text-[34px] text-lime-700" : ""
           } ${
             winMoney >= 10000 ? "text-[36px] text-red-600" : ""
-          }text-xl font-bold text-gray-800`}
+          }text-xl font-bold `}
         >
           {!isSpinning && winMoney
             ? `+ ${formatLargeNumber(winMoney)} €`
