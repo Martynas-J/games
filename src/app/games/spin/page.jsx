@@ -280,7 +280,7 @@ const Engine = () => {
 
       <div
         className={`mb-5 h-10 ${
-          winMoney > 2 ? "text-[34px] text-lime-700" : ""
+          (winMoney > 2 && winMoney < 10000 ) ? "text-[34px] text-lime-700" : ""
           
         } ${winMoney >= 10000 ? "text-[36px] text-red-600" : ""}text-xl font-bold text-gray-800`}
       >
