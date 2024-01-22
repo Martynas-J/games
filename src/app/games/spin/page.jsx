@@ -17,6 +17,7 @@ import {
 } from "./config/config";
 import Loading from "@/components/Loading/Loading";
 import { toast } from "react-toastify";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 
 const Engine = () => {
   const session = useSession();
@@ -71,6 +72,8 @@ const Engine = () => {
     Nova: 0,
   });
   const [money, setMoney] = useState(10);
+  const [leftSpins, setLeftSpins] = useState(0);
+  const [leftSpinsMax, setLeftSpinsMax] = useState(0);
   const [lvl, setLvl] = useState(0);
   const [allMoney, setAllMoney] = useState(0);
   const [winMoney, setWinMoney] = useState(0);
@@ -150,7 +153,7 @@ const Engine = () => {
     }
   };
 
-  const spinSlotMachine = () => {
+  const spinSlotMachine = (spinsLeft) => {
     setIsSpinning(true);
     setSpins((prev) => prev + 1);
     const newResults = Array.from(
@@ -165,6 +168,7 @@ const Engine = () => {
         newResults.map((value) => checkIntervals(value, upgradeLucky))
       );
       MoneyPlusHandler(newResults);
+      setLeftSpins(spinsLeft);
     }, 1000);
   };
 
@@ -190,10 +194,11 @@ const Engine = () => {
     setMoney((prev) => prev - cost);
     setMultiply(multiply);
     let spinsLeft = nr;
+    setLeftSpinsMax(nr);
     for (let i = 0; i < nr; i++) {
       spinsLeft--;
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      spinSlotMachine();
+      spinSlotMachine(spinsLeft);
     }
     setTimeout(() => {
       setMultiply(1);
@@ -217,7 +222,9 @@ const Engine = () => {
         setLvl((prev) => prev + 1);
         addPremiumMoney = premiumMoney[lvl];
         toast.success(
-          `Jūs pasiekėte: ${lvl + 1} lygi ir gavote ${formatLargeNumber(premiumMoney[lvl])}€`
+          `Jūs pasiekėte: ${lvl + 1} lygi ir gavote ${formatLargeNumber(
+            premiumMoney[lvl]
+          )}€`
         );
       }
 
@@ -277,22 +284,47 @@ const Engine = () => {
           </div>
         </div>
       </div>
-
-      <div
-        className={`mb-5 h-10 ${
-          (winMoney > 2 && winMoney < 10000 ) ? "text-[34px] text-lime-700" : ""
-          
-        } ${winMoney >= 10000 ? "text-[36px] text-red-600" : ""}text-xl font-bold text-gray-800`}
-      >
-        {!isSpinning && winMoney
-          ? `+ ${formatLargeNumber(winMoney)} €`
-          : isSpinning && (
-              <div className="flex justify-center items-center">
-                <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
-              </div>
-            )}
+      <div className="flex">
+        <div
+          className={` w-[90%]  mb-5 h-10 ${
+            winMoney > 2 && winMoney < 10000 ? "text-[34px] text-lime-700" : ""
+          } ${
+            winMoney >= 10000 ? "text-[36px] text-red-600" : ""
+          }text-xl font-bold text-gray-800`}
+        >
+          {!isSpinning && winMoney
+            ? `+ ${formatLargeNumber(winMoney)} €`
+            : isSpinning && (
+                <div className="flex justify-center items-center">
+                  <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
+                </div>
+              )}
+        </div>
+        {/* <div>{leftSpins > 0 && leftSpins}</div> */}
+        
+        {leftSpins > 0 && (
+          <div className="w-10 h-10 flex justify-center items-center myShadowOut  rounded-full ">
+            <CircularProgressbar
+              value={leftSpins}
+              maxValue={leftSpinsMax}
+              text={`${leftSpins}`}
+              strokeWidth="50"
+              styles={buildStyles({
+                rotation: 1,
+                strokeLinecap: "but",
+                 textSize: "34px",
+                pathTransitionDuration: 0.5,
+                marginTop: -100,
+                // Colors
+                pathColor: `rgba(0, 128, 128, ${leftSpinsMax / 10})`,
+                textColor: "#000000",
+                trailColor: "#e2dbdb",
+                backgroundColor: "#0057fa",
+              })}
+            />
+          </div>
+        )}
       </div>
-
       <div
         className={`flex justify-center space-x-4 slot-machine ${
           isSpinning ? "spinning" : ""
