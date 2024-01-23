@@ -270,7 +270,7 @@ const Engine = () => {
         </div>
         <div className="flex flex-col items-end">
           <div className="text-sm text-gray-600">
-            Viso laiko laimėta:{" "}
+            Iš viso laimėta:{" "}
             <span className="text-green-500">
               {formatLargeNumber(allMoney)}€
             </span>
