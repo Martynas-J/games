@@ -2,7 +2,7 @@ export const ballsData = [
   {
     color: "bg-gradient-to-r from-blue-300 to-blue-50",
     title: "Normal",
-    text: "+1 Euras",
+    text: "+10 Euras",
   },
   {
     color: "bg-gradient-to-r from-orange-500  to-orange-100",
