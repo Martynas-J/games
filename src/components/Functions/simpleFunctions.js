@@ -14,7 +14,7 @@ export const formatLargeNumber = (value, toFixedNr) => {
       suffixIndex++;
     }
 
-    return `${parseFloat(formattedValue.toFixed(2))}${suffixes[suffixIndex]}`;
+    return `${parseFloat(formattedValue.toFixed(3))}${suffixes[suffixIndex]}`;
   };
 
   export const FromDb = (link) => {
