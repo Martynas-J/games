@@ -56,7 +56,7 @@ export const spinOptions = [
   { amount: 50, cost: 70 },
   { amount: 100, cost: 200 },
 
-  { amount: 5, cost: 500, multiplier: 5 },
+  { amount: 5, cost: 100, multiplier: 5 },
   { amount: 10, cost: 1500, multiplier: 10 },
   { amount: 50, cost: 100000, multiplier: 50 },
   { amount: 100, cost: 300000, multiplier: 100 },
