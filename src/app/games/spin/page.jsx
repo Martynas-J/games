@@ -8,6 +8,7 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import {
+  ballsData,
   checkIntervals,
   intervalColors,
   premiumMoney,
@@ -18,6 +19,7 @@ import {
 import Loading from "@/components/Loading/Loading";
 import { toast } from "react-toastify";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import Balls from "./components/balls/Balls";
 
 const Engine = () => {
   const session = useSession();
@@ -71,6 +73,16 @@ const Engine = () => {
     Platina: 0,
     Nova: 0,
   });
+  const [winBallsNow, setWinBallsNow] = useState({
+    Normal: 0,
+    Rare: 0,
+    Blue: 0,
+    Gold: 0,
+    Platina: 0,
+    Nova: 0,
+  });
+  const [isToggled, setToggled] = useState(false);
+
   const [money, setMoney] = useState(10);
   const [momentMoney, setMomentMoney] = useState(0);
   const [leftSpins, setLeftSpins] = useState(0);
@@ -85,6 +97,10 @@ const Engine = () => {
   const [upgradeLucky, setUpgradeLucky] = useState(0);
   const [addMoney, setAddMoney] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
+
+  const handleToggle = () => {
+    setToggled(!isToggled);
+  };
 
   const renderSpinOption = ({ amount, cost, multiplier = 1 }, index) => {
     const buttonType = index < 4;
@@ -181,16 +197,23 @@ const Engine = () => {
     const moneyPlus = isAllResultsSame
       ? winMultiplier * multiply * upgradeX
       : 1 * multiply * upgradeX;
-    isAllResultsSame &&
+    if (isAllResultsSame) {
       setWinBalls((prev) => ({
         ...prev,
         [newResults[0]]: prev[newResults[0]] + 1,
       }));
 
+      setWinBallsNow((prev) => ({
+        ...prev,
+        [newResults[0]]: prev[newResults[0]] + 1,
+      }));
+    }
+
     setWinMoney(moneyPlus);
     setBiggestWin((prev) => Math.max(prev, moneyPlus));
   };
   const autoSpin = async (nr, cost, multiply) => {
+    setToggled(false)
     setMomentMoney(0);
     setButtonClicked(true);
     setMoney((prev) => prev - cost);
@@ -206,6 +229,7 @@ const Engine = () => {
     setTimeout(() => {
       setMultiply(1);
       setButtonClicked(false);
+      setToggled(true);
     }, 1500);
   };
 
@@ -249,7 +273,7 @@ const Engine = () => {
         : premiumSpins[lvl] - premiumSpins[lvl - 1])
     ).toFixed(2)
   );
-
+  const allValuesZero = Object.values(winBallsNow).every(value => value <= 0);
   return (
     <div className="relative">
       <div className="relative bg-slate-400 h-5 w-full rounded-lg overflow-hidden">
@@ -288,6 +312,35 @@ const Engine = () => {
           </div>
         </div>
       </div>
+
+      {isToggled && (
+        <div
+          onClick={handleToggle}
+          className="p-2 absolute top-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-100/95 to-blue-300 inline-block h-auto w-auto hover:cursor-pointer border-2 border-teal-700 rounded-xl z-10"
+        >
+          <div>
+            {allValuesZero ? "Nieko neišsukote :(":ballsData.map((data, index) => (
+              <div key={index}>
+                {Object.values(winBallsNow)[index] > 0 && (
+                  <div className="flex justify-start items-center gap-3">
+                    <Balls {...data} text={false} />
+                    <div>
+                      {formatLargeNumber(Object.values(winBallsNow)[index])}
+                    </div>
+                    <div className="text-green-950 font-bold">
+                      +
+                      {formatLargeNumber(Object.values(winBallsNow)[index]) *
+                        Object.values(winMappings)[index]}
+                      €
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="flex justify-between items-center mb-5">
         <div
           className={`text-lg w-10 h-10 ${
