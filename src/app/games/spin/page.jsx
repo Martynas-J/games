@@ -149,7 +149,7 @@ const Engine = () => {
     );
   };
   const resetAllResults = () => {
-    setWinBallsToday({
+    setWinBallsNow({
       Normal: 0,
       Rare: 0,
       Blue: 0,
@@ -351,13 +351,15 @@ const Engine = () => {
                       {Object.values(winBallsToday)[index]}
                     </div>
 
-                    (<div>+{Object.values(winBallsNow)[index]}</div>
-                    <div className="text-green-950 font-bold">
-                      <div className="text-green-950 font-normal">
-                        +
-                        {formatLargeNumber(Object.values(winBallsNow)[index]) *
-                          Object.values(winMappings)[index]}
-                        €
+                    (<div className="flex justify-start items-center gap-2">
+                      <div>+{Object.values(winBallsNow)[index]}</div>
+                      <div className="text-green-950 font-bold">
+                        <div className="text-green-950 font-normal">
+                          +
+                          {formatLargeNumber(Object.values(winBallsNow)[index]) *
+                            Object.values(winMappings)[index]}
+                          €
+                        </div>
                       </div>)
                       +
                       {formatLargeNumber(Object.values(winBallsToday)[index]) *
