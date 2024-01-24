@@ -351,16 +351,14 @@ const Engine = () => {
                       {Object.values(winBallsToday)[index]}
                     </div>
 
-                    (<div className="flex justify-start items-center gap-2">
-                      <div>+{Object.values(winBallsNow)[index]}</div>
-                      <div className="text-green-950 font-bold">
-                        <div className="text-green-950 font-normal">
-                          +
-                          {formatLargeNumber(Object.values(winBallsNow)[index]) *
-                            Object.values(winMappings)[index]}
-                          €
-                        </div>
-                      </div>)
+                    <div className="flex justify-start items-center gap-2">
+                      <div> ( +{Object.values(winBallsNow)[index]}</div>
+                      <div className="text-green-950 font-normal">
+                        +
+                        {formatLargeNumber(Object.values(winBallsNow)[index]) *
+                          Object.values(winMappings)[index]} € ) </div>
+                    </div>
+                    <div className="text-green-950 font-bold">
                       +
                       {formatLargeNumber(Object.values(winBallsToday)[index]) *
                         Object.values(winMappings)[index]}
