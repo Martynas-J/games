@@ -344,30 +344,28 @@ const Engine = () => {
             {allValuesZero ? "Nieko neišsukote :(" : ballsData.map((data, index) => (
               <div key={index}>
 
-                <div className="flex justify-start items-center gap-3">
-                  {Object.values(winBallsToday)[index] > 0 && (
-                    <>
-                      <Balls {...data} text={false} />
-                      <div className="text-green-950 font-bold">
-                        {Object.values(winBallsToday)[index]}
-                      </div>
-                    </>
-                  )}
-                  (<div>+{Object.values(winBallsNow)[index]}</div>
-                  <div className="text-green-950 font-bold">
-                  <div className="text-green-950 font-normal">
-                    +
-                    {formatLargeNumber(Object.values(winBallsNow)[index]) *
-                      Object.values(winMappings)[index]}
-                    €
-                  </div>)
-                    +
-                    {formatLargeNumber(Object.values(winBallsToday)[index]) *
-                      Object.values(winMappings)[index]}
-                    €
-                  </div>
-                </div>
+                {Object.values(winBallsToday)[index] > 0 && (
+                  <div className="flex justify-start items-center gap-3">
+                    <Balls {...data} text={false} />
+                    <div className="text-green-950 font-bold">
+                      {Object.values(winBallsToday)[index]}
+                    </div>
 
+                    (<div>+{Object.values(winBallsNow)[index]}</div>
+                    <div className="text-green-950 font-bold">
+                      <div className="text-green-950 font-normal">
+                        +
+                        {formatLargeNumber(Object.values(winBallsNow)[index]) *
+                          Object.values(winMappings)[index]}
+                        €
+                      </div>)
+                      +
+                      {formatLargeNumber(Object.values(winBallsToday)[index]) *
+                        Object.values(winMappings)[index]}
+                      €
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
