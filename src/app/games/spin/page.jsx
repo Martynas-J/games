@@ -301,7 +301,9 @@ const Engine = () => {
         : premiumSpins[lvl] - premiumSpins[lvl - 1])
     ).toFixed(2)
   );
-  const allValuesZero = Object.values(winBallsToday).every((value) => value.count <= 0);
+  const allValuesZero = Object.values(winBallsToday).every(
+    (value) => value.count <= 0
+  );
   return (
     <div className="relative">
       <div className="relative bg-slate-400 h-5 w-full rounded-lg overflow-hidden">
@@ -318,7 +320,7 @@ const Engine = () => {
             <span className="text-red-500">{lvl} lvl</span>
           </div>
           <div className="text-sm">
-            <span className="text-gray-600">Losimas: </span>
+            <span className="text-gray-600">Lošimas: </span>
             <span className="text-blue-500">{formatLargeNumber(spins)}</span>
           </div>
         </div>
@@ -347,43 +349,63 @@ const Engine = () => {
           className="p-2 absolute top-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-100/95 to-blue-300 inline-block h-auto w-auto hover:cursor-pointer border-2 border-teal-700 rounded-xl z-10"
         >
           <div>
-            {allValuesZero
-              ? "Nieko neišsukote :("
-              : ballsData.map((data, index) => (
+            {allValuesZero ? (
+              "Nieko neišsukote :("
+            ) : (
+              <div className="flex flex-col">
+                {ballsData.map((data, index) => (
                   <div key={index}>
                     {Object.values(winBallsToday)[index].count > 0 && (
-                      <div className="flex justify-start items-center gap-3">
+                      <div className="flex  items-center gap-3">
                         <Balls {...data} text={false} />
-
-                        <div className="text-green-950 font-bold">
-                          {Object.values(winBallsToday)[index].count}
-                        </div>
-
-                        {Object.values(winBallsNow)[index].count > 0 && (
-                          <div className=" flex gap-1">
-                            <div>(</div>
-                            <div>{Object.values(winBallsNow)[index].count}</div>
-                            <div className="">
-                              +
-                              {formatLargeNumber(
-                                Object.values(winBallsNow)[index].money)}
-                              €
-                            </div>
-                            <div>)</div>
+                        <div className=" w-[80%] flex justify-between items-center gap-3">
+                          <div className="text-green-950 font-bold">
+                            {Object.values(winBallsToday)[index].count}
                           </div>
-                        )}
 
-                        <div className="text-green-950 font-bold">
-                          +
-                          {formatLargeNumber(
-                            Object.values(winBallsToday)[index].money
+                          {Object.values(winBallsNow)[index].count > 0 && (
+                            <div>
+                              <div className=" flex gap-1">
+                                <div>(</div>
+                                <div>
+                                  {Object.values(winBallsNow)[index].count}
+                                </div>
+                                <div className="">
+                                  +
+                                  {formatLargeNumber(
+                                    Object.values(winBallsNow)[index].money
+                                  )}
+                                  €
+                                </div>
+                                <div>)</div>
+                              </div>
+                            </div>
                           )}
-                          €
+
+                          <div className="text-gray-700 font-bold">
+                            +
+                            {formatLargeNumber(
+                              Object.values(winBallsToday)[index].money
+                            )}
+                            €
+                          </div>
                         </div>
                       </div>
                     )}
                   </div>
                 ))}
+                <div className="w-full border-b-2 border-b-teal-700 pt-2"></div>
+                <div className="flex justify-end">
+                  <div className="text-gray-950 font-bold">
+                    {formatLargeNumber(Object.values(winBallsToday).reduce(
+                      (accumulator, currentValue) =>
+                        accumulator + currentValue.money,
+                      0
+                    ))}€
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
