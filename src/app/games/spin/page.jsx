@@ -352,7 +352,7 @@ const Engine = () => {
                       {Object.values(winBallsToday)[index]}
                     </div>
 
-                    <div className=" flex items-center gap-2">
+                    <div className=" ">
                       ( +{Object.values(winBallsNow)[index]}
                       +
                       {formatLargeNumber(Object.values(winBallsNow)[index] * Object.values(winMappings)[index])}€ )
