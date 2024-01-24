@@ -355,13 +355,13 @@ const Engine = () => {
                       <div> ( +{Object.values(winBallsNow)[index]}</div>
                       <div className="text-green-950 font-normal">
                         +
-                        {formatLargeNumber(Object.values(winBallsNow)[index]) *
-                          Object.values(winMappings)[index]} € ) </div>
+                        {formatLargeNumber(Object.values(winBallsNow)[index] * Object.values(winMappings)[index])}
+                        € ) </div>
                     </div>
                     <div className="text-green-950 font-bold">
                       +
-                      {formatLargeNumber(Object.values(winBallsToday)[index]) *
-                        Object.values(winMappings)[index]}
+                      {formatLargeNumber(Object.values(winBallsToday)[index] *
+                        Object.values(winMappings)[index])}
                       €
                     </div>
                   </div>
