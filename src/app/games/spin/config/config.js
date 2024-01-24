@@ -18,7 +18,7 @@ export const ballsData = [
     color:
       "bg-gradient-to-r from-yellow-700  to-yellow-200 border border-blue-300",
     title: "Gold",
-    text: "+1K Eurų",
+    text: "+10K Eurų",
   },
   {
     color:

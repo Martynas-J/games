@@ -74,20 +74,20 @@ const Engine = () => {
     Nova: 0,
   });
   const [winBallsNow, setWinBallsNow] = useState({
-    Normal: 0,
-    Rare: 0,
-    Blue: 0,
-    Gold: 0,
-    Platina: 0,
-    Nova: 0,
+    Normal: { count: 0, money: 0 },
+    Rare: { count: 0, money: 0 },
+    Blue: { count: 0, money: 0 },
+    Gold: { count: 0, money: 0 },
+    Platina: { count: 0, money: 0 },
+    Nova: { count: 0, money: 0 },
   });
   const [winBallsToday, setWinBallsToday] = useState({
-    Normal: 0,
-    Rare: 0,
-    Blue: 0,
-    Gold: 0,
-    Platina: 0,
-    Nova: 0,
+    Normal: { count: 0, money: 0 },
+    Rare: { count: 0, money: 0 },
+    Blue: { count: 0, money: 0 },
+    Gold: { count: 0, money: 0 },
+    Platina: { count: 0, money: 0 },
+    Nova: { count: 0, money: 0 },
   });
   const [isToggled, setToggled] = useState(false);
 
@@ -124,12 +124,13 @@ const Engine = () => {
 
     const buttonClass = `myShadow w-14 h-14 ${gradientColors} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
 
-    const textStyle = ` ${canBay
-      ? canAutoSpin
-        ? ""
-        : "cursor-not-allowed text-gray-800"
-      : "text-red-800 font-bold cursor-not-allowed"
-      }`;
+    const textStyle = ` ${
+      canBay
+        ? canAutoSpin
+          ? ""
+          : "cursor-not-allowed text-gray-800"
+        : "text-red-800 font-bold cursor-not-allowed"
+    }`;
 
     return (
       <div
@@ -150,12 +151,12 @@ const Engine = () => {
   };
   const resetAllResults = () => {
     setWinBallsNow({
-      Normal: 0,
-      Rare: 0,
-      Blue: 0,
-      Gold: 0,
-      Platina: 0,
-      Nova: 0,
+      Normal: { count: 0, money: 0 },
+      Rare: { count: 0, money: 0 },
+      Blue: { count: 0, money: 0 },
+      Gold: { count: 0, money: 0 },
+      Platina: { count: 0, money: 0 },
+      Nova: { count: 0, money: 0 },
     });
   };
   const saveResult = async () => {
@@ -221,21 +222,26 @@ const Engine = () => {
 
       setWinBallsNow((prev) => ({
         ...prev,
-        [newResults[0]]: prev[newResults[0]] + 1,
+        [newResults[0]]: {
+          count: prev[newResults[0]].count + 1,
+          money: prev[newResults[0]].money + moneyPlus,
+        },
       }));
       setWinBallsToday((prev) => ({
         ...prev,
-        [newResults[0]]: prev[newResults[0]] + 1,
+        [newResults[0]]: {
+          count: prev[newResults[0]].count + 1,
+          money: prev[newResults[0]].money + moneyPlus,
+        },
       }));
-
     }
 
     setWinMoney(moneyPlus);
     setBiggestWin((prev) => Math.max(prev, moneyPlus));
   };
   const autoSpin = async (nr, cost, multiply) => {
-    resetAllResults()
-    setToggled(false)
+    resetAllResults();
+    setToggled(false);
     setMomentMoney(0);
     setButtonClicked(true);
     setMoney((prev) => prev - cost);
@@ -295,7 +301,7 @@ const Engine = () => {
         : premiumSpins[lvl] - premiumSpins[lvl - 1])
     ).toFixed(2)
   );
-  const allValuesZero = Object.values(winBallsNow).every(value => value <= 0);
+  const allValuesZero = Object.values(winBallsToday).every((value) => value.count <= 0);
   return (
     <div className="relative">
       <div className="relative bg-slate-400 h-5 w-full rounded-lg overflow-hidden">
@@ -341,65 +347,75 @@ const Engine = () => {
           className="p-2 absolute top-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-100/95 to-blue-300 inline-block h-auto w-auto hover:cursor-pointer border-2 border-teal-700 rounded-xl z-10"
         >
           <div>
-            {allValuesZero ? "Nieko neišsukote :(" : ballsData.map((data, index) => (
-              <div key={index}>
+            {allValuesZero
+              ? "Nieko neišsukote :("
+              : ballsData.map((data, index) => (
+                  <div key={index}>
+                    {Object.values(winBallsToday)[index].count > 0 && (
+                      <div className="flex justify-start items-center gap-3">
+                        <Balls {...data} text={false} />
 
-                {Object.values(winBallsToday)[index] > 0 && (
-                  <div className="flex justify-start items-center gap-3">
-                    <Balls {...data} text={false} />
+                        <div className="text-green-950 font-bold">
+                          {Object.values(winBallsToday)[index].count}
+                        </div>
 
-                    <div className="text-green-950 font-bold">
-                      {Object.values(winBallsToday)[index]}
-                    </div>
+                        {Object.values(winBallsNow)[index].count > 0 && (
+                          <div className=" flex gap-1">
+                            <div>(</div>
+                            <div>{Object.values(winBallsNow)[index].count}</div>
+                            <div className="">
+                              +
+                              {formatLargeNumber(
+                                Object.values(winBallsNow)[index].money)}
+                              €
+                            </div>
+                            <div>)</div>
+                          </div>
+                        )}
 
-                    {Object.values(winBallsNow)[index] > 0 && <div className=" flex gap-1">
-                      <div>(</div>
-                      <div>{Object.values(winBallsNow)[index]}</div>
-                      <div className="">+
-                        {formatLargeNumber(Object.values(winBallsNow)[index] * Object.values(winMappings)[index] * upgradeX)}€</div>
-                      <div>)</div>
-                    </div>}
-
-                    <div className="text-green-950 font-bold">
-                      +
-                      {formatLargeNumber(Object.values(winBallsToday)[index] *
-                        Object.values(winMappings)[index]* upgradeX)}
-                      €
-                    </div>
+                        <div className="text-green-950 font-bold">
+                          +
+                          {formatLargeNumber(
+                            Object.values(winBallsToday)[index].money
+                          )}
+                          €
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            ))}
+                ))}
           </div>
         </div>
       )}
 
       <div className="flex justify-between items-center mb-5">
         <div
-          className={`text-lg w-10 h-10 ${momentMoney >= 10000
-            ? "text-xl font-bold text-red-700"
-            : momentMoney >= 1000
+          className={`text-lg w-10 h-10 ${
+            momentMoney >= 10000
+              ? "text-xl font-bold text-red-700"
+              : momentMoney >= 1000
               ? "text-xl font-semibold text-green-500"
               : ""
-            }`}
+          }`}
         >
           {momentMoney > 0 && "+" + formatLargeNumber(momentMoney) + "€"}
         </div>
         <div
-          className={`  h-10 text-gray-800 ${winMoney <= 10
-            ? "text-black text-[36px]"
-            : winMoney <= 10000
+          className={`  h-10 text-gray-800 ${
+            winMoney <= 10
+              ? "text-black text-[36px]"
+              : winMoney <= 10000
               ? "text-lime-700 text-[36px]"
               : "text-red-600 text-[46px]"
-            } text-xl font-bold`}
+          } text-xl font-bold`}
         >
           {!isSpinning && winMoney
             ? `+ ${formatLargeNumber(winMoney)} €`
             : isSpinning && (
-              <div className="flex justify-center items-center">
-                <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
-              </div>
-            )}
+                <div className="flex justify-center items-center">
+                  <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
+                </div>
+              )}
         </div>
 
         <div className="w-10 h-10  myShadowOut  rounded-full ">
@@ -426,23 +442,26 @@ const Engine = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center space-x-4 slot-machine ${isSpinning ? "spinning" : ""
-          }`}
+        className={`flex justify-center space-x-4 slot-machine ${
+          isSpinning ? "spinning" : ""
+        }`}
       >
         {intervals.map((value, index) => (
           <div key={index} className={`relative `}>
             <div
               className={` myShadowOut border-teal-500 w-24 h-24 border-2  border-solid rounded-full 
       ${value === 0 ? "bg-gradient-to-r from-black to-white" : ""}
-      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${intervalColors[value] || ""
-                }
+      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${
+                intervalColors[value] || ""
+              }
       transition-opacity
       `}
               style={{ animationDelay: `${index * 0.3}s` }}
             ></div>
             <div
-              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${isSpinning ? "opacity-0" : "text-black"
-                }`}
+              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${
+                isSpinning ? "opacity-0" : "text-black"
+              }`}
             >
               <span className=" text-gray-800">{value}</span>
             </div>
@@ -451,8 +470,9 @@ const Engine = () => {
       </div>
       <div className=" relative">
         <button
-          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${isSpinning ? "cursor-not-allowed" : ""
-            }`}
+          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${
+            isSpinning ? "cursor-not-allowed" : ""
+          }`}
           onClick={
             isSpinning || multiply > 1 || buttonClicked ? null : spinSlotMachine
           }
