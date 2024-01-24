@@ -352,16 +352,18 @@ const Engine = () => {
                       {Object.values(winBallsToday)[index]}
                     </div>
 
-                    <div className=" ">
-                      ( +{Object.values(winBallsNow)[index]}
-                      +
-                      {formatLargeNumber(Object.values(winBallsNow)[index] * Object.values(winMappings)[index])}€ )
-                    </div>
+                    {Object.values(winBallsNow)[index] > 0 && <div className=" flex gap-1">
+                      <div>(</div>
+                      <div>{Object.values(winBallsNow)[index]}</div>
+                      <div className="">+
+                        {formatLargeNumber(Object.values(winBallsNow)[index] * Object.values(winMappings)[index] * upgradeX === 0 ? 1 : upgradeX)}€</div>
+                      <div>)</div>
+                    </div>}
 
                     <div className="text-green-950 font-bold">
                       +
                       {formatLargeNumber(Object.values(winBallsToday)[index] *
-                        Object.values(winMappings)[index])}
+                        Object.values(winMappings)[index]* upgradeX === 0 ? 1 : upgradeX)}
                       €
                     </div>
                   </div>
