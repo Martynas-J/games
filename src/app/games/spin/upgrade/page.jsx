@@ -115,7 +115,7 @@ const Upgrade = () => {
         "Visam laikui",
         `X${uX+1}`,
         () => saveResult(money - uXCost, uX+1),
-        RomNumber[uX - 2]
+        RomNumber[uX - 1]
       )}
       {buttons(
         uLuckyCost,
