@@ -90,11 +90,11 @@ const Engine = () => {
     Nova: { count: 0, money: 0 },
   });
   const [isToggled, setToggled] = useState(false);
-
   const [money, setMoney] = useState(10);
   const [momentMoney, setMomentMoney] = useState(0);
   const [leftSpins, setLeftSpins] = useState(0);
   const [leftSpinsMax, setLeftSpinsMax] = useState(0);
+  const [spinsToday, setSpinsToday] = useState(0);
   const [lvl, setLvl] = useState(0);
   const [allMoney, setAllMoney] = useState(0);
   const [winMoney, setWinMoney] = useState(0);
@@ -105,6 +105,10 @@ const Engine = () => {
   const [upgradeLucky, setUpgradeLucky] = useState(0);
   const [addMoney, setAddMoney] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
+//1500 1100
+  const spinsTime = 1500
+  const spinsAnimationTime = 1100
+
 
   const handleToggle = () => {
     setToggled(!isToggled);
@@ -124,13 +128,12 @@ const Engine = () => {
 
     const buttonClass = `myShadow w-14 h-14 ${gradientColors} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
 
-    const textStyle = ` ${
-      canBay
-        ? canAutoSpin
-          ? ""
-          : "cursor-not-allowed text-gray-800"
-        : "text-red-800 font-bold cursor-not-allowed"
-    }`;
+    const textStyle = ` ${canBay
+      ? canAutoSpin
+        ? ""
+        : "cursor-not-allowed text-gray-800"
+      : "text-red-800 font-bold cursor-not-allowed"
+      }`;
 
     return (
       <div
@@ -190,6 +193,7 @@ const Engine = () => {
   const spinSlotMachine = (spinsLeft) => {
     setIsSpinning(true);
     setSpins((prev) => prev + 1);
+    setSpinsToday(prev => prev + 1)
     const newResults = Array.from(
       { length: 3 },
       () => Math.floor(Math.random() * 99) + 1
@@ -203,7 +207,7 @@ const Engine = () => {
       );
       MoneyPlusHandler(newResults);
       setLeftSpins(spinsLeft);
-    }, 1000);
+    }, spinsAnimationTime);
   };
 
   const MoneyPlusHandler = (newResults) => {
@@ -250,7 +254,7 @@ const Engine = () => {
     setLeftSpinsMax(nr);
     for (let i = 0; i < nr; i++) {
       spinsLeft--;
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      await new Promise((resolve) => setTimeout(resolve, spinsTime));
       spinSlotMachine(spinsLeft);
     }
 
@@ -258,7 +262,7 @@ const Engine = () => {
       setMultiply(1);
       setButtonClicked(false);
       setToggled(true);
-    }, 1500);
+    }, spinsTime);
   };
 
   useEffect(() => {
@@ -395,7 +399,8 @@ const Engine = () => {
                   </div>
                 ))}
                 <div className="w-full border-b-2 border-b-teal-700 pt-2"></div>
-                <div className="flex justify-end">
+                <div className="flex justify-between gap-4">
+                  <div className="flex gap-1" >Sukimai: <span className="text-gray-700 font-semibold">{formatLargeNumber(spinsToday)}</span></div>
                   <div className="text-gray-950 font-bold">
                     {formatLargeNumber(Object.values(winBallsToday).reduce(
                       (accumulator, currentValue) =>
@@ -412,32 +417,30 @@ const Engine = () => {
 
       <div className="flex justify-between items-center mb-5">
         <div
-          className={`text-lg w-10 h-10 ${
-            momentMoney >= 10000
-              ? "text-xl font-bold text-red-700"
-              : momentMoney >= 1000
+          className={`text-lg w-10 h-10 ${momentMoney >= 10000
+            ? "text-xl font-bold text-red-700"
+            : momentMoney >= 1000
               ? "text-xl font-semibold text-green-500"
               : ""
-          }`}
+            }`}
         >
           {momentMoney > 0 && "+" + formatLargeNumber(momentMoney) + "€"}
         </div>
         <div
-          className={`  h-10 text-gray-800 ${
-            winMoney <= 10
-              ? "text-black text-[36px]"
-              : winMoney <= 10000
+          className={`  h-10 text-gray-800 ${winMoney <= 10
+            ? "text-black text-[36px]"
+            : winMoney <= 10000
               ? "text-lime-700 text-[36px]"
               : "text-red-600 text-[46px]"
-          } text-xl font-bold`}
+            } text-xl font-bold`}
         >
           {!isSpinning && winMoney
             ? `+ ${formatLargeNumber(winMoney)} €`
             : isSpinning && (
-                <div className="flex justify-center items-center">
-                  <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
-                </div>
-              )}
+              <div className="flex justify-center items-center">
+                <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
+              </div>
+            )}
         </div>
 
         <div className="w-10 h-10  myShadowOut  rounded-full ">
@@ -464,26 +467,23 @@ const Engine = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center space-x-4 slot-machine ${
-          isSpinning ? "spinning" : ""
-        }`}
+        className={`flex justify-center space-x-4 slot-machine ${isSpinning ? "spinning" : ""
+          }`}
       >
         {intervals.map((value, index) => (
           <div key={index} className={`relative `}>
             <div
               className={` myShadowOut border-teal-500 w-24 h-24 border-2  border-solid rounded-full 
       ${value === 0 ? "bg-gradient-to-r from-black to-white" : ""}
-      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${
-                intervalColors[value] || ""
-              }
+      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${intervalColors[value] || ""
+                }
       transition-opacity
       `}
               style={{ animationDelay: `${index * 0.3}s` }}
             ></div>
             <div
-              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${
-                isSpinning ? "opacity-0" : "text-black"
-              }`}
+              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${isSpinning ? "opacity-0" : "text-black"
+                }`}
             >
               <span className=" text-gray-800">{value}</span>
             </div>
@@ -492,9 +492,8 @@ const Engine = () => {
       </div>
       <div className=" relative">
         <button
-          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${
-            isSpinning ? "cursor-not-allowed" : ""
-          }`}
+          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${isSpinning ? "cursor-not-allowed" : ""
+            }`}
           onClick={
             isSpinning || multiply > 1 || buttonClicked ? null : spinSlotMachine
           }
