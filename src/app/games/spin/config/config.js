@@ -72,7 +72,7 @@ export const winMappings = {
 
 export const uXArray = [
   1000000, 3000000, 10000000, 23000000, 50000000, 150000000, 350000000,
-  900000000, 2000000000, 10,
+  900000000, 2000000000, 9000000000,
 ];
 
 const nr = 5;
@@ -165,7 +165,6 @@ export const checkIntervals = (value, upgradeLucky) => {
   //   if (value >= 34 && value < 45) return "Nova";
   // }
   else {
-    console.log("rest");
     if (value >= 1 && value < 40) return "Normal";
     if (value >= 77 && value <= 99) return "Rare";
     if (value >= 40 && value < 58) return "Blue";
