@@ -58,26 +58,38 @@ const Results = ({ data, game }) => {
                 )}
                 {game === "spin" && (
                   <>
-                  <div>
-                    Lygis: <span className="text-green-700"> {result.level}</span>
-                  </div>
+                    <div>
+                      Lygis:{" "}
+                      <span className="text-green-700 font-bold">
+                        {" "}
+                        {result.level}
+                      </span>{" "}
+                      Lvl
+                    </div>
                     <span className="text-blue-600">
-                      Pinigai: {formatLargeNumber(result.spinMoney, 2)}€
+                      Pinigai:{" "}
+                      <span className="font-bold">
+                        {formatLargeNumber(result.spinMoney, 2)}€
+                      </span>
                     </span>
                     <div>
                       Sukimai:{" "}
-                      {formatLargeNumber(
-                        result.spins,
-                        result.spins > 1000 && 2
-                      )}
+                      <span className="font-bold">
+                        {formatLargeNumber(
+                          result.spins,
+                          result.spins > 1000 && 2
+                        )}
+                      </span>
                     </div>
                     <div>
                       Viso laiko laimėta:{" "}
-                      {formatLargeNumber(
-                        result.allTimeMoney,
-                        result.allTimeMoney > 1000 && 2
-                      )}
-                      €
+                      <span className="font-bold">
+                        {formatLargeNumber(
+                          result.allTimeMoney,
+                          result.allTimeMoney > 1000 && 2
+                        )}
+                        €
+                      </span>
                     </div>
                   </>
                 )}
