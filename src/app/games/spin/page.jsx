@@ -324,7 +324,7 @@ const Engine = () => {
             <span className="text-red-500">{lvl} lvl</span>
           </div>
           <div className="text-sm">
-            <span className="text-gray-600">Lošimas: </span>
+            <span className="text-gray-600">Lošimai: </span>
             <span className="text-blue-500">{formatLargeNumber(spins)}</span>
           </div>
         </div>
