@@ -30,6 +30,10 @@ const playerSchema = new Schema(
       type: Number,
       required: true,
       default: 0,
+    }, upgradeSpeed: {
+      type: Number,
+      required: true,
+      default: 1,
     },
     allTimeMoney: {
       type: Number,

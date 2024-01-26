@@ -72,7 +72,7 @@ export const winMappings = {
 
 export const uXArray = [
   1000000, 3000000, 10000000, 23000000, 50000000, 150000000, 350000000,
-  900000000, 2000000000, 9000000000,
+  900000000, 2000000000, 10,
 ];
 
 const nr = 5;
@@ -86,6 +86,19 @@ export const uLuckyArray = [
   350000000 * nr,
   900000000 * nr,
   2000000000 * nr,
+  10,
+];
+const speedNr = 10;
+export const uSpeedArray = [
+  1000000 * speedNr,
+  3000000 * speedNr,
+  10000000 * speedNr,
+  23000000 * speedNr,
+  50000000 * speedNr,
+  150000000 * speedNr,
+  350000000 * speedNr,
+  900000000 * speedNr,
+  2000000000 * speedNr,
   10,
 ];
 
