@@ -50,6 +50,7 @@ const Engine = () => {
       setSpins(spins);
       setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
       setUpgradeLucky(upgradeLucky);
+      setUpgradeSpeed(upgradeSpeed)
       setAllMoney(allTimeMoney);
       setLvl(level);
       setWinBalls({
@@ -104,6 +105,7 @@ const Engine = () => {
   const [biggestWin, setBiggestWin] = useState(0);
   const [upgradeX, setUpgradeX] = useState(1);
   const [upgradeLucky, setUpgradeLucky] = useState(0);
+  const [upgradeSpeed, setUpgradeSpeed] = useState(0);
   const [addMoney, setAddMoney] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
 //1500 1100
