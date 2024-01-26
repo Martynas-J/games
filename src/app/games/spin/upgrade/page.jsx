@@ -7,14 +7,14 @@ import { uLuckyArray, uSpeedArray, uXArray } from "../config/config";
 const Upgrade = () => {
   const session = useSession();
 
-  // const { result, isLoading, mutate} = FromDb(`getSpinResults/${session.data?.user.name}`)
-  const result = {
-    spinMoney: 100000000,
-    upgradeX: 2,
-    upgradeLucky: 50,
-    upgradeSpeed: 9,
-    spins: 100,
-  }
+   const { result, isLoading, mutate} = FromDb(`getSpinResults/${session.data?.user.name}`)
+  // const result = {
+  //   spinMoney: 100000000,
+  //   upgradeX: 2,
+  //   upgradeLucky: 50,
+  //   upgradeSpeed: 9,
+  //   spins: 100,
+  // }
 
   const money = result?.spinMoney;
   const saveResult = async (money, uX, uLucky, uSpeed) => {
@@ -39,16 +39,16 @@ const Upgrade = () => {
     }
   };
 
-  // if (isLoading) {
-  //   return (
-  //     <div className="flex items-center justify-center h-screen">
-  //       <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-500 border-4 border-solid"></div>
-  //       <div className="ml-4 text-blue-500 text-2xl font-semibold">
-  //         Loading...
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-500 border-4 border-solid"></div>
+        <div className="ml-4 text-blue-500 text-2xl font-semibold">
+          Loading...
+        </div>
+      </div>
+    );
+  }
 
   const buttons = (
     cost,
@@ -107,9 +107,9 @@ const Upgrade = () => {
   let uXCost = uXArray[uX - 1];
   let uLuckyCost = uLuckyArray[uLucky / 5 - 1];
   let uSpeedCost = uSpeedArray[uSpeed - 1];
-  // if (session.status === "unauthenticated") {
-  //   return <div>Reikia prisijungti</div>;
-  // }
+  if (session.status === "unauthenticated") {
+    return <div>Reikia prisijungti</div>;
+  }
   if (!result?.spins) {
     return <div>Pasuk nors kartą ir sužinosi</div>;
   }
