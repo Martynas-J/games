@@ -58,6 +58,9 @@ const Results = ({ data, game }) => {
                 )}
                 {game === "spin" && (
                   <>
+                  <div>
+                    Lygis: <span className="text-green-700"> {result.level}</span>
+                  </div>
                     <span className="text-blue-600">
                       Pinigai: {formatLargeNumber(result.spinMoney, 2)}€
                     </span>
