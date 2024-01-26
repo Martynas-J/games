@@ -25,7 +25,7 @@ const Upgrade = () => {
           spinMoney: money,
           upgradeX: uX,
           upgradeLucky: uLucky,
-          upgradeLSpeed: uSpeed,
+          upgradeSpeed: uSpeed,
         },
         "saveSpinResults"
       );
