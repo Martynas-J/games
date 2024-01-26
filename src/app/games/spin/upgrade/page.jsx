@@ -142,7 +142,7 @@ const Upgrade = () => {
         "bg-gradient-to-r from-blue-950 to-teal-400",
         "border-red-950",
         "Pridėti greičio",
-        `${uSpeed}%`,
+        `${uSpeed *5}%`,
         () => saveResult(money - uLuckyCost, uX, uLucky, uSpeed + 1),
         RomNumber[uSpeed - 1]
       )}

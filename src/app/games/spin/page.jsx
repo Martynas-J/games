@@ -34,6 +34,7 @@ const Engine = () => {
         spins,
         upgradeX,
         upgradeLucky,
+        upgradeSpeed,
         allTimeMoney,
         ballsNormal,
         ballsRare,
@@ -106,8 +107,8 @@ const Engine = () => {
   const [addMoney, setAddMoney] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
 //1500 1100
-  const spinsTime = 1500
-  const spinsAnimationTime = 1100
+  const spinsTime = 1500 - (1500 - upgradeSpeed * 100);
+  const spinsAnimationTime = 1100 - (1100 - upgradeSpeed * 100);
 
 
   const handleToggle = () => {
