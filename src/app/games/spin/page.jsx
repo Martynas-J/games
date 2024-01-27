@@ -22,6 +22,7 @@ import Loading from "@/components/Loading/Loading";
 import { toast } from "react-toastify";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import Balls from "./components/balls/Balls";
+import CurrentDateTime from "./components/date/date";
 
 const Engine = () => {
   const session = useSession();
@@ -336,6 +337,7 @@ const Engine = () => {
       </div>
       <div className="  text-2xl font-bold text-gray-800 flex justify-between items-center">
         <div className="flex flex-col">
+          <CurrentDateTime time={true} />
           <div className="text-sm">
             <span className="text-gray-600">Lygis: </span>
             <span className="text-red-500">{lvl} lvl</span>

@@ -20,6 +20,7 @@ const HeaderSpin = () => {
     { href: "/games/spin/info", label: "Info" },
     { href: "/games/spin/upgrade", label: "Tobulinimai" },
     { href: "/games/spin/wins", label: "Laimėjimai" },
+    { href: "/games/spin/chat", label: "Žinutės" },
     { href: "/games/spin", label: "Sukti" },
   ];
   const NavigationItem = ({ href, label, index, activeIndex, onClick }) => {

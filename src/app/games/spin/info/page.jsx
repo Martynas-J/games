@@ -25,26 +25,6 @@ const Info = () => {
             <Balls key={index} {...data} texts={true} />
           ))}
         </div>
-        <div className="w-[170px]">
-          <div className="flex justify-center items-center mt-2">
-            <div
-              className={`flex justify-center items-center  myShadow  w-10 h-10 rounded-full mx-1 bg-gradient-to-r from-green-300 to-green-200  hover:from-green-300 hover:to-green-100`}
-            >
-              <span className="">+5 </span>
-            </div>
-            <div className="text-xs w-[120px] "> nuo 5 iki 100 sukimų</div>
-          </div>
-          <div className="flex justify-center items-center mt-2">
-            <div
-              className={`flex justify-center items-center  myShadow  w-10 h-10 rounded-full mx-1 bg-gradient-to-r from-blue-500 to-blue-200  hover:from-blue-400 hover:to-blue-100`}
-            >
-              <span className="">X5 </span>
-            </div>
-            <div className="text-xs w-[120px] ">
-              5 sukimai ir laimėjimas X5{" "}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
