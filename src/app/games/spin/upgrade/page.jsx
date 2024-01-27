@@ -143,7 +143,7 @@ const Upgrade = () => {
         "border-red-950",
         "Pridėti greičio",
         `${uSpeed *5}%`,
-        () => saveResult(money - uLuckyCost, uX, uLucky, uSpeed + 1),
+        () => saveResult(money - uSpeedCost, uX, uLucky, uSpeed + 1),
         RomNumber[uSpeed - 1]
       )}
     </div>

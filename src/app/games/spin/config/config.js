@@ -47,20 +47,19 @@ export const premiumMoney = [
   500, 1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000, 1,
 ];
 export const premiumSpins = [
-  100, 500, 1000, 2000, 4000, 8000, 10000, 20000, 40000, 80000, 1000000000000000,
+  100, 500, 1000, 2000, 4000, 8000, 10000, 20000, 40000, 80000,
+  1000000000000000,
 ];
-
-export const spinOptions = [
-  { amount: 5, cost: 6 },
-  { amount: 10, cost: 13 },
-  { amount: 50, cost: 70 },
-  { amount: 100, cost: 200 },
-
-  { amount: 5, cost: 100, multiplier: 5 },
-  { amount: 10, cost: 1500, multiplier: 10 },
-  { amount: 50, cost: 100000, multiplier: 50 },
-  { amount: 100, cost: 300000, multiplier: 100 },
+export const ballsColors = [
+  "bg-gradient-to-r from-green-300 to-green-200  hover:from-green-300 hover:to-green-100",
+  "bg-gradient-to-r from-teal-500 to-blue-200  hover:from-teal-400 hover:to-blue-100",
+  "bg-gradient-to-r from-blue-500 to-blue-200  hover:from-blue-400 hover:to-blue-100",
+  "bg-gradient-to-r from-blue-700 to-blue-500  hover:from-blue-800 hover:to-blue-300",
 ];
+export const spinsCost = [3, 6, 10, 20];
+
+export const amountSpins = [25, 50, 75, 100];
+
 export const winMappings = {
   Normal: 10,
   Rare: 50,
@@ -71,36 +70,12 @@ export const winMappings = {
 };
 
 export const uXArray = [
-  1000000, 3000000, 10000000, 23000000, 50000000, 150000000, 350000000,
-  900000000, 2000000000, 10,
+  500000, 1000000, 10000000, 50000000, 200000000, 800000000, 2000000000,
+  8000000000, 20000000000, 10,
 ];
 
-const nr = 5;
-export const uLuckyArray = [
-  1000000 * nr,
-  3000000 * nr,
-  10000000 * nr,
-  23000000 * nr,
-  50000000 * nr,
-  150000000 * nr,
-  350000000 * nr,
-  900000000 * nr,
-  2000000000 * nr,
-  10,
-];
-const speedNr = 10;
-export const uSpeedArray = [
-  1000000 * speedNr,
-  3000000 * speedNr,
-  10000000 * speedNr,
-  23000000 * speedNr,
-  50000000 * speedNr,
-  150000000 * speedNr,
-  350000000 * speedNr,
-  900000000 * speedNr,
-  2000000000 * speedNr,
-  10,
-];
+export const uLuckyArray = uXArray.map((value) => value * 5);
+export const uSpeedArray = uXArray.map((value) => value * 7);
 
 export const checkIntervals = (value, upgradeLucky) => {
   if (upgradeLucky === 0) {

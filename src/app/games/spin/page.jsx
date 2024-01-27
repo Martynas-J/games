@@ -8,12 +8,14 @@ import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import {
+  amountSpins,
+  ballsColors,
   ballsData,
   checkIntervals,
   intervalColors,
   premiumMoney,
   premiumSpins,
-  spinOptions,
+  spinsCost,
   winMappings,
 } from "./config/config";
 import Loading from "@/components/Loading/Loading";
@@ -50,7 +52,7 @@ const Engine = () => {
       setSpins(spins);
       setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
       setUpgradeLucky(upgradeLucky);
-      setUpgradeSpeed(upgradeSpeed)
+      setUpgradeSpeed(upgradeSpeed);
       setAllMoney(allTimeMoney);
       setLvl(level);
       setWinBalls({
@@ -108,36 +110,45 @@ const Engine = () => {
   const [upgradeSpeed, setUpgradeSpeed] = useState(0);
   const [addMoney, setAddMoney] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
-//1500 1100
-const procents = (upgradeSpeed *5) / 100
-  const spinsTime = 1500 - (1500 * procents);
-  const spinsAnimationTime = 1100 - (1100 * procents);
+  const [selectedNumber, setSelectedNumber] = useState(1);
+  //1500 1100
+  const procents = (upgradeSpeed * 5) / 100;
+  const spinsTime = 1500 - 1500 * procents;
+  const spinsAnimationTime = 1100 - 1100 * procents;
 
+  const handleSelectChange = (event) => {
+    setSelectedNumber(parseInt(event.target.value, 10));
+  };
+  const handleWheelChange = (event) => {
+    event.preventDefault();
+
+    const delta = Math.sign(event.deltaY);
+    const newNumber = selectedNumber + delta;
+
+    const clampedNumber = Math.min(Math.max(newNumber, 1), 10);
+
+    setSelectedNumber(clampedNumber);
+  };
 
   const handleToggle = () => {
     setToggled(!isToggled);
   };
 
-  const renderSpinOption = ({ amount, cost, multiplier = 1 }, index) => {
-    const buttonType = index < 4;
-
-    const canAutoSpin =
-      money >= cost && !isSpinning && multiply === 1 && !buttonClicked;
+  const renderSpinOption = (amount, multiplier, index) => {
+    const cost = Math.round(spinsCost[index] * multiplier ** 5 * 10);
+    const canAutoSpin = money >= cost && !isSpinning && !buttonClicked;
 
     const canBay = money >= cost;
 
-    const gradientColors = buttonType
-      ? "bg-gradient-to-r from-green-300 to-green-200  hover:from-green-300 hover:to-green-100"
-      : "bg-gradient-to-r from-blue-500 to-blue-200  hover:from-blue-400 hover:to-blue-100";
+    const buttonClass = `myShadow w-[65px] h-[65px] ${ballsColors[index]} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
 
-    const buttonClass = `myShadow w-14 h-14 ${gradientColors} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
-
-    const textStyle = ` ${canBay
-      ? canAutoSpin
-        ? ""
-        : "cursor-not-allowed text-gray-800"
-      : "text-red-800 font-bold cursor-not-allowed"
-      }`;
+    const textStyle = ` ${
+      canBay
+        ? canAutoSpin
+          ? ""
+          : "cursor-not-allowed text-gray-800"
+        : "text-red-800 font-bold cursor-not-allowed"
+    }`;
 
     return (
       <div
@@ -148,10 +159,12 @@ const procents = (upgradeSpeed *5) / 100
       >
         <div className={textStyle}>
           <span className="text-lg">
-            {buttonType ? "+" : "X"}
-            {amount}
+            <div>
+              {amount}x
+              <span className="text-red-900 font-semibold">{multiplier}</span>
+            </div>
           </span>
-          <div className="text-[8px]">-{formatLargeNumber(cost)}€</div>
+          <div className="text-[10px] ">-{formatLargeNumber(cost)}€</div>
         </div>
       </div>
     );
@@ -197,7 +210,7 @@ const procents = (upgradeSpeed *5) / 100
   const spinSlotMachine = (spinsLeft) => {
     setIsSpinning(true);
     setSpins((prev) => prev + 1);
-    setSpinsToday(prev => prev + 1)
+    setSpinsToday((prev) => prev + 1);
     const newResults = Array.from(
       { length: 3 },
       () => Math.floor(Math.random() * 99) + 1
@@ -247,13 +260,13 @@ const procents = (upgradeSpeed *5) / 100
     setWinMoney(moneyPlus);
     setBiggestWin((prev) => Math.max(prev, moneyPlus));
   };
-  const autoSpin = async (nr, cost, multiply) => {
+  const autoSpin = async (nr, cost, multiplys) => {
     resetAllResults();
     setToggled(false);
     setMomentMoney(0);
     setButtonClicked(true);
     setMoney((prev) => prev - cost);
-    setMultiply(multiply);
+    setMultiply(multiplys);
     let spinsLeft = nr;
     setLeftSpinsMax(nr);
     for (let i = 0; i < nr; i++) {
@@ -404,13 +417,21 @@ const procents = (upgradeSpeed *5) / 100
                 ))}
                 <div className="w-full border-b-2 border-b-teal-700 pt-2"></div>
                 <div className="flex justify-between gap-4">
-                  <div className="flex gap-1" >Sukimai: <span className="text-gray-700 font-semibold">{formatLargeNumber(spinsToday)}</span></div>
+                  <div className="flex gap-1">
+                    Sukimai:{" "}
+                    <span className="text-gray-700 font-semibold">
+                      {formatLargeNumber(spinsToday)}
+                    </span>
+                  </div>
                   <div className="text-gray-950 font-bold">
-                    {formatLargeNumber(Object.values(winBallsToday).reduce(
-                      (accumulator, currentValue) =>
-                        accumulator + currentValue.money,
-                      0
-                    ))}€
+                    {formatLargeNumber(
+                      Object.values(winBallsToday).reduce(
+                        (accumulator, currentValue) =>
+                          accumulator + currentValue.money,
+                        0
+                      )
+                    )}
+                    €
                   </div>
                 </div>
               </div>
@@ -421,30 +442,32 @@ const procents = (upgradeSpeed *5) / 100
 
       <div className="flex justify-between items-center mb-5">
         <div
-          className={`text-lg w-10 h-10 ${momentMoney >= 10000
-            ? "text-xl font-bold text-red-700"
-            : momentMoney >= 1000
+          className={`text-lg w-10 h-10 ${
+            momentMoney >= 10000
+              ? "text-xl font-bold text-red-700"
+              : momentMoney >= 1000
               ? "text-xl font-semibold text-green-500"
               : ""
-            }`}
+          }`}
         >
           {momentMoney > 0 && "+" + formatLargeNumber(momentMoney) + "€"}
         </div>
         <div
-          className={`  h-10 text-gray-800 ${winMoney <= 10
-            ? "text-black text-[36px]"
-            : winMoney <= 10000
+          className={`  h-10 text-gray-800 ${
+            winMoney <= 10
+              ? "text-black text-[36px]"
+              : winMoney <= 10000
               ? "text-lime-700 text-[36px]"
               : "text-red-600 text-[46px]"
-            } text-xl font-bold`}
+          } text-xl font-bold`}
         >
           {!isSpinning && winMoney
             ? `+ ${formatLargeNumber(winMoney)} €`
             : isSpinning && (
-              <div className="flex justify-center items-center">
-                <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
-              </div>
-            )}
+                <div className="flex justify-center items-center">
+                  <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
+                </div>
+              )}
         </div>
 
         <div className="w-10 h-10  myShadowOut  rounded-full ">
@@ -471,23 +494,26 @@ const procents = (upgradeSpeed *5) / 100
         </div>
       </div>
       <div
-        className={`flex justify-center space-x-4 slot-machine ${isSpinning ? "spinning" : ""
-          }`}
+        className={`flex justify-center space-x-4 slot-machine ${
+          isSpinning ? "spinning" : ""
+        }`}
       >
         {intervals.map((value, index) => (
           <div key={index} className={`relative `}>
             <div
               className={` myShadowOut border-teal-500 w-24 h-24 border-2  border-solid rounded-full 
       ${value === 0 ? "bg-gradient-to-r from-black to-white" : ""}
-      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${intervalColors[value] || ""
-                }
+      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${
+                intervalColors[value] || ""
+              }
       transition-opacity
       `}
               style={{ animationDelay: `${index * 0.3}s` }}
             ></div>
             <div
-              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${isSpinning ? "opacity-0" : "text-black"
-                }`}
+              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${
+                isSpinning ? "opacity-0" : "text-black"
+              }`}
             >
               <span className=" text-gray-800">{value}</span>
             </div>
@@ -496,8 +522,9 @@ const procents = (upgradeSpeed *5) / 100
       </div>
       <div className=" relative">
         <button
-          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${isSpinning ? "cursor-not-allowed" : ""
-            }`}
+          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${
+            isSpinning ? "cursor-not-allowed" : ""
+          }`}
           onClick={
             isSpinning || multiply > 1 || buttonClicked ? null : spinSlotMachine
           }
@@ -508,9 +535,27 @@ const procents = (upgradeSpeed *5) / 100
       <div className="flex flex-col gap-5">
         <div className="flex justify-center items-center gap-5">
           <div className="flex flex-wrap justify-center items-center gap-4">
-            {spinOptions.map((option, index) => (
-              <div key={index}> {renderSpinOption(option, index)}</div>
+            {amountSpins.map((amount, index) => (
+              <div key={index}>
+                {" "}
+                {renderSpinOption(amount, selectedNumber, index)}
+              </div>
             ))}
+            <div className="">
+              <select
+                id="numberSelect"
+                value={selectedNumber}
+                onWheel={handleWheelChange}
+                onChange={handleSelectChange}
+                className=" appearance-none myShadow w-full p-2 border-0 border-green-300 rounded-[10px] text-center focus:outline-none focus:shadow-2xl bg-gradient-to-r from-teal-800 to-blue-200"
+              >
+                {[...Array(10)].map((_, index) => (
+                  <option key={index + 1} value={index + 1}>
+                    <div className="">-- x{index + 1} --</div>
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
       </div>
