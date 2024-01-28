@@ -1,6 +1,7 @@
 import React from "react";
 import DbSpinGame from "./components/allDataSpinGame/dbSpinGame";
 import HeaderSpin from "./components/header/header";
+import Chat from "./chat/page";
 
 export const metadata = {
   title: "Spin Game",
@@ -9,7 +10,7 @@ export const metadata = {
 export default function RootLayoutSpin({ children }) {
   return (
     <div>
-      <div className="flex justify-center flex-col md:flex-row">
+      <div className="flex justify-center flex-col md:flex-row lg:flex-wrap">
         <div>
           <HeaderSpin />
           <div className="text-center p-6 pt-0 bg-gray-100 rounded-b-lg shadow-md w-[360px] mx-auto">
@@ -17,6 +18,7 @@ export default function RootLayoutSpin({ children }) {
           </div>
         </div>
         <DbSpinGame />
+        <Chat/>
       </div>
     </div>
   );
