@@ -96,6 +96,7 @@ const Engine = () => {
     Nova: { count: 0, money: 0 },
   });
   const [isToggled, setToggled] = useState(false);
+  const [isEvent, setIsEvent] = useState(false);
   const [money, setMoney] = useState(10);
   const [momentMoney, setMomentMoney] = useState(0);
   const [leftSpins, setLeftSpins] = useState(0);
@@ -328,6 +329,7 @@ const Engine = () => {
   );
   return (
     <div className="relative">
+      <TimeCheckComponent setIsAllowed={setIsEvent} />
       <div className="relative bg-slate-400 h-5 w-full rounded-lg overflow-hidden">
         <span
           className={`absolute left-0 rounded-2xl bg-gradient-to-r from-green-200 to-green-700 h-5  overflow-hidden`}
@@ -538,9 +540,9 @@ const Engine = () => {
               </div>
             ))}
             <div className="">
-              <TimeCheckComponent> 
+              {isEvent &&
                 <div className="text-2xl animate-bounce transition duration-500">EVENTAS</div>
-              </TimeCheckComponent>
+              }
               <select
                 id="numberSelect"
                 value={selectedNumber}

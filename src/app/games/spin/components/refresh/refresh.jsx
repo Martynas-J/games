@@ -1,35 +1,33 @@
-import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
+import { useEffect } from "react";
 
-const TimeCheckComponent = ({ children }) => {
-    const [isAllowed, setIsAllowed] = useState(false);
+const TimeCheckComponent = ({ setIsAllowed }) => {
+  const checkTime = () => {
+    const currentTime = new Date();
+    const currentHour = currentTime.getHours();
+    const currentMinutes = currentTime.getMinutes();
 
-    useEffect(() => {
-        const checkTime = () => {
-            const currentTime = new Date();
-            const currentHour = currentTime.getHours();
-            const currentMinutes = currentTime.getMinutes();
+    if (currentHour === 13 && currentMinutes <= 39) {
+      setIsAllowed(true);
+    } else {
+      setIsAllowed(false);
+    }
+  };
 
-            if (currentHour === 12 && currentMinutes <= 50) {
-                {toast.info("Eventas -10%")}
-                setIsAllowed(true);
-            } else {
-                setIsAllowed(false);
-            }
-        };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      checkTime();
+    }, 60000);
 
-        const interval = setInterval(() => {
-            checkTime();
-        }, 60000);
+    checkTime();
 
-        checkTime();
+    return () => {
+      clearInterval(interval);
+    };
+  }, [setIsAllowed]);
 
-        return () => {
-            clearInterval(interval);
-        };
-    }, []);
-
-    return isAllowed ? <>{children}</> : null;
+  return null; // arba galite grąžinti ką nors, kas nėra vaizduojama
 };
 
 export default TimeCheckComponent;
+
+
