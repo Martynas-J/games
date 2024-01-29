@@ -1,15 +1,23 @@
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 
-const TimeCheckComponent = ({ setIsAllowed }) => {
+const TimeCheckComponent = ({ setIsAllowed, isAllowed }) => {
   const checkTime = () => {
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
     const currentMinutes = currentTime.getMinutes();
+    const isEventHour = [17, 18, 19, 20].includes(currentHour);
 
-    if (currentHour === 13 && currentMinutes <= 39) {
-      setIsAllowed(true);
+    if (isEventHour && currentMinutes < 20) {
+      if (!isAllowed) {
+        setIsAllowed(true);
+        toast.info("Prasideda Eventas -20%")
+      }
     } else {
-      setIsAllowed(false);
+      if (isAllowed) {
+        setIsAllowed(false);
+        toast.error("Eventas baigtas")
+      }
     }
   };
 
@@ -23,11 +31,9 @@ const TimeCheckComponent = ({ setIsAllowed }) => {
     return () => {
       clearInterval(interval);
     };
-  }, [setIsAllowed]);
+  }, [setIsAllowed, isAllowed]);
 
-  return null; // arba galite grąžinti ką nors, kas nėra vaizduojama
+  return null;
 };
 
 export default TimeCheckComponent;
-
-

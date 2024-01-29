@@ -138,7 +138,11 @@ const Engine = () => {
   };
 
   const renderSpinOption = (amount, multiplier, index) => {
-    const cost = Math.round(spinsCost[index] * multiplier ** 5 * 10);
+    let cost = Math.round(spinsCost[index] * multiplier ** 5 * 10);
+    if (isEvent) {
+      cost *= 0.8;
+    }
+
     const canAutoSpin = money >= cost && !isSpinning && !buttonClicked;
 
     const canBay = money >= cost;
@@ -329,7 +333,7 @@ const Engine = () => {
   );
   return (
     <div className="relative">
-      <TimeCheckComponent setIsAllowed={setIsEvent} />
+      <TimeCheckComponent setIsAllowed={setIsEvent} isAllowed={isEvent} />
       <div className="relative bg-slate-400 h-5 w-full rounded-lg overflow-hidden">
         <span
           className={`absolute left-0 rounded-2xl bg-gradient-to-r from-green-200 to-green-700 h-5  overflow-hidden`}
