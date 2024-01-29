@@ -6,9 +6,9 @@ const TimeCheckComponent = ({ setIsAllowed, isAllowed }) => {
     const currentTime = new Date();
     const currentHour = currentTime.getHours();
     const currentMinutes = currentTime.getMinutes();
-    const isEventHour = [16, 17, 18, 19, 20].includes(currentHour);
+    const isEventHour = [17, 18, 19, 20].includes(currentHour);
 
-    if (isEventHour && currentMinutes < 12) {
+    if (isEventHour && currentMinutes < 20) {
       if (!isAllowed) {
         setIsAllowed(true);
         toast.info("Prasideda Eventas -20%")
