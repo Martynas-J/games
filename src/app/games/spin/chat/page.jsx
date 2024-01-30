@@ -4,6 +4,7 @@ import Loading from "@/components/Loading/Loading";
 import { updateResultData } from "@/components/updateResultData";
 import { useSession } from "next-auth/react";
 import React, { useState, useEffect } from "react";
+import Refresher from "../components/refresh/componentsRefresh";
 
 const Chat = () => {
   const session = useSession();
@@ -57,21 +58,24 @@ const Chat = () => {
       id="chatContainer"
       className="bg-gray-100 p-2 text-center max-w-[500px] mx-auto lg:mx-0"
     >
-<div className="flex flex-col gap-1">
-  {messages.map((message, index) => (
-    <div key={index} className={` ${index % 2 === 0 ? 'bg-gray-200' : ''}`}>
-      <div className="text-sm text-gray-500 mr-2">
-        {new Date(message.createdAt).toLocaleString("lt-LT")}
+      <div className="flex flex-col gap-1">
+          {messages.map((message, index) => (
+            <div
+              key={index}
+              className={` ${index % 2 === 0 ? "bg-gray-200" : ""}`}
+            >
+              <div className="text-sm text-gray-500 mr-2">
+                {new Date(message.createdAt).toLocaleString("lt-LT")}
+              </div>
+              <div className="text-base">
+                <strong className="mr-2 text-black font-bold">
+                  {message.playerName}:
+                </strong>
+                {message.message}
+              </div>
+            </div>
+          ))}
       </div>
-      <div className="text-base">
-        <strong className="mr-2 text-black font-bold">
-          {message.playerName}:
-        </strong>
-        {message.message}
-      </div>
-    </div>
-  ))}
-</div>
       <div className="flex flex-col">
         <input
           type="text"

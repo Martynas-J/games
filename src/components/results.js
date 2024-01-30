@@ -1,6 +1,7 @@
 import { FaMedal } from "react-icons/fa";
 import { formatLargeNumber } from "./Functions/simpleFunctions";
 import Loading from "./Loading/Loading";
+import { addMinutes, isToday, isWithinInterval, subMinutes } from "date-fns";
 
 const Results = ({ data, game }) => {
   if (!data) {
@@ -18,8 +19,44 @@ const Results = ({ data, game }) => {
           data.map((result, index) => {
             const updatedAt = new Date(result.updatedAt);
             const now = new Date();
-            const fiveMinutesAgo = new Date(now.getTime() - 5 * 60 * 1000);
-            const active = updatedAt >= fiveMinutesAgo && updatedAt <= now;
+            const fiveMinutesAgo = subMinutes(now, 5);
+            const oneMinuteAfter = addMinutes(now, 1);
+            const tenMinutesAgo = subMinutes(now, 30);
+
+            let intervalType;
+            if (isToday(updatedAt)) {
+              if (
+                isWithinInterval(updatedAt, {
+                  start: fiveMinutesAgo,
+                  end: oneMinuteAfter,
+                })
+              ) {
+                intervalType = "active";
+              } else if (
+                isWithinInterval(updatedAt, {
+                  start: tenMinutesAgo,
+                  end: oneMinuteAfter,
+                })
+              ) {
+                intervalType = "passive";
+              } else {
+                intervalType = "out";
+              }
+            }
+
+            let intervalColor;
+
+            switch (intervalType) {
+              case "active":
+                intervalColor = "bg-green-500";
+                break;
+              case "passive":
+                intervalColor = "bg-yellow-500";
+                break;
+              default:
+                intervalColor = "bg-red-500";
+                break;
+            }
             return (
               <li
                 key={index}
@@ -49,7 +86,11 @@ const Results = ({ data, game }) => {
                 <div className="text-gray-700">
                   {new Date(result.updatedAt).toLocaleString("lt-LT")} -{" "}
                   <span className=" relative font-semibold">
-                    {<span className={`inline-block w-3 h-3 ${active ? "bg-green-500" : "bg-red-500"}  rounded-full mr-1`}></span>}
+                    {
+                      <span
+                        className={`inline-block w-3 h-3 ${intervalColor} rounded-full mr-1`}
+                      ></span>
+                    }
                     {result.playerName}
                   </span>
                   {game === "quiz" && (

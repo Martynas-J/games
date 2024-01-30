@@ -2,6 +2,7 @@ import React from "react";
 import DbSpinGame from "./components/allDataSpinGame/dbSpinGame";
 import HeaderSpin from "./components/header/header";
 import Chat from "./chat/page";
+import Refresher from "./components/refresh/componentsRefresh";
 
 export const metadata = {
   title: "Spin Game",
@@ -17,8 +18,12 @@ export default function RootLayoutSpin({ children }) {
             {children}
           </div>
         </div>
-        <DbSpinGame />
-        <Chat/>
+        <Refresher speed={60000}>
+          <DbSpinGame />
+        </Refresher>
+       {/* <Refresher speed={60000}> */}
+          <Chat />
+        {/* </Refresher> */}
       </div>
     </div>
   );
