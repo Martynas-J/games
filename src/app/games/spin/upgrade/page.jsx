@@ -1,13 +1,19 @@
 "use client";
-import { FromDb, formatLargeNumber } from "@/components/Functions/simpleFunctions";
+import {
+  FromDb,
+  formatLargeNumber,
+} from "@/components/Functions/simpleFunctions";
 import { updateResultData } from "@/components/updateResultData";
 import { useSession } from "next-auth/react";
 import { uLuckyArray, uSpeedArray, uXArray } from "../config/config";
+import Loading from "@/components/Loading/Loading";
 
 const Upgrade = () => {
   const session = useSession();
 
-   const { result, isLoading, mutate} = FromDb(`getSpinResults/${session.data?.user.name}`)
+  const { result, isLoading, mutate } = FromDb(
+    `getSpinResults/${session.data?.user.name}`
+  );
   // const result = {
   //   spinMoney: 100000000,
   //   upgradeX: 2,
@@ -40,14 +46,7 @@ const Upgrade = () => {
   };
 
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-blue-500 border-4 border-solid"></div>
-        <div className="ml-4 text-blue-500 text-2xl font-semibold">
-          Loading...
-        </div>
-      </div>
-    );
+    return <Loading />;
   }
 
   const buttons = (
@@ -65,10 +64,11 @@ const Upgrade = () => {
       <div className="flex gap-5 items-center">
         <div
           onClick={money >= cost && num !== "MAX" ? onclickFunction : null}
-          className={`${notAllowed 
-            ? "cursor-not-allowed text-red-950 opacity-70 "
-            : "cursor-pointer hover:scale-110 "
-            }  ${color} w-16 h-16 p-1 rounded-2xl  border-2 myShadow ${aroundColor} flex justify-center items-center`}
+          className={`${
+            notAllowed
+              ? "cursor-not-allowed text-red-950 opacity-70 "
+              : "cursor-pointer hover:scale-110 "
+          }  ${color} w-16 h-16 p-1 rounded-2xl  border-2 myShadow ${aroundColor} flex justify-center items-center`}
         >
           <div>
             <span className=" text-lg font-serif text-[35px] font-bold">
@@ -79,12 +79,14 @@ const Upgrade = () => {
             </div>
           </div>
         </div>
-        {num !== "MAX" ?
-        <div>
-          {text}{" "}
-          <span className={`text-green-600 font-semibold`}>{symbol}</span>
-        </div> :
-        <div>Pasiektas maksimalus lygis</div> }
+        {num !== "MAX" ? (
+          <div>
+            {text}{" "}
+            <span className={`text-green-600 font-semibold`}>{symbol}</span>
+          </div>
+        ) : (
+          <div>Pasiektas maksimalus lygis</div>
+        )}
       </div>
     );
   };
@@ -142,7 +144,7 @@ const Upgrade = () => {
         "bg-gradient-to-r from-blue-950 to-teal-400",
         "border-red-950",
         "Pridėti greičio",
-        `${uSpeed *5}%`,
+        `${uSpeed * 5}%`,
         () => saveResult(money - uSpeedCost, uX, uLucky, uSpeed + 1),
         RomNumber[uSpeed - 1]
       )}

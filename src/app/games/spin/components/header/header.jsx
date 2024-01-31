@@ -3,7 +3,7 @@ import { FromDb } from "@/components/Functions/simpleFunctions";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState } from "react";
-import { uLuckyArray, uXArray } from "../../config/config";
+import { uLuckyArray, uSpeedArray, uXArray } from "../../config/config";
 
 const HeaderSpin = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -21,14 +21,17 @@ const HeaderSpin = () => {
     { href: "/games/spin/upgrade", label: "Tobulinimai" },
     { href: "/games/spin/wins", label: "Laimėjimai" },
     { href: "/games/spin/chat", label: "Žinutės" },
-    { href: "/games/spin", label: "Sukti" },
+    { href: "/games/spin", label: "Sukti" }, 
   ];
   const NavigationItem = ({ href, label, index, activeIndex, onClick }) => {
     let uX = result?.upgradeX == 0 ? 1 : result?.upgradeX;
     let uLucky = result?.upgradeLucky == 0 ? 5 : result?.upgradeLucky;
+    let uSpeed = result?.upgradeSpeed;
     const isUpgrade =
       result?.spinMoney >= uXArray[uX - 1] ||
-      result?.spinMoney >= uLuckyArray[uLucky / 5 - 1];
+      result?.spinMoney >= uLuckyArray[uLucky / 5 - 1]||
+      result?.spinMoney >= uSpeedArray[uSpeed - 1];
+      
     return (
       <div
         className={` relative p-1 hover:scale-110 cursor-pointer hover:text-gray-300 transition-all duration-500 ${
