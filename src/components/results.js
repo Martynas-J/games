@@ -2,6 +2,8 @@ import { FaMedal } from "react-icons/fa";
 import { formatLargeNumber } from "./Functions/simpleFunctions";
 import Loading from "./Loading/Loading";
 import { addMinutes, isToday, isWithinInterval, subMinutes } from "date-fns";
+import Balls from "@/app/games/spin/components/balls/Balls";
+import { ballsData } from "@/app/games/spin/config/config";
 
 const Results = ({ data, game }) => {
   if (!data) {
@@ -17,6 +19,15 @@ const Results = ({ data, game }) => {
       <ul className="space-y-2">
         {data.length > 0 ? (
           data.map((result, index) => {
+            const allBalls = [
+              result?.ballsNormal,
+              result?.ballsRare,
+              result?.ballsBlue,
+              result?.ballsGold,
+              result?.ballsPlatina,
+              result?.ballsNova,
+            ];
+
             const updatedAt = new Date(result.updatedAt);
             const now = new Date();
             const fiveMinutesAgo = subMinutes(now, 5);
@@ -84,7 +95,7 @@ const Results = ({ data, game }) => {
                   </span>
                 ) : null}
                 <div className="text-gray-700">
-                  {new Date(result.updatedAt).toLocaleString("lt-LT")} -{" "}
+                  {new Date(result.updatedAt).toLocaleString("lt-LT")}{" "}
                   <span className=" relative font-semibold">
                     {
                       <span
@@ -108,20 +119,10 @@ const Results = ({ data, game }) => {
                   {game === "spin" && (
                     <>
                       <div>
-                        Lygis:{" "}
+                        Lvl:{" "}
                         <span className="text-green-700 font-bold">
-                          {" "}
                           {result.level}
                         </span>{" "}
-                        Lvl
-                      </div>
-                      <span className="text-blue-600">
-                        Pinigai:{" "}
-                        <span className="font-bold">
-                          {formatLargeNumber(result.spinMoney, 2)}€
-                        </span>
-                      </span>
-                      <div>
                         Sukimai:{" "}
                         <span className="font-bold">
                           {formatLargeNumber(
@@ -131,7 +132,23 @@ const Results = ({ data, game }) => {
                         </span>
                       </div>
                       <div>
-                        Viso laiko laimėta:{" "}
+                        <span className="text-blue-600">
+                          Pinigai:{" "}
+                          <span className="font-bold">
+                            {formatLargeNumber(result.spinMoney, 2)}€
+                          </span>
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-start ">
+                        {ballsData.map((data, index) => (
+                          <div key={index}>
+                            <Balls {...data} text={false} size="w-7 h-7" />
+                           <span className="text-[14px]">{formatLargeNumber(allBalls[index] || 0)}</span> 
+                          </div>
+                        ))}
+                      </div>
+                      <div>
+                        Iš viso laimėta:{" "}
                         <span className="font-bold">
                           {formatLargeNumber(
                             result.allTimeMoney,
