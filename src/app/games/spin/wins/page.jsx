@@ -29,7 +29,7 @@ const Wins = () => {
   ];
   return (
     <div className="flex flex-col ">
-       <h3>Coming soon...</h3>
+       <h2 className="text-xl">Coming soon...</h2>
       {ballsData.map((data, index) => {
         const number = formatLargeNumber(allBalls[index] || 0);
         return (
