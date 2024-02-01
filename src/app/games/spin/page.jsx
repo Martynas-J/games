@@ -25,6 +25,7 @@ import Balls from "./components/balls/Balls";
 import CurrentDateTime from "./components/date/date";
 import TimeCheckComponent from "./components/refresh/refresh";
 import { moneyColors } from "./components/functions/moneyColors";
+import ProgressBar from "./components/brogressBar/progresBar";
 
 const Engine = () => {
   const session = useSession();
@@ -322,27 +323,20 @@ const Engine = () => {
   if (isLoading) {
     return <Loading />;
   }
-  const progress = parseFloat(
-    (
-      (lvl === 0 ? spins * 100 : (spins - premiumSpins[lvl - 1]) * 100) /
-      (lvl === 0
-        ? premiumSpins[lvl]
-        : premiumSpins[lvl] - premiumSpins[lvl - 1])
-    ).toFixed(2)
-  );
+
   const allValuesZero = Object.values(winBallsToday).every(
     (value) => value.count <= 0
   );
   return (
     <div className="relative">
       <TimeCheckComponent setIsAllowed={setIsEvent} isAllowed={isEvent} />
-      <div className="relative bg-slate-400 h-5 w-full rounded-lg overflow-hidden">
-        <span
-          className={`absolute left-0 rounded-2xl bg-gradient-to-r from-green-200 to-green-700 h-5  overflow-hidden`}
-          style={{ width: `${progress}%` }}
-        ></span>
-        <span className="absolute left-[47%] text-black z-50 ">{`${progress}%`}</span>
-      </div>
+      <ProgressBar
+        lvl={lvl}
+        numberMin={spins}
+        numberMax={premiumSpins[lvl]}
+        valueBefore={premiumSpins[lvl - 1]}
+        type="percent"
+      />
       <div className="  text-2xl font-bold text-gray-800 flex justify-between items-center">
         <div className="flex flex-col">
           <CurrentDateTime time={true} />
@@ -451,13 +445,7 @@ const Engine = () => {
       )}
 
       <div className="flex justify-between items-center mb-5">
-        <div
-          className={`text-lg w-10 h-10  ${
-            moneyColors(
-              momentMoney, 10
-            )
-          }`}
-        >
+        <div className={`text-lg w-10 h-10  ${moneyColors(momentMoney, 10)}`}>
           {momentMoney > 0 && "+" + formatLargeNumber(momentMoney) + "€"}
         </div>
         <div

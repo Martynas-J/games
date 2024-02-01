@@ -44,10 +44,11 @@ export const intervalColors = {
 };
 
 export const premiumMoney = [
-  500, 1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000, 5000000, 10000000
+  500, 1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000,
+  5000000, 10000000,
 ];
 export const premiumSpins = [
-  100, 500, 1000, 2000, 4000, 8000, 10000, 20000, 40000, 80000,160000,320000,
+  100, 500, 1000, 2000, 4000, 8000, 10000, 20000, 40000, 80000, 160000, 320000,
   1000000000000000,
 ];
 export const ballsColors = [
@@ -56,6 +57,14 @@ export const ballsColors = [
   "bg-gradient-to-r from-blue-500 to-blue-200  hover:from-blue-400 hover:to-blue-100",
   "bg-gradient-to-r from-blue-700 to-blue-500  hover:from-blue-800 hover:to-blue-300",
 ];
+
+export const rewardForBalls = [
+  100, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000,
+];
+export const NeedBallsForReward = [
+  1, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000,
+];
+
 export const spinsCost = [3, 6, 10, 20];
 
 export const amountSpins = [25, 50, 75, 100];
