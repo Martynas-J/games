@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import Balls from "../components/balls/Balls";
-import { NeedBallsForReward, ballsData } from "../config/config";
+import { NeedBallsForReward, ballsData, rewardForBalls } from "../config/config";
 import Loading from "@/components/Loading/Loading";
 import {
   FromDb,
@@ -28,7 +28,7 @@ const Wins = () => {
     result?.ballsNova,
   ];
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col gap-1 ">
        <h2 className="text-xl">Coming soon...</h2>
       {ballsData.map((data, index) => {
         const number = formatLargeNumber(allBalls[index] || 0);
@@ -39,13 +39,13 @@ const Wins = () => {
             <ProgressBar
               lvl={0}
               numberMin={number}
-              numberMax={NeedBallsForReward[1]}
+              numberMax={NeedBallsForReward[0]}
               valueBefore={NeedBallsForReward[0]}
               type="numbers"
             />
 
-            <button className=" myShadow bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-600 hover:to-blue-800 text-white px-3 py-1 rounded-full shadow-md">
-              Pasiimti
+            <button className=" myShadow bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-600 hover:to-blue-800 text-white px-3 py-1 rounded-full shadow-md min-w-[80px]">
+            +{formatLargeNumber(rewardForBalls[0])}€
             </button>
           </div>
         );
