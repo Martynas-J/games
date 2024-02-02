@@ -30,7 +30,8 @@ const playerSchema = new Schema(
       type: Number,
       required: true,
       default: 0,
-    }, upgradeSpeed: {
+    },
+    upgradeSpeed: {
       type: Number,
       required: true,
       default: 1,
@@ -75,7 +76,39 @@ const playerSchema = new Schema(
       required: true,
       default: 0,
     },
+    rewards: {
+      type: {
+        normalReward: {
+          type: Number,
+        },
+        rareReward: {
+          type: Number,
+        },
+        blueReward: {
+          type: Number,
+        },
+        goldReward: {
+          type: Number,
+        },
+        platinaReward: {
+          type: Number,
+        },
+        novaReward: {
+          type: Number,
+        },
+      },
+      required: true,
+      default: {
+        normalReward: 0,
+        rareReward: 0,
+        blueReward: 0,
+        goldReward: 0,
+        platinaReward: 0,
+        novaReward: 0,
+      },
+    },
   },
+
   { timestamps: true }
 );
 
