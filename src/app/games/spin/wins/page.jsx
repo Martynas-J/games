@@ -44,8 +44,8 @@ const Wins = () => {
               type="numbers"
             />
 
-            <button className=" myShadow bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-600 hover:to-blue-800 text-white px-3 py-1 rounded-full shadow-md min-w-[80px]">
-            +{formatLargeNumber(rewardForBalls[0])}€
+            <button className=" myShadow bg-gradient-to-r from-blue-400 to-blue-600 hover:from-blue-600 hover:to-blue-800 text-white px-1 py-1 rounded-full shadow-md min-w-[90px]">
+            +{formatLargeNumber(rewardForBalls[0]*Math.pow((index + 1), rewardForBalls.length - 1 ? 5 :4))}€
             </button>
           </div>
         );
