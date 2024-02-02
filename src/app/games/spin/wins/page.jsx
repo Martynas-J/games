@@ -31,7 +31,7 @@ const Wins = () => {
     <div className="flex flex-col gap-1 ">
        <h2 className="text-xl">Coming soon...</h2>
       {ballsData.map((data, index) => {
-        const number = formatLargeNumber(allBalls[index] || 0);
+        const number = allBalls[index] || 0;
         return (
           <div key={index} className="  flex items-center gap-1">
            

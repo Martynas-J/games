@@ -1,3 +1,5 @@
+import { formatLargeNumber } from "@/components/Functions/simpleFunctions";
+
 const ProgressBar = ({ lvl, numberMin, numberMax, valueBefore, type }) => {
   let progress;
   let viewsElement;
@@ -10,7 +12,7 @@ const ProgressBar = ({ lvl, numberMin, numberMax, valueBefore, type }) => {
     );
     viewsElement = <span className="absolute left-[50%] text-black z-50 translate-x-[-50%] ">{`${progress}%`}</span>
   } else if (type === "numbers") {
-    let views = numberMin >= numberMax ? ` ${numberMax}/${numberMax}` : `${numberMin}/${numberMax}`
+    let views = numberMin >= numberMax ? ` ${formatLargeNumber(numberMax)}/${formatLargeNumber(numberMax)}` : `${formatLargeNumber(numberMin)}/${formatLargeNumber(numberMax)}`
     progress = parseFloat(
       (
         (lvl === 0 ? numberMin * 100 : (numberMin - valueBefore) * 100) /
