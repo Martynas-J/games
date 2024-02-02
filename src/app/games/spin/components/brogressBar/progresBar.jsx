@@ -21,7 +21,7 @@ const ProgressBar = ({ lvl, numberMin, numberMax, valueBefore, type }) => {
   }
 
   return (
-    <div className="relative bg-slate-400 h-5 w-full mt-[0.81px] rounded-lg overflow-hidden myShadow">
+    <div className="relative bg-slate-200 h-5 w-full mt-[0.81px] rounded-lg overflow-hidden myShadow">
       <div className="relative">
         <span
           className={` myShadow absolute left-0 rounded-2xl bg-gradient-to-r from-green-200 to-green-700 h-5 overflow-hidden`}
