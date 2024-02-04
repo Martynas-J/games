@@ -76,6 +76,11 @@ const playerSchema = new Schema(
       required: true,
       default: 0,
     },
+    dailyRewardData: {
+      type: Date,
+      required: true,
+      default: () => new Date('2024-01-01T00:00:00Z'),
+    },
     rewards: {
       type: {
         normalReward: {

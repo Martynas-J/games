@@ -4,6 +4,7 @@ import Balls from "../components/balls/Balls";
 import {
   NeedBallsForReward,
   ballsData,
+  dayRewards,
   rewardForBalls,
 } from "../config/config";
 import Loading from "@/components/Loading/Loading";
@@ -13,6 +14,10 @@ import {
 } from "@/components/Functions/simpleFunctions";
 import ProgressBar from "../components/brogressBar/progresBar";
 import { updateResultData } from "@/components/updateResultData";
+import { addDays, format, setHours, setMinutes, setSeconds } from "date-fns";
+import { lt } from "date-fns/locale";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Wins = () => {
   const session = useSession();
@@ -44,20 +49,36 @@ const Wins = () => {
     novaReward: 0,
   };
 
-  const saveResult = async (reward, rewardsLvl, rewardsKey) => {
+  const now = new Date();
+  let dailyRewardData = result?.dailyRewardData || 0;
+
+  const saveResult = async (
+    reward,
+    rewardsLvl,
+    rewardsKey,
+    dailyRewardData
+  ) => {
+    dailyRewardData = setSeconds(
+      setMinutes(setHours(addDays(new Date(), 1), 0), 0),
+      0
+    );
+    reward = reward * (result?.level + 1);
     try {
       const response = await updateResultData(
         {
           playerName: session.data.user.name,
           spinMoney: result?.spinMoney + reward,
-          rewards: {
-            ...result?.rewards,
-            [rewardsKey]: rewardsLvl + 1,
-          },
+          ...(rewardsKey && {
+            rewards: { ...result?.rewards, [rewardsKey]: rewardsLvl + 1 },
+          }),
+          ...(dailyRewardData && {
+            dailyRewardData,
+          }),
         },
         "saveSpinResults"
       );
       if (response.ok) {
+        toast.info(`Gavote +${formatLargeNumber(reward)}€`);
         mutate();
       } else {
         console.error("Failed to save the result.");
@@ -69,7 +90,29 @@ const Wins = () => {
 
   return (
     <div className="flex flex-col gap-1 ">
-      <h2 className="text-xl">Pinigai: {formatLargeNumber(result?.spinMoney)}€</h2>
+      <h2 className="text-xl">
+        Pinigai: {formatLargeNumber(result?.spinMoney)}€
+      </h2>
+      <button
+        onClick={
+          now >= new Date(dailyRewardData)
+            ? () =>
+                saveResult(
+                  dayRewards[Math.floor(Math.random() * 11)],
+                  "",
+                  "",
+                  dailyRewardData
+                )
+            : null
+        }
+        className={` ${
+          now >= new Date(dailyRewardData)
+            ? "bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-800 text-white"
+            : "bg-gradient-to-r from-blue-400 to-blue-600  text-black cursor-not-allowed"
+        } myShadow  px-1 py-1 rounded-full shadow-md min-w-[90px]`}
+      >
+        Dienos prizas
+      </button>
       {ballsData.map((data, index) => {
         const number = allBalls[index] || 0;
         const key = Object.keys(rewardsDb)[index];

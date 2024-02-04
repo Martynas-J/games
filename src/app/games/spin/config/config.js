@@ -61,6 +61,9 @@ export const ballsColors = [
 export const rewardForBalls = [
   100, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000,
 ];
+export const dayRewards = [
+  100, 500, 1000, 5000, 10000, 50000, 80000, 100000, 200000, 500000, 1, 2,
+];
 export const NeedBallsForReward = [
   1, 10, 50, 100, 500, 1000, 5000, 10000, 50000, 100000,
 ];
