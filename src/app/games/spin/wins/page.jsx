@@ -58,12 +58,14 @@ const Wins = () => {
     rewardsKey,
     dailyRewardData
   ) => {
-    dailyRewardData = setSeconds(
-      setMinutes(setHours(addDays(new Date(), 1), 0), 0),
-      0
-    );
     if (!rewardsKey) {
       reward = reward * (result?.level + 1);
+    }
+    if (dailyRewardData) {
+      dailyRewardData = setSeconds(
+        setMinutes(setHours(addDays(new Date(), 1), 0), 0),
+        0
+      );
     }
     try {
       const response = await updateResultData(
