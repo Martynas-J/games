@@ -62,7 +62,7 @@ const Wins = () => {
       setMinutes(setHours(addDays(new Date(), 1), 0), 0),
       0
     );
-    if (rewardsKey) {
+    if (!rewardsKey) {
       reward = reward * (result?.level + 1);
     }
     try {
