@@ -548,7 +548,7 @@ const Engine = () => {
               >
                 {[...Array(10)].map((_, index) => (
                   <option key={index + 1} value={index + 1}>
-                    <div className="">-- x{index + 1} --</div>
+                    -- x{index + 1} --
                   </option>
                 ))}
               </select>

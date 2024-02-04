@@ -23,6 +23,9 @@ const Wins = () => {
   if (isLoading) {
     return <Loading />;
   }
+  if (!result?.spins) {
+    return <div>Pasuk nors kartą ir sužinosi</div>;
+  }
 
   const allBalls = [
     result?.ballsNormal,
