@@ -62,7 +62,9 @@ const Wins = () => {
       setMinutes(setHours(addDays(new Date(), 1), 0), 0),
       0
     );
-    reward = reward * (result?.level + 1);
+    if (rewardsKey) {
+      reward = reward * (result?.level + 1);
+    }
     try {
       const response = await updateResultData(
         {
