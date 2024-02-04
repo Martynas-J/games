@@ -40,7 +40,6 @@ const Wins = () => {
     platinaReward: 0,
     novaReward: 0,
   };
-  // console.log(rewardsDb);
 
   const saveResult = async (reward, rewardsLvl, rewardsKey) => {
     try {
@@ -67,7 +66,7 @@ const Wins = () => {
 
   return (
     <div className="flex flex-col gap-1 ">
-      <h2 className="text-xl">Pinigai: {result?.spinMoney}</h2>
+      <h2 className="text-xl">Pinigai: {formatLargeNumber(result?.spinMoney)}€</h2>
       {ballsData.map((data, index) => {
         const number = allBalls[index] || 0;
         const key = Object.keys(rewardsDb)[index];

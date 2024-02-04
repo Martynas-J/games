@@ -3,7 +3,13 @@ import { FromDb } from "@/components/Functions/simpleFunctions";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState } from "react";
-import { uLuckyArray, uSpeedArray, uXArray } from "../../config/config";
+import {
+  NeedBallsForReward,
+  uLuckyArray,
+  uSpeedArray,
+  uXArray,
+} from "../../config/config";
+import Loading from "@/components/Loading/Loading";
 
 const HeaderSpin = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -21,17 +27,32 @@ const HeaderSpin = () => {
     { href: "/games/spin/upgrade", label: "Tobulinimai" },
     { href: "/games/spin/wins", label: "Laimėjimai" },
     { href: "/games/spin/chat", label: "Žinutės" },
-    { href: "/games/spin", label: "Sukti" }, 
+    { href: "/games/spin", label: "Sukti" },
   ];
   const NavigationItem = ({ href, label, index, activeIndex, onClick }) => {
+    if (isLoading) {
+      return "";
+    }
+    const allBalls = [
+      result?.ballsNormal,
+      result?.ballsRare,
+      result?.ballsBlue,
+      result?.ballsGold,
+      result?.ballsPlatina,
+      result?.ballsNova,
+    ];
+
     let uX = result?.upgradeX == 0 ? 1 : result?.upgradeX;
     let uLucky = result?.upgradeLucky == 0 ? 5 : result?.upgradeLucky;
     let uSpeed = result?.upgradeSpeed;
     const isUpgrade =
       result?.spinMoney >= uXArray[uX - 1] ||
-      result?.spinMoney >= uLuckyArray[uLucky / 5 - 1]||
+      result?.spinMoney >= uLuckyArray[uLucky / 5 - 1] ||
       result?.spinMoney >= uSpeedArray[uSpeed - 1];
-      
+    const rewardsDb = result?.rewards;
+    const allowed = rewardsDb && Object.values(rewardsDb).some((rewardsLvl, index) => {
+      return allBalls[index] >= NeedBallsForReward[rewardsLvl];
+    });
     return (
       <div
         className={` relative p-1 hover:scale-110 cursor-pointer hover:text-gray-300 transition-all duration-500 ${
@@ -41,9 +62,10 @@ const HeaderSpin = () => {
         }`}
         onClick={() => onClick(index)}
       >
-        {label === "Tobulinimai" && isUpgrade && (
-          <span className=" absolute top-1 -right-1 w-2 h-2 bg-red-500 myShadowGreen rounded-full animate-pulse"></span>
-        )}
+        {((label === "Tobulinimai" && isUpgrade) ||
+          (label === "Laimėjimai" && allowed)) && (
+            <span className=" absolute top-1 -right-1 w-2 h-2 bg-red-500 myShadowGreen rounded-full animate-pulse"></span>
+          )}
         <Link href={href}>{label}</Link>
       </div>
     );
