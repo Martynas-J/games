@@ -50,9 +50,15 @@ const HeaderSpin = () => {
       result?.spinMoney >= uLuckyArray[uLucky / 5 - 1] ||
       result?.spinMoney >= uSpeedArray[uSpeed - 1];
     const rewardsDb = result?.rewards;
-    const allowed = rewardsDb && Object.values(rewardsDb).some((rewardsLvl, index) => {
-      return allBalls[index] >= NeedBallsForReward[rewardsLvl];
-    });
+    let dailyRewardData = result?.dailyRewardData || 0;
+    const now = new Date();
+    const allowed =
+      (rewardsDb &&
+        Object.values(rewardsDb).some((rewardsLvl, index) => {
+          return allBalls[index] >= NeedBallsForReward[rewardsLvl];
+        })) ||
+      now >= new Date(dailyRewardData);
+
     return (
       <div
         className={` relative p-1 hover:scale-110 cursor-pointer hover:text-gray-300 transition-all duration-500 ${
@@ -64,8 +70,8 @@ const HeaderSpin = () => {
       >
         {((label === "Tobulinimai" && isUpgrade) ||
           (label === "Laimėjimai" && allowed)) && (
-            <span className=" absolute top-1 -right-1 w-2 h-2 bg-red-500 myShadowGreen rounded-full animate-pulse"></span>
-          )}
+          <span className=" absolute top-1 -right-1 w-2 h-2 bg-red-500 myShadowGreen rounded-full animate-pulse"></span>
+        )}
         <Link href={href}>{label}</Link>
       </div>
     );
