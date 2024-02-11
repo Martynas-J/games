@@ -75,7 +75,7 @@ const Upgrade = () => {
               {num}
             </span>
             <div className={`text-[14px] font-bold `}>
-              {formatLargeNumber(cost)}
+              {num !== "MAX" && formatLargeNumber(cost)}
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ const Upgrade = () => {
   return (
     <div className="pt-2 flex flex-col gap-2">
       <h1 className="font-bold text-2xl">
-        Jūs turite {result ? formatLargeNumber(result.spinMoney) : "0"}€
+        Jūs turite {result ? formatLargeNumber(result?.spinMoney) : "0"}€
       </h1>
       {buttons(
         uXCost,

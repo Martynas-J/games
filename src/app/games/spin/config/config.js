@@ -34,6 +34,7 @@ export const ballsData = [
 ];
 
 export const intervalColors = {
+  Card: "bg-gradient-to-r from-purple-600 to-red-600 border border-teal-500",
   Normal: "bg-gradient-to-r from-blue-300 to-blue-50 ",
   Rare: "bg-gradient-to-r from-orange-500  to-orange-100",
   Blue: "bg-gradient-to-r from-blue-700  to-blue-300 border border-gray-200",
@@ -57,6 +58,27 @@ export const ballsColors = [
   "bg-gradient-to-r from-blue-500 to-blue-200  hover:from-blue-400 hover:to-blue-100",
   "bg-gradient-to-r from-blue-700 to-blue-500  hover:from-blue-800 hover:to-blue-300",
 ];
+export const cards = [
+  { name: "JackOfClubs", symbol: "♣", type: "♖", title: "J" },
+  { name: "JackOfHearts", symbol: "♥", type: "♖", title: "J", color: "text-red-500" },
+  { name: "JackOfSpades", symbol: "♠", type: "♖", title: "J" },
+  { name: "JackOfDiamonds", symbol: "♦", type: "♖", title: "J", color: "text-red-500" },
+
+  { name: "QueenOfClubs", symbol: "♣", type: "♕", title: "Q" },
+  { name: "QueenOfHearts", symbol: "♥", type: "♕", title: "Q", color: "text-red-500" },
+  { name: "QueenOfSpades", symbol: "♠", type: "♕", title: "Q" },
+  { name: "QueenOfDiamonds", symbol: "♦", type: "♕", title: "Q", color: "text-red-500" },
+
+  { name: "KingOfClubs", symbol: "♣", type: "♔", title: "K" },
+  { name: "KingOfHearts", symbol: "♥", type: "♔", title: "K", color: "text-red-500" },
+  { name: "KingOfSpades", symbol: "♠", type: "♔", title: "K" },
+  { name: "KingOfDiamonds", symbol: "♦", type: "♔", title: "K", color: "text-red-500" },
+
+  { name: "AceOfClubs", symbol: "♣", type: "♗", title: "A" },
+  { name: "AceOfHearts", symbol: "♥", type: "♗", title: "A", color: "text-red-500" },
+  { name: "AceOfSpades", symbol: "♠", type: "♗", title: "A" },
+  { name: "AceOfDiamonds", symbol: "♦", type: "♗", title: "A", color: "text-red-500" },
+];
 
 export const rewardForBalls = [
   100, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000,
@@ -70,9 +92,10 @@ export const NeedBallsForReward = [
 
 export const spinsCost = [3, 6, 10, 20];
 
-export const amountSpins = [25, 50, 75, 100];
+export const amountSpins = [25, 50, 75, 1000];
 
 export const winMappings = {
+  Card: 0,
   Normal: 10,
   Rare: 50,
   Blue: 500,
@@ -91,64 +114,72 @@ export const uSpeedArray = uXArray.map((value) => value * 7);
 
 export const checkIntervals = (value, upgradeLucky) => {
   if (upgradeLucky === 0) {
-    if (value >= 1 && value < 40) return "Normal";
+    if (value === 1) return "Card";
+    if (value > 1 && value < 40) return "Normal";
     if (value >= 77 && value <= 99) return "Rare";
     if (value >= 40 && value < 58) return "Blue";
     if (value >= 60 && value < 72) return "Gold";
     if (value >= 72 && value < 77) return "Platina";
     if (value >= 58 && value < 60) return "Nova";
   } else if (upgradeLucky === 10) {
-    if (value >= 1 && value < 38) return "Normal";
+    if (value === 1) return "Card";
+    if (value > 1 && value < 38) return "Normal";
     if (value >= 80 && value <= 99) return "Rare";
     if (value >= 38 && value < 54) return "Blue";
     if (value >= 57 && value < 71) return "Gold";
     if (value >= 71 && value < 80) return "Platina";
     if (value >= 54 && value < 57) return "Nova";
   } else if (upgradeLucky === 15) {
-    if (value >= 1 && value < 36) return "Normal";
+    if (value === 1) return "Card";
+    if (value > 1 && value < 36) return "Normal";
     if (value >= 81 && value <= 99) return "Rare";
     if (value >= 36 && value < 50) return "Blue";
     if (value >= 54 && value < 70) return "Gold";
     if (value >= 70 && value < 81) return "Platina";
     if (value >= 50 && value < 54) return "Nova";
   } else if (upgradeLucky === 20) {
-    if (value >= 1 && value < 34) return "Normal";
+    if (value === 1) return "Card";
+    if (value > 1 && value < 34) return "Normal";
     if (value >= 78 && value <= 99) return "Rare";
     if (value >= 34 && value < 46) return "Blue";
     if (value >= 51 && value < 67) return "Gold";
     if (value >= 67 && value < 78) return "Platina";
     if (value >= 46 && value < 51) return "Nova";
   } else if (upgradeLucky === 25) {
-    if (value >= 1 && value < 32) return "Normal";
+    if (value === 1) return "Card";
+    if (value > 1 && value < 32) return "Normal";
     if (value >= 79 && value <= 99) return "Rare";
     if (value >= 32 && value < 44) return "Blue";
     if (value >= 50 && value < 67) return "Gold";
     if (value >= 67 && value < 79) return "Platina";
     if (value >= 44 && value < 50) return "Nova";
   } else if (upgradeLucky === 30) {
-    if (value >= 1 && value < 30) return "Normal";
+    if (value === 1) return "Card";
+    if (value > 1 && value < 30) return "Normal";
     if (value >= 80 && value <= 99) return "Rare";
     if (value >= 30 && value < 42) return "Blue";
     if (value >= 49 && value < 67) return "Gold";
     if (value >= 67 && value < 80) return "Platina";
     if (value >= 42 && value < 49) return "Nova";
   } else if (upgradeLucky === 35) {
-    if (value >= 1 && value < 28) return "Normal";
+    if (value = 1 ) return "Card";
+    if (value > 1 && value < 28) return "Normal";
     if (value >= 78 && value <= 99) return "Rare";
     if (value >= 28 && value < 40) return "Blue";
     if (value >= 48 && value < 64) return "Gold";
     if (value >= 64 && value < 78) return "Platina";
     if (value >= 40 && value < 48) return "Nova";
   } else if (upgradeLucky === 40) {
-    if (value >= 1 && value < 26) return "Normal";
+    if (value = 1 ) return "Card";
+    if (value > 1 && value < 26) return "Normal";
     if (value >= 78 && value <= 99) return "Rare";
     if (value >= 26 && value < 38) return "Blue";
     if (value >= 47 && value < 63) return "Gold";
     if (value >= 63 && value < 78) return "Platina";
     if (value >= 38 && value < 47) return "Nova";
   } else if (upgradeLucky === 45) {
-    console.log("9");
-    if (value >= 1 && value < 24) return "Normal";
+    if (value = 1 ) return "Card";
+    if (value > 1 && value < 24) return "Normal";
     if (value >= 78 && value <= 99) return "Rare";
     if (value >= 24 && value < 36) return "Blue";
     if (value >= 46 && value < 62) return "Gold";

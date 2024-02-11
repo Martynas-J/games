@@ -1,3 +1,4 @@
+import CardElement from "../components/Cards/CardElement";
 import Balls from "../components/balls/Balls";
 import { ballsData } from "../config/config";
 

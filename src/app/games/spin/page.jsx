@@ -11,6 +11,7 @@ import {
   amountSpins,
   ballsColors,
   ballsData,
+  cards,
   checkIntervals,
   intervalColors,
   premiumMoney,
@@ -26,6 +27,7 @@ import CurrentDateTime from "./components/date/date";
 import TimeCheckComponent from "./components/refresh/refresh";
 import { moneyColors } from "./components/functions/moneyColors";
 import ProgressBar from "./components/brogressBar/progresBar";
+import CardSelect from "./components/cardSelect/cardSelect";
 
 const Engine = () => {
   const session = useSession();
@@ -49,6 +51,7 @@ const Engine = () => {
         ballsPlatina,
         ballsNova,
         level,
+        cardsData,
       } = result;
 
       setMoney(spinMoney);
@@ -67,6 +70,8 @@ const Engine = () => {
         Platina: ballsPlatina,
         Nova: ballsNova,
       });
+
+      setCardsDb(cardsData);
     }
   }, [result]);
 
@@ -74,6 +79,7 @@ const Engine = () => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [intervals, setIntervals] = useState([0, 0, 0]);
   const [winBalls, setWinBalls] = useState({
+    Card: 0,
     Normal: 0,
     Rare: 0,
     Blue: 0,
@@ -81,7 +87,30 @@ const Engine = () => {
     Platina: 0,
     Nova: 0,
   });
+  const [cardsDb, setCardsDb] = useState({
+    JackOfSpades: 0,
+    JackOfClubs: 0,
+    JackOfHearts: 0,
+    JackOfDiamonds: 0,
+
+    QueenOfSpades: 0,
+    QueenOfClubs: 0,
+    QueenOfHearts: 0,
+    QueenOfDiamonds: 0,
+
+    KingOfSpades: 0,
+    KingOfClubs: 0,
+    KingOfHearts: 0,
+    KingOfDiamonds: 0,
+
+    AceOfSpades: 0,
+    AceOfClubs: 0,
+    AceOfHearts: 0,
+    AceOfDiamonds: 0,
+  });
+
   const [winBallsNow, setWinBallsNow] = useState({
+  
     Normal: { count: 0, money: 0 },
     Rare: { count: 0, money: 0 },
     Blue: { count: 0, money: 0 },
@@ -90,6 +119,7 @@ const Engine = () => {
     Nova: { count: 0, money: 0 },
   });
   const [winBallsToday, setWinBallsToday] = useState({
+
     Normal: { count: 0, money: 0 },
     Rare: { count: 0, money: 0 },
     Blue: { count: 0, money: 0 },
@@ -98,6 +128,7 @@ const Engine = () => {
     Nova: { count: 0, money: 0 },
   });
   const [isToggled, setToggled] = useState(false);
+  const [isToggled2, setToggled2] = useState(false);
   const [isEvent, setIsEvent] = useState(false);
   const [money, setMoney] = useState(10);
   const [momentMoney, setMomentMoney] = useState(0);
@@ -116,6 +147,7 @@ const Engine = () => {
   const [addMoney, setAddMoney] = useState(false);
   const [buttonClicked, setButtonClicked] = useState(false);
   const [selectedNumber, setSelectedNumber] = useState(1);
+  const [randomNr, setRandomNr] = useState(0);
   //1500 1100
   const procents = (upgradeSpeed * 5) / 100;
   const spinsTime = 1500 - 1500 * procents;
@@ -137,6 +169,13 @@ const Engine = () => {
 
   const handleToggle = () => {
     setToggled(!isToggled);
+  };
+
+  const getId = (cardId) => {
+    setCardsDb((prev) => ({
+      ...prev,
+      [cards[cardId].name]: prev[cards[cardId].name] + 1,
+    }));
   };
 
   const renderSpinOption = (amount, multiplier, index) => {
@@ -180,6 +219,7 @@ const Engine = () => {
   };
   const resetAllResults = () => {
     setWinBallsNow({
+      Card: { count: 0, money: 0 },
       Normal: { count: 0, money: 0 },
       Rare: { count: 0, money: 0 },
       Blue: { count: 0, money: 0 },
@@ -204,6 +244,7 @@ const Engine = () => {
           ballsGold: winBalls.Gold,
           ballsPlatina: winBalls.Platina,
           ballsNova: winBalls.Nova,
+          cardsData: cardsDb,
         },
         "saveSpinResults"
       );
@@ -241,6 +282,23 @@ const Engine = () => {
     const isAllResultsSame = newResults.every(
       (value) => value === newResults[0]
     );
+
+    if (newResults[0] === "Card" && newResults[1] === "Card") {
+      setToggled2(true);
+    }
+    if (newResults[2] === "Card" && newResults[1] === "Card") {
+      setRandomNr(4)
+      setToggled2(true);
+    }
+    if (newResults[0] === "Card" && newResults[2] === "Card") {
+      setRandomNr(8)
+      setToggled2(true);
+    }
+    if (newResults[0] === "Card" && newResults[1] === "Card" && newResults[2] === "Card") {
+      setRandomNr(12)
+      setToggled2(true);
+    }
+
     const moneyPlus = isAllResultsSame
       ? winMultiplier * multiply * upgradeX
       : 1 * multiply * upgradeX;
@@ -269,13 +327,14 @@ const Engine = () => {
     setWinMoney(moneyPlus);
     setBiggestWin((prev) => Math.max(prev, moneyPlus));
   };
-  const autoSpin = async (nr, cost, multiplys) => {
+  const autoSpin = async (nr, cost, multiples) => {
     resetAllResults();
     setToggled(false);
+    setToggled2(false);
     setMomentMoney(0);
     setButtonClicked(true);
     setMoney((prev) => prev - cost);
-    setMultiply(multiplys);
+    setMultiply(multiples);
     let spinsLeft = nr;
     setLeftSpinsMax(nr);
     for (let i = 0; i < nr; i++) {
@@ -290,6 +349,11 @@ const Engine = () => {
       setToggled(true);
     }, spinsTime);
   };
+  useEffect(() => {
+    if (session?.data) {
+      saveResult();
+    }
+  }, [cardsDb]);
 
   useEffect(() => {
     if (results[0] > 0) {
@@ -371,7 +435,7 @@ const Engine = () => {
       {isToggled && (
         <div
           onClick={handleToggle}
-          className="p-2 absolute top-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-100/95 to-blue-300 inline-block h-auto w-auto hover:cursor-pointer border-2 border-teal-700 rounded-xl z-10"
+          className=" zoom-in p-2 absolute top-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-100/95 to-blue-300 inline-block h-auto w-auto hover:cursor-pointer border-2 border-teal-700 rounded-xl z-10"
         >
           <div>
             {allValuesZero ? (
@@ -443,7 +507,7 @@ const Engine = () => {
           </div>
         </div>
       )}
-
+      {isToggled2 && <CardSelect sendId={getId} randomNr={randomNr} />}
       <div className="flex justify-between items-center mb-5">
         <div className={`text-lg w-10 h-10  ${moneyColors(momentMoney, 10)}`}>
           {momentMoney > 0 && "+" + formatLargeNumber(momentMoney) + "€"}

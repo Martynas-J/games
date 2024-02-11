@@ -79,28 +79,56 @@ const playerSchema = new Schema(
     dailyRewardData: {
       type: Date,
       required: true,
-      default: () => new Date('2024-01-01T00:00:00Z'),
+      default: () => new Date("2024-01-01T00:00:00Z"),
     },
-    rewards: {
+    cardsData: {
       type: {
-        normalReward: {
-          type: Number,
-        },
-        rareReward: {
-          type: Number,
-        },
-        blueReward: {
-          type: Number,
-        },
-        goldReward: {
-          type: Number,
-        },
-        platinaReward: {
-          type: Number,
-        },
-        novaReward: {
-          type: Number,
-        },
+        JackOfClubs: { type: Number },
+        JackOfHearts: { type: Number },
+        JackOfDiamonds: { type: Number },
+        JackOfSpades: { type: Number },
+        QueenOfClubs: { type: Number },
+        QueenOfSpades: { type: Number },
+        QueenOfHearts: { type: Number },
+        QueenOfDiamonds: { type: Number },
+        KingOfDiamonds: { type: Number },
+        KingOfHearts: { type: Number },
+        KingOfClubs: { type: Number },
+        KingOfSpades: { type: Number },
+        AceOfHearts: { type: Number },
+        AceOfDiamonds: { type: Number },
+        AceOfClubs: { type: Number },
+        AceOfSpades: { type: Number },
+      },
+      required: true,
+      default: {
+        JackOfClubs: 0,
+        JackOfHearts: 0,
+        JackOfDiamonds: 0,
+        JackOfSpades: 0,
+        QueenOfClubs: 0,
+        QueenOfSpades: 0,
+        QueenOfHearts: 0,
+        QueenOfDiamonds: 0,
+        KingOfDiamonds: 0,
+        KingOfHearts: 0,
+        KingOfClubs: 0,
+        KingOfSpades: 0,
+        AceOfHearts: 0,
+        AceOfDiamonds: 0,
+        AceOfClubs: 0,
+        AceOfSpades: 0,
+      },
+    },
+
+    rewards:{
+      type: {
+        normalReward: { type: Number },
+        rareReward: { type: Number },
+        blueReward: { type: Number },
+        goldReward: { type: Number },
+        platinaReward: { type: Number },
+        novaReward: { type: Number },
       },
       required: true,
       default: {
