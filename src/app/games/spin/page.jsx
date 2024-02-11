@@ -51,7 +51,7 @@ const Engine = () => {
         ballsPlatina,
         ballsNova,
         level,
-        cardsData,
+        // cardsData,
       } = result;
 
       setMoney(spinMoney);
@@ -243,7 +243,7 @@ const Engine = () => {
           ballsGold: winBalls.Gold,
           ballsPlatina: winBalls.Platina,
           ballsNova: winBalls.Nova,
-          cardsData: cardsDb,
+         // cardsData: cardsDb,
         },
         "saveSpinResults"
       );
