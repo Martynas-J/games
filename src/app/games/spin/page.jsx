@@ -350,11 +350,11 @@ const Engine = () => {
       setToggled(true);
     }, spinsTime);
   };
-  useEffect(() => {
-    if (session.data?.user.name) {
-      saveResult();
-    }
-  }, [cardsDb]);
+  // useEffect(() => {
+  //   if (session.data?.user.name) {
+  //     saveResult();
+  //   }
+  // }, [cardsDb]);
 
   useEffect(() => {
     if (results[0] > 0) {
