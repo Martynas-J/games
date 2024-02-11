@@ -305,7 +305,7 @@ const Engine = () => {
     const moneyPlus = isAllResultsSame
       ? winMultiplier * multiply * upgradeX
       : 1 * multiply * upgradeX;
-    if (isAllResultsSame) {
+    if (isAllResultsSame && newResults[0] !== "Card") {
       setWinBalls((prev) => ({
         ...prev,
         [newResults[0]]: prev[newResults[0]] + 1,
