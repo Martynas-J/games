@@ -178,7 +178,6 @@ const Engine = () => {
     }));
     setIsUpdated(true); 
   };
-  console.log("bendars"+cardsDb);
   const renderSpinOption = (amount, multiplier, index) => {
     let cost = Math.round(spinsCost[index] * multiplier ** 5 * 10);
     if (isEvent) {
@@ -295,8 +294,8 @@ const Engine = () => {
       setToggled2(true);
     }
     if (
-      newResults[0] === "Card" ||
-      newResults[1] === "Card" ||
+      newResults[0] === "Card" &&
+      newResults[1] === "Card" &&
       newResults[2] === "Card"
     ) {
       setRandomNr(12);
