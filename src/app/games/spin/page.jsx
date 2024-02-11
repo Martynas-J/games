@@ -70,8 +70,9 @@ const Engine = () => {
         Platina: ballsPlatina,
         Nova: ballsNova,
       });
-
-      setCardsDb(cardsData);
+      if (cardsData) {
+        setCardsDb(cardsData);
+      }
     }
   }, [result]);
 
@@ -110,7 +111,6 @@ const Engine = () => {
   });
 
   const [winBallsNow, setWinBallsNow] = useState({
-  
     Normal: { count: 0, money: 0 },
     Rare: { count: 0, money: 0 },
     Blue: { count: 0, money: 0 },
@@ -119,7 +119,6 @@ const Engine = () => {
     Nova: { count: 0, money: 0 },
   });
   const [winBallsToday, setWinBallsToday] = useState({
-
     Normal: { count: 0, money: 0 },
     Rare: { count: 0, money: 0 },
     Blue: { count: 0, money: 0 },
@@ -287,15 +286,19 @@ const Engine = () => {
       setToggled2(true);
     }
     if (newResults[2] === "Card" && newResults[1] === "Card") {
-      setRandomNr(4)
+      setRandomNr(4);
       setToggled2(true);
     }
     if (newResults[0] === "Card" && newResults[2] === "Card") {
-      setRandomNr(8)
+      setRandomNr(8);
       setToggled2(true);
     }
-    if (newResults[0] === "Card" && newResults[1] === "Card" && newResults[2] === "Card") {
-      setRandomNr(12)
+    if (
+      newResults[0] === "Card" &&
+      newResults[1] === "Card" &&
+      newResults[2] === "Card"
+    ) {
+      setRandomNr(12);
       setToggled2(true);
     }
 
