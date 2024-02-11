@@ -146,6 +146,8 @@ const Engine = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [randomNr, setRandomNr] = useState(0);
+  const [isUpdated, setIsUpdated] = useState(false);
+
   //1500 1100
   const procents = (upgradeSpeed * 5) / 100;
   const spinsTime = 1500 - 1500 * procents;
@@ -174,8 +176,9 @@ const Engine = () => {
       ...prev,
       [cards[cardId].name]: prev[cards[cardId].name] + 1,
     }));
+    setIsUpdated(true); 
   };
-
+  console.log("bendars"+cardsDb);
   const renderSpinOption = (amount, multiplier, index) => {
     let cost = Math.round(spinsCost[index] * multiplier ** 5 * 10);
     if (isEvent) {
@@ -350,11 +353,12 @@ const Engine = () => {
       setToggled(true);
     }, spinsTime);
   };
-  // useEffect(() => {
-  //   if (session.data?.user.name) {
-  //     saveResult();
-  //   }
-  // }, [cardsDb]);
+  useEffect(() => {
+    if (isUpdated && session?.data) {
+      saveResult(); 
+      setIsUpdated(false); 
+    }
+  }, [isUpdated]);
 
   useEffect(() => {
     if (results[0] > 0) {
