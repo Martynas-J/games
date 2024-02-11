@@ -351,7 +351,7 @@ const Engine = () => {
     }, spinsTime);
   };
   useEffect(() => {
-    if (session?.data) {
+    if (ssession.data?.user.name) {
       saveResult();
     }
   }, [cardsDb]);
