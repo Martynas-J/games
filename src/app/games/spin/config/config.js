@@ -92,7 +92,7 @@ export const NeedBallsForReward = [
 
 export const spinsCost = [3, 6, 10, 20];
 
-export const amountSpins = [25, 50, 75, 1000];
+export const amountSpins = [25, 50, 75, 100];
 
 export const winMappings = {
   Card: 0,
