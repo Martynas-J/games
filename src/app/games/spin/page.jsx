@@ -70,9 +70,9 @@ const Engine = () => {
         Platina: ballsPlatina,
         Nova: ballsNova,
       });
-      if (cardsData) {
-        setCardsDb(cardsData);
-      }
+      // if (cardsData) {
+      //   setCardsDb(cardsData);
+      // }
     }
   }, [result]);
 
