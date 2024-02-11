@@ -51,7 +51,7 @@ const Engine = () => {
         ballsPlatina,
         ballsNova,
         level,
-        // cardsData,
+        cardsData,
       } = result;
 
       setMoney(spinMoney);
@@ -70,9 +70,9 @@ const Engine = () => {
         Platina: ballsPlatina,
         Nova: ballsNova,
       });
-      // if (cardsData) {
-      //   setCardsDb(cardsData);
-      // }
+      if (cardsData) {
+        setCardsDb(cardsData);
+      }
     }
   }, [result]);
 
@@ -80,7 +80,6 @@ const Engine = () => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [intervals, setIntervals] = useState([0, 0, 0]);
   const [winBalls, setWinBalls] = useState({
-    Card: 0,
     Normal: 0,
     Rare: 0,
     Blue: 0,
@@ -218,7 +217,6 @@ const Engine = () => {
   };
   const resetAllResults = () => {
     setWinBallsNow({
-      Card: { count: 0, money: 0 },
       Normal: { count: 0, money: 0 },
       Rare: { count: 0, money: 0 },
       Blue: { count: 0, money: 0 },
@@ -243,7 +241,7 @@ const Engine = () => {
           ballsGold: winBalls.Gold,
           ballsPlatina: winBalls.Platina,
           ballsNova: winBalls.Nova,
-         // cardsData: cardsDb,
+          cardsData: cardsDb,
         },
         "saveSpinResults"
       );
@@ -294,8 +292,8 @@ const Engine = () => {
       setToggled2(true);
     }
     if (
-      newResults[0] === "Card" &&
-      newResults[1] === "Card" &&
+      newResults[0] === "Card" ||
+      newResults[1] === "Card" ||
       newResults[2] === "Card"
     ) {
       setRandomNr(12);

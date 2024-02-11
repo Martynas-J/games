@@ -80,6 +80,7 @@ export const cards = [
   { name: "AceOfDiamonds", symbol: "♦", type: "♗", title: "A", color: "text-red-500" },
 ];
 
+
 export const rewardForBalls = [
   100, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000,
 ];
