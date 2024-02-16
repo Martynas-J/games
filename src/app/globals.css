@@ -53,6 +53,9 @@
 .zoom-in {
   animation: zoomInAnimation 0.5s ease forwards;
 }
+.show-in {
+  animation: showInAnimation 0.5s ease forwards;
+}
 .zoom-out {
   animation: zoomOutAnimation 0.5s ease forwards;
 }
@@ -64,6 +67,16 @@
   to {
     opacity: 1;
     transform: translate(-50%) scale(1); 
+  }
+}
+@keyframes showInAnimation {
+  from {
+    opacity: 0;
+    transform:  scale(0); 
+  }
+  to {
+    opacity: 1;
+    transform:  scale(1); 
   }
 }
 @keyframes zoomOutAnimation {

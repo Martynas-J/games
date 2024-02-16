@@ -26,8 +26,10 @@ const HeaderSpin = () => {
     { href: "/games/spin/cards", label: "Kortos" },
     { href: "/games/spin/upgrade", label: "Tobulinimai" },
     { href: "/games/spin/wins", label: "Laimėjimai" },
-    { href: "/games/spin/chat", label: "Žinutės" },
     { href: "/games/spin", label: "Sukti" },
+    { href: "/games/spin/chat", label: "Žinutės" },
+    { href: "/games/spin/market", label: "Turgus" },
+    { href: "/games/spin/info", label: "info" },
   ];
   const NavigationItem = ({ href, label, index, activeIndex, onClick }) => {
     if (isLoading) {
@@ -77,17 +79,20 @@ const HeaderSpin = () => {
     );
   };
   return (
-    <div className="flex justify-around  bg-teal-600  sm:rounded-t-lg myShadow w-[360px] mx-auto">
-      {navigationItems.map((item, index) => (
-        <NavigationItem
-          key={index}
-          href={item.href}
-          label={item.label}
-          index={index}
-          activeIndex={activeIndex}
-          onClick={handleItemClick}
-        />
-      ))}
+
+      <div className="flex flex-wrap justify-around gap-x-1  bg-teal-600  sm:rounded-t-lg myShadow w-[360px] mx-auto">
+        {navigationItems.map((item, index) => (
+          <NavigationItem
+            key={index}
+            href={item.href}
+            label={item.label}
+            index={index}
+            activeIndex={activeIndex}
+            onClick={handleItemClick}
+          />
+        ))}
+        
+      
     </div>
   );
 };

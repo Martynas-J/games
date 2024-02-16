@@ -197,7 +197,7 @@ export const checkIntervals = (value, upgradeLucky) => {
   //   if (value >= 34 && value < 45) return "Nova";
   // }
   else {
-    if (value = 1 ) return "Card";
+    if (value === 1 ) return "Card";
     if (value > 1 && value < 40) return "Normal";
     if (value >= 77 && value <= 99) return "Rare";
     if (value >= 40 && value < 58) return "Blue";
