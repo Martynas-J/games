@@ -159,7 +159,7 @@ const Results = ({ data, game }) => {
                           €
                         </span>
                       </div>
-                      <div>
+                      {/* <div>
                         {Object.entries(result?.cardsData).map(
                           ([name, count], index) =>
                             count > 0 && (
@@ -170,7 +170,7 @@ const Results = ({ data, game }) => {
                               </div>
                             )
                         )}
-                      </div>
+                      </div> */}
                     </>
                   )}
                 </div>
