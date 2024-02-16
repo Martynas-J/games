@@ -29,7 +29,7 @@ const HeaderSpin = () => {
     { href: "/games/spin", label: "Sukti" },
     { href: "/games/spin/chat", label: "Žinutės" },
     { href: "/games/spin/market", label: "Turgus" },
-    { href: "/games/spin/info", label: "info" },
+    { href: "/games/spin/info", label: "Info" },
   ];
   const NavigationItem = ({ href, label, index, activeIndex, onClick }) => {
     if (isLoading) {
