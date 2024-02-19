@@ -23,11 +23,11 @@ export const cardLinesFunction = (filteredArray, cardsData) => {
     if (cardLine[0].count > 0 ) {
       bonus = 2;
       if (cardLine[1].count > 0) {
-        bonus = 3;
+        bonus = 10;
         if (cardLine[2].count > 0) {
-          bonus = 4;
+          bonus = 50;
           if (cardLine[3].count > 0) {
-            bonus = 100;
+            bonus = 200;
           }
         }
       }
