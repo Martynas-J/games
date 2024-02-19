@@ -176,7 +176,7 @@ const Engine = () => {
       ...prev,
       [cards[cardId].name]: prev[cards[cardId].name] + 1,
     }));
-    setIsUpdated(true); 
+    setIsUpdated(true);
   };
   const renderSpinOption = (amount, multiplier, index) => {
     let cost = Math.round(spinsCost[index] * multiplier ** 5 * 10);
@@ -190,13 +190,12 @@ const Engine = () => {
 
     const buttonClass = `myShadow w-[65px] h-[65px] ${ballsColors[index]} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
 
-    const textStyle = ` ${
-      canBay
+    const textStyle = ` ${canBay
         ? canAutoSpin
           ? ""
           : "cursor-not-allowed text-gray-800"
         : "text-red-800 font-bold cursor-not-allowed"
-    }`;
+      }`;
 
     return (
       <div
@@ -256,9 +255,9 @@ const Engine = () => {
     }
   };
 
-  const spinSlotMachine = (spinsLeft) => {
+  const spinSlotMachine = (spinsLeft, multiples = 1) => {
     setIsSpinning(true);
-    setSpins((prev) => prev + 1);
+    setSpins((prev) => prev + multiples);
     setSpinsToday((prev) => prev + 1);
     const newResults = Array.from(
       { length: 3 },
@@ -343,7 +342,7 @@ const Engine = () => {
     for (let i = 0; i < nr; i++) {
       spinsLeft--;
       await new Promise((resolve) => setTimeout(resolve, spinsTime));
-      spinSlotMachine(spinsLeft);
+      spinSlotMachine(spinsLeft, multiples);
     }
 
     setTimeout(() => {
@@ -354,8 +353,8 @@ const Engine = () => {
   };
   useEffect(() => {
     if (isUpdated && session?.data) {
-      saveResult(); 
-      setIsUpdated(false); 
+      saveResult();
+      setIsUpdated(false);
     }
   }, [isUpdated]);
 
@@ -524,10 +523,10 @@ const Engine = () => {
           {!isSpinning && winMoney
             ? `+ ${formatLargeNumber(winMoney)} €`
             : isSpinning && (
-                <div className="flex justify-center items-center">
-                  <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
-                </div>
-              )}
+              <div className="flex justify-center items-center">
+                <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
+              </div>
+            )}
         </div>
 
         <div className="w-10 h-10  myShadowOut  rounded-full ">
@@ -554,26 +553,23 @@ const Engine = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center space-x-4 slot-machine ${
-          isSpinning ? "spinning" : ""
-        }`}
+        className={`flex justify-center space-x-4 slot-machine ${isSpinning ? "spinning" : ""
+          }`}
       >
         {intervals.map((value, index) => (
           <div key={index} className={`relative `}>
             <div
               className={` myShadowOut border-teal-500 w-24 h-24 border-2  border-solid rounded-full 
       ${value === 0 ? "bg-gradient-to-r from-black to-white" : ""}
-      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${
-                intervalColors[value] || ""
-              }
+      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${intervalColors[value] || ""
+                }
       transition-opacity
       `}
               style={{ animationDelay: `${index * 0.3}s` }}
             ></div>
             <div
-              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${
-                isSpinning ? "opacity-0" : "text-black"
-              }`}
+              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${isSpinning ? "opacity-0" : "text-black"
+                }`}
             >
               <span className=" text-gray-800">{value}</span>
             </div>
@@ -582,9 +578,8 @@ const Engine = () => {
       </div>
       <div className=" relative">
         <button
-          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${
-            isSpinning ? "cursor-not-allowed" : ""
-          }`}
+          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${isSpinning ? "cursor-not-allowed" : ""
+            }`}
           onClick={
             isSpinning || multiply > 1 || buttonClicked ? null : spinSlotMachine
           }
