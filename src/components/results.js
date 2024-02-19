@@ -5,7 +5,7 @@ import { addMinutes, isToday, isWithinInterval, subMinutes } from "date-fns";
 import Balls from "@/app/games/spin/components/balls/Balls";
 import { ballsData } from "@/app/games/spin/config/config";
 
-const Results = ({ data, game }) => {
+const Results = ({ data, game, name }) => {
   if (!data) {
     return <Loading />;
   }
@@ -143,7 +143,9 @@ const Results = ({ data, game }) => {
                         {ballsData.map((data, index) => (
                           <div key={index}>
                             <Balls {...data} text={false} size="w-7 h-7" />
-                           <span className="text-[14px]">{formatLargeNumber(allBalls[index] || 0)}</span> 
+                            <span className="text-[14px]">
+                              {formatLargeNumber(allBalls[index] || 0)}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -157,6 +159,20 @@ const Results = ({ data, game }) => {
                           €
                         </span>
                       </div>
+                      {name === "ServerTest" && (
+                        <div>
+                          {Object.entries(result?.cardsData).map(
+                            ([name, count], index) =>
+                              count > 0 && (
+                                <div key={index}>
+                                  <p className="text-red-500">
+                                    {name}: {count}
+                                  </p>
+                                </div>
+                              )
+                          )}
+                        </div>
+                      )}
                     </>
                   )}
                 </div>
