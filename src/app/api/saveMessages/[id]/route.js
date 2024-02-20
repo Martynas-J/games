@@ -7,7 +7,6 @@ export const POST = async (request, { params }) => {
   const data = await request.json();
   try {
     await connect();
-    console.log(data);
 
     let generalChat = await chatModel.findOne({
       _id: "65b5fd7cc261535759eefcdb",
