@@ -11,26 +11,14 @@ export const PATCH = async (request) => {
 
     const existingData = await marketModel.findOne({ name: "Market" });
     if (existingData) {
-      existingData.sellMarket.push({
-        item: data.itemName,
-        seller: data.sellerName,
-        price: parseInt(data.price), 
-      });
-  
-      existingData.markModified('sellMarket');
+      existingData.sellMarket.push(data);
+      existingData.markModified("sellMarket");
       updatedData = existingData;
     } else {
       updatedData = new marketModel({
         name: objName,
-        sellMarket: [
-          {
-            item: data.itemName,
-            seller: data.sellerName,
-            price: parseInt(data.price), 
-          },
-        ],
+        sellMarket: [data],
       });
-      
     }
 
     await updatedData.save();
