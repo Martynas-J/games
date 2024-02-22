@@ -42,7 +42,6 @@ const DailyQuests = ({ result }) => {
       reward: "Card",
     },
   ];
-  console.log(quests[0]);
   const allowed = true;
   return (
     <div className=" border-t-2 mt-2 bg-blue-200 rounded-3xl -m-2 p-2">
