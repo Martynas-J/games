@@ -40,25 +40,25 @@ const Login = () => {
     return (
       <div className={styles.container}>
         <p>{error && toast.error(error)}</p>
-        <h1 className={styles.title}>{success ? success : "Welcome Back"}</h1>
+        <h1 className={styles.title}>{success ? success : "Sveiki sugryžę"}</h1>
         <h2 className={styles.subtitle}>
-          Please sign in to see the dashboard.
+          Reikia prisijungti kad matyti turinį.
         </h2>
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <input
             type="text"
-            placeholder="Email"
+            placeholder="El. paštas"
             required
             className={styles.input}
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="Slaptažodis"
             required
             className={styles.input}
           />
-          <button className={styles.button}>Login</button>
+          <button className={styles.button}>Prisijungti</button>
           {error && error}
         </form>
         <button
@@ -67,19 +67,19 @@ const Login = () => {
           }}
           className={styles.button + " " + styles.google}
         >
-          Login with Google
+          Prisijungti su Google
         </button>
-        <button
+        {/* <button
           onClick={() => {
             signIn("facebook");
           }}
           className={styles.button + " " + styles.facebook}
         >
           Login with Facebook
-        </button>
-        <span className={styles.or}>- OR -</span>
+        </button> */}
+        <span className={styles.or}>- Arba -</span>
         <Link className={styles.link} href="/dashboard/register">
-          Create new account
+          Sukurti nują paskyrą
         </Link>
       </div>
     );

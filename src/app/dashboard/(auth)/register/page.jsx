@@ -16,7 +16,10 @@ const Register = () => {
     const name = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-
+    if (name.includes(" ")) {
+      setError("Vartotojo vardas negali turėti tarpo simbolio.");
+      return;
+    }
     try {
       const res = await fetch("/api/auth/register", {
         method: "POST",
@@ -34,7 +37,7 @@ const Register = () => {
         router.push("/dashboard/login?success=Account has been created");
       } else if (res.status === 409) {
         toast.error("Toks vartotojas arba el. paštas jau yra sukurtas ")
-        setError("Username or email already exists.");
+        setError("Vartotojas arba el. paštas jau egzistuoja.");
       } else {
         toast.error("Klaida")
         setError("Something went wrong!");
@@ -48,33 +51,33 @@ const Register = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Create an Account</h1>
-      <h2 className={styles.subtitle}>Please sign up to see the dashboard.</h2>
+      <h1 className={styles.title}>Sukurti naują paskyrą</h1>
+      <h2 className={styles.subtitle}>Reikalingas prisijungimas po sukurimo.</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Vartotojo vardas"
           required
           className={styles.input}
         />
         <input
           type="Email"
-          placeholder="Email"
+          placeholder="El. paštas"
           required
           className={styles.input}
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Slaptažodis"
           required
           className={styles.input}
         />
-        <button className={styles.button}>Register</button>
+        <button className={styles.button}>Registuotis</button>
       </form>
-      {error}
-      <span className={styles.or}>- OR -</span>
+      <span className="text-red-500 font-bold">{error}</span>
+      <span className={styles.or}>- Arba -</span>
       <Link className={styles.link} href="/dashboard/login">
-        Login with an existing account
+        Prisijungri su esama paskyra
       </Link>
     </div>
   );

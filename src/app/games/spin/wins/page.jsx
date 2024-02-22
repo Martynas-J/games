@@ -147,7 +147,7 @@ const Wins = () => {
                   : "bg-gradient-to-r from-blue-400 to-blue-600  text-black cursor-not-allowed"
               } myShadow  px-1 py-1 rounded-full shadow-md min-w-[90px]`}
             >
-              +{formatLargeNumber(rewards, rewardsLvl, key)}€
+              +{formatLargeNumber(rewards)}€
             </button>
           </div>
         );

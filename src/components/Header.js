@@ -13,7 +13,7 @@ const Header = () => {
               <Link href="/">
                 <div className="group relative">
                   <span className="text-lg group-hover:text-blue-500">
-                    Home
+                    Pradinis
                   </span>
                   <div className="absolute w-full h-0.5 bg-white bottom-0 left-0 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform"></div>
                 </div>
@@ -22,7 +22,7 @@ const Header = () => {
           <li>
             <Link href="/games">
               <div className="group relative">
-                <span className="text-lg group-hover:text-blue-500">Games</span>
+                <span className="text-lg group-hover:text-blue-500">Žaidimai</span>
                 <div className="absolute w-full h-0.5 bg-white bottom-0 left-0 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform"></div>
               </div>
             </Link>
@@ -31,7 +31,7 @@ const Header = () => {
             <Link href="/dashboard">
               <div className="group relative">
                 <span className="text-lg group-hover:text-blue-500">
-                  Dashboard
+                  Valdymas
                 </span>
                 <div className="absolute w-full h-0.5 bg-white bottom-0 left-0 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform"></div>
               </div>
@@ -40,7 +40,7 @@ const Header = () => {
           <li className="text-lg group-hover:text-blue-500">
             {session.status === "authenticated" && (
               <button onClick={signOut} className="hover:text-red-500">
-                Log out
+                Atsijungti
               </button>
             )}
           </li>

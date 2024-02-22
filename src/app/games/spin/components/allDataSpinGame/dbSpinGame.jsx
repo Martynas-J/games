@@ -25,7 +25,7 @@ const DbSpinGame = () => {
       className="cursor-pointer hover:placeholder-paslepti text-center"
     >
       {isTableVisible ? (
-        <Results data={result} game={"spin"} name={name} />
+        <Results data={result} game={"spin"} name={name} limit={10} />
       ) : (
         <div className="p-3 text-5xl">+</div>
       )}

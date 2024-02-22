@@ -5,17 +5,19 @@ import { addMinutes, isToday, isWithinInterval, subMinutes } from "date-fns";
 import Balls from "@/app/games/spin/components/balls/Balls";
 import { ballsData } from "@/app/games/spin/config/config";
 
-const Results = ({ data, game, name }) => {
+const Results = ({ data, game, name, limit }) => {
   if (!data) {
     return <Loading />;
   }
 
   game === "quiz" && data.sort((a, b) => b.playerScore - a.playerScore);
   game === "spin" && data.sort((a, b) => b.spinMoney - a.spinMoney);
-
+  data = data.slice(0, limit);
   return (
     <div className="results-sidebar p-4 text-center">
-      <h2 className="text-lg font-semibold mb-2">Visi Rezultatai:</h2>
+      <h2 className="text-lg font-semibold mb-2">
+        {limit ? `TOP ${limit}` : "Visi Rezultatai:"}
+      </h2>
       <ul className="space-y-2">
         {data.length > 0 ? (
           data.map((result, index) => {
@@ -71,7 +73,7 @@ const Results = ({ data, game, name }) => {
             return (
               <li
                 key={index}
-                className={`${
+                className={`flex flex-col ${
                   index === 0
                     ? " shadow-yellow-500"
                     : index === 1
@@ -82,18 +84,21 @@ const Results = ({ data, game, name }) => {
                 } p-2 rounded-md shadow-md `}
               >
                 {index === 0 ? (
-                  <span className="text-yellow-500 mr-2">
+                  <span className="text-yellow-500 flex justify-center text-2xl">
                     <FaMedal />
                   </span>
                 ) : index === 1 ? (
-                  <span className="text-gray-600 mr-2">
+                  <span className="text-gray-600 flex justify-center text-2xl">
                     <FaMedal />
                   </span>
                 ) : index === 2 ? (
-                  <span className="text-orange-500 mr-2">
+                  <span className="text-orange-500 flex justify-center text-2xl">
                     <FaMedal />
                   </span>
-                ) : null}
+                ) : (
+                  <span className="flex justify-center text-2xl"></span>
+                )}
+                <div className="text-xl font-bold float-left ">{index + 1}</div>
                 <div className="text-gray-700">
                   {new Date(result.updatedAt).toLocaleString("lt-LT")}{" "}
                   <span className=" relative font-semibold">
