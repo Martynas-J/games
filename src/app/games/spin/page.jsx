@@ -28,6 +28,7 @@ import TimeCheckComponent from "./components/refresh/refresh";
 import { moneyColors } from "./components/functions/moneyColors";
 import ProgressBar from "./components/brogressBar/progresBar";
 import CardSelect from "./components/cardSelect/cardSelect";
+import DailyQuests from "./components/dailyQuests/page";
 
 const Engine = () => {
   const session = useSession();
@@ -619,6 +620,7 @@ const Engine = () => {
           </div>
         </div>
       </div>
+      <DailyQuests result={result}/>
     </div>
   );
 };

@@ -31,7 +31,7 @@ const Wins = () => {
   if (!result?.spins) {
     return <div>Pasuk nors kartą ir sužinosi</div>;
   }
-
+  const allowed = true;
   const allBalls = [
     result?.ballsNormal,
     result?.ballsRare,
@@ -152,6 +152,30 @@ const Wins = () => {
           </div>
         );
       })}
+      <div className=" border-t-2 mt-2 bg-blue-200 rounded-3xl -m-2 p-2">
+        <div>Surink 5k sukimų Surink 5k sukimų Surink 5k sukimų</div>
+        <div className="flex items-center gap-1">
+          <ProgressBar
+            lvl={0}
+            numberMin={5}
+            numberMax={100}
+            valueBefore={0}
+            type="numbers"
+          />
+          <button
+            // onClick={
+            //   allowed ? () => saveResult(rewards, rewardsLvl, key) : null
+            // }
+            className={` ${
+              allowed
+                ? "bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-800 text-white"
+                : "bg-gradient-to-r from-blue-400 to-blue-600  text-black cursor-not-allowed"
+            } myShadow  px-1 py-1 rounded-full shadow-md min-w-[90px]`}
+          >
+            +{formatLargeNumber(50000)}€
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
