@@ -26,7 +26,7 @@ const DailyQuests = ({
   }
 
   const needNumber = (nr) => (result.level || 1) * nr;
-  const needMoney = (nr) => ((result.level ** 1 || 1) * nr)*2;
+  const needMoney = (nr) => ((result.level ** 2 || 1) * nr)*2;
   const quests = [
     {
       title: `Išsuk ${formatLargeNumber(needNumber(100))} sukimų`,
@@ -103,7 +103,7 @@ const DailyQuests = ({
       condition: needNumber(2),
       conditionString: winBalls.Gold - dailyQuestsData.condition,
       isDone: winBalls.Gold - dailyQuestsData?.condition >= needNumber(2),
-      reward: needNumber(30000),
+      reward: needMoney(30000),
     },
     {
       title: (
@@ -120,7 +120,7 @@ const DailyQuests = ({
       condition: needNumber(1),
       conditionString: winBalls.Platina - dailyQuestsData.condition,
       isDone: winBalls.Platina - dailyQuestsData?.condition >= needNumber(1),
-      reward: needNumber(500000),
+      reward: needMoney(500000),
     },
     {
       title: (
@@ -134,7 +134,7 @@ const DailyQuests = ({
       condition: 1,
       conditionString: winBalls.Platina - dailyQuestsData.condition,
       isDone: winBalls.Platina - dailyQuestsData?.condition >= 1,
-      reward: needNumber(500000),
+      reward: needMoney(500000),
     },
     {
       title: "Surinkote visas užduotis",
