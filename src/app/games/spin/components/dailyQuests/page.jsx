@@ -27,7 +27,7 @@ const DailyQuests = ({
 
   const needNumber = (nr) => (result.level || 1) * nr;
   const needMoney = (nr) =>
-    (result.level ** 2 || 1) * nr * (result.level > 9 ? result.level : 2);
+    (result.level ** 2 || 1) * nr * (result.level > 7 ? result.level : 2);
   const quests = [
     {
       title: `Išsuk ${formatLargeNumber(needNumber(100))} sukimų`,
