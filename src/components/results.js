@@ -1,4 +1,15 @@
-import { FaMedal } from "react-icons/fa";
+import {
+  FaAward,
+  FaFantasyFlightGames,
+  FaFlag,
+  FaFlagCheckered,
+  FaFlagUsa,
+  FaFontAwesomeFlag,
+  FaMedal,
+  FaRegFlag,
+  FaSpinner,
+  FaTape,
+} from "react-icons/fa";
 import { formatLargeNumber } from "./Functions/simpleFunctions";
 import Loading from "./Loading/Loading";
 import { addMinutes, isToday, isWithinInterval, subMinutes } from "date-fns";
@@ -84,8 +95,14 @@ const Results = ({ data, game, name, limit }) => {
                 } p-2 rounded-md shadow-md `}
               >
                 {index === 0 ? (
-                  <span className="text-yellow-500 flex justify-center text-2xl">
+                  <span className="text-yellow-500 flex justify-center gap-2 text-2xl">
+                    <span className="text-gray-700 transform scale-x-[-1] -rotate-2">
+                      <FaFlagCheckered />
+                    </span>
                     <FaMedal />
+                    <span className="text-gray-700 ">
+                      <FaFlagCheckered />
+                    </span>
                   </span>
                 ) : index === 1 ? (
                   <span className="text-gray-600 flex justify-center text-2xl">

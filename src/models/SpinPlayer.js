@@ -81,7 +81,15 @@ const playerSchema = new Schema(
       required: true,
       default: () => new Date("2024-01-01T00:00:00Z"),
     },
-
+    dailyQuestsData: {
+      type: {
+        date: { type: Date, default: () => new Date("2024-01-01T00:00:00Z") },
+        condition: { type: Number, default: 0 },
+        question: { type: Number, default: 1 }
+      },
+      required: true
+    },
+    
     cardsData: {
       type: {
         JackOfClubs: { type: Number },

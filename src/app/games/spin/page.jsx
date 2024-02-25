@@ -29,6 +29,7 @@ import { moneyColors } from "./components/functions/moneyColors";
 import ProgressBar from "./components/brogressBar/progresBar";
 import CardSelect from "./components/cardSelect/cardSelect";
 import DailyQuests from "./components/dailyQuests/page";
+import { addDays, setHours, setMinutes, setSeconds } from "date-fns";
 
 const Engine = () => {
   const session = useSession();
@@ -38,6 +39,7 @@ const Engine = () => {
   useEffect(() => {
     if (result) {
       const {
+        dailyQuestsData,
         spinMoney,
         bestWin,
         spins,
@@ -54,7 +56,9 @@ const Engine = () => {
         level,
         cardsData,
       } = result;
-
+      if (dailyQuestsData) {
+        setDailyQuestsDb(dailyQuestsData);
+      }
       setMoney(spinMoney);
       setBiggestWin(bestWin);
       setSpins(spins);
@@ -110,6 +114,11 @@ const Engine = () => {
     AceOfDiamonds: 0,
   });
 
+  const [dailyQuestsDb, setDailyQuestsDb] = useState({
+    date: setSeconds(setMinutes(setHours(addDays(new Date(), 1), 0), 0), 0),
+    condition: 0,
+    question: 0,
+  });
   const [winBallsNow, setWinBallsNow] = useState({
     Normal: { count: 0, money: 0 },
     Rare: { count: 0, money: 0 },
@@ -191,12 +200,13 @@ const Engine = () => {
 
     const buttonClass = `myShadow w-[65px] h-[65px] ${ballsColors[index]} hover:cursor-pointer hover:xl  rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110 shadow-lg `;
 
-    const textStyle = ` ${canBay
+    const textStyle = ` ${
+      canBay
         ? canAutoSpin
           ? ""
           : "cursor-not-allowed text-gray-800"
         : "text-red-800 font-bold cursor-not-allowed"
-      }`;
+    }`;
 
     return (
       <div
@@ -244,6 +254,7 @@ const Engine = () => {
           ballsPlatina: winBalls.Platina,
           ballsNova: winBalls.Nova,
           cardsData: cardsDb,
+          dailyQuestsData: dailyQuestsDb,
         },
         "saveSpinResults"
       );
@@ -388,10 +399,35 @@ const Engine = () => {
     }
   }, [addMoney]);
 
-  if (isLoading) {
+  if (isLoading || !session.data) {
     return <Loading />;
   }
-
+  const updateState = (moneyPlus, nextDayData, questionNr) => {
+    console.log(questionNr);
+    if (moneyPlus) {
+      setMoney((prev) => prev + moneyPlus);
+      if (lvl > 5) {
+        if (questionNr === 2) {
+          setToggled2(true);
+        }
+        if (questionNr === 3) {
+          setRandomNr(4);
+          setToggled2(true);
+        }
+        if (questionNr === 4) {
+          setRandomNr(8);
+          setToggled2(true);
+        }
+        if (questionNr >= 5) {
+          setRandomNr(12);
+          setToggled2(true);
+        }
+      }
+    }
+    if (nextDayData) {
+      setDailyQuestsDb(nextDayData);
+    }
+  };
   const allValuesZero = Object.values(winBallsToday).every(
     (value) => value.count <= 0
   );
@@ -524,10 +560,10 @@ const Engine = () => {
           {!isSpinning && winMoney
             ? `+ ${formatLargeNumber(winMoney)} €`
             : isSpinning && (
-              <div className="flex justify-center items-center">
-                <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
-              </div>
-            )}
+                <div className="flex justify-center items-center">
+                  <div className="w-[34px] h-[34px] border-t-4 border-blue-500 border-solid animate-spin rounded-full"></div>
+                </div>
+              )}
         </div>
 
         <div className="w-10 h-10  myShadowOut  rounded-full ">
@@ -554,23 +590,26 @@ const Engine = () => {
         </div>
       </div>
       <div
-        className={`flex justify-center space-x-4 slot-machine ${isSpinning ? "spinning" : ""
-          }`}
+        className={`flex justify-center space-x-4 slot-machine ${
+          isSpinning ? "spinning" : ""
+        }`}
       >
         {intervals.map((value, index) => (
           <div key={index} className={`relative `}>
             <div
               className={` myShadowOut border-teal-500 w-24 h-24 border-2  border-solid rounded-full 
       ${value === 0 ? "bg-gradient-to-r from-black to-white" : ""}
-      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${intervalColors[value] || ""
-                }
+      ${isSpinning ? "animate-[spin_1s_ease-in-out]" : ""} ${
+                intervalColors[value] || ""
+              }
       transition-opacity
       `}
               style={{ animationDelay: `${index * 0.3}s` }}
             ></div>
             <div
-              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${isSpinning ? "opacity-0" : "text-black"
-                }`}
+              className={`absolute inset-0 flex items-center justify-center text-lg font-bold transition-opacity duration-5000 ease-in-out ${
+                isSpinning ? "opacity-0" : "text-black"
+              }`}
             >
               <span className=" text-gray-800">{value}</span>
             </div>
@@ -579,8 +618,9 @@ const Engine = () => {
       </div>
       <div className=" relative">
         <button
-          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${isSpinning ? "cursor-not-allowed" : ""
-            }`}
+          className={` myShadow m-6 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-700 hover:to-blue-900 text-white hover:scale-95 font-bold py-4 px-5 text-xl rounded-full transform transition-transform  shadow-md ${
+            isSpinning ? "cursor-not-allowed" : ""
+          }`}
           onClick={
             isSpinning || multiply > 1 || buttonClicked ? null : spinSlotMachine
           }
@@ -620,7 +660,17 @@ const Engine = () => {
           </div>
         </div>
       </div>
-      <DailyQuests result={result}/>
+      {result && (
+        <DailyQuests
+          result={result}
+          winBalls={winBalls}
+          level={lvl}
+          dailyQuestsData={dailyQuestsDb}
+          spinsNow={spins}
+          moneyNow={money}
+          updateState={updateState}
+        />
+      )}
     </div>
   );
 };
