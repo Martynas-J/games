@@ -43,34 +43,17 @@ const DailyQuests = ({
         <div>
           Surink{" "}
           <span className="text-green-700">
-            {formatLargeNumber(needNumber(5))}{" "}
+            {formatLargeNumber(needNumber(4))}{" "}
           </span>
           <span className="font-bold">Normal</span>
         </div>
       ),
       conditionName: "Normal",
       conditionItem: winBalls.Normal,
-      condition: needNumber(5),
-      conditionString: winBalls.Normal - dailyQuestsData.condition,
-      isDone: winBalls.Normal - dailyQuestsData?.condition >= needNumber(5),
-      reward: needMoney(15000),
-    },
-    {
-      title: (
-        <div>
-          Surink{" "}
-          <span className="text-green-700">
-            {formatLargeNumber(needNumber(4))}{" "}
-          </span>
-          <span className="font-bold">Rare</span>
-        </div>
-      ),
-      conditionName: "Rare",
-      conditionItem: winBalls.Rare,
       condition: needNumber(4),
-      conditionString: winBalls.Rare - dailyQuestsData.condition,
-      isDone: winBalls.Rare - dailyQuestsData?.condition >= needNumber(4),
-      reward: needMoney(20000),
+      conditionString: winBalls.Normal - dailyQuestsData.condition,
+      isDone: winBalls.Normal - dailyQuestsData?.condition >= needNumber(4),
+      reward: needMoney(15000),
     },
     {
       title: (
@@ -79,14 +62,31 @@ const DailyQuests = ({
           <span className="text-green-700">
             {formatLargeNumber(needNumber(3))}{" "}
           </span>
+          <span className="font-bold">Rare</span>
+        </div>
+      ),
+      conditionName: "Rare",
+      conditionItem: winBalls.Rare,
+      condition: needNumber(3),
+      conditionString: winBalls.Rare - dailyQuestsData.condition,
+      isDone: winBalls.Rare - dailyQuestsData?.condition >= needNumber(3),
+      reward: needMoney(20000),
+    },
+    {
+      title: (
+        <div>
+          Surink{" "}
+          <span className="text-green-700">
+            {needNumber(1) + 5}{" "}
+          </span>
           <span className="font-bold">Blue</span>
         </div>
       ),
       conditionName: "Blue",
       conditionItem: winBalls.Blue,
-      condition: needNumber(3),
+      condition: needNumber(1) + 5,
       conditionString: winBalls.Blue - dailyQuestsData.condition,
-      isDone: winBalls.Blue - dailyQuestsData?.condition >= needNumber(3),
+      isDone: winBalls.Blue - dailyQuestsData?.condition >= needNumber(1) + 5,
       reward: needMoney(25000),
     },
     {
@@ -94,16 +94,16 @@ const DailyQuests = ({
         <div>
           Surink{" "}
           <span className="text-green-700">
-            {formatLargeNumber(needNumber(2))}{" "}
+            {needNumber(1) + 3}{" "}
           </span>
           <span className="font-bold">Gold</span>{" "}
         </div>
       ),
       conditionName: "Gold",
       conditionItem: winBalls.Gold,
-      condition: needNumber(2),
+      condition: needNumber(1) + 3,
       conditionString: winBalls.Gold - dailyQuestsData.condition,
-      isDone: winBalls.Gold - dailyQuestsData?.condition >= needNumber(2),
+      isDone: winBalls.Gold - dailyQuestsData?.condition >= needNumber(1) + 3,
       reward: needMoney(30000),
     },
     {
@@ -184,11 +184,10 @@ const DailyQuests = ({
                   ? () => updateDate(quests[questionNr].reward)
                   : null
               }
-              className={`${
-                quests[questionNr].isDone
-                  ? "bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-800 text-white cursor-pointer"
-                  : "bg-gradient-to-r from-blue-400 to-blue-600 text-black cursor-not-allowed"
-              } myShadow px-3 py-1 rounded-full shadow-md min-w-[90px]`}
+              className={`${quests[questionNr].isDone
+                ? "bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-800 text-white cursor-pointer"
+                : "bg-gradient-to-r from-blue-400 to-blue-600 text-black cursor-not-allowed"
+                } myShadow px-3 py-1 rounded-full shadow-md min-w-[90px]`}
               disabled={!quests[questionNr].isDone}
             >
               +{formatLargeNumber(quests[questionNr].reward)}€
