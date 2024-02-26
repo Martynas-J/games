@@ -77,16 +77,16 @@ const DailyQuests = ({
         <div>
           Surink{" "}
           <span className="text-green-700">
-            {needNumber(1) + 5}{" "}
+            {needNumber(1) + 1}{" "}
           </span>
           <span className="font-bold">Blue</span>
         </div>
       ),
       conditionName: "Blue",
       conditionItem: winBalls.Blue,
-      condition: needNumber(1) + 5,
+      condition: needNumber(1) + 1,
       conditionString: winBalls.Blue - dailyQuestsData.condition,
-      isDone: winBalls.Blue - dailyQuestsData?.condition >= needNumber(1) + 5,
+      isDone: winBalls.Blue - dailyQuestsData?.condition >= needNumber(1) + 1,
       reward: needMoney(25000),
     },
     {
@@ -94,16 +94,16 @@ const DailyQuests = ({
         <div>
           Surink{" "}
           <span className="text-green-700">
-            {needNumber(1) + 3}{" "}
+            {needNumber(1) + 1}{" "}
           </span>
           <span className="font-bold">Gold</span>{" "}
         </div>
       ),
       conditionName: "Gold",
       conditionItem: winBalls.Gold,
-      condition: needNumber(1) + 3,
+      condition: needNumber(1) + 1,
       conditionString: winBalls.Gold - dailyQuestsData.condition,
-      isDone: winBalls.Gold - dailyQuestsData?.condition >= needNumber(1) + 3,
+      isDone: winBalls.Gold - dailyQuestsData?.condition >= needNumber(1) + 1,
       reward: needMoney(30000),
     },
     {
