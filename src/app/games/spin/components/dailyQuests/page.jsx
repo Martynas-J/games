@@ -121,7 +121,7 @@ const DailyQuests = ({
       condition: needNumber(1),
       conditionString: winBalls.Platina - dailyQuestsData.condition,
       isDone: winBalls.Platina - dailyQuestsData?.condition >= needNumber(1),
-      reward: needMoney(500000),
+      reward: needMoney(50000),
     },
     {
       title: (
@@ -135,7 +135,7 @@ const DailyQuests = ({
       condition: 1,
       conditionString: winBalls.Platina - dailyQuestsData.condition,
       isDone: winBalls.Platina - dailyQuestsData?.condition >= 1,
-      reward: needMoney(500000),
+      reward: needMoney(60000),
     },
     {
       title: "Surinkote visas užduotis",
