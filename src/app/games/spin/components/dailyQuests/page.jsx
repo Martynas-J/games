@@ -60,16 +60,16 @@ const DailyQuests = ({
         <div>
           Surink{" "}
           <span className="text-green-700">
-            {formatLargeNumber(needNumber(3))}{" "}
+            {formatLargeNumber(needNumber(2))}{" "}
           </span>
           <span className="font-bold">Rare</span>
         </div>
       ),
       conditionName: "Rare",
       conditionItem: winBalls.Rare,
-      condition: needNumber(3),
+      condition: needNumber(2),
       conditionString: winBalls.Rare - dailyQuestsData.condition,
-      isDone: winBalls.Rare - dailyQuestsData?.condition >= needNumber(3),
+      isDone: winBalls.Rare - dailyQuestsData?.condition >= needNumber(2),
       reward: needMoney(20000),
     },
     // {
