@@ -46,11 +46,11 @@ export const intervalColors = {
 
 export const premiumMoney = [
   500, 1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000,
-  50000000, 100000000,
+  50000000, 100000000, 500000000, 1000000000,
 ];
 export const premiumSpins = [
   100, 500, 1000, 2000, 4000, 8000, 10000, 20000, 40000, 80000, 160000, 320000,
-  1000000000000000,
+  640000, 1280000,
 ];
 export const ballsColors = [
   "bg-gradient-to-r from-green-300 to-green-200  hover:from-green-300 hover:to-green-100",
@@ -60,26 +60,73 @@ export const ballsColors = [
 ];
 export const cards = [
   { name: "JackOfClubs", symbol: "♣", type: "♖", title: "J" },
-  { name: "JackOfHearts", symbol: "♥", type: "♖", title: "J", color: "text-red-500" },
+  {
+    name: "JackOfHearts",
+    symbol: "♥",
+    type: "♖",
+    title: "J",
+    color: "text-red-500",
+  },
   { name: "JackOfSpades", symbol: "♠", type: "♖", title: "J" },
-  { name: "JackOfDiamonds", symbol: "♦", type: "♖", title: "J", color: "text-red-500" },
+  {
+    name: "JackOfDiamonds",
+    symbol: "♦",
+    type: "♖",
+    title: "J",
+    color: "text-red-500",
+  },
 
   { name: "QueenOfClubs", symbol: "♣", type: "♕", title: "Q" },
-  { name: "QueenOfHearts", symbol: "♥", type: "♕", title: "Q", color: "text-red-500" },
+  {
+    name: "QueenOfHearts",
+    symbol: "♥",
+    type: "♕",
+    title: "Q",
+    color: "text-red-500",
+  },
   { name: "QueenOfSpades", symbol: "♠", type: "♕", title: "Q" },
-  { name: "QueenOfDiamonds", symbol: "♦", type: "♕", title: "Q", color: "text-red-500" },
+  {
+    name: "QueenOfDiamonds",
+    symbol: "♦",
+    type: "♕",
+    title: "Q",
+    color: "text-red-500",
+  },
 
   { name: "KingOfClubs", symbol: "♣", type: "♔", title: "K" },
-  { name: "KingOfHearts", symbol: "♥", type: "♔", title: "K", color: "text-red-500" },
+  {
+    name: "KingOfHearts",
+    symbol: "♥",
+    type: "♔",
+    title: "K",
+    color: "text-red-500",
+  },
   { name: "KingOfSpades", symbol: "♠", type: "♔", title: "K" },
-  { name: "KingOfDiamonds", symbol: "♦", type: "♔", title: "K", color: "text-red-500" },
+  {
+    name: "KingOfDiamonds",
+    symbol: "♦",
+    type: "♔",
+    title: "K",
+    color: "text-red-500",
+  },
 
   { name: "AceOfClubs", symbol: "♣", type: "♗", title: "A" },
-  { name: "AceOfHearts", symbol: "♥", type: "♗", title: "A", color: "text-red-500" },
+  {
+    name: "AceOfHearts",
+    symbol: "♥",
+    type: "♗",
+    title: "A",
+    color: "text-red-500",
+  },
   { name: "AceOfSpades", symbol: "♠", type: "♗", title: "A" },
-  { name: "AceOfDiamonds", symbol: "♦", type: "♗", title: "A", color: "text-red-500" },
+  {
+    name: "AceOfDiamonds",
+    symbol: "♦",
+    type: "♗",
+    title: "A",
+    color: "text-red-500",
+  },
 ];
-
 
 export const rewardForBalls = [
   100, 1000, 5000, 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000,
@@ -163,7 +210,7 @@ export const checkIntervals = (value, upgradeLucky) => {
     if (value >= 67 && value < 80) return "Platina";
     if (value >= 42 && value < 49) return "Nova";
   } else if (upgradeLucky === 35) {
-    if (value = 1 ) return "Card";
+    if ((value = 1)) return "Card";
     if (value > 1 && value < 28) return "Normal";
     if (value >= 78 && value <= 99) return "Rare";
     if (value >= 28 && value < 40) return "Blue";
@@ -171,7 +218,7 @@ export const checkIntervals = (value, upgradeLucky) => {
     if (value >= 64 && value < 78) return "Platina";
     if (value >= 40 && value < 48) return "Nova";
   } else if (upgradeLucky === 40) {
-    if (value = 1 ) return "Card";
+    if ((value = 1)) return "Card";
     if (value > 1 && value < 26) return "Normal";
     if (value >= 78 && value <= 99) return "Rare";
     if (value >= 26 && value < 38) return "Blue";
@@ -179,7 +226,7 @@ export const checkIntervals = (value, upgradeLucky) => {
     if (value >= 63 && value < 78) return "Platina";
     if (value >= 38 && value < 47) return "Nova";
   } else if (upgradeLucky === 45) {
-    if (value = 1 ) return "Card";
+    if ((value = 1)) return "Card";
     if (value > 1 && value < 24) return "Normal";
     if (value >= 78 && value <= 99) return "Rare";
     if (value >= 24 && value < 36) return "Blue";
@@ -197,7 +244,7 @@ export const checkIntervals = (value, upgradeLucky) => {
   //   if (value >= 34 && value < 45) return "Nova";
   // }
   else {
-    if (value === 1 ) return "Card";
+    if (value === 1) return "Card";
     if (value > 1 && value < 40) return "Normal";
     if (value >= 77 && value <= 99) return "Rare";
     if (value >= 40 && value < 58) return "Blue";

@@ -407,21 +407,8 @@ const Engine = () => {
     if (moneyPlus) {
       setMoney((prev) => prev + moneyPlus);
       if (lvl > 5) {
-        if (questionNr === 2) {
-          setToggled2(true);
-        }
-        if (questionNr === 3) {
-          setRandomNr(4);
-          setToggled2(true);
-        }
-        if (questionNr === 4) {
-          setRandomNr(8);
-          setToggled2(true);
-        }
-        if (questionNr >= 5) {
-          setRandomNr(12);
-          setToggled2(true);
-        }
+        setRandomNr(Math.floor(Math.random() * 13));
+        setToggled2(true);
       }
     }
     if (nextDayData) {
