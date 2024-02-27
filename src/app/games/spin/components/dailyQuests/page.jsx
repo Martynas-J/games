@@ -72,23 +72,23 @@ const DailyQuests = ({
       isDone: winBalls.Rare - dailyQuestsData?.condition >= needNumber(3),
       reward: needMoney(20000),
     },
-    {
-      title: (
-        <div>
-          Surink{" "}
-          <span className="text-green-700">
-            {needNumber(1) + 1}{" "}
-          </span>
-          <span className="font-bold">Blue</span>
-        </div>
-      ),
-      conditionName: "Blue",
-      conditionItem: winBalls.Blue,
-      condition: needNumber(1) + 1,
-      conditionString: winBalls.Blue - dailyQuestsData.condition,
-      isDone: winBalls.Blue - dailyQuestsData?.condition >= needNumber(1) + 1,
-      reward: needMoney(25000),
-    },
+    // {
+    //   title: (
+    //     <div>
+    //       Surink{" "}
+    //       <span className="text-green-700">
+    //         {needNumber(1) + 1}{" "}
+    //       </span>
+    //       <span className="font-bold">Blue</span>
+    //     </div>
+    //   ),
+    //   conditionName: "Blue",
+    //   conditionItem: winBalls.Blue,
+    //   condition: needNumber(1) + 1,
+    //   conditionString: winBalls.Blue - dailyQuestsData.condition,
+    //   isDone: winBalls.Blue - dailyQuestsData?.condition >= needNumber(1) + 1,
+    //   reward: needMoney(25000),
+    // },
     {
       title: (
         <div>
@@ -163,7 +163,7 @@ const DailyQuests = ({
       <div className="font-bold text-lg mb-2 font-serif border-b-2">
         DIENOS UŽDUOTYS
       </div>
-      {questionNr < 7 ? (
+      {questionNr < 6 ? (
         <>
           <div className="flex flex-col font-semibold text-gray-800 text-[18px]">
             {" "}
