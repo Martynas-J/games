@@ -403,12 +403,25 @@ const Engine = () => {
     return <Loading />;
   }
   const updateState = (moneyPlus, nextDayData, questionNr) => {
-    console.log(questionNr);
     if (moneyPlus) {
       setMoney((prev) => prev + moneyPlus);
       if (lvl > 5) {
-        setRandomNr(Math.floor(Math.random() * 13));
-        setToggled2(true);
+        if (questionNr === 2) {
+          setRandomNr(Math.floor(Math.random() * 13));  
+          setToggled2(true);
+        }
+        if (questionNr === 3) {
+          setRandomNr(Math.floor(Math.random() * 9) + 4);
+          setToggled2(true);
+        }
+        if (questionNr === 4) {
+          setRandomNr(Math.floor(Math.random() * 5) + 8);
+          setToggled2(true);
+        }
+        if (questionNr >= 5) {
+          setRandomNr(12);
+          setToggled2(true);
+        }
       }
     }
     if (nextDayData) {
