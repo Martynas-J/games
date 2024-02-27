@@ -1,15 +1,5 @@
-import {
-  FaAward,
-  FaFantasyFlightGames,
-  FaFlag,
-  FaFlagCheckered,
-  FaFlagUsa,
-  FaFontAwesomeFlag,
-  FaMedal,
-  FaRegFlag,
-  FaSpinner,
-  FaTape,
-} from "react-icons/fa";
+import { FaFlagCheckered, FaMedal } from "react-icons/fa";
+import { GiMedal, GiRibbonMedal } from "react-icons/gi";
 import { formatLargeNumber } from "./Functions/simpleFunctions";
 import Loading from "./Loading/Loading";
 import { addMinutes, isToday, isWithinInterval, subMinutes } from "date-fns";
@@ -20,10 +10,38 @@ const Results = ({ data, game, name, limit }) => {
   if (!data) {
     return <Loading />;
   }
-
+  let maxBestWin = null;
+  let maxBallsNormal = null;
+  let maxBallsRare = null;
+  let maxBallsBlue = null;
+  let maxBallsGold = null;
+  let maxBallsPlatina = null;
+  let maxBallsNova = null;
   game === "quiz" && data.sort((a, b) => b.playerScore - a.playerScore);
   game === "spin" && data.sort((a, b) => b.spinMoney - a.spinMoney);
   data = data.slice(0, limit);
+  if (game === "spin") {
+    maxBestWin = Math.max(...data.map((item) => item.bestWin));
+    maxBallsNormal = Math.max(...data.map((item) => item.ballsNormal));
+    maxBallsRare = Math.max(...data.map((item) => item.ballsRare));
+    maxBallsBlue = Math.max(...data.map((item) => item.ballsBlue));
+    maxBallsGold = Math.max(...data.map((item) => item.ballsGold));
+    maxBallsPlatina = Math.max(...data.map((item) => item.ballsPlatina));
+    maxBallsNova = Math.max(...data.map((item) => item.ballsNova));
+    
+  //   const sum = data.reduce((acc, curr) => {
+  //     const cardsData = curr.cardsData;
+  //     for (const key in cardsData) {
+  //         if (Object.hasOwnProperty.call(cardsData, key) && key !== '_id') {
+  //             acc += cardsData[key];
+  //         }
+  //     }
+  //     return acc;
+  // }, 0);
+  
+  // console.log(sum);
+  }
+
   return (
     <div className="results-sidebar p-4 text-center">
       <h2 className="text-lg font-semibold mb-2">
@@ -105,12 +123,12 @@ const Results = ({ data, game, name, limit }) => {
                     </span>
                   </span>
                 ) : index === 1 ? (
-                  <span className="text-gray-600 flex justify-center text-2xl">
-                    <FaMedal />
+                  <span className="flex justify-center text-2xl">
+                    <FaMedal color="Silver" />
                   </span>
                 ) : index === 2 ? (
-                  <span className="text-orange-500 flex justify-center text-2xl">
-                    <FaMedal />
+                  <span className=" flex justify-center text-2xl">
+                    <FaMedal color="Gold" />
                   </span>
                 ) : (
                   <span className="flex justify-center text-2xl"></span>
@@ -141,6 +159,29 @@ const Results = ({ data, game, name, limit }) => {
                   {game === "spin" && (
                     <>
                       <div>
+                        <div className="flex justify-center">
+                          {result.bestWin === maxBestWin && (
+                            <GiRibbonMedal color="blue" size={30} />
+                          )}
+                          {result.ballsNormal === maxBallsNormal && (
+                            <GiMedal color="Silver" size={30} />
+                          )}
+                          {result.ballsRare === maxBallsRare && (
+                            <GiMedal color="Orange" size={30} />
+                          )}
+                          {result.ballsBlue === maxBallsBlue && (
+                            <GiMedal color="Blue" size={30} />
+                          )}
+                          {result.ballsGold === maxBallsGold && (
+                            <GiMedal color="Gold" size={30} />
+                          )}
+                          {result.ballsPlatina === maxBallsPlatina && (
+                            <GiMedal color="Gray" size={30} />
+                          )}
+                          {result.ballsNova === maxBallsNova && (
+                            <GiMedal color="purple" size={30} />
+                          )}
+                        </div>
                         Lvl:{" "}
                         <span className="text-green-700 font-bold">
                           {result.level}
