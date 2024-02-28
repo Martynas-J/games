@@ -4,7 +4,41 @@ import { ballsData, cards, intervalColors } from "../config/config";
 
 const Info = () => {
   const time = [1, 2, 3];
+  const cardItem = (indexArr, text, money) => (
+    <div className="flex justify-between items-center w-full">
+      <div className="flex justify-start gap-1">
+        {indexArr.map((indexNr, index) => {
+          return (
+            <div key={index}>
+              <CardElement
+                {...cards[indexNr]}
+                miniSymbolSize="text-xs"
+                symbolSize="text-md"
+                titleSize="text-md"
+                typeSize="text-[8px]"
+                cardSize="w-[56px]"
+              />
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        {text}
+        <span className="text-green-700 font-bold">{money}&euro;</span>
+      </div>
+    </div>
+  );
+  const b1 = <Balls color={intervalColors.Card} title="Card" texts={true} />;
+  const b2 = <Balls title="?" texts={true} />;
 
+  const cardBallItem = (balls, text) => (
+    <div className="flex items-center ">
+      {balls.map((ball, i) => (
+        <div key={i}>{ball}</div>
+      ))}
+      <span className="text-xs w-36"> {text} </span>
+    </div>
+  );
   return (
     <>
       <div className="border-b-2 pb-2">
@@ -25,139 +59,35 @@ const Info = () => {
           {ballsData.map((data, index) => (
             <Balls key={index} {...data} texts={true} />
           ))}
-
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-y-1 border-b-2 pb-2">
+        <div className="text-md my-4 w-full font-bold">
+          Dienos uždutys gaunate pinigų įveikę užduotį. Nuo 3 užduoties gaunate
+          ir Kortą (<span className="text-red-600">nuo 6 lvl</span>)
         </div>
       </div>
       <div className="flex flex-wrap gap-y-1 border-b-2 pb-2">
         <div className="text-md my-4 w-full font-bold">
           Surink Card kamuoliukus ir laimėk kortą
         </div>
-        <div className="flex items-center ">
-          <Balls color={intervalColors.Card} title="Card" texts={true} />
-          <Balls color={intervalColors.Card} title="Card" texts={true} />
-          <Balls title="?" texts={true} />
-          <span className="text-xs w-36"> Surink 2 pirmus kamuoliukus </span>
-        </div>
-        <div className="flex items-center ">
-          <Balls color={intervalColors.Card} title="Card" texts={true} />
-          <Balls title="?" texts={true} />
-          <Balls color={intervalColors.Card} title="Card" texts={true} />
-          <span className="text-xs w-36"> Surink pirma ir paskutinį </span>
-        </div>
-        <div className="flex items-center ">
-          <Balls title="?" texts={true} />
-          <Balls color={intervalColors.Card} title="Card" texts={true} />
-          <Balls color={intervalColors.Card} title="Card" texts={true} />
-          <span className="text-xs w-36"> Surink 2 paskutinius kamuoliukus </span>
-        </div>
-        <div className="flex items-center ">
-          <Balls color={intervalColors.Card} title="Card" texts={true} />
-          <Balls color={intervalColors.Card} title="Card" texts={true} />
-          <Balls color={intervalColors.Card} title="Card" texts={true} />
-          <span className="text-xs w-36"> Surink 3 kamuoliukus ir laimėk Tuzą </span>
-        </div>
+        {cardBallItem([b1, b1, b2], "Surink 2 pirmus kamuoliukus ")}
+        {cardBallItem([b1, b2, b1], "Surink pirma ir paskutinį ")}
+        {cardBallItem([b2, b1, b1], "Surink 2 paskutinius kamuoliukus ")}
+        {cardBallItem([b1, b1, b1], "Surink 3 kamuoliukus ir laimėk Tuzą ")}
       </div>
       <div className="flex flex-wrap gap-y-1 border-b-2 pb-2">
         <div className="text-md my-4 w-full font-bold">
           Galima pirkti ir parduoti kortas Turguje arba iškeisti jas į pinigus
         </div>
         <div className="text-md  w-full">
-          Surink vienodas
+          Surink vienos rūšies (
+          <span className="text-red-600">atsiimti nuo 8 lvl</span>)
         </div>
-        <div className="flex justify-between items-center w-full">
-          <CardElement
-            {...cards[0]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          <div>Už viena korta iš eilės <span className="text-green-700 font-bold">100k</span></div>
-        </div>
-        <div className="flex justify-between items-center w-full">
-          <div className="flex gap-1">
-          <CardElement
-            {...cards[0]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          <CardElement
-            {...cards[4]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          </div>
-          <div>Už 2 iš eilės <span className="text-green-700 font-bold">1.5m</span></div>
-        </div>
-        <div className="flex justify-between items-center w-full">
-          <CardElement
-            {...cards[0]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          <CardElement
-            {...cards[4]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          <CardElement
-            {...cards[8]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          <div>Už 3 iš eilės <span className="text-green-700 font-bold">15m</span></div>
-        </div>
-        <div className="flex justify-between items-center w-full">
-          <CardElement
-            {...cards[0]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          <CardElement
-            {...cards[4]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          <CardElement
-            {...cards[8]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          <CardElement
-            {...cards[12]}
-            miniSymbolSize="text-xs"
-            symbolSize="text-md"
-            titleSize="text-md"
-            typeSize="text-[8px]"
-            cardSize="w-[56px]"
-          />
-          <div>Už visas <span className="text-green-700 font-bold">100m</span></div>
-        </div>
+        {cardItem([0], "Už viena korta iš eilės ", "100k")}
+        {cardItem([0, 4], "Už 2 iš eilės ", "1.5m")}
+        {cardItem([0, 4, 8], "Už 3 iš eilės ", "15m")}
+        {cardItem([0, 4, 8, 12], "Už visą ", "100m")}
       </div>
     </>
   );
