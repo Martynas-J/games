@@ -5,8 +5,10 @@ import Loading from "./Loading/Loading";
 import { addMinutes, isToday, isWithinInterval, subMinutes } from "date-fns";
 import Balls from "@/app/games/spin/components/balls/Balls";
 import { ballsData } from "@/app/games/spin/config/config";
+import { useState } from "react";
 
 const Results = ({ data, game, name, limit }) => {
+  const [mesage, setMessage] = useState("")
   if (!data) {
     return <Loading />;
   }
@@ -28,20 +30,22 @@ const Results = ({ data, game, name, limit }) => {
     maxBallsGold = Math.max(...data.map((item) => item.ballsGold));
     maxBallsPlatina = Math.max(...data.map((item) => item.ballsPlatina));
     maxBallsNova = Math.max(...data.map((item) => item.ballsNova));
-    
-  //   const sum = data.reduce((acc, curr) => {
-  //     const cardsData = curr.cardsData;
-  //     for (const key in cardsData) {
-  //         if (Object.hasOwnProperty.call(cardsData, key) && key !== '_id') {
-  //             acc += cardsData[key];
-  //         }
-  //     }
-  //     return acc;
-  // }, 0);
-  
-  // console.log(sum);
-  }
 
+    //   const sum = data.reduce((acc, curr) => {
+    //     const cardsData = curr.cardsData;
+    //     for (const key in cardsData) {
+    //         if (Object.hasOwnProperty.call(cardsData, key) && key !== '_id') {
+    //             acc += cardsData[key];
+    //         }
+    //     }
+    //     return acc;
+    // }, 0);
+
+    // console.log(sum);
+  }
+  const handleMedalClick = (color) => {
+    setMessage(`Pirmas pagal ${color}`)
+  };
   return (
     <div className="results-sidebar p-4 text-center">
       <h2 className="text-lg font-semibold mb-2">
@@ -102,15 +106,14 @@ const Results = ({ data, game, name, limit }) => {
             return (
               <li
                 key={index}
-                className={`flex flex-col ${
-                  index === 0
-                    ? " shadow-yellow-500"
-                    : index === 1
+                className={`flex flex-col ${index === 0
+                  ? " shadow-yellow-500"
+                  : index === 1
                     ? "shadow-gray-500"
                     : index === 2
-                    ? " shadow-orange-700"
-                    : " shadow-slate-700"
-                } p-2 rounded-md shadow-md `}
+                      ? " shadow-orange-700"
+                      : " shadow-slate-700"
+                  } p-2 rounded-md shadow-md `}
               >
                 {index === 0 ? (
                   <span className="text-yellow-500 flex justify-center gap-2 text-2xl">
@@ -160,28 +163,44 @@ const Results = ({ data, game, name, limit }) => {
                     <>
                       <div>
                         <div className="flex justify-center">
+                          {mesage && <span>{mesage}</span>}
                           {result.bestWin === maxBestWin && (
-                            <GiRibbonMedal color="blue" size={30} />
+                            <span onClick={() => handleMedalClick("best Win")}>
+                              <GiRibbonMedal color="blue" size={30} />
+                            </span>
                           )}
                           {result.ballsNormal === maxBallsNormal && (
-                            <GiMedal color="Silver" size={30} />
+                            <span onClick={() => handleMedalClick("Normal kamuoliukus")}>
+                              <GiMedal color="Silver" size={30} />
+                            </span>
                           )}
                           {result.ballsRare === maxBallsRare && (
-                            <GiMedal color="Orange" size={30} />
+                            <span onClick={() => handleMedalClick("Rare kamuoliukus")}>
+                              <GiMedal color="Orange" size={30} />
+                            </span>
                           )}
                           {result.ballsBlue === maxBallsBlue && (
-                            <GiMedal color="Blue" size={30} />
+                            <span onClick={() => handleMedalClick("Blue kamuoliukus")}>
+                              <GiMedal color="Blue" size={30} />
+                            </span>
                           )}
                           {result.ballsGold === maxBallsGold && (
-                            <GiMedal color="Gold" size={30} />
+                            <span onClick={() => handleMedalClick("Gold kamuoliukus")}>
+                              <GiMedal color="Gold" size={30} />
+                            </span>
                           )}
                           {result.ballsPlatina === maxBallsPlatina && (
-                            <GiMedal color="Gray" size={30} />
+                            <span onClick={() => handleMedalClick("Platina kamuoliukus")}>
+                              <GiMedal color="Gray" size={30} />
+                            </span>
                           )}
                           {result.ballsNova === maxBallsNova && (
-                            <GiMedal color="purple" size={30} />
+                            <span onClick={() => handleMedalClick("Nova kamuoliukus")}>
+                              <GiMedal color="purple" size={30} />
+                            </span>
                           )}
                         </div>
+
                         Lvl:{" "}
                         <span className="text-green-700 font-bold">
                           {result.level}
