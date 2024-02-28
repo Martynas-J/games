@@ -9,7 +9,7 @@ import {
   uSpeedArray,
   uXArray,
 } from "../../config/config";
-import Loading from "@/components/Loading/Loading";
+
 
 const HeaderSpin = () => {
   const [activeIndex, setActiveIndex] = useState(null);
