@@ -163,7 +163,7 @@ const Results = ({ data, game, name, limit }) => {
                     <>
                       <div>
                         <div className="flex justify-center">
-                          {mesage && <span>{mesage}</span>}
+                          {/* {mesage && <span>{mesage}</span>} */}
                           {result.bestWin === maxBestWin && (
                             <span onClick={() => handleMedalClick("best Win")}>
                               <GiRibbonMedal color="blue" size={30} />
