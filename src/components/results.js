@@ -166,7 +166,7 @@ const Results = ({ data, game, name, limit }) => {
                         <div className="flex justify-center">
                           {mesage?.text && mesage.i === index && <div className="font-bold text-green-800">{mesage.text}</div>}
                           {result.bestWin === maxBestWin && (
-                            <span onClick={() => handleMedalClick("best Win", index)}>
+                            <span onClick={() => handleMedalClick("Top Win", index)}>
                               <GiRibbonMedal color="blue" size={30} />
                             </span>
                           )}
