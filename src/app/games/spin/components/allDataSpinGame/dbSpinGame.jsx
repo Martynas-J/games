@@ -18,16 +18,17 @@ const DbSpinGame = () => {
   if (isLoading) {
     return <Loading />;
   }
+  const classtoggle = "text-xl flex justify-end cursor-pointer  hover:text-red-600"
 
   return (
-    <div
-      onClick={handleToggleTableVisibility}
-      className="cursor-pointer hover:placeholder-paslepti text-center"
-    >
+    <div className=" text-center" >
       {isTableVisible ? (
-        <Results data={result} game={"spin"} name={name} limit={10} />
+        <>
+          <div onClick={handleToggleTableVisibility} className={`hover:after:content-['_Sumažinti-']  ${classtoggle}`}>-</div>
+          <Results data={result} game={"spin"} name={name} limit={10} />
+        </>
       ) : (
-        <div className="p-3 text-5xl">+</div>
+        <div onClick={handleToggleTableVisibility} className={`hover:after:content-['_Išskleisti+']  ${classtoggle}`}>+</div>
       )}
     </div>
   );
