@@ -72,9 +72,9 @@ const Info = () => {
           Surink Card kamuoliukus ir laimėk kortą
         </div>
         {cardBallItem([b1, b1, b2], "Surink 2 pirmus kamuoliukus ")}
-        {cardBallItem([b1, b2, b1], "Surink pirma ir paskutinį ")}
+        {cardBallItem([b1, b2, b1], "Surink pirmą ir paskutinį ")}
         {cardBallItem([b2, b1, b1], "Surink 2 paskutinius kamuoliukus ")}
-        {cardBallItem([b1, b1, b1], "Surink 3 kamuoliukus ir laimėk Tuzą ")}
+        {cardBallItem([b1, b1, b1], "Surink 3 kamuoliukus ir laimėk Tūzą ")}
       </div>
       <div className="flex flex-wrap gap-y-1 border-b-2 pb-2">
         <div className="text-md my-4 w-full font-bold">
@@ -84,7 +84,7 @@ const Info = () => {
           Surink vienos rūšies (
           <span className="text-red-600">atsiimti nuo 8 lvl</span>)
         </div>
-        {cardItem([0], "Už viena korta iš eilės ", "100k")}
+        {cardItem([0], "Už vieną kortą iš eilės ", "100k")}
         {cardItem([0, 4], "Už 2 iš eilės ", "1.5m")}
         {cardItem([0, 4, 8], "Už 3 iš eilės ", "15m")}
         {cardItem([0, 4, 8, 12], "Už visą ", "100m")}
