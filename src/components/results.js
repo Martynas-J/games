@@ -1,5 +1,6 @@
 import { FaFlagCheckered, FaMedal } from "react-icons/fa";
-import { GiMedal, GiRibbonMedal } from "react-icons/gi";
+import { PiMedal, PiMedalDuotone, PiMedalFill, PiMedalLight } from "react-icons/pi";
+import { GiMedal, GiMedallist, GiRibbonMedal } from "react-icons/gi";
 import { formatLargeNumber } from "./Functions/simpleFunctions";
 import Loading from "./Loading/Loading";
 import { addMinutes, isToday, isWithinInterval, subMinutes } from "date-fns";
@@ -30,34 +31,22 @@ const Results = ({ data, game, name, limit }) => {
     maxBallsGold = Math.max(...data.map((item) => item.ballsGold));
     maxBallsPlatina = Math.max(...data.map((item) => item.ballsPlatina));
     maxBallsNova = Math.max(...data.map((item) => item.ballsNova));
-    const findMaxCard = (cardName) => {
-      const card = data.map((item, index) =>
-        Object.entries(item.cardsData)
-          .filter(([key, value]) => key.startsWith(cardName) && key !== "_id")
-          .reduce((acc, [key, value]) => acc + value, 0)
-      );
-      const maxCard = Math.max(...card);
-      const maxCardIndex = card.indexOf(maxCard);
-      return { maxCard, maxCardIndex };
-    };
-    const maxJack = findMaxCard("Jack");
-    const maxQueen = findMaxCard("Queen");
-    const maxKing = findMaxCard("King");
-    const maxAce = findMaxCard("Ace");
 
-
-    //   const sum = data.reduce((acc, curr) => {
-    //     const cardsData = curr.cardsData;
-    //     for (const key in cardsData) {
-    //         if (Object.hasOwnProperty.call(cardsData, key) && key !== '_id') {
-    //             acc += cardsData[key];
-    //         }
-    //     }
-    //     return acc;
-    // }, 0);
-
-    // console.log(sum);
+    // const maxJack = findMaxCard("Jack");
+    // const maxQueen = findMaxCard("Queen");
+    // const maxKing = findMaxCard("King");
+    // const maxAce = findMaxCard("Ace");
   }
+  const findMaxCard = (cardName) => {
+    const card = data.map((item, index) =>
+      Object.entries(item.cardsData)
+        .filter(([key, value]) => key.startsWith(cardName) && key !== "_id")
+        .reduce((acc, [key, value]) => acc + value, 0)
+    );
+    const maxCard = Math.max(...card);
+    const maxCardIndex = card.indexOf(maxCard);
+    return { maxCard, maxCardIndex };
+  };
   const handleMedalClick = (color, index) => {
     const messageObj = { text: `Pirmas pagal ${color}`, i: index };
     setMessage(messageObj);
@@ -184,6 +173,41 @@ const Results = ({ data, game, name, limit }) => {
                             <div className="font-bold text-green-800">
                               {message.text}
                             </div>
+                          )}
+                          {index === findMaxCard("Jack").maxCardIndex && (
+                            <span
+                              onClick={() => handleMedalClick("Bartukus", index)}
+                            >
+                              <PiMedal color="gray" size={30} />
+                            </span>
+                          )}
+                          {index === findMaxCard("Queen").maxCardIndex && (
+                            <span
+                              onClick={() => handleMedalClick("Damas", index)}
+                            >
+                              <PiMedalDuotone color="braun" size={30} />
+                            </span>
+                          )}
+                          {index === findMaxCard("King").maxCardIndex && (
+                            <span
+                              onClick={() => handleMedalClick("Karalius", index)}
+                            >
+                              <PiMedalLight color="blue" size={30} />
+                            </span>
+                          )}
+                          {index === findMaxCard("King").maxCardIndex && (
+                            <span
+                              onClick={() => handleMedalClick("Tūzus", index)}
+                            >
+                              <PiMedalFill color="purple" size={30} />
+                            </span>
+                          )}
+                          {index === findMaxCard("").maxCardIndex && (
+                            <span
+                              onClick={() => handleMedalClick("Kortas", index)}
+                            >
+                              <GiMedallist color="purple" size={30} />
+                            </span>
                           )}
                           {result.bestWin === maxBestWin && (
                             <span
