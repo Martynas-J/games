@@ -43,6 +43,7 @@ const Engine = () => {
         spinMoney,
         bestWin,
         spins,
+        spinsLeft,
         upgradeX,
         upgradeLucky,
         upgradeSpeed,
@@ -62,6 +63,9 @@ const Engine = () => {
       setMoney(spinMoney);
       setBiggestWin(bestWin);
       setSpins(spins);
+      if (spinsLeft) {
+        setLeftSpins(spinsLeft)
+      }
       setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
       setUpgradeLucky(upgradeLucky);
       setUpgradeSpeed(upgradeSpeed);
