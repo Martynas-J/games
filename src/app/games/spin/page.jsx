@@ -259,6 +259,7 @@ const Engine = () => {
           ballsNova: winBalls.Nova,
           cardsData: cardsDb,
           dailyQuestsData: dailyQuestsDb,
+          // spinsLeft:leftSpins,
         },
         "saveSpinResults"
       );
