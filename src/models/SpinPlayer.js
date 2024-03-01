@@ -21,6 +21,10 @@ const playerSchema = new Schema(
       type: Number,
       required: true,
     },
+    multiplyDbNr: {
+      type: Number,
+      required: true,
+    },
     bestWin: {
       type: Number,
       required: true,
