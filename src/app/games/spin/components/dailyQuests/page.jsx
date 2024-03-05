@@ -131,10 +131,10 @@ const DailyQuests = ({
         </div>
       ),
       conditionName: "Nova",
-      conditionItem: winBalls.Platina,
+      conditionItem: winBalls.Nova,
       condition: 1,
-      conditionString: winBalls.Platina - dailyQuestsData.condition,
-      isDone: winBalls.Platina - dailyQuestsData?.condition >= 1,
+      conditionString: winBalls.Nova - dailyQuestsData.condition,
+      isDone: winBalls.Nova - dailyQuestsData?.condition >= 1,
       reward: needMoney(60000),
     },
     {
