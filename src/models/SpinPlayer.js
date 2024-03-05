@@ -17,6 +17,14 @@ const playerSchema = new Schema(
       type: Number,
       required: true,
     },
+    spinsLeft: {
+      type: Number,
+      required: true,
+    },
+    multiplyDbNr: {
+      type: Number,
+      required: true,
+    },
     bestWin: {
       type: Number,
       required: true,
@@ -27,7 +35,7 @@ const playerSchema = new Schema(
       default: 0,
     },
     upgradeLucky: {
-      type: Number,
+      type: Number, 
       required: true,
       default: 0,
     },

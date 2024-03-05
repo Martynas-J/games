@@ -111,15 +111,14 @@ const Results = ({ data, game, name, limit }) => {
             return (
               <li
                 key={index}
-                className={`flex flex-col ${
-                  index === 0
+                className={`flex flex-col ${index === 0
                     ? " shadow-yellow-500"
                     : index === 1
-                    ? "shadow-gray-500"
-                    : index === 2
-                    ? " shadow-orange-700"
-                    : " shadow-slate-700"
-                } p-2 rounded-md shadow-md `}
+                      ? "shadow-gray-500"
+                      : index === 2
+                        ? " shadow-orange-700"
+                        : " shadow-slate-700"
+                  } p-2 rounded-md shadow-md `}
               >
                 {index === 0 ? (
                   <span className="text-yellow-500 flex justify-center gap-2 text-2xl">
@@ -195,7 +194,7 @@ const Results = ({ data, game, name, limit }) => {
                               <PiMedalLight color="blue" size={30} />
                             </span>
                           )}
-                          {index === findMaxCard("King").maxCardIndex && (
+                          {findMaxCard("Ace").maxCard > 0 && index === findMaxCard("Ace").maxCardIndex && (
                             <span
                               onClick={() => handleMedalClick("Tūzus", index)}
                             >

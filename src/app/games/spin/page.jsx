@@ -43,6 +43,8 @@ const Engine = () => {
         spinMoney,
         bestWin,
         spins,
+        spinsLeft,
+        multiplyDbNr,
         upgradeX,
         upgradeLucky,
         upgradeSpeed,
@@ -62,6 +64,10 @@ const Engine = () => {
       setMoney(spinMoney);
       setBiggestWin(bestWin);
       setSpins(spins);
+      if (spinsLeft) {
+        autoSpin(spinsLeft, 1, multiplyDbNr)
+        setLeftSpins(spinsLeft)      
+      }
       setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
       setUpgradeLucky(upgradeLucky);
       setUpgradeSpeed(upgradeSpeed);
@@ -255,6 +261,8 @@ const Engine = () => {
           ballsNova: winBalls.Nova,
           cardsData: cardsDb,
           dailyQuestsData: dailyQuestsDb,
+          spinsLeft:leftSpins,
+          multiplyDbNr: multiply,
         },
         "saveSpinResults"
       );
@@ -402,6 +410,7 @@ const Engine = () => {
   if (isLoading || !session.data) {
     return <Loading />;
   }
+
   const updateState = (moneyPlus, nextDayData, questionNr) => {
     if (moneyPlus) {
       setMoney((prev) => prev + moneyPlus);
