@@ -66,7 +66,7 @@ const Engine = () => {
       setSpins(spins);
       if (spinsLeft && spinsLeft >0) {
         autoSpin(spinsLeft, 1, multiplyDbNr)
-        setLeftSpins(spinsLeft)      
+        //setLeftSpins(spinsLeft)      
       }
       setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
       setUpgradeLucky(upgradeLucky);
