@@ -64,7 +64,7 @@ const Engine = () => {
       setMoney(spinMoney);
       setBiggestWin(bestWin);
       setSpins(spins);
-      if (spinsLeft) {
+      if (spinsLeft && spinsLeft >0) {
         autoSpin(spinsLeft, 1, multiplyDbNr)
         setLeftSpins(spinsLeft)      
       }
