@@ -102,7 +102,7 @@ const Wins = () => {
           now >= new Date(dailyRewardData)
             ? () =>
                 saveResult(
-                  dayRewards[Math.floor(Math.random() * 11)],
+                  dayRewards[Math.floor(Math.random() * 11)] *(result?.level >7 ? 5 : result?.level >9 ? 10 : result?.level >11 ? 50 :1)  ,
                   "",
                   "",
                   dailyRewardData
