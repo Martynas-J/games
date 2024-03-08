@@ -66,8 +66,8 @@ const Engine = () => {
       setSpins(spins);
 
       if (spinsLeft && spinsLeft >0) {
+        setUpgradeSpeed(upgradeSpeed);    
         autoSpin(spinsLeft, 1, multiplyDbNr)
-        //setLeftSpins(spinsLeft)      
 
       }
       setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
@@ -417,7 +417,7 @@ const Engine = () => {
     if (moneyPlus) {
       setMoney((prev) => prev + moneyPlus);
       if (lvl > 5) {
-        if (questionNr === 2) {
+        if (questionNr === 1) {
           setRandomNr(Math.floor(Math.random() * 13));  
           setToggled2(true);
         }
@@ -425,11 +425,15 @@ const Engine = () => {
           setRandomNr(Math.floor(Math.random() * 9) + 4);
           setToggled2(true);
         }
-        if (questionNr === 4) {
+        if (questionNr === 5) {
           setRandomNr(Math.floor(Math.random() * 5) + 8);
           setToggled2(true);
         }
-        if (questionNr >= 5) {
+        if (questionNr === 7) {
+          setRandomNr(Math.floor(Math.random() * 5) + 8);
+          setToggled2(true);
+        }
+        if (questionNr >= 9) {
           setRandomNr(12);
           setToggled2(true);
         }

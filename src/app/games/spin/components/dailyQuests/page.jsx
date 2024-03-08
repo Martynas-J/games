@@ -56,6 +56,15 @@ const DailyQuests = ({
       reward: needMoney(15000),
     },
     {
+      title: `Išsuk ${formatLargeNumber(needNumber(500))} sukimų`,
+      conditionName: "spins",
+      conditionItem: spinsNow,
+      condition: needNumber(500),
+      conditionString: spinsNow - dailyQuestsData.condition,
+      isDone: spinsNow - dailyQuestsData?.condition >= needNumber(500),
+      reward: needMoney(17000),
+    },
+    {
       title: (
         <div>
           Surink{" "}
@@ -72,23 +81,15 @@ const DailyQuests = ({
       isDone: winBalls.Rare - dailyQuestsData?.condition >= needNumber(2),
       reward: needMoney(20000),
     },
-    // {
-    //   title: (
-    //     <div>
-    //       Surink{" "}
-    //       <span className="text-green-700">
-    //         {needNumber(1) + 1}{" "}
-    //       </span>
-    //       <span className="font-bold">Blue</span>
-    //     </div>
-    //   ),
-    //   conditionName: "Blue",
-    //   conditionItem: winBalls.Blue,
-    //   condition: needNumber(1) + 1,
-    //   conditionString: winBalls.Blue - dailyQuestsData.condition,
-    //   isDone: winBalls.Blue - dailyQuestsData?.condition >= needNumber(1) + 1,
-    //   reward: needMoney(25000),
-    // },
+    {
+      title: `Išsuk ${formatLargeNumber(needNumber(700))} sukimų`,
+      conditionName: "spins",
+      conditionItem: spinsNow,
+      condition: needNumber(700),
+      conditionString: spinsNow - dailyQuestsData.condition,
+      isDone: spinsNow - dailyQuestsData?.condition >= needNumber(700),
+      reward: needMoney(25000),
+    },
     {
       title: (
         <div>
@@ -107,6 +108,15 @@ const DailyQuests = ({
       reward: needMoney(30000),
     },
     {
+      title: `Išsuk ${formatLargeNumber(needNumber(1000))} sukimų`,
+      conditionName: "spins",
+      conditionItem: spinsNow,
+      condition: needNumber(1000),
+      conditionString: spinsNow - dailyQuestsData.condition,
+      isDone: spinsNow - dailyQuestsData?.condition >= needNumber(1000),
+      reward: needMoney(40000),
+    },
+    {
       title: (
         <div>
           Surink{" "}
@@ -122,6 +132,15 @@ const DailyQuests = ({
       conditionString: winBalls.Platina - dailyQuestsData.condition,
       isDone: winBalls.Platina - dailyQuestsData?.condition >= needNumber(1),
       reward: needMoney(50000),
+    },
+    {
+      title: `Išsuk ${formatLargeNumber(needNumber(1500))} sukimų`,
+      conditionName: "spins",
+      conditionItem: spinsNow,
+      condition: needNumber(1500),
+      conditionString: spinsNow - dailyQuestsData.condition,
+      isDone: spinsNow - dailyQuestsData?.condition >= needNumber(1500),
+      reward: needMoney(55000),
     },
     {
       title: (
@@ -163,7 +182,7 @@ const DailyQuests = ({
       <div className="font-bold text-lg mb-2 font-serif border-b-2">
         DIENOS UŽDUOTYS
       </div>
-      {questionNr < 6 ? (
+      {questionNr < 10 ? (
         <>
           <div className="flex flex-col font-semibold text-gray-800 text-[18px]">
             {" "}
