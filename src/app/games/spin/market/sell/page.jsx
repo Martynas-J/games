@@ -176,7 +176,7 @@ const Sell = () => {
                 onClick={() =>
                   sellCardHandler(card.name, playerName, cardsData)
                 }
-                className="hover:scale-110 transition-all duration-500 ease-in-out hover:cursor-pointer"
+                className=" relative hover:scale-110 transition-all duration-500 ease-in-out hover:cursor-pointer"
               >
                 <CardElement
                   {...cards[index]}
@@ -186,6 +186,9 @@ const Sell = () => {
                   typeSize="text-[8px]"
                   cardSize="w-[56px]"
                 />
+                <div className="border-[1px] border-y-0 border-x-gray-300 bg-white/90 absolute top-1/2 transform -translate-y-1/2  w-full ">
+                {cardsData[card.name]}
+                </div>
               </div>
             );
           })}
