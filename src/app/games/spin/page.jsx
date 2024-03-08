@@ -64,9 +64,11 @@ const Engine = () => {
       setMoney(spinMoney);
       setBiggestWin(bestWin);
       setSpins(spins);
-      if (spinsLeft) {
-        //setLeftSpins(spinsLeft)      
+
+      if (spinsLeft && spinsLeft >0) {
         autoSpin(spinsLeft, 1, multiplyDbNr)
+        //setLeftSpins(spinsLeft)      
+
       }
       setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
       setUpgradeLucky(upgradeLucky);
