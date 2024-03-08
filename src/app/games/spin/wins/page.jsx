@@ -118,12 +118,22 @@ const Wins = () => {
         Dienos prizas
       </button>
       {ballsData.map((data, index) => {
+        let upPrize = 1
+        if (result?.level >= 10) {
+          upPrize = 2
+        }
+        if (result?.level >= 12) {
+          upPrize = 3
+        }
+        if (result?.level >= 15) {
+          upPrize = 4
+        }
         const number = allBalls[index] || 0;
         const key = Object.keys(rewardsDb)[index];
         const rewardsLvl = rewardsDb[key];
         const rewards =
           rewardForBalls[rewardsLvl] *
-          Math.pow(index + 1, rewardForBalls.length - 1 ? 5 : 4);
+          Math.pow(index + upPrize, rewardForBalls.length - 1 ? 5 : 4);
         const allowed = number >= NeedBallsForReward[rewardsLvl];
 
         return (
