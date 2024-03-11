@@ -27,18 +27,27 @@ const Cards = () => {
     return <div>Pasuk nors kartą ir sužinosi</div>;
   }
   const { spinMoney, cardsData, level } = result;
-  const saveResult = async (data) => {
+
+  const saveResult = async (data = 0) => {
     const updatedCardsData = { ...cardsData };
-    for (let i = 0; i < 4; i++) {
-      if (data[i].count > 0) {
-        updatedCardsData[data[i].name] = (cardsData[data[i].name] || 0) - 1;
+    if (data) {
+      for (let i = 0; i < 4; i++) {
+        if (data[i].count > 0) {
+          updatedCardsData[data[i].name] = (cardsData[data[i].name] || 0) - 1;
+        }
+      }
+    } else {
+      const keys = Object.keys(updatedCardsData);
+      for (let i = 0; i < keys.length - 1; i++) {
+        updatedCardsData[keys[i]]--;
       }
     }
+
     try {
       const response = await updateResultData(
         {
           playerName: session.data.user.name,
-          spinMoney: result?.spinMoney + data[4],
+          spinMoney: result?.spinMoney + (data ? data[4] : 1000000000),
           ...(Object.keys(updatedCardsData).length && {
             cardsData: updatedCardsData,
           }),
@@ -46,7 +55,7 @@ const Cards = () => {
         "saveSpinResults"
       );
       if (response.ok) {
-        toast.success(`Atsiėmėte: ${formatLargeNumber(data[4])}`);
+        toast.success(`Atsiėmėte: ${formatLargeNumber(data ? data[4] : 1000000000)}`);
         mutate();
       } else {
         console.error("Failed to save the result.");
@@ -62,6 +71,9 @@ const Cards = () => {
     }
   }
 
+  const allCardsDeck = Object.values(cardsData)
+    .slice(0, -1)
+    .every((value) => value > 0);
   const cardLines = cardLinesFunction(filteredArray, cardsData);
 
   return (
@@ -127,6 +139,17 @@ const Cards = () => {
             )}
         </div>
       </div>
+      <button
+        onClick={() => saveResult()}
+        disabled={level < 8 || !allCardsDeck}
+        className={` ${
+          level > 7 && allCardsDeck
+            ? "bg-gradient-to-r from-green-400 to-green-600 hover:from-green-600 hover:to-green-800 text-white"
+            : "bg-gradient-to-r from-blue-400 to-blue-600  text-black cursor-not-allowed"
+        } myShadow  px-1 py-1 rounded-full shadow-md min-w-[70px]`}
+      >
+        Pasiimti už visą kaladę <span className=" font-bold">1B</span> .
+      </button>
     </div>
   );
 };

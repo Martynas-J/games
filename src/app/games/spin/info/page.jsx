@@ -76,7 +76,7 @@ const Info = () => {
         {cardBallItem([b2, b1, b1], "Surink 2 paskutinius kamuoliukus ")}
         {cardBallItem([b1, b1, b1], "Surink 3 kamuoliukus ir laimėk Tūzą ")}
       </div>
-      <div className="flex flex-wrap gap-y-1 border-b-2 pb-2">
+      <div className="flex flex-wrap gap-y-1 border-b-2 pb-2 justify-center">
         <div className="text-md my-4 w-full font-bold">
           Galima pirkti ir parduoti kortas Turguje arba iškeisti jas į pinigus
         </div>
@@ -88,6 +88,7 @@ const Info = () => {
         {cardItem([0, 4], "Už 2 iš eilės ", "1.5m")}
         {cardItem([0, 4, 8], "Už 3 iš eilės ", "15m")}
         {cardItem([0, 4, 8, 12], "Už visą ", "100m")}
+        <div className=" text-red-700 text-center font-semibold">Surink visą kaladę ir atsiimk 1B</div>
       </div>
     </>
   );
