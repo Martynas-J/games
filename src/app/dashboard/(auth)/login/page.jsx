@@ -1,6 +1,6 @@
 "use client";
 import { signIn, useSession } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter,  } from "next/navigation";
 import Link from "next/link";
 import styles from "./login.module.css";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const session = useSession();
   const router = useRouter();
-  const params = useSearchParams(); 
+ // const params = useSearchParams(); 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
