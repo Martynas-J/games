@@ -14,10 +14,10 @@ const Login = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  useEffect(() => {
-    setError(params.get("error"));
-    setSuccess(params.get("success"));
-  }, [params]);
+  // useEffect(() => {
+  //   setError(params.get("error"));
+  //   setSuccess(params.get("success"));
+  // }, [params]);
 
   useEffect(() => {
     if (session.status === "authenticated") {
