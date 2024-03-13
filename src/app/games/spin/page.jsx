@@ -64,9 +64,7 @@ const Engine = () => {
       setMoney(spinMoney);
       setBiggestWin(bestWin);
       setSpins(spins);
-
-      if (spinsLeft && spinsLeft > 0) {
-        setUpgradeSpeed(upgradeSpeed);
+      if (spinsLeft && spinsLeft > 0 && !buttonClicked) {
         autoSpin(spinsLeft, 1, multiplyDbNr);
       }
       setUpgradeX(upgradeX === 0 ? 1 : upgradeX);
