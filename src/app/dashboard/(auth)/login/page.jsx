@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const session = useSession();
   const router = useRouter();
-  const params = useSearchParams();
+  const params = useSearchParams(); 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
