@@ -1,23 +1,23 @@
 "use client";
 import { signIn, useSession } from "next-auth/react";
-import { useRouter,  } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import styles from "./login.module.css";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const session = useSession();
   const router = useRouter();
- // const params = useSearchParams(); 
+  const params = useSearchParams();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  // useEffect(() => {
-  //   setError(params.get("error"));
-  //   setSuccess(params.get("success"));
-  // }, [params]);
+  useEffect(() => {
+    setError(params.get("error"));
+    setSuccess(params.get("success"));
+  }, [params]);
 
   useEffect(() => {
     if (session.status === "authenticated") {
@@ -38,6 +38,7 @@ const Login = () => {
   };
   if (session.status === "unauthenticated") {
     return (
+      <Suspense fallback={<>Loading...</>}>
       <div className={styles.container}>
         <p>{error && toast.error(error)}</p>
         <h1 className={styles.title}>{success ? success : "Sveiki sugryžę"}</h1>
@@ -82,6 +83,7 @@ const Login = () => {
           Sukurti nują paskyrą
         </Link>
       </div>
+      </Suspense>
     );
   }
 };
